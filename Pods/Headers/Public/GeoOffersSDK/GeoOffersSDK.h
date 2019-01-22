@@ -1,0 +1,1 @@
+../../../../../SDK/GeoOffersSDK/GeoOffersSDK/GeoOffersSDK.h

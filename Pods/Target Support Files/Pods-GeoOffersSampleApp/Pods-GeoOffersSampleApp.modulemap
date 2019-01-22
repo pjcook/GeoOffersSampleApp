@@ -1,0 +1,6 @@
+module Pods_GeoOffersSampleApp {
+  umbrella header "Pods-GeoOffersSampleApp-umbrella.h"
+
+  export *
+  module * { export * }
+}

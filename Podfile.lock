@@ -1,0 +1,16 @@
+PODS:
+  - GeoOffersSDK (0.0.1)
+
+DEPENDENCIES:
+  - GeoOffersSDK (from `~/Dropbox/Private/Private Projects/Zappit/Geo-Offers.com/SDK/GeoOffersSDK`)
+
+EXTERNAL SOURCES:
+  GeoOffersSDK:
+    :path: "~/Dropbox/Private/Private Projects/Zappit/Geo-Offers.com/SDK/GeoOffersSDK"
+
+SPEC CHECKSUMS:
+  GeoOffersSDK: 31c780084f5ef01abbf5295cf2130593b9f75a0d
+
+PODFILE CHECKSUM: 931ecb2cf7fa8d9f6e03106ead7e81eec4d15ea9
+
+COCOAPODS: 1.5.3
