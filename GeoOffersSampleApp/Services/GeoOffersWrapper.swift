@@ -5,6 +5,7 @@ import GeoOffersSDK
 
 class GeoOffersWrapper {
     static let shared = GeoOffersWrapper()
+    
     var geoOffers: GeoOffersSDKService = {
         let registrationCode = ""
         let authToken = ""
@@ -12,4 +13,16 @@ class GeoOffersWrapper {
         let geoOffers = GeoOffersSDKServiceDefault(configuration: configuration)
         return geoOffers
     }()
+    
+    var pushToken: String? {
+        get {
+            let defaults = UserDefaults.standard
+            let token = defaults.string(forKey: "SampleAppPushToken")
+            return token
+        }
+        set {
+            let defaults = UserDefaults.standard
+            defaults.set(newValue, forKey: "SampleAppPushToken")
+        }
+    }
 }

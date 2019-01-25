@@ -4,6 +4,8 @@ import UIKit
 import GeoOffersSDK
 
 class ViewController: UIViewController {
+    @IBOutlet private var pushToken: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,6 +21,12 @@ class ViewController: UIViewController {
     
     @IBAction fileprivate func presentOffers() {
         GeoOffersWrapper.shared.geoOffers.presentOfferScreen(in: self)
+    }
+    
+    @IBAction private func togglePushToken() {
+        pushToken.text = GeoOffersWrapper.shared.pushToken ?? "No Token"
+        pushToken.isHidden = !pushToken.isHidden
+        UIPasteboard.general.string = GeoOffersWrapper.shared.pushToken
     }
 }
 

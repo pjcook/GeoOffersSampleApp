@@ -10,7 +10,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Initialise the GeoOffersSDK, simply using the Wrapper singleton for simplifying the Sample App, use your own preferred dependency injection pattern
-        _ = GeoOffersWrapper.shared
+        // Call the matching method on the GeoOffersSDK instance
+        GeoOffersWrapper.shared.geoOffers.application(application, didFinishLaunchingWithOptions: launchOptions)
         return true
     }
 
@@ -29,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
+        // Call the matching method on the GeoOffersSDK instance
         GeoOffersWrapper.shared.geoOffers.applicationDidBecomeActive(application)
     }
 
@@ -38,7 +40,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // Required if implementing Remote notifications
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        let tokenParts = deviceToken.map { data in String(format: "%02.2hhx", data) }
+        let token = tokenParts.joined()
+        GeoOffersWrapper.shared.pushToken = token
+
+        // This part is required, the stuff above is simply for the sample app
+        // Call the matching method on the GeoOffersSDK instance
         GeoOffersWrapper.shared.geoOffers.application(application, didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        // Call the matching method on the GeoOffersSDK instance
+        GeoOffersWrapper.shared.geoOffers.application(application, didReceiveRemoteNotification: userInfo, fetchCompletionHandler: completionHandler)
     }
 }
 
