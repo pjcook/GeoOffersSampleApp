@@ -18,36 +18,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BMp-4d-YhJ">
-                                <rect key="frame" x="16" y="20" width="343" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="VqX-G5-mWZ"/>
-                                </constraints>
-                                <state key="normal" title="Request Location Permissions"/>
-                                <connections>
-                                    <action selector="requestLocationPermissions" destination="BYZ-38-t0r" eventType="touchUpInside" id="cjp-Rn-Kq3"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xxy-4W-JAX">
-                                <rect key="frame" x="16" y="86" width="343" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="Xga-ug-gbr"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="g5i-f5-EZk"/>
-                                </constraints>
-                                <state key="normal" title="Present Offers Window"/>
-                                <connections>
-                                    <action selector="presentOffers" destination="BYZ-38-t0r" eventType="touchUpInside" id="FsI-UB-uTO"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="WSI-dO-6Nl">
+                                <rect key="frame" x="16" y="20" width="343" height="182"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BMp-4d-YhJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="VqX-G5-mWZ"/>
+                                        </constraints>
+                                        <state key="normal" title="Request Location Permissions"/>
+                                        <connections>
+                                            <action selector="requestLocationPermissions" destination="BYZ-38-t0r" eventType="touchUpInside" id="cjp-Rn-Kq3"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BCA-dv-mcQ">
+                                        <rect key="frame" x="0.0" y="66" width="343" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="22G-OS-JRY"/>
+                                        </constraints>
+                                        <state key="normal" title="Request Notification Permissions"/>
+                                        <connections>
+                                            <action selector="requestNotificationPermissions" destination="BYZ-38-t0r" eventType="touchUpInside" id="NQN-1X-B2J"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xxy-4W-JAX">
+                                        <rect key="frame" x="0.0" y="132" width="343" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Xga-ug-gbr"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="g5i-f5-EZk"/>
+                                        </constraints>
+                                        <state key="normal" title="Present Offers Window"/>
+                                        <connections>
+                                            <action selector="presentOffers" destination="BYZ-38-t0r" eventType="touchUpInside" id="FsI-UB-uTO"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BMp-4d-YhJ" secondAttribute="trailing" constant="16" id="7As-5L-Ne9"/>
-                            <constraint firstItem="xxy-4W-JAX" firstAttribute="top" secondItem="BMp-4d-YhJ" secondAttribute="bottom" constant="16" id="HBb-mA-U0c"/>
-                            <constraint firstItem="BMp-4d-YhJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Wdi-nr-YSX"/>
-                            <constraint firstItem="xxy-4W-JAX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="aD7-FR-6rQ"/>
-                            <constraint firstItem="BMp-4d-YhJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="gkh-oj-gfW"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xxy-4W-JAX" secondAttribute="trailing" constant="16" id="vuE-Br-pNK"/>
+                            <constraint firstItem="WSI-dO-6Nl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="LWk-eQ-UKv"/>
+                            <constraint firstItem="WSI-dO-6Nl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ciA-Cs-3Iv"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WSI-dO-6Nl" secondAttribute="trailing" constant="16" id="mIo-px-4gg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

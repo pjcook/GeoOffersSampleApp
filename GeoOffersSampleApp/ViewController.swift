@@ -13,6 +13,10 @@ class ViewController: UIViewController {
         GeoOffersWrapper.shared.geoOffers.requestLocationPermissions()
     }
     
+    @IBAction private func requestNotificationPermissions() {
+        GeoOffersWrapper.shared.geoOffers.requestPushNotificationPermissions()
+    }
+    
     @IBAction fileprivate func presentOffers() {
         GeoOffersWrapper.shared.geoOffers.presentOfferScreen(in: self)
     }
