@@ -8,7 +8,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 
     @IBAction private func requestLocationPermissions() {
@@ -20,13 +19,17 @@ class ViewController: UIViewController {
     }
     
     @IBAction fileprivate func presentOffers() {
-        GeoOffersWrapper.shared.geoOffers.presentOfferScreen(in: self)
+        let viewController = GeoOffersWrapper.shared.geoOffers.buildOfferListViewController()
+        navigationController?.pushViewController(viewController, animated: true)
     }
     
     @IBAction private func togglePushToken() {
-        pushToken.text = GeoOffersWrapper.shared.pushToken ?? "No Token"
+        let token = GeoOffersWrapper.shared.pushToken
+        pushToken.text = token ?? "No Token"
         pushToken.isHidden = !pushToken.isHidden
-        UIPasteboard.general.string = GeoOffersWrapper.shared.pushToken
+        if let token = token {
+            UIPasteboard.general.string = token
+        }
     }
 }
 

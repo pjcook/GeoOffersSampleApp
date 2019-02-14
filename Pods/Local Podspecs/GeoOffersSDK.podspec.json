@@ -21,7 +21,7 @@
     "GeoOffersSDK",
     "GeoOffersSDK/**/*.{h,m,swift}"
   ],
-  "resources": "GeoOffersSDK/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}",
+  "resources": "GeoOffersSDK/**/*.{png,jpeg,jpg,svg,storyboard,html,json,css,js,xib,xcassets}",
   "frameworks": [
     "UIKit",
     "CoreLocation",

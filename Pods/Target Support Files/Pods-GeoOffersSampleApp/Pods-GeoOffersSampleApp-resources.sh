@@ -92,10 +92,42 @@ EOM
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/Coupon.json"
+  install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/app.css"
+  install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/coupon.html"
+  install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/jquery.min.js"
+  install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/JsBarcode.all.min.js"
+  install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/qrcode.min.js"
+  install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/rere.main.min.js"
+  install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/socket.io.js"
+  install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/vue.js"
   install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/GeoOffersSDK.storyboard"
+  install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/index.html"
+  install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/Listing.json"
+  install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/ListingJSTemplate.js"
+  install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/offerslist/offerslist.html"
+  install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/offerslist/offerslist_files/app.css"
+  install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/offerslist/offerslist_files/app.js"
+  install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/offerslist/offerslist_files/geo-gmap-icon.svg"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/Coupon.json"
+  install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/app.css"
+  install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/coupon.html"
+  install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/jquery.min.js"
+  install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/JsBarcode.all.min.js"
+  install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/qrcode.min.js"
+  install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/rere.main.min.js"
+  install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/socket.io.js"
+  install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/vue.js"
   install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/GeoOffersSDK.storyboard"
+  install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/index.html"
+  install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/Listing.json"
+  install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/ListingJSTemplate.js"
+  install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/offerslist/offerslist.html"
+  install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/offerslist/offerslist_files/app.css"
+  install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/offerslist/offerslist_files/app.js"
+  install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/offerslist/offerslist_files/geo-gmap-icon.svg"
 fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
