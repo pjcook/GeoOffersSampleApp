@@ -7,36 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		03C4F39A79BEBC35B8596C5ED3FB94BC /* GeoOffersListing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CBBEE3C46B3391FB2064ED0673F579 /* GeoOffersListing.swift */; };
-		05A473554659C49D4163236C0C6B2651 /* String+URLEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19373D7D07E624FDCFC9618951DEE5D4 /* String+URLEncoding.swift */; };
+		0FD37D695108BB7ACE036F0AE992C675 /* GeoOffersCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5ADF82228D159F3A4E512CD516733A /* GeoOffersCacheService.swift */; };
 		162628371DDEEE0888289F22393B45A9 /* Pods-GeoOffersSampleApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EC63C21BEBF2AF5576F17B210A73379A /* Pods-GeoOffersSampleApp-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		22A31A69BF86CBBAD35B902BAFC71AE8 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F5A324B59F57EE51ACCC8B9B5E23C3 /* UserNotifications.framework */; };
-		3D54D46E58AE8D9C70F2FE29124144F1 /* GeoOffersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3816798497266329C01963760F6F48F7 /* GeoOffersPresenter.swift */; };
-		3DA8B339C2E8DB9435083C710C8DFD0B /* GeoOffersGeoFence.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED5536463962746B18B9F730067A63FB /* GeoOffersGeoFence.swift */; };
-		4898D96F7B164FA6164FAE35E5187F42 /* GeoOffersServiceModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2A28612BB4D4E5D114E778A42A336D1 /* GeoOffersServiceModels.swift */; };
-		4A7DE1449F40A3B29A997576550703AB /* GeoOffersPushData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F3A37F20161787CAC994757214BC2DF /* GeoOffersPushData.swift */; };
-		54900733983E4032C4692C40E454E610 /* GeoOffersOffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C93148BD5EB0AA6B0CEAD1BDA0A8A75 /* GeoOffersOffer.swift */; };
-		55AEA650728E9B323E3EF2FD56146564 /* GeoOffersCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC6F2DEAF61719956F7768B57745206A /* GeoOffersCacheService.swift */; };
-		55D68CB856AD714621E735B5AF0178F4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C00F5B9B011D185DB8BA83BFC1A0DF7A /* UIKit.framework */; };
-		57B9AAAF91C920700433E789996FB324 /* GeoOffersConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = D63F82597B6BCEEADBAD52686A4989FE /* GeoOffersConfiguration.swift */; };
-		5FFA5F14EFBFF754090B11146A33A7EB /* GeoOffersSDKService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF8317F9AE099689F0B5D9857B611443 /* GeoOffersSDKService.swift */; };
+		20BECF856115E0F12E0D67189C1508EA /* GeoOffersSDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C194E42144D8FEACECC83A41A267AE /* GeoOffersSDK-dummy.m */; };
+		2489DDB132566F6C9825473483BD1FB2 /* GeoOffersSDKService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA746A723D649C6E5E3E271AA9A15A65 /* GeoOffersSDKService.swift */; };
+		26B65267503835BBE17BDD7714422302 /* GeoOffersGeoFence.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9AA7A119ED40BD59191927DEAA57C1D /* GeoOffersGeoFence.swift */; };
+		2B7F1BCC6C48BF6C05548EB85BDF36B5 /* GeoOffersOffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09932B8FC984A3175C382071077087FF /* GeoOffersOffer.swift */; };
+		2C1D214BE5BCB4E2A4A2F67D293822CE /* GeoOffersDeliveredSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B87A7B0D95065A467A4D73EF933A96E /* GeoOffersDeliveredSchedule.swift */; };
+		3394B0396E4A79218E99E2AC37F15963 /* GeoOffersSDK-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B5DAE78292E06A660B6DB2FF9F96B45 /* GeoOffersSDK-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		400EB57A7553EA5B8E14A163D4DC11CB /* GeoOffersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA19139A5CDD46BB2160667F20C971E /* GeoOffersViewController.swift */; };
+		45216C904C1CBDDC4D4F5E16E8471B6A /* KeyedDecodingContainerProtocol+PHPJSONEncoderHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96656A2E3783F53721C584BE636D8D6 /* KeyedDecodingContainerProtocol+PHPJSONEncoderHelper.swift */; };
+		46CA4B6B85B9FBF83500B284CD06748C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C00F5B9B011D185DB8BA83BFC1A0DF7A /* UIKit.framework */; };
+		494E92BDB783F366ED4884C0C2BA7F50 /* GeoOffersDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5A93819C8D3C23A6359BEB5C562FCD /* GeoOffersDataParser.swift */; };
 		6141DF379DAD699B29DC43EBF9D5D31B /* Pods-GeoOffersSampleApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BFB662F9E7BD51C999B03449D27A247E /* Pods-GeoOffersSampleApp-dummy.m */; };
-		6C54D3923B02DCFD19F2DAF5FF4DEC75 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1DB99884DA61504DDA34DB54CEC82E9 /* CoreLocation.framework */; };
+		649C1CE2DDB66A6EF19DA2C5F9F1542C /* GeoOffersTrackingEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0C3D5AB4228C22FB071CAC8296CB3B /* GeoOffersTrackingEvent.swift */; };
+		6D677067BA5539A008CE35C55001810E /* GeoOffersSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E27B1CE3DD9690B6E7C47822E90FCAA /* GeoOffersSchedule.swift */; };
 		7017147847D9F01175A7B0883BDD8F30 /* Pods-GeoOffersSampleAppTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 22CBF8179A380F51236FA3650CF73132 /* Pods-GeoOffersSampleAppTests-dummy.m */; };
-		81110D6308C98AD9F3C390959B6A8D97 /* GeoOffersSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCEC6E71A42ECCDDE838A60B996AD363 /* GeoOffersSchedule.swift */; };
-		82014904BF3D5B18D71FB09983106FE2 /* GeoOffersDeliveredSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCA692E694672DDA568F660AEA49B2A /* GeoOffersDeliveredSchedule.swift */; };
-		9646B0C8586E7E7D271D4AD9AC358D5C /* GeoOffersTrackingEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66F94FCAA002510EC61C7A52EE13B05 /* GeoOffersTrackingEvent.swift */; };
-		9873BC197FE2BAD51D09BCCDC81DFF7B /* GeoOffersSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 762276FEBDB48478C5274F347EA9E871 /* GeoOffersSDK.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		B314D21F2CFDDD8ACCBF069941BE0B07 /* GeoOffersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1399D18BFE6FAE97CC31464B7A1F0608 /* GeoOffersViewController.swift */; };
-		BEF2524A0047E0680624B1465C2311CE /* GeoOffersLogging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654899CED67D47B4078FE1DB7DD11670 /* GeoOffersLogging.swift */; };
-		D165F7A6AD15F4F5572F4DB4866D8A18 /* GeoOffersNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B7D5FCD72735C779DEB0FB39B6B562 /* GeoOffersNotificationService.swift */; };
-		D58E6C5384D9009252CD2B646C188AD6 /* GeoOffersAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34D77DA873993D354421A6BDB224570 /* GeoOffersAPIService.swift */; };
-		E0ABD0C7568A7E5378BF9BA70728F557 /* GeoOffersSDK-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F3A020CEB546195AB7A653650DAC97D3 /* GeoOffersSDK-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		708F72EBBA0D2B73E670DC55CA189304 /* GeoOffersPushData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5629C04380EA5302B070E940196ACC4 /* GeoOffersPushData.swift */; };
+		7199C8F31B7800440B3B841A5173EDD2 /* GeoOffersListing.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF13C1C946279D99D0A78B9DD5D4CCC /* GeoOffersListing.swift */; };
+		80F1B40C278A161465E0BF9918D8AB16 /* GeoOffersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5797494D59644308A7307FEA7D5AA283 /* GeoOffersPresenter.swift */; };
+		85268A2499747F826D8458D90ECC54AF /* GeoOffersLogging.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BC7333CFC97D8C1D04017DB2B5779A /* GeoOffersLogging.swift */; };
+		8CC35793CE5C1813321EC59F45EAB2C8 /* GeoOffersLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D281FA89A7787A282F99A61567B4CA9A /* GeoOffersLocationService.swift */; };
+		8F3F2810D06B4D1A6724E8209C00C094 /* GeoOffersSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 72D97B119A85B120D303211A1DD3BC17 /* GeoOffersSDK.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		9EB825F5AAB78F6908009CB8AA60FE11 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1DB99884DA61504DDA34DB54CEC82E9 /* CoreLocation.framework */; };
+		A5EAF3CE76FAB07CC40CC7D2DAC1CA40 /* GeoOffersAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90557BF00C22954C488F67342F853B14 /* GeoOffersAPIService.swift */; };
+		ABB7281835FA83081369FF176110998C /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B67E89019894178BA82CBD8BBD5DAE /* WebKit.framework */; };
+		B6F45CC90364DD3528E9B88413B04981 /* GeoOffersServiceModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF293F6E095C270E9230A79C2F0AFE22 /* GeoOffersServiceModels.swift */; };
+		B71E1A860F24FBD0F3C3C07DB5117D37 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09F5A324B59F57EE51ACCC8B9B5E23C3 /* UserNotifications.framework */; };
+		D3FDC269F8061C337896F2ABB141930D /* String+URLEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE569C221AC775574C11FFBD2DAA4E6 /* String+URLEncoding.swift */; };
 		E65B19BE42D35A77296F3F9C435051A4 /* Pods-GeoOffersSampleAppUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BDE7BEDC44F2D356692A254E53A1F58F /* Pods-GeoOffersSampleAppUITests-dummy.m */; };
-		F2011662AAA7D3897305FD1B8E938D77 /* GeoOffersLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E275010FE210A56C3E7F027951759F36 /* GeoOffersLocationService.swift */; };
-		F34D43DD3C95D04FEBB32EBD220915B3 /* GeoOffersDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AA79E1716185BD47EF87DF40492C3FC /* GeoOffersDataParser.swift */; };
-		F42F1C2ADC9A789C41A649EC0842259A /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 35B67E89019894178BA82CBD8BBD5DAE /* WebKit.framework */; };
-		FEA950060424288B1C5ADD9966CDBAAA /* GeoOffersSDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D48CC25372A8B894EFEA03E8BA823800 /* GeoOffersSDK-dummy.m */; };
+		EEDB1C1C7E8E4A659B08B1979EA598E2 /* GeoOffersConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D56D3785CB6998E49391EF9ABB7392 /* GeoOffersConfiguration.swift */; };
+		FAA5D08B0804E97DACA5AA058E8EFB58 /* GeoOffersNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60EDC6431E9A8D4A9377928DFD2E5270 /* GeoOffersNotificationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +52,7 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = DEFA5B1379890AA77E01F6B1ADA112F8;
+			remoteGlobalIDString = 28DD70D7A39EABCE05A77365BD7BB6BD;
 			remoteInfo = GeoOffersSDK;
 		};
 		FE7026EE1EEC5AAF89E1560E900AED85 /* PBXContainerItemProxy */ = {
@@ -64,99 +65,100 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		026365409919322DA3B20A232961DC54 /* JsBarcode.all.min.js */ = {isa = PBXFileReference; includeInIndex = 1; path = JsBarcode.all.min.js; sourceTree = "<group>"; };
-		04EC4567B2DDE59085EA577E3A62F7AF /* ListingJSTemplate.js */ = {isa = PBXFileReference; includeInIndex = 1; name = ListingJSTemplate.js; path = GeoOffersSDK/ListingJSTemplate.js; sourceTree = "<group>"; };
+		09932B8FC984A3175C382071077087FF /* GeoOffersOffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersOffer.swift; path = GeoOffersSDK/GeoOffersOffer.swift; sourceTree = "<group>"; };
 		09F5A324B59F57EE51ACCC8B9B5E23C3 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/UserNotifications.framework; sourceTree = DEVELOPER_DIR; };
+		0B87A7B0D95065A467A4D73EF933A96E /* GeoOffersDeliveredSchedule.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersDeliveredSchedule.swift; path = GeoOffersSDK/GeoOffersDeliveredSchedule.swift; sourceTree = "<group>"; };
 		0FEC9F18E7B63766A9D36BC52F330A8F /* libPods-GeoOffersSampleApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-GeoOffersSampleApp.a"; path = "libPods-GeoOffersSampleApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		106C9A680F72C1F95D5567F277865595 /* Pods-GeoOffersSampleAppTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GeoOffersSampleAppTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		12C191994E29223775B275D57F236BE9 /* Pods-GeoOffersSampleApp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GeoOffersSampleApp-acknowledgements.markdown"; sourceTree = "<group>"; };
-		1399D18BFE6FAE97CC31464B7A1F0608 /* GeoOffersViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersViewController.swift; path = GeoOffersSDK/GeoOffersViewController.swift; sourceTree = "<group>"; };
-		16369BA295DBE0B1FC24A8469A669457 /* jquery.min.js */ = {isa = PBXFileReference; includeInIndex = 1; path = jquery.min.js; sourceTree = "<group>"; };
-		19373D7D07E624FDCFC9618951DEE5D4 /* String+URLEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+URLEncoding.swift"; path = "GeoOffersSDK/String+URLEncoding.swift"; sourceTree = "<group>"; };
-		1C890A24227E7CF43BA1E3447E73CC7D /* rere.main.min.js */ = {isa = PBXFileReference; includeInIndex = 1; path = rere.main.min.js; sourceTree = "<group>"; };
+		1B5DAE78292E06A660B6DB2FF9F96B45 /* GeoOffersSDK-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GeoOffersSDK-umbrella.h"; path = "../../Headers/Public/GeoOffersSDK/GeoOffersSDK-umbrella.h"; sourceTree = "<group>"; };
 		1D6CF42F9FFF5F7E1AC50DEBA25E69F8 /* Pods-GeoOffersSampleAppUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GeoOffersSampleAppUITests-resources.sh"; sourceTree = "<group>"; };
 		20D602A926CB5C6FF6BC9F92D8CE31D6 /* Pods-GeoOffersSampleApp-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GeoOffersSampleApp-resources.sh"; sourceTree = "<group>"; };
 		22858B76B76432EBD1DA5AED1726A189 /* Pods-GeoOffersSampleAppTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GeoOffersSampleAppTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		22CBF8179A380F51236FA3650CF73132 /* Pods-GeoOffersSampleAppTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GeoOffersSampleAppTests-dummy.m"; sourceTree = "<group>"; };
-		2816ECF9D99C839D476756F90F6B9EE9 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		2AA79E1716185BD47EF87DF40492C3FC /* GeoOffersDataParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersDataParser.swift; path = GeoOffersSDK/GeoOffersDataParser.swift; sourceTree = "<group>"; };
-		2B893C99264DF79A258709100B73E7F4 /* GeoOffersSDK-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GeoOffersSDK-prefix.pch"; sourceTree = "<group>"; };
-		31B7D5FCD72735C779DEB0FB39B6B562 /* GeoOffersNotificationService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersNotificationService.swift; path = GeoOffersSDK/GeoOffersNotificationService.swift; sourceTree = "<group>"; };
+		2612627B699E36ACE91C92BE99143CB7 /* rere.main.min.js */ = {isa = PBXFileReference; includeInIndex = 1; path = rere.main.min.js; sourceTree = "<group>"; };
+		2B5A93819C8D3C23A6359BEB5C562FCD /* GeoOffersDataParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersDataParser.swift; path = GeoOffersSDK/GeoOffersDataParser.swift; sourceTree = "<group>"; };
 		35B67E89019894178BA82CBD8BBD5DAE /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/WebKit.framework; sourceTree = DEVELOPER_DIR; };
-		3816798497266329C01963760F6F48F7 /* GeoOffersPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersPresenter.swift; path = GeoOffersSDK/GeoOffersPresenter.swift; sourceTree = "<group>"; };
+		374D03016C4C9A8763C534D97C0492EE /* jquery.min.js */ = {isa = PBXFileReference; includeInIndex = 1; path = jquery.min.js; sourceTree = "<group>"; };
 		3CC9A218C021BB6F6BD592FD9DE8076B /* Pods-GeoOffersSampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GeoOffersSampleApp.release.xcconfig"; sourceTree = "<group>"; };
-		3FCA692E694672DDA568F660AEA49B2A /* GeoOffersDeliveredSchedule.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersDeliveredSchedule.swift; path = GeoOffersSDK/GeoOffersDeliveredSchedule.swift; sourceTree = "<group>"; };
-		41198F58A0A64FD358CDB1ACF0543300 /* geo-gmap-icon.svg */ = {isa = PBXFileReference; includeInIndex = 1; path = "geo-gmap-icon.svg"; sourceTree = "<group>"; };
-		41E2714435CDBC43694B633EB706EC13 /* offerslist.html */ = {isa = PBXFileReference; includeInIndex = 1; path = offerslist.html; sourceTree = "<group>"; };
-		4C93148BD5EB0AA6B0CEAD1BDA0A8A75 /* GeoOffersOffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersOffer.swift; path = GeoOffersSDK/GeoOffersOffer.swift; sourceTree = "<group>"; };
+		41947A0F17199D76968BB6B4B73C74B2 /* GeoOffersSDK-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GeoOffersSDK-prefix.pch"; sourceTree = "<group>"; };
+		4ABA5972149E51FB2FF4C48561E29E4C /* socket.io.js */ = {isa = PBXFileReference; includeInIndex = 1; path = socket.io.js; sourceTree = "<group>"; };
+		4E27B1CE3DD9690B6E7C47822E90FCAA /* GeoOffersSchedule.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersSchedule.swift; path = GeoOffersSDK/GeoOffersSchedule.swift; sourceTree = "<group>"; };
 		55ACD118B20E04E2864DA6A7074D26F6 /* Pods-GeoOffersSampleAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GeoOffersSampleAppTests.debug.xcconfig"; sourceTree = "<group>"; };
-		58A608656B1AB4952709560E21799AE7 /* app.js */ = {isa = PBXFileReference; includeInIndex = 1; path = app.js; sourceTree = "<group>"; };
+		5797494D59644308A7307FEA7D5AA283 /* GeoOffersPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersPresenter.swift; path = GeoOffersSDK/GeoOffersPresenter.swift; sourceTree = "<group>"; };
 		5A2A7804CAB5E3180B3962D41B29FF95 /* libGeoOffersSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libGeoOffersSDK.a; path = libGeoOffersSDK.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		60D03FBE90F6056364EB394E1F7F70D2 /* qrcode.min.js */ = {isa = PBXFileReference; includeInIndex = 1; path = qrcode.min.js; sourceTree = "<group>"; };
+		5E0C3D5AB4228C22FB071CAC8296CB3B /* GeoOffersTrackingEvent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersTrackingEvent.swift; path = GeoOffersSDK/GeoOffersTrackingEvent.swift; sourceTree = "<group>"; };
+		5E5ADF82228D159F3A4E512CD516733A /* GeoOffersCacheService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersCacheService.swift; path = GeoOffersSDK/GeoOffersCacheService.swift; sourceTree = "<group>"; };
+		5F7FFE0CFCFF32E8474A7FFE1AF2700C /* GeoOffersSDK.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = GeoOffersSDK.storyboard; path = GeoOffersSDK/GeoOffersSDK.storyboard; sourceTree = "<group>"; };
+		60EDC6431E9A8D4A9377928DFD2E5270 /* GeoOffersNotificationService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersNotificationService.swift; path = GeoOffersSDK/GeoOffersNotificationService.swift; sourceTree = "<group>"; };
 		61AB277C69B89A990283911C8F843AF8 /* Pods-GeoOffersSampleAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GeoOffersSampleAppTests.release.xcconfig"; sourceTree = "<group>"; };
-		654899CED67D47B4078FE1DB7DD11670 /* GeoOffersLogging.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersLogging.swift; path = GeoOffersSDK/GeoOffersLogging.swift; sourceTree = "<group>"; };
-		6A2718D86A41114B1D01C47A5EA677C8 /* GeoOffersSDK.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; name = GeoOffersSDK.modulemap; path = ../../Headers/Public/GeoOffersSDK/GeoOffersSDK.modulemap; sourceTree = "<group>"; };
-		6F3A37F20161787CAC994757214BC2DF /* GeoOffersPushData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersPushData.swift; path = GeoOffersSDK/GeoOffersPushData.swift; sourceTree = "<group>"; };
-		722A16708B090DF5A59FA791A34EBBBC /* index.html */ = {isa = PBXFileReference; includeInIndex = 1; name = index.html; path = GeoOffersSDK/index.html; sourceTree = "<group>"; };
-		73B93E452A1C0762B1A85FD6E2E29FD8 /* socket.io.js */ = {isa = PBXFileReference; includeInIndex = 1; path = socket.io.js; sourceTree = "<group>"; };
-		762276FEBDB48478C5274F347EA9E871 /* GeoOffersSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GeoOffersSDK.h; path = GeoOffersSDK/GeoOffersSDK.h; sourceTree = "<group>"; };
+		61C0960E1769AC951D0A130865CD0093 /* coupon.html */ = {isa = PBXFileReference; includeInIndex = 1; path = coupon.html; sourceTree = "<group>"; };
+		711B7523F7E4E05D22CF35857C040A09 /* GeoOffersSDK.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; name = GeoOffersSDK.modulemap; path = ../../Headers/Public/GeoOffersSDK/GeoOffersSDK.modulemap; sourceTree = "<group>"; };
+		72D97B119A85B120D303211A1DD3BC17 /* GeoOffersSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GeoOffersSDK.h; path = GeoOffersSDK/GeoOffersSDK.h; sourceTree = "<group>"; };
+		73460C91AEA893A196AC76BCD825F17F /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		75D04D4341721FD9B9D91296B93D0E9F /* index.html */ = {isa = PBXFileReference; includeInIndex = 1; name = index.html; path = GeoOffersSDK/index.html; sourceTree = "<group>"; };
 		7B98A14E33DEB45FB527888F19845D41 /* Pods-GeoOffersSampleAppUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GeoOffersSampleAppUITests-frameworks.sh"; sourceTree = "<group>"; };
+		7BF1E4EEBD1279BA89C714A5B5441E2F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		7F0CB09D2B9F8C400DBB2CC8632EC78A /* Pods-GeoOffersSampleApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GeoOffersSampleApp-acknowledgements.plist"; sourceTree = "<group>"; };
+		80642A824D57C49E67B6A4C3DC7437CF /* vue.js */ = {isa = PBXFileReference; includeInIndex = 1; path = vue.js; sourceTree = "<group>"; };
 		822FB222F32AA311952D6EF1C2FEA8FD /* Pods-GeoOffersSampleAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GeoOffersSampleAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		88CBBEE3C46B3391FB2064ED0673F579 /* GeoOffersListing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersListing.swift; path = GeoOffersSDK/GeoOffersListing.swift; sourceTree = "<group>"; };
+		8EA19139A5CDD46BB2160667F20C971E /* GeoOffersViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersViewController.swift; path = GeoOffersSDK/GeoOffersViewController.swift; sourceTree = "<group>"; };
+		90557BF00C22954C488F67342F853B14 /* GeoOffersAPIService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersAPIService.swift; path = GeoOffersSDK/GeoOffersAPIService.swift; sourceTree = "<group>"; };
+		9335F2DD3DC2F081819A8587D1150431 /* app.css */ = {isa = PBXFileReference; includeInIndex = 1; path = app.css; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		98D56D3785CB6998E49391EF9ABB7392 /* GeoOffersConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersConfiguration.swift; path = GeoOffersSDK/GeoOffersConfiguration.swift; sourceTree = "<group>"; };
 		9AC91545D53861DC96B4E58A0DCD212E /* Pods-GeoOffersSampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GeoOffersSampleApp.debug.xcconfig"; sourceTree = "<group>"; };
 		9C5DCF9DAA74CF0CC548EB7E00A8589C /* Pods-GeoOffersSampleApp-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GeoOffersSampleApp-frameworks.sh"; sourceTree = "<group>"; };
-		A095E48D30E939397804C249A1090646 /* vue.js */ = {isa = PBXFileReference; includeInIndex = 1; path = vue.js; sourceTree = "<group>"; };
 		A0B481574C6BDC261F507D981134A38B /* libPods-GeoOffersSampleAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-GeoOffersSampleAppTests.a"; path = "libPods-GeoOffersSampleAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B1379CDDD4CFEAE33AAA32739B11B5CE /* GeoOffersSDK.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GeoOffersSDK.xcconfig; sourceTree = "<group>"; };
+		A19F8612435A56CC436FAF055D2C5C65 /* geo-gmap-icon.svg */ = {isa = PBXFileReference; includeInIndex = 1; path = "geo-gmap-icon.svg"; sourceTree = "<group>"; };
+		A2DE3CED4BA7AAC75E0A01F310BFC62B /* GeoOffersSDK.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GeoOffersSDK.xcconfig; sourceTree = "<group>"; };
+		A5629C04380EA5302B070E940196ACC4 /* GeoOffersPushData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersPushData.swift; path = GeoOffersSDK/GeoOffersPushData.swift; sourceTree = "<group>"; };
+		AAF13C1C946279D99D0A78B9DD5D4CCC /* GeoOffersListing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersListing.swift; path = GeoOffersSDK/GeoOffersListing.swift; sourceTree = "<group>"; };
+		AE1AE5E221704A7FFF0AC6EC551D176A /* app.js */ = {isa = PBXFileReference; includeInIndex = 1; path = app.js; sourceTree = "<group>"; };
+		B39B0E0DD60A916A3974A8F4C8E58261 /* ListingJSTemplate.js */ = {isa = PBXFileReference; includeInIndex = 1; name = ListingJSTemplate.js; path = GeoOffersSDK/ListingJSTemplate.js; sourceTree = "<group>"; };
+		B5C194E42144D8FEACECC83A41A267AE /* GeoOffersSDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GeoOffersSDK-dummy.m"; sourceTree = "<group>"; };
+		B8197517A9FE2811C364185F2B0E29B9 /* qrcode.min.js */ = {isa = PBXFileReference; includeInIndex = 1; path = qrcode.min.js; sourceTree = "<group>"; };
+		B9AA7A119ED40BD59191927DEAA57C1D /* GeoOffersGeoFence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersGeoFence.swift; path = GeoOffersSDK/GeoOffersGeoFence.swift; sourceTree = "<group>"; };
 		BC607532C8DB6FFFE687599CC4E968E6 /* libPods-GeoOffersSampleAppUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-GeoOffersSampleAppUITests.a"; path = "libPods-GeoOffersSampleAppUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCC10DDA20F15885DEEDFC6D4079F5F0 /* Pods-GeoOffersSampleAppTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GeoOffersSampleAppTests-resources.sh"; sourceTree = "<group>"; };
 		BDE7BEDC44F2D356692A254E53A1F58F /* Pods-GeoOffersSampleAppUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GeoOffersSampleAppUITests-dummy.m"; sourceTree = "<group>"; };
-		BF8317F9AE099689F0B5D9857B611443 /* GeoOffersSDKService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersSDKService.swift; path = GeoOffersSDK/GeoOffersSDKService.swift; sourceTree = "<group>"; };
+		BF293F6E095C270E9230A79C2F0AFE22 /* GeoOffersServiceModels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersServiceModels.swift; path = GeoOffersSDK/GeoOffersServiceModels.swift; sourceTree = "<group>"; };
 		BFB662F9E7BD51C999B03449D27A247E /* Pods-GeoOffersSampleApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GeoOffersSampleApp-dummy.m"; sourceTree = "<group>"; };
 		C00F5B9B011D185DB8BA83BFC1A0DF7A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		C1BC7333CFC97D8C1D04017DB2B5779A /* GeoOffersLogging.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersLogging.swift; path = GeoOffersSDK/GeoOffersLogging.swift; sourceTree = "<group>"; };
 		C1DB99884DA61504DDA34DB54CEC82E9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
-		C2A28612BB4D4E5D114E778A42A336D1 /* GeoOffersServiceModels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersServiceModels.swift; path = GeoOffersSDK/GeoOffersServiceModels.swift; sourceTree = "<group>"; };
-		C2D12841D3A937A879D3BD57752646E0 /* app.css */ = {isa = PBXFileReference; includeInIndex = 1; path = app.css; sourceTree = "<group>"; };
 		C581E988EDEC874ABAA1F6733A82D05D /* Pods-GeoOffersSampleAppUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GeoOffersSampleAppUITests-acknowledgements.plist"; sourceTree = "<group>"; };
-		C6B18B925B6DF30F6588D8A38014AE26 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		CCEC6E71A42ECCDDE838A60B996AD363 /* GeoOffersSchedule.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersSchedule.swift; path = GeoOffersSDK/GeoOffersSchedule.swift; sourceTree = "<group>"; };
+		CDE569C221AC775574C11FFBD2DAA4E6 /* String+URLEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+URLEncoding.swift"; path = "GeoOffersSDK/String+URLEncoding.swift"; sourceTree = "<group>"; };
 		D1007AE1679C09450999BAC681566B25 /* Pods-GeoOffersSampleAppUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GeoOffersSampleAppUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D281FA89A7787A282F99A61567B4CA9A /* GeoOffersLocationService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersLocationService.swift; path = GeoOffersSDK/GeoOffersLocationService.swift; sourceTree = "<group>"; };
 		D32F3775709BD124F15FB0DFB592C735 /* Pods-GeoOffersSampleApp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GeoOffersSampleApp.modulemap"; sourceTree = "<group>"; };
-		D34D77DA873993D354421A6BDB224570 /* GeoOffersAPIService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersAPIService.swift; path = GeoOffersSDK/GeoOffersAPIService.swift; sourceTree = "<group>"; };
-		D48CC25372A8B894EFEA03E8BA823800 /* GeoOffersSDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GeoOffersSDK-dummy.m"; sourceTree = "<group>"; };
-		D63F82597B6BCEEADBAD52686A4989FE /* GeoOffersConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersConfiguration.swift; path = GeoOffersSDK/GeoOffersConfiguration.swift; sourceTree = "<group>"; };
-		D66F94FCAA002510EC61C7A52EE13B05 /* GeoOffersTrackingEvent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersTrackingEvent.swift; path = GeoOffersSDK/GeoOffersTrackingEvent.swift; sourceTree = "<group>"; };
+		D96656A2E3783F53721C584BE636D8D6 /* KeyedDecodingContainerProtocol+PHPJSONEncoderHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "KeyedDecodingContainerProtocol+PHPJSONEncoderHelper.swift"; path = "GeoOffersSDK/KeyedDecodingContainerProtocol+PHPJSONEncoderHelper.swift"; sourceTree = "<group>"; };
+		DD50E882306E788ED7A81642818C147C /* GeoOffersSDK.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = GeoOffersSDK.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		DDD62535CCF4A6D2FABDF22B26E27211 /* Pods-GeoOffersSampleAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GeoOffersSampleAppUITests.release.xcconfig"; sourceTree = "<group>"; };
-		DE69FD61214F3A8C192806520D7230E5 /* app.css */ = {isa = PBXFileReference; includeInIndex = 1; path = app.css; sourceTree = "<group>"; };
-		E275010FE210A56C3E7F027951759F36 /* GeoOffersLocationService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersLocationService.swift; path = GeoOffersSDK/GeoOffersLocationService.swift; sourceTree = "<group>"; };
 		E640A08758440172111694460AC390BB /* Pods-GeoOffersSampleAppTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GeoOffersSampleAppTests-frameworks.sh"; sourceTree = "<group>"; };
-		E6667C54D6C80006A5672532BD18C1A5 /* coupon.html */ = {isa = PBXFileReference; includeInIndex = 1; path = coupon.html; sourceTree = "<group>"; };
+		E6A28F4702D65E6312DA9E707AADBC81 /* offerslist.html */ = {isa = PBXFileReference; includeInIndex = 1; path = offerslist.html; sourceTree = "<group>"; };
+		EC027FD8320C5150AEBD396260394DC1 /* JsBarcode.all.min.js */ = {isa = PBXFileReference; includeInIndex = 1; path = JsBarcode.all.min.js; sourceTree = "<group>"; };
 		EC63C21BEBF2AF5576F17B210A73379A /* Pods-GeoOffersSampleApp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GeoOffersSampleApp-umbrella.h"; sourceTree = "<group>"; };
-		EC6F2DEAF61719956F7768B57745206A /* GeoOffersCacheService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersCacheService.swift; path = GeoOffersSDK/GeoOffersCacheService.swift; sourceTree = "<group>"; };
-		ED5536463962746B18B9F730067A63FB /* GeoOffersGeoFence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersGeoFence.swift; path = GeoOffersSDK/GeoOffersGeoFence.swift; sourceTree = "<group>"; };
-		F3A020CEB546195AB7A653650DAC97D3 /* GeoOffersSDK-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GeoOffersSDK-umbrella.h"; path = "../../Headers/Public/GeoOffersSDK/GeoOffersSDK-umbrella.h"; sourceTree = "<group>"; };
-		F88A150BB43C7E3AF4564E399E34FBD8 /* GeoOffersSDK.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = GeoOffersSDK.storyboard; path = GeoOffersSDK/GeoOffersSDK.storyboard; sourceTree = "<group>"; };
-		FA94C5012CEF2229DCBDCC2A696FAB0A /* GeoOffersSDK.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = GeoOffersSDK.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		F67269302D3B765EBD7312628B2534E6 /* app.css */ = {isa = PBXFileReference; includeInIndex = 1; path = app.css; sourceTree = "<group>"; };
+		FA746A723D649C6E5E3E271AA9A15A65 /* GeoOffersSDKService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersSDKService.swift; path = GeoOffersSDK/GeoOffersSDKService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1AE182E057B664043B5063ED6F9B5FC3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9EB825F5AAB78F6908009CB8AA60FE11 /* CoreLocation.framework in Frameworks */,
+				46CA4B6B85B9FBF83500B284CD06748C /* UIKit.framework in Frameworks */,
+				B71E1A860F24FBD0F3C3C07DB5117D37 /* UserNotifications.framework in Frameworks */,
+				ABB7281835FA83081369FF176110998C /* WebKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		42BD15A8D7134854B7FDD866D7AC50F9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6574AEF4D99BDCF8B6444BF002C726B1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6C54D3923B02DCFD19F2DAF5FF4DEC75 /* CoreLocation.framework in Frameworks */,
-				55D68CB856AD714621E735B5AF0178F4 /* UIKit.framework in Frameworks */,
-				22A31A69BF86CBBAD35B902BAFC71AE8 /* UserNotifications.framework in Frameworks */,
-				F42F1C2ADC9A789C41A649EC0842259A /* WebKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,39 +179,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		03E04602141B6B6FD2D7C787382912C8 /* Resources */ = {
+		0C37BDD823C039EE56713D074A0B2B54 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F88A150BB43C7E3AF4564E399E34FBD8 /* GeoOffersSDK.storyboard */,
-				722A16708B090DF5A59FA791A34EBBBC /* index.html */,
-				04EC4567B2DDE59085EA577E3A62F7AF /* ListingJSTemplate.js */,
-				D176A7629834EAFEF3F5F7877004D4E0 /* coupon */,
-				07E16FFD09F926BB9A7B52B3505053B1 /* offerslist */,
+				5F7FFE0CFCFF32E8474A7FFE1AF2700C /* GeoOffersSDK.storyboard */,
+				75D04D4341721FD9B9D91296B93D0E9F /* index.html */,
+				B39B0E0DD60A916A3974A8F4C8E58261 /* ListingJSTemplate.js */,
+				24AF57E75D76393F4694751664A4054A /* coupon */,
+				7909C2CB127CC8F4B2EBB6E1061C1B01 /* offerslist */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
-		};
-		07E16FFD09F926BB9A7B52B3505053B1 /* offerslist */ = {
-			isa = PBXGroup;
-			children = (
-				41E2714435CDBC43694B633EB706EC13 /* offerslist.html */,
-				A50B4B9E0610D1379DD5848E61D971ED /* offerslist_files */,
-			);
-			name = offerslist;
-			path = GeoOffersSDK/offerslist;
-			sourceTree = "<group>";
-		};
-		13C09FC9393A367C4AD071750FD15039 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				6A2718D86A41114B1D01C47A5EA677C8 /* GeoOffersSDK.modulemap */,
-				B1379CDDD4CFEAE33AAA32739B11B5CE /* GeoOffersSDK.xcconfig */,
-				D48CC25372A8B894EFEA03E8BA823800 /* GeoOffersSDK-dummy.m */,
-				2B893C99264DF79A258709100B73E7F4 /* GeoOffersSDK-prefix.pch */,
-				F3A020CEB546195AB7A653650DAC97D3 /* GeoOffersSDK-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../../GeoOffersSampleApp/Pods/Target Support Files/GeoOffersSDK";
 			sourceTree = "<group>";
 		};
 		13E68C4D7362E545DD3B3D656DDE8C90 /* Pods-GeoOffersSampleAppTests */ = {
@@ -233,6 +212,35 @@
 				4DCC4580660935C474FE92997C8CD718 /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1E14E9BA7E6CDD9B0A7679B057825D69 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				711B7523F7E4E05D22CF35857C040A09 /* GeoOffersSDK.modulemap */,
+				A2DE3CED4BA7AAC75E0A01F310BFC62B /* GeoOffersSDK.xcconfig */,
+				B5C194E42144D8FEACECC83A41A267AE /* GeoOffersSDK-dummy.m */,
+				41947A0F17199D76968BB6B4B73C74B2 /* GeoOffersSDK-prefix.pch */,
+				1B5DAE78292E06A660B6DB2FF9F96B45 /* GeoOffersSDK-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../../GeoOffersSampleApp/Pods/Target Support Files/GeoOffersSDK";
+			sourceTree = "<group>";
+		};
+		24AF57E75D76393F4694751664A4054A /* coupon */ = {
+			isa = PBXGroup;
+			children = (
+				F67269302D3B765EBD7312628B2534E6 /* app.css */,
+				61C0960E1769AC951D0A130865CD0093 /* coupon.html */,
+				374D03016C4C9A8763C534D97C0492EE /* jquery.min.js */,
+				EC027FD8320C5150AEBD396260394DC1 /* JsBarcode.all.min.js */,
+				B8197517A9FE2811C364185F2B0E29B9 /* qrcode.min.js */,
+				2612627B699E36ACE91C92BE99143CB7 /* rere.main.min.js */,
+				4ABA5972149E51FB2FF4C48561E29E4C /* socket.io.js */,
+				80642A824D57C49E67B6A4C3DC7437CF /* vue.js */,
+			);
+			name = coupon;
+			path = GeoOffersSDK/coupon;
 			sourceTree = "<group>";
 		};
 		3D81FFF9F8CD58E48329628EB9862BF8 /* Products */ = {
@@ -267,47 +275,37 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		7909C2CB127CC8F4B2EBB6E1061C1B01 /* offerslist */ = {
+			isa = PBXGroup;
+			children = (
+				E6A28F4702D65E6312DA9E707AADBC81 /* offerslist.html */,
+				7B20A76E738310B405C3FD6197D5B3BD /* offerslist_files */,
+			);
+			name = offerslist;
+			path = GeoOffersSDK/offerslist;
+			sourceTree = "<group>";
+		};
+		7B20A76E738310B405C3FD6197D5B3BD /* offerslist_files */ = {
+			isa = PBXGroup;
+			children = (
+				9335F2DD3DC2F081819A8587D1150431 /* app.css */,
+				AE1AE5E221704A7FFF0AC6EC551D176A /* app.js */,
+				A19F8612435A56CC436FAF055D2C5C65 /* geo-gmap-icon.svg */,
+			);
+			name = offerslist_files;
+			path = offerslist_files;
+			sourceTree = "<group>";
+		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				FC6F1CD7A4ABCBC9E3F769AD29565570 /* Development Pods */,
+				C905820C1023234F5E9AAB0B733E64AC /* Development Pods */,
 				14B8B9B15ECBE87983FF987239AB2D7B /* Frameworks */,
 				3D81FFF9F8CD58E48329628EB9862BF8 /* Products */,
 				6B969F8E83EAB09EFFD80CFA66AA9B80 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
-		};
-		8D98D074C820BF16A7592BC6F0FF0316 /* GeoOffersSDK */ = {
-			isa = PBXGroup;
-			children = (
-				D34D77DA873993D354421A6BDB224570 /* GeoOffersAPIService.swift */,
-				EC6F2DEAF61719956F7768B57745206A /* GeoOffersCacheService.swift */,
-				D63F82597B6BCEEADBAD52686A4989FE /* GeoOffersConfiguration.swift */,
-				2AA79E1716185BD47EF87DF40492C3FC /* GeoOffersDataParser.swift */,
-				3FCA692E694672DDA568F660AEA49B2A /* GeoOffersDeliveredSchedule.swift */,
-				ED5536463962746B18B9F730067A63FB /* GeoOffersGeoFence.swift */,
-				88CBBEE3C46B3391FB2064ED0673F579 /* GeoOffersListing.swift */,
-				E275010FE210A56C3E7F027951759F36 /* GeoOffersLocationService.swift */,
-				654899CED67D47B4078FE1DB7DD11670 /* GeoOffersLogging.swift */,
-				31B7D5FCD72735C779DEB0FB39B6B562 /* GeoOffersNotificationService.swift */,
-				4C93148BD5EB0AA6B0CEAD1BDA0A8A75 /* GeoOffersOffer.swift */,
-				3816798497266329C01963760F6F48F7 /* GeoOffersPresenter.swift */,
-				6F3A37F20161787CAC994757214BC2DF /* GeoOffersPushData.swift */,
-				CCEC6E71A42ECCDDE838A60B996AD363 /* GeoOffersSchedule.swift */,
-				762276FEBDB48478C5274F347EA9E871 /* GeoOffersSDK.h */,
-				BF8317F9AE099689F0B5D9857B611443 /* GeoOffersSDKService.swift */,
-				C2A28612BB4D4E5D114E778A42A336D1 /* GeoOffersServiceModels.swift */,
-				D66F94FCAA002510EC61C7A52EE13B05 /* GeoOffersTrackingEvent.swift */,
-				1399D18BFE6FAE97CC31464B7A1F0608 /* GeoOffersViewController.swift */,
-				19373D7D07E624FDCFC9618951DEE5D4 /* String+URLEncoding.swift */,
-				A01009BA9D614488C9E77F15A8EC66CA /* Pod */,
-				03E04602141B6B6FD2D7C787382912C8 /* Resources */,
-				13C09FC9393A367C4AD071750FD15039 /* Support Files */,
-			);
-			name = GeoOffersSDK;
-			path = "/Users/pjcook/Dropbox/Private/Private Projects/Zappit/Geo-Offers.com/SDK/GeoOffersSDK";
-			sourceTree = "<absolute>";
 		};
 		9A617718006D7DE3A8946950203E8C3D /* Pods-GeoOffersSampleApp */ = {
 			isa = PBXGroup;
@@ -326,27 +324,6 @@
 			path = "Target Support Files/Pods-GeoOffersSampleApp";
 			sourceTree = "<group>";
 		};
-		A01009BA9D614488C9E77F15A8EC66CA /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				FA94C5012CEF2229DCBDCC2A696FAB0A /* GeoOffersSDK.podspec */,
-				C6B18B925B6DF30F6588D8A38014AE26 /* LICENSE */,
-				2816ECF9D99C839D476756F90F6B9EE9 /* README.md */,
-			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
-		A50B4B9E0610D1379DD5848E61D971ED /* offerslist_files */ = {
-			isa = PBXGroup;
-			children = (
-				C2D12841D3A937A879D3BD57752646E0 /* app.css */,
-				58A608656B1AB4952709560E21799AE7 /* app.js */,
-				41198F58A0A64FD358CDB1ACF0543300 /* geo-gmap-icon.svg */,
-			);
-			name = offerslist_files;
-			path = offerslist_files;
-			sourceTree = "<group>";
-		};
 		AF423B68B45B295DFE1B8F36599E72F3 /* Pods-GeoOffersSampleAppUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -362,29 +339,55 @@
 			path = "Target Support Files/Pods-GeoOffersSampleAppUITests";
 			sourceTree = "<group>";
 		};
-		D176A7629834EAFEF3F5F7877004D4E0 /* coupon */ = {
+		B95EE24E648D2FD69F02C3BB39D022C1 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				DE69FD61214F3A8C192806520D7230E5 /* app.css */,
-				E6667C54D6C80006A5672532BD18C1A5 /* coupon.html */,
-				16369BA295DBE0B1FC24A8469A669457 /* jquery.min.js */,
-				026365409919322DA3B20A232961DC54 /* JsBarcode.all.min.js */,
-				60D03FBE90F6056364EB394E1F7F70D2 /* qrcode.min.js */,
-				1C890A24227E7CF43BA1E3447E73CC7D /* rere.main.min.js */,
-				73B93E452A1C0762B1A85FD6E2E29FD8 /* socket.io.js */,
-				A095E48D30E939397804C249A1090646 /* vue.js */,
+				DD50E882306E788ED7A81642818C147C /* GeoOffersSDK.podspec */,
+				7BF1E4EEBD1279BA89C714A5B5441E2F /* LICENSE */,
+				73460C91AEA893A196AC76BCD825F17F /* README.md */,
 			);
-			name = coupon;
-			path = GeoOffersSDK/coupon;
+			name = Pod;
 			sourceTree = "<group>";
 		};
-		FC6F1CD7A4ABCBC9E3F769AD29565570 /* Development Pods */ = {
+		C905820C1023234F5E9AAB0B733E64AC /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				8D98D074C820BF16A7592BC6F0FF0316 /* GeoOffersSDK */,
+				CC3A347A8CEA872E25172A6A20B28171 /* GeoOffersSDK */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
+		};
+		CC3A347A8CEA872E25172A6A20B28171 /* GeoOffersSDK */ = {
+			isa = PBXGroup;
+			children = (
+				90557BF00C22954C488F67342F853B14 /* GeoOffersAPIService.swift */,
+				5E5ADF82228D159F3A4E512CD516733A /* GeoOffersCacheService.swift */,
+				98D56D3785CB6998E49391EF9ABB7392 /* GeoOffersConfiguration.swift */,
+				2B5A93819C8D3C23A6359BEB5C562FCD /* GeoOffersDataParser.swift */,
+				0B87A7B0D95065A467A4D73EF933A96E /* GeoOffersDeliveredSchedule.swift */,
+				B9AA7A119ED40BD59191927DEAA57C1D /* GeoOffersGeoFence.swift */,
+				AAF13C1C946279D99D0A78B9DD5D4CCC /* GeoOffersListing.swift */,
+				D281FA89A7787A282F99A61567B4CA9A /* GeoOffersLocationService.swift */,
+				C1BC7333CFC97D8C1D04017DB2B5779A /* GeoOffersLogging.swift */,
+				60EDC6431E9A8D4A9377928DFD2E5270 /* GeoOffersNotificationService.swift */,
+				09932B8FC984A3175C382071077087FF /* GeoOffersOffer.swift */,
+				5797494D59644308A7307FEA7D5AA283 /* GeoOffersPresenter.swift */,
+				A5629C04380EA5302B070E940196ACC4 /* GeoOffersPushData.swift */,
+				4E27B1CE3DD9690B6E7C47822E90FCAA /* GeoOffersSchedule.swift */,
+				72D97B119A85B120D303211A1DD3BC17 /* GeoOffersSDK.h */,
+				FA746A723D649C6E5E3E271AA9A15A65 /* GeoOffersSDKService.swift */,
+				BF293F6E095C270E9230A79C2F0AFE22 /* GeoOffersServiceModels.swift */,
+				5E0C3D5AB4228C22FB071CAC8296CB3B /* GeoOffersTrackingEvent.swift */,
+				8EA19139A5CDD46BB2160667F20C971E /* GeoOffersViewController.swift */,
+				D96656A2E3783F53721C584BE636D8D6 /* KeyedDecodingContainerProtocol+PHPJSONEncoderHelper.swift */,
+				CDE569C221AC775574C11FFBD2DAA4E6 /* String+URLEncoding.swift */,
+				B95EE24E648D2FD69F02C3BB39D022C1 /* Pod */,
+				0C37BDD823C039EE56713D074A0B2B54 /* Resources */,
+				1E14E9BA7E6CDD9B0A7679B057825D69 /* Support Files */,
+			);
+			name = GeoOffersSDK;
+			path = "/Users/pjcook/Dropbox/Private/Private Projects/Zappit/Geo-Offers.com/SDK/GeoOffersSDK";
+			sourceTree = "<absolute>";
 		};
 /* End PBXGroup section */
 
@@ -397,12 +400,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C9FDE05EE2714D808CB28299678E05B8 /* Headers */ = {
+		A85EC86200A21EB01C1FF29B7D92F0F3 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0ABD0C7568A7E5378BF9BA70728F557 /* GeoOffersSDK-umbrella.h in Headers */,
-				9873BC197FE2BAD51D09BCCDC81DFF7B /* GeoOffersSDK.h in Headers */,
+				3394B0396E4A79218E99E2AC37F15963 /* GeoOffersSDK-umbrella.h in Headers */,
+				8F3F2810D06B4D1A6724E8209C00C094 /* GeoOffersSDK.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +427,24 @@
 			name = "Pods-GeoOffersSampleAppTests";
 			productName = "Pods-GeoOffersSampleAppTests";
 			productReference = A0B481574C6BDC261F507D981134A38B /* libPods-GeoOffersSampleAppTests.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		28DD70D7A39EABCE05A77365BD7BB6BD /* GeoOffersSDK */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC0C97E5D3C17F218C57851447E10735 /* Build configuration list for PBXNativeTarget "GeoOffersSDK" */;
+			buildPhases = (
+				D8AD042FB8B68E14EA44EA779986C58A /* Sources */,
+				1AE182E057B664043B5063ED6F9B5FC3 /* Frameworks */,
+				A85EC86200A21EB01C1FF29B7D92F0F3 /* Headers */,
+				A17790BD54648245B9C9EDBDE45CCBB2 /* Copy generated compatibility header */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GeoOffersSDK;
+			productName = GeoOffersSDK;
+			productReference = 5A2A7804CAB5E3180B3962D41B29FF95 /* libGeoOffersSDK.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		41D3EB6CAEA02F81C33A60828BC0F9D2 /* Pods-GeoOffersSampleApp */ = {
@@ -461,24 +482,6 @@
 			productReference = BC607532C8DB6FFFE687599CC4E968E6 /* libPods-GeoOffersSampleAppUITests.a */;
 			productType = "com.apple.product-type.library.static";
 		};
-		DEFA5B1379890AA77E01F6B1ADA112F8 /* GeoOffersSDK */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B6D9756197A08B25B9CF3E8DEA3C6FD1 /* Build configuration list for PBXNativeTarget "GeoOffersSDK" */;
-			buildPhases = (
-				6E1F0C5946156C1E2922B4496736F95B /* Sources */,
-				6574AEF4D99BDCF8B6444BF002C726B1 /* Frameworks */,
-				C9FDE05EE2714D808CB28299678E05B8 /* Headers */,
-				BCFAEDFD691B5DB7308F648FD394F228 /* Copy generated compatibility header */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = GeoOffersSDK;
-			productName = GeoOffersSDK;
-			productReference = 5A2A7804CAB5E3180B3962D41B29FF95 /* libGeoOffersSDK.a */;
-			productType = "com.apple.product-type.library.static";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -500,7 +503,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DEFA5B1379890AA77E01F6B1ADA112F8 /* GeoOffersSDK */,
+				28DD70D7A39EABCE05A77365BD7BB6BD /* GeoOffersSDK */,
 				41D3EB6CAEA02F81C33A60828BC0F9D2 /* Pods-GeoOffersSampleApp */,
 				2867B77054BF5B644A089912DC459752 /* Pods-GeoOffersSampleAppTests */,
 				89F29AE39F1A82EF5249DC519CDE9E7D /* Pods-GeoOffersSampleAppUITests */,
@@ -509,7 +512,7 @@
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		BCFAEDFD691B5DB7308F648FD394F228 /* Copy generated compatibility header */ = {
+		A17790BD54648245B9C9EDBDE45CCBB2 /* Copy generated compatibility header */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -533,33 +536,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		6E1F0C5946156C1E2922B4496736F95B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D58E6C5384D9009252CD2B646C188AD6 /* GeoOffersAPIService.swift in Sources */,
-				55AEA650728E9B323E3EF2FD56146564 /* GeoOffersCacheService.swift in Sources */,
-				57B9AAAF91C920700433E789996FB324 /* GeoOffersConfiguration.swift in Sources */,
-				F34D43DD3C95D04FEBB32EBD220915B3 /* GeoOffersDataParser.swift in Sources */,
-				82014904BF3D5B18D71FB09983106FE2 /* GeoOffersDeliveredSchedule.swift in Sources */,
-				3DA8B339C2E8DB9435083C710C8DFD0B /* GeoOffersGeoFence.swift in Sources */,
-				03C4F39A79BEBC35B8596C5ED3FB94BC /* GeoOffersListing.swift in Sources */,
-				F2011662AAA7D3897305FD1B8E938D77 /* GeoOffersLocationService.swift in Sources */,
-				BEF2524A0047E0680624B1465C2311CE /* GeoOffersLogging.swift in Sources */,
-				D165F7A6AD15F4F5572F4DB4866D8A18 /* GeoOffersNotificationService.swift in Sources */,
-				54900733983E4032C4692C40E454E610 /* GeoOffersOffer.swift in Sources */,
-				3D54D46E58AE8D9C70F2FE29124144F1 /* GeoOffersPresenter.swift in Sources */,
-				4A7DE1449F40A3B29A997576550703AB /* GeoOffersPushData.swift in Sources */,
-				81110D6308C98AD9F3C390959B6A8D97 /* GeoOffersSchedule.swift in Sources */,
-				FEA950060424288B1C5ADD9966CDBAAA /* GeoOffersSDK-dummy.m in Sources */,
-				5FFA5F14EFBFF754090B11146A33A7EB /* GeoOffersSDKService.swift in Sources */,
-				4898D96F7B164FA6164FAE35E5187F42 /* GeoOffersServiceModels.swift in Sources */,
-				9646B0C8586E7E7D271D4AD9AC358D5C /* GeoOffersTrackingEvent.swift in Sources */,
-				B314D21F2CFDDD8ACCBF069941BE0B07 /* GeoOffersViewController.swift in Sources */,
-				05A473554659C49D4163236C0C6B2651 /* String+URLEncoding.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		7DCD9B4AD3DD66F7381CA1F7669D434E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -573,6 +549,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				6141DF379DAD699B29DC43EBF9D5D31B /* Pods-GeoOffersSampleApp-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8AD042FB8B68E14EA44EA779986C58A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5EAF3CE76FAB07CC40CC7D2DAC1CA40 /* GeoOffersAPIService.swift in Sources */,
+				0FD37D695108BB7ACE036F0AE992C675 /* GeoOffersCacheService.swift in Sources */,
+				EEDB1C1C7E8E4A659B08B1979EA598E2 /* GeoOffersConfiguration.swift in Sources */,
+				494E92BDB783F366ED4884C0C2BA7F50 /* GeoOffersDataParser.swift in Sources */,
+				2C1D214BE5BCB4E2A4A2F67D293822CE /* GeoOffersDeliveredSchedule.swift in Sources */,
+				26B65267503835BBE17BDD7714422302 /* GeoOffersGeoFence.swift in Sources */,
+				7199C8F31B7800440B3B841A5173EDD2 /* GeoOffersListing.swift in Sources */,
+				8CC35793CE5C1813321EC59F45EAB2C8 /* GeoOffersLocationService.swift in Sources */,
+				85268A2499747F826D8458D90ECC54AF /* GeoOffersLogging.swift in Sources */,
+				FAA5D08B0804E97DACA5AA058E8EFB58 /* GeoOffersNotificationService.swift in Sources */,
+				2B7F1BCC6C48BF6C05548EB85BDF36B5 /* GeoOffersOffer.swift in Sources */,
+				80F1B40C278A161465E0BF9918D8AB16 /* GeoOffersPresenter.swift in Sources */,
+				708F72EBBA0D2B73E670DC55CA189304 /* GeoOffersPushData.swift in Sources */,
+				6D677067BA5539A008CE35C55001810E /* GeoOffersSchedule.swift in Sources */,
+				20BECF856115E0F12E0D67189C1508EA /* GeoOffersSDK-dummy.m in Sources */,
+				2489DDB132566F6C9825473483BD1FB2 /* GeoOffersSDKService.swift in Sources */,
+				B6F45CC90364DD3528E9B88413B04981 /* GeoOffersServiceModels.swift in Sources */,
+				649C1CE2DDB66A6EF19DA2C5F9F1542C /* GeoOffersTrackingEvent.swift in Sources */,
+				400EB57A7553EA5B8E14A163D4DC11CB /* GeoOffersViewController.swift in Sources */,
+				45216C904C1CBDDC4D4F5E16E8471B6A /* KeyedDecodingContainerProtocol+PHPJSONEncoderHelper.swift in Sources */,
+				D3FDC269F8061C337896F2ABB141930D /* String+URLEncoding.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -596,7 +600,7 @@
 		867133DD383F1235034CE18B5FF4D5DD /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = GeoOffersSDK;
-			target = DEFA5B1379890AA77E01F6B1ADA112F8 /* GeoOffersSDK */;
+			target = 28DD70D7A39EABCE05A77365BD7BB6BD /* GeoOffersSDK */;
 			targetProxy = 9B086F72CAF7F893AEE3FDA5AC51963D /* PBXContainerItemProxy */;
 		};
 		A2E3274B4B7090758AF99B0AEC34EFD0 /* PBXTargetDependency */ = {
@@ -671,9 +675,31 @@
 			};
 			name = Debug;
 		};
-		11D8D3923C13FF1EB7405B5728793C6B /* Debug */ = {
+		1622A1B891A736580ABDBC6566A9460F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B1379CDDD4CFEAE33AAA32739B11B5CE /* GeoOffersSDK.xcconfig */;
+			baseConfigurationReference = 55ACD118B20E04E2864DA6A7074D26F6 /* Pods-GeoOffersSampleAppTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		325DF58FB4F6A984F7BCB1454956180E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2DE3CED4BA7AAC75E0A01F310BFC62B /* GeoOffersSDK.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -694,28 +720,6 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		1622A1B891A736580ABDBC6566A9460F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 55ACD118B20E04E2864DA6A7074D26F6 /* Pods-GeoOffersSampleAppTests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				MACH_O_TYPE = staticlib;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -743,9 +747,9 @@
 			};
 			name = Release;
 		};
-		48BC07D715C29C1BDABE61776A47F564 /* Release */ = {
+		5B8414E1DBB606D71C876F985DFE818D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B1379CDDD4CFEAE33AAA32739B11B5CE /* GeoOffersSDK.xcconfig */;
+			baseConfigurationReference = A2DE3CED4BA7AAC75E0A01F310BFC62B /* GeoOffersSDK.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -945,11 +949,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B6D9756197A08B25B9CF3E8DEA3C6FD1 /* Build configuration list for PBXNativeTarget "GeoOffersSDK" */ = {
+		AC0C97E5D3C17F218C57851447E10735 /* Build configuration list for PBXNativeTarget "GeoOffersSDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				11D8D3923C13FF1EB7405B5728793C6B /* Debug */,
-				48BC07D715C29C1BDABE61776A47F564 /* Release */,
+				325DF58FB4F6A984F7BCB1454956180E /* Debug */,
+				5B8414E1DBB606D71C876F985DFE818D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
