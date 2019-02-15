@@ -409,7 +409,6 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-GeoOffersSampleApp/Pods-GeoOffersSampleApp-resources.sh",
-				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/Coupon.json",
 				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/app.css",
 				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/coupon.html",
 				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/jquery.min.js",
@@ -420,7 +419,6 @@
 				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/vue.js",
 				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/GeoOffersSDK.storyboard",
 				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/index.html",
-				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/Listing.json",
 				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/ListingJSTemplate.js",
 				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/offerslist/offerslist.html",
 				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/offerslist/offerslist_files/app.css",
@@ -429,7 +427,6 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Coupon.json",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/app.css",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/coupon.html",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/jquery.min.js",
@@ -440,7 +437,6 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/vue.js",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GeoOffersSDK.storyboardc",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/index.html",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Listing.json",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ListingJSTemplate.js",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/offerslist.html",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/app.js",
