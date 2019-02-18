@@ -16,6 +16,9 @@
 		D58C096821E8A9B200D503D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58C096621E8A9B200D503D2 /* LaunchScreen.storyboard */; };
 		D58C097321E8A9B200D503D2 /* GeoOffersSampleAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58C097221E8A9B200D503D2 /* GeoOffersSampleAppTests.swift */; };
 		D58C097E21E8A9B200D503D2 /* GeoOffersSampleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58C097D21E8A9B200D503D2 /* GeoOffersSampleAppUITests.swift */; };
+		D5C271C7221A952E00104FCA /* GeoOffersNotificationLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C271C6221A952E00104FCA /* GeoOffersNotificationLogger.swift */; };
+		D5C271C9221AB4A900104FCA /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C271C8221AB4A900104FCA /* NotificationsViewController.swift */; };
+		D5C271CB221AB58200104FCA /* NotificationSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C271CA221AB58200104FCA /* NotificationSummaryCell.swift */; };
 		D5F38DC621F71DE800531B7F /* GeoOffersWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F38DC521F71DE800531B7F /* GeoOffersWrapper.swift */; };
 		D5F38DC821F71E3200531B7F /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = D5F38DC721F71E2100531B7F /* LICENSE */; };
 		DC8374ADC0FFC35AF75E7C5D /* libPods-GeoOffersSampleApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EE835F73813279369F615F6 /* libPods-GeoOffersSampleApp.a */; };
@@ -66,6 +69,9 @@
 		D5AE1A3621F9A8C4005F86CF /* Apple.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Apple.gpx; sourceTree = "<group>"; };
 		D5AE1A3721F9A8C4005F86CF /* GeoOffersLocation.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = GeoOffersLocation.gpx; sourceTree = "<group>"; };
 		D5AE1A3821F9A8C4005F86CF /* Google.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Google.gpx; sourceTree = "<group>"; };
+		D5C271C6221A952E00104FCA /* GeoOffersNotificationLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoOffersNotificationLogger.swift; sourceTree = "<group>"; };
+		D5C271C8221AB4A900104FCA /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
+		D5C271CA221AB58200104FCA /* NotificationSummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSummaryCell.swift; sourceTree = "<group>"; };
 		D5F38DC521F71DE800531B7F /* GeoOffersWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoOffersWrapper.swift; sourceTree = "<group>"; };
 		D5F38DC721F71E2100531B7F /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -180,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				D58C095F21E8A9B000D503D2 /* ViewController.swift */,
+				D5C271C8221AB4A900104FCA /* NotificationsViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -187,6 +194,7 @@
 		D5F38DC021F71AE800531B7F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D5C271CA221AB58200104FCA /* NotificationSummaryCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -225,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				D5F38DC521F71DE800531B7F /* GeoOffersWrapper.swift */,
+				D5C271C6221A952E00104FCA /* GeoOffersNotificationLogger.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -472,7 +481,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5C271C9221AB4A900104FCA /* NotificationsViewController.swift in Sources */,
 				D58C096021E8A9B000D503D2 /* ViewController.swift in Sources */,
+				D5C271C7221A952E00104FCA /* GeoOffersNotificationLogger.swift in Sources */,
+				D5C271CB221AB58200104FCA /* NotificationSummaryCell.swift in Sources */,
 				D5F38DC621F71DE800531B7F /* GeoOffersWrapper.swift in Sources */,
 				D58C095E21E8A9B000D503D2 /* AppDelegate.swift in Sources */,
 			);

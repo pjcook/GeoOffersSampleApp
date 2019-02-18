@@ -12,6 +12,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Initialise the GeoOffersSDK, simply using the Wrapper singleton for simplifying the Sample App, use your own preferred dependency injection pattern
         // Call the matching method on the GeoOffersSDK instance
         GeoOffersWrapper.shared.geoOffers.application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+        // Log push notifications for testing
+        if
+            let notificationOptions = launchOptions?[.remoteNotification],
+            let notification = notificationOptions as? [String: AnyObject],
+            notification["aps"] != nil {
+            GeoOffersNotificationLogger.shared.log(notification)
+        }
+        
         return true
     }
 
@@ -52,6 +61,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         // Call the matching method on the GeoOffersSDK instance
         GeoOffersWrapper.shared.geoOffers.application(application, didReceiveRemoteNotification: userInfo, fetchCompletionHandler: completionHandler)
+        
+        // Log push notifications for testing
+        guard let notification = userInfo as? [String: AnyObject] else { return }
+        GeoOffersNotificationLogger.shared.log(notification)
     }
 }
 
