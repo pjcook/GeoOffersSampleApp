@@ -8,14 +8,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let notification: [String: AnyObject] = [
-            "Test message": [
-                "key1": "username",
-                "key2": "address"
-            ]
-        ] as [String: AnyObject]
-        GeoOffersNotificationLogger.shared.log(notification)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
