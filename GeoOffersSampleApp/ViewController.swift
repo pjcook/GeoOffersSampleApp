@@ -5,7 +5,7 @@ import GeoOffersSDK
 
 class ViewController: UIViewController {
     @IBOutlet private var pushToken: UILabel!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }
