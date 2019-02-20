@@ -91,7 +91,7 @@ SPEC CHECKSUMS:
   FirebaseCore: ea2d1816723ef21492b8e9113303e1350db5e08c
   FirebaseInstanceID: 97ea7a5dca9afd72c79bfcdddb7a44aa1cbb42a1
   FirebaseMessaging: acbd51fe1a172bf29abaaa6e93a60f98bbf8e4f9
-  GeoOffersSDK: b644387a42d6b3f1452bdc4c85b40a0f39081737
+  GeoOffersSDK: 8563c3aa615605d2b4578a2f6185c5068d50c4d6
   GoogleAppMeasurement: 621f3bc6211d5ba548debe01fafad30cf5ab6859
   GoogleUtilities: 111a012f4c3a29c9e7c954c082fafd6ee3c999c0
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48

@@ -249,7 +249,7 @@
 				D58C095621E8A9B000D503D2 /* Sources */,
 				D58C095721E8A9B000D503D2 /* Frameworks */,
 				D58C095821E8A9B000D503D2 /* Resources */,
-				AF773FCB89AE3A8EC7CFF7B8 /* [CP] Copy Pods Resources */,
+				4BC244034660347E7DD55896 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -375,6 +375,57 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		4BC244034660347E7DD55896 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GeoOffersSampleApp/Pods-GeoOffersSampleApp-resources.sh",
+				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/app.css",
+				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/coupon.html",
+				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/jquery.min.js",
+				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/JsBarcode.all.min.js",
+				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/qrcode.min.js",
+				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/rere.main.min.js",
+				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/socket.io.js",
+				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/vue.js",
+				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/GeoOffersSDK-GoogleService-Info.geoconfig",
+				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/GeoOffersSDK.storyboard",
+				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/index.html",
+				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/ListingJSTemplate.js",
+				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/offerslist/offerslist.html",
+				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/offerslist/offerslist_files/app.css",
+				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/offerslist/offerslist_files/app.js",
+				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/offerslist/offerslist_files/geo-gmap-icon.svg",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/app.css",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/coupon.html",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/jquery.min.js",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/JsBarcode.all.min.js",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/qrcode.min.js",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/rere.main.min.js",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/socket.io.js",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/vue.js",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GeoOffersSDK-GoogleService-Info.geoconfig",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GeoOffersSDK.storyboardc",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/index.html",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ListingJSTemplate.js",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/offerslist.html",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/app.js",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/geo-gmap-icon.svg",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GeoOffersSampleApp/Pods-GeoOffersSampleApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		85B18A6C7AB71B60307C7F06 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -409,51 +460,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AF773FCB89AE3A8EC7CFF7B8 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GeoOffersSampleApp/Pods-GeoOffersSampleApp-resources.sh",
-				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/app.css",
-				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/coupon.html",
-				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/jquery.min.js",
-				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/JsBarcode.all.min.js",
-				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/qrcode.min.js",
-				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/rere.main.min.js",
-				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/socket.io.js",
-				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/vue.js",
-				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/GeoOffersSDK.storyboard",
-				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/index.html",
-				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/ListingJSTemplate.js",
-				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/offerslist/offerslist.html",
-				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/offerslist/offerslist_files/app.css",
-				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/offerslist/offerslist_files/app.js",
-				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/offerslist/offerslist_files/geo-gmap-icon.svg",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/app.css",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/coupon.html",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/jquery.min.js",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/JsBarcode.all.min.js",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/qrcode.min.js",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/rere.main.min.js",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/socket.io.js",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/vue.js",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GeoOffersSDK.storyboardc",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/index.html",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ListingJSTemplate.js",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/offerslist.html",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/app.js",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/geo-gmap-icon.svg",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GeoOffersSampleApp/Pods-GeoOffersSampleApp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DAC533E63B76267663E00023 /* [CP] Check Pods Manifest.lock */ = {
