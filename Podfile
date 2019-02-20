@@ -7,6 +7,7 @@ source 'https://github.com/pjcook/ZappitPodSpecs.git'
 target 'GeoOffersSampleApp' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   # use_frameworks!
+  use_modular_headers!
 
   # Pods for GeoOffersSampleApp
   pod 'GeoOffersSDK', :path => '~/Dropbox/Private/Private Projects/Zappit/Geo-Offers.com/SDK/GeoOffersSDK'

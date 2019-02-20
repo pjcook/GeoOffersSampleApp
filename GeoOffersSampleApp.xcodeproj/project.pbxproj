@@ -417,7 +417,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-GeoOffersSampleApp/Pods-GeoOffersSampleApp-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-GeoOffersSampleApp/Pods-GeoOffersSampleApp-resources.sh",
 				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/app.css",
 				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/coupon.html",
 				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/jquery.min.js",
@@ -453,7 +453,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GeoOffersSampleApp/Pods-GeoOffersSampleApp-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GeoOffersSampleApp/Pods-GeoOffersSampleApp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DAC533E63B76267663E00023 /* [CP] Check Pods Manifest.lock */ = {

@@ -48,7 +48,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
-        completionHandler(.newData)
+        // If you want to handle the "completionHandler" then pass nil to the geoOffers function completionHandler
+        
+        GeoOffersWrapper.shared.geoOffers.application(application, performFetchWithCompletionHandler: completionHandler)
     }
 
     // Required if implementing Remote notifications

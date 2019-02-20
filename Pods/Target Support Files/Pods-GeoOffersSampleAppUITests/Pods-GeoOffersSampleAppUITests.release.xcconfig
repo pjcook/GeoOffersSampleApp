@@ -1,9 +1,9 @@
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/FirebaseAnalytics/Frameworks" "${PODS_ROOT}/FirebaseInstanceID/Frameworks" "${PODS_ROOT}/GoogleAppMeasurement/Frameworks"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/GeoOffersSDK"
-LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/GeoOffersSDK"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/GeoOffersSDK" -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/GeoOffersSDK/GeoOffersSDK.modulemap"
-OTHER_LDFLAGS = $(inherited) -ObjC -framework "CoreLocation" -framework "UIKit" -framework "UserNotifications" -framework "WebKit"
-OTHER_SWIFT_FLAGS = $(inherited) -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/GeoOffersSDK/GeoOffersSDK.modulemap"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/Firebase" "${PODS_ROOT}/Headers/Public/FirebaseAnalyticsInterop" "${PODS_ROOT}/Headers/Public/FirebaseCore" "${PODS_ROOT}/Headers/Public/FirebaseMessaging" "${PODS_ROOT}/Headers/Public/GeoOffersSDK" "${PODS_ROOT}/Headers/Public/GoogleUtilities" "${PODS_ROOT}/Headers/Public/Protobuf" "${PODS_ROOT}/Headers/Public/nanopb"
+OTHER_CFLAGS = $(inherited) -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/GeoOffersSDK/GeoOffersSDK.modulemap" -fmodule-map-file="${PODS_ROOT}/Headers/Public/FirebaseCore/FirebaseCore.modulemap" -fmodule-map-file="${PODS_ROOT}/Headers/Public/FirebaseMessaging/FirebaseMessaging.modulemap" -fmodule-map-file="${PODS_ROOT}/Headers/Public/GoogleUtilities/GoogleUtilities.modulemap" -fmodule-map-file="${PODS_ROOT}/Headers/Public/Protobuf/Protobuf.modulemap" -fmodule-map-file="${PODS_ROOT}/Headers/Public/nanopb/nanopb.modulemap"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"c++" -l"sqlite3" -l"z" -framework "CoreLocation" -framework "Foundation" -framework "Security" -framework "StoreKit" -framework "SystemConfiguration" -framework "UIKit" -framework "UserNotifications" -framework "WebKit"
+OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS -Xcc -fmodule-map-file="${PODS_CONFIGURATION_BUILD_DIR}/GeoOffersSDK/GeoOffersSDK.modulemap" -Xcc -fmodule-map-file="${PODS_ROOT}/Headers/Public/FirebaseCore/FirebaseCore.modulemap" -Xcc -fmodule-map-file="${PODS_ROOT}/Headers/Public/FirebaseMessaging/FirebaseMessaging.modulemap" -Xcc -fmodule-map-file="${PODS_ROOT}/Headers/Public/GoogleUtilities/GoogleUtilities.modulemap" -Xcc -fmodule-map-file="${PODS_ROOT}/Headers/Public/Protobuf/Protobuf.modulemap" -Xcc -fmodule-map-file="${PODS_ROOT}/Headers/Public/nanopb/nanopb.modulemap"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.

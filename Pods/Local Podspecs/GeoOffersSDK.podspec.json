@@ -29,5 +29,13 @@
     "WebKit"
   ],
   "requires_arc": true,
+  "dependencies": {
+    "Firebase/Core": [
+
+    ],
+    "Firebase/Messaging": [
+
+    ]
+  },
   "swift_version": "4.2"
 }
