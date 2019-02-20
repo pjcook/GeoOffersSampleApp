@@ -55,6 +55,7 @@ class GeoOffersNotificationMessage {
 class GeoOffersNotificationLogger {
     static let shared = GeoOffersNotificationLogger()
     
+    private let maxMessagesToCache = 100
     private var notifications: [GeoOffersNotificationMessage] = []
     
     func clearCache() {
@@ -79,6 +80,9 @@ class GeoOffersNotificationLogger {
         let message = GeoOffersNotificationMessage(message: notification)
         GeoOffersNotificationLoggerQueue.sync {
             self.notifications.append(message)
+            while self.notifications.count > self.maxMessagesToCache {
+                _ = self.notifications.removeFirst()
+            }
         }
         save()
     }
