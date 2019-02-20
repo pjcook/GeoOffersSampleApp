@@ -15,7 +15,7 @@ class GeoOffersNotificationMessage {
     let id: String
     let message: [String: AnyObject]
     let createdAt: TimeInterval
-    
+
     lazy var messageString: String? = {
         do {
             let data = try JSONSerialization.data(withJSONObject: message, options: .prettyPrinted)
@@ -25,28 +25,28 @@ class GeoOffersNotificationMessage {
         }
         return nil
     }()
-    
+
     lazy var formattedDate: String = {
-        return notificationSummaryCellDateFormatter.string(from: Date(timeIntervalSinceReferenceDate: createdAt))
+        notificationSummaryCellDateFormatter.string(from: Date(timeIntervalSinceReferenceDate: createdAt))
     }()
-    
+
     init(message: [String: AnyObject]) {
         id = UUID().uuidString
         createdAt = Date().timeIntervalSinceReferenceDate
         self.message = message
     }
-    
+
     init(with dictionary: [String: AnyObject]) {
-        self.id = dictionary["id"] as? String ?? UUID().uuidString
-        self.createdAt = dictionary["createdAt"] as! TimeInterval
-        self.message = dictionary["message"] as! [String: AnyObject]
+        id = dictionary["id"] as? String ?? UUID().uuidString
+        createdAt = dictionary["createdAt"] as! TimeInterval
+        message = dictionary["message"] as! [String: AnyObject]
     }
-    
+
     func toDictionary() -> [String: AnyObject] {
         let dictionary: [String: AnyObject] = [
             "id": id as AnyObject,
             "createdAt": createdAt as AnyObject,
-            "message": message as AnyObject
+            "message": message as AnyObject,
         ]
         return dictionary
     }
@@ -54,28 +54,28 @@ class GeoOffersNotificationMessage {
 
 class GeoOffersNotificationLogger {
     static let shared = GeoOffersNotificationLogger()
-    
+
     private let maxMessagesToCache = 100
     private var notifications: [GeoOffersNotificationMessage] = []
-    
+
     func clearCache() {
         GeoOffersNotificationLoggerQueue.sync {
             self.notifications = []
         }
         save()
     }
-    
+
     func remove(_ id: String) {
         GeoOffersNotificationLoggerQueue.sync {
             self.notifications.removeAll(where: { $0.id == id })
         }
         save()
     }
-    
+
     func allMessages() -> [GeoOffersNotificationMessage] {
         return notifications
     }
-    
+
     func log(_ notification: [String: AnyObject]) {
         let message = GeoOffersNotificationMessage(message: notification)
         GeoOffersNotificationLoggerQueue.sync {
@@ -86,7 +86,7 @@ class GeoOffersNotificationLogger {
         }
         save()
     }
-    
+
     private lazy var savePath: String? = {
         let fileManager = FileManager.default
         do {
@@ -97,11 +97,11 @@ class GeoOffersNotificationLogger {
         }
         return nil
     }()
-    
+
     init() {
         load()
     }
-    
+
     private func load() {
         guard let savePath = savePath, FileManager.default.fileExists(atPath: savePath) else { return }
         GeoOffersNotificationLoggerQueue.sync {
@@ -119,7 +119,7 @@ class GeoOffersNotificationLogger {
             }
         }
     }
-    
+
     private func save() {
         guard let savePath = savePath else { return }
         let cache = notifications
@@ -130,7 +130,7 @@ class GeoOffersNotificationLogger {
                 for item in cache {
                     array.append(item.toDictionary())
                 }
-                
+
                 let data = try JSONSerialization.data(withJSONObject: array, options: [])
                 try data.write(to: url)
                 print("GeoOffersNotificationLogger.save().saved")

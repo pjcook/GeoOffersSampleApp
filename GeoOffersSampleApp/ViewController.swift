@@ -1,7 +1,7 @@
 //  Copyright © 2019 Zappit. All rights reserved.
 
-import UIKit
 import GeoOffersSDK
+import UIKit
 
 class ViewController: UIViewController {
     @IBOutlet private var pushToken: UILabel!
@@ -9,8 +9,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+    override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
         if segue.identifier == "showNotifications", let vc = segue.destination as? NotificationsViewController {
             vc.notifications = GeoOffersNotificationLogger.shared.allMessages()
         }
@@ -19,16 +19,16 @@ class ViewController: UIViewController {
     @IBAction private func requestLocationPermissions() {
         GeoOffersWrapper.shared.geoOffers.requestLocationPermissions()
     }
-    
+
     @IBAction private func requestNotificationPermissions() {
         GeoOffersWrapper.shared.geoOffers.requestPushNotificationPermissions()
     }
-    
+
     @IBAction fileprivate func presentOffers() {
         let viewController = GeoOffersWrapper.shared.geoOffers.buildOfferListViewController()
         navigationController?.pushViewController(viewController, animated: true)
     }
-    
+
     @IBAction private func togglePushToken() {
         let token = GeoOffersWrapper.shared.pushToken
         pushToken.text = token ?? "No Token"
@@ -44,4 +44,3 @@ extension ViewController: GeoOffersSDKServiceDelegate {
         presentOffers()
     }
 }
-

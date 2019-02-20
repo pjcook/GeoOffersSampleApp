@@ -11,10 +11,10 @@ class NotificationsViewController: UIViewController {
             }
         }
     }
-    
+
     @IBAction func deleteAll() {
         GeoOffersNotificationLogger.shared
-        .clearCache()
+            .clearCache()
         notifications = []
         tableView.reloadData()
     }
@@ -27,25 +27,25 @@ extension NotificationsViewController: UITableViewDelegate {
         guard let notificationMessage = notification.messageString else { return }
         UIPasteboard.general.string = notificationMessage
     }
-    
+
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { [weak self] (action, indexPath) in
+        let delete = UITableViewRowAction(style: .destructive, title: "Delete") { [weak self] _, indexPath in
             guard let self = self else { return }
             let notification = self.notifications[indexPath.row]
             self.notifications.remove(at: indexPath.row)
             tableView.reloadData()
             GeoOffersNotificationLogger.shared.remove(notification.id)
         }
-        
+
         return [delete]
     }
 }
 
 extension NotificationsViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_: UITableView, numberOfRowsInSection _: Int) -> Int {
         return notifications.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let notification = notifications[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "NotificationSummaryCell", for: indexPath) as! NotificationSummaryCell
