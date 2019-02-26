@@ -6,8 +6,8 @@
      waypoint, Xcode will simulate that specific location. If you provide multiple waypoints,
      Xcode will simulate a route visiting each waypoint.
      -->
-    <wpt lat="37.331705" lon="-122.030237">
-        <name>Cupertino</name>
+    <!--wpt lat="37.331705" lon="-122.030237">
+        <name>Cupertino</name-->
         
         <!--
          Optionally provide a time element for each waypoint. Xcode will interpolate movement
@@ -16,12 +16,167 @@
          
          Waypoints must be sorted by time in ascending order.
          -->
-        <time>2014-09-24T14:55:30Z</time>
+        <!--time>2014-09-24T14:55:30Z</time>
+    </wpt-->
+    
+    <wpt lat="51.13413929" lon="-0.186796029">
+        <name>5c06963016171</name>
     </wpt>
     
-    <wpt lat="51.5060112" lon="-0.4633194">
-        <name>GeoOffersLocation</name>
-        <time>2014-09-24T14:55:35Z</time>
+    <wpt lat="51.11336115" lon="-0.191824851">
+        <name>5c0680ac0d4d7</name>
+    </wpt>
+    
+    <wpt lat="51.09713767" lon="-0.205113739">
+        <name>5c068ee7374c8</name>
+    </wpt>
+    
+    <wpt lat="51.12362864" lon="-0.163332802">
+        <name>5c0688105920f</name>
+    </wpt>
+    
+    <wpt lat="51.10739856" lon="-0.153228769">
+        <name>5c068b1e21e52</name>
+    </wpt>
+    
+    <wpt lat="51.11844663" lon="-0.162625828">
+        <name>5c0689567bd92</name>
+    </wpt>
+    
+    <wpt lat="51.11589688" lon="-0.147168415">
+        <name>5c068d03b5a54</name>
+    </wpt>
+    
+    <wpt lat="51.10194502" lon="-0.18132931">
+        <name>5c068c2bdbc2a</name>
+    </wpt>
+    
+    <wpt lat="51.08335667" lon="-0.199920191">
+        <name>5c0681cfbc686</name>
+    </wpt>
+    
+    <wpt lat="51.11592387" lon="-0.18515995">
+        <name>5c06817bbf634</name>
+    </wpt>
+    
+    <wpt lat="51.11575194" lon="-0.184477868">
+        <name>5c06836c55949</name>
+    </wpt>
+    
+    <wpt lat="51.1284226" lon="-0.198042539">
+        <name>5c068c2b68bf5</name>
+    </wpt>
+    
+    <wpt lat="51.11777591" lon="-0.15376557">
+        <name>5c068c282beb8</name>
+    </wpt>
+    
+    <wpt lat="51.1050073" lon="-0.198450038">
+        <name>5c06869819eb2</name>
+    </wpt>
+    
+    <wpt lat="51.12736541" lon="-0.155311395">
+        <name>5c068696a8787</name>
+    </wpt>
+    
+    <wpt lat="51.12298518" lon="-0.193482285">
+        <name>5c06836cb13ba</name>
+    </wpt>
+    
+    <wpt lat="51.11701883" lon="-0.190379979">
+        <name>5c068da45f4fa</name>
+    </wpt>
+    
+    <wpt lat="51.11835994" lon="-0.162648414">
+        <name>5c06937297b5a</name>
+    </wpt>
+    
+    <wpt lat="51.11395603" lon="-0.17556268">
+        <name>5c06869637d19</name>
+    </wpt>
+    
+    <wpt lat="51.11575194" lon="-0.184477868">
+        <name>5c06836c55949</name>
+    </wpt>
+    
+    <wpt lat="51.1050073" lon="-0.198450038">
+        <name>5c06869819eb2</name>
+    </wpt>
+    
+    <wpt lat="51.08335667" lon="-0.199920191">
+        <name>5c0681cfbc686</name>
+    </wpt>
+    
+    <wpt lat="51.11589688" lon="-0.147168415">
+        <name>5c068d03b5a54</name>
+    </wpt>
+    
+    <wpt lat="51.12298518" lon="-0.193482285">
+        <name>5c06836cb13ba</name>
+    </wpt>
+    
+    <wpt lat="51.10194502" lon="-0.18132931">
+        <name>5c068c2bdbc2a</name>
+    </wpt>
+    
+    <wpt lat="51.11395603" lon="-0.17556268">
+        <name>5c06869637d19</name>
+    </wpt>
+    
+    <wpt lat="51.11701883" lon="-0.190379979">
+        <name>5c068da45f4fa</name>
+    </wpt>
+    
+    <wpt lat="51.10739856" lon="-0.153228769">
+        <name>5c068b1e21e52</name>
+    </wpt>
+    
+    <wpt lat="51.11844663" lon="-0.162625828">
+        <name>5c0689567bd92</name>
+    </wpt>
+    
+    <wpt lat="51.11336115" lon="-0.191824851">
+        <name>5c0680ac0d4d7</name>
+    </wpt>
+    
+    <wpt lat="51.1284226" lon="-0.198042539">
+        <name>5c068c2b68bf5</name>
+    </wpt>
+    
+    <wpt lat="51.09713767" lon="-0.205113739">
+        <name>5c068ee7374c8</name>
+    </wpt>
+    
+    <wpt lat="51.11592387" lon="-0.18515995">
+        <name>5c06817bbf634</name>
+    </wpt>
+    
+    <wpt lat="51.12736541" lon="-0.155311395">
+        <name>5c068696a8787</name>
+    </wpt>
+    
+    <wpt lat="51.11777591" lon="-0.15376557">
+        <name>5c068c282beb8</name>
+    </wpt>
+    
+    <wpt lat="51.12362864" lon="-0.163332802">
+        <name>5c0688105920f</name>
+    </wpt>
+    
+    <wpt lat="51.13413929" lon="-0.186796029">
+        <name>5c06963016171</name>
+    </wpt>
+    
+    <wpt lat="51.11835994" lon="-0.162648414">
+        <name>5c06937297b5a</name>
+    </wpt>
+    
+    <wpt lat="51.7034864" lon="-0.19154809999998">
+        <name>ClientCode-535987-OffersAppGooglePlaceIdChIJQTC2xEo9dkgRHf5kgZdl9lc</name>
+    </wpt>
+    
+    <wpt lat="51.1057276" lon="-0.1538865">
+        <name>ClientCode-535987-OffersAppGooglePlaceIdChIJT52J7YTxdUgRMV23CUI_xyc</name>
     </wpt>
     
 </gpx>
