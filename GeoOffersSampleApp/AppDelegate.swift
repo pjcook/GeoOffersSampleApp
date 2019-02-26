@@ -7,7 +7,7 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {        
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Initialise the GeoOffersSDK, simply using the Wrapper singleton for simplifying the Sample App, use your own preferred dependency injection pattern
         // Call the matching method on the GeoOffersSDK instance
         GeoOffersWrapper.shared.geoOffers.application(application, didFinishLaunchingWithOptions: launchOptions)
@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             notification["aps"] != nil {
             GeoOffersNotificationLogger.shared.log(notification)
         }
-        
+
         return true
     }
 
@@ -42,7 +42,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GeoOffersWrapper.shared.pushToken = token
         // End of sample app test code
 
-        
         // This part is required, the stuff above is simply for the sample app
         // Call the matching method on the GeoOffersSDK instance
         GeoOffersWrapper.shared.geoOffers.application(application, didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)
