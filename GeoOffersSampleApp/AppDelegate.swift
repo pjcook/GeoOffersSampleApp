@@ -2,18 +2,12 @@
 
 import GeoOffersSDK
 import UIKit
-import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
-        // Initialise Firebase, if you use Firebase, replace the GoogleService-Info.plist file with your own, otherwise, please include the one in the Sample app.
-        // Please initialise Firebase before the GeoOffersSDK
-        FirebaseApp.configure()
-        
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {        
         // Initialise the GeoOffersSDK, simply using the Wrapper singleton for simplifying the Sample App, use your own preferred dependency injection pattern
         // Call the matching method on the GeoOffersSDK instance
         GeoOffersWrapper.shared.geoOffers.application(application, didFinishLaunchingWithOptions: launchOptions)
