@@ -16,6 +16,7 @@
 		D58C096821E8A9B200D503D2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58C096621E8A9B200D503D2 /* LaunchScreen.storyboard */; };
 		D58C097321E8A9B200D503D2 /* GeoOffersSampleAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58C097221E8A9B200D503D2 /* GeoOffersSampleAppTests.swift */; };
 		D58C097E21E8A9B200D503D2 /* GeoOffersSampleAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58C097D21E8A9B200D503D2 /* GeoOffersSampleAppUITests.swift */; };
+		D59B9A5322268A9E00B0DEBB /* Norwich.gpx in Resources */ = {isa = PBXBuildFile; fileRef = D59B9A5222268A9E00B0DEBB /* Norwich.gpx */; };
 		D5C271C7221A952E00104FCA /* GeoOffersNotificationLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C271C6221A952E00104FCA /* GeoOffersNotificationLogger.swift */; };
 		D5C271C9221AB4A900104FCA /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C271C8221AB4A900104FCA /* NotificationsViewController.swift */; };
 		D5C271CB221AB58200104FCA /* NotificationSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C271CA221AB58200104FCA /* NotificationSummaryCell.swift */; };
@@ -65,6 +66,7 @@
 		D58C097D21E8A9B200D503D2 /* GeoOffersSampleAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoOffersSampleAppUITests.swift; sourceTree = "<group>"; };
 		D58C097F21E8A9B200D503D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D58C098C21E8B3BD00D503D2 /* GeoOffersSampleApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GeoOffersSampleApp.entitlements; sourceTree = "<group>"; };
+		D59B9A5222268A9E00B0DEBB /* Norwich.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Norwich.gpx; sourceTree = "<group>"; };
 		D5AE1A3521F9A735005F86CF /* SimulatedLocations.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = SimulatedLocations.gpx; sourceTree = "<group>"; };
 		D5AE1A3621F9A8C4005F86CF /* Apple.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Apple.gpx; sourceTree = "<group>"; };
 		D5AE1A3721F9A8C4005F86CF /* GeoOffersLocation.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = GeoOffersLocation.gpx; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				D58C096921E8A9B200D503D2 /* Info.plist */,
 				D5AE1A3521F9A735005F86CF /* SimulatedLocations.gpx */,
 				D5AE1A3621F9A8C4005F86CF /* Apple.gpx */,
+				D59B9A5222268A9E00B0DEBB /* Norwich.gpx */,
 				D5AE1A3721F9A8C4005F86CF /* GeoOffersLocation.gpx */,
 				D5AE1A3821F9A8C4005F86CF /* Google.gpx */,
 			);
@@ -354,6 +357,7 @@
 				D58C096821E8A9B200D503D2 /* LaunchScreen.storyboard in Resources */,
 				D58C096521E8A9B200D503D2 /* Assets.xcassets in Resources */,
 				D5F38DC821F71E3200531B7F /* LICENSE in Resources */,
+				D59B9A5322268A9E00B0DEBB /* Norwich.gpx in Resources */,
 				D58C096321E8A9B000D503D2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
