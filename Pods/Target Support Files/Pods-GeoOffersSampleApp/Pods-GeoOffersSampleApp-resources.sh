@@ -98,11 +98,16 @@ EOM
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/app.css"
+  install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/blank-bcode.png"
   install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/coupon.html"
+  install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/google-pay-logo.svg"
   install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/jquery.min.js"
   install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/JsBarcode.all.min.js"
+  install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/map-icon.svg"
+  install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/print-icon.svg"
   install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/qrcode.min.js"
   install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/rere.main.min.js"
+  install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/save-to-google-pay.svg"
   install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/socket.io.js"
   install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/vue.js"
   install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/GeoOffersSDK-GoogleService-Info.geoconfig"
@@ -116,11 +121,16 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/app.css"
+  install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/blank-bcode.png"
   install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/coupon.html"
+  install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/google-pay-logo.svg"
   install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/jquery.min.js"
   install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/JsBarcode.all.min.js"
+  install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/map-icon.svg"
+  install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/print-icon.svg"
   install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/qrcode.min.js"
   install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/rere.main.min.js"
+  install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/save-to-google-pay.svg"
   install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/socket.io.js"
   install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/vue.js"
   install_resource "${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/GeoOffersSDK-GoogleService-Info.geoconfig"
