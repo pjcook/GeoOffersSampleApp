@@ -34,6 +34,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GeoOffersWrapper.shared.geoOffers.application(application, performFetchWithCompletionHandler: completionHandler)
     }
 
+    func application(_ application: UIApplication, handleEventsForBackgroundURLSession identifier: String, completionHandler: @escaping () -> Void) {
+        // Call the matching method on the GeoOffersSDK instance
+        GeoOffersWrapper.shared.geoOffers.application(application, handleEventsForBackgroundURLSession: identifier, completionHandler: completionHandler)
+    }
+
     // Required if implementing Remote notifications
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         // Start of sample app test code
