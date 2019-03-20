@@ -252,6 +252,7 @@
 				D58C095621E8A9B000D503D2 /* Sources */,
 				D58C095721E8A9B000D503D2 /* Frameworks */,
 				D58C095821E8A9B000D503D2 /* Resources */,
+				26DFA9BADDDFECADB520F9D2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -378,6 +379,67 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		26DFA9BADDDFECADB520F9D2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GeoOffersSampleApp/Pods-GeoOffersSampleApp-resources.sh",
+				"${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/coupon/app.css",
+				"${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/coupon/blank-bcode.png",
+				"${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/coupon/coupon.html",
+				"${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/coupon/google-pay-logo.svg",
+				"${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/coupon/jquery.min.js",
+				"${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/coupon/JsBarcode.all.min.js",
+				"${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/coupon/map-icon.svg",
+				"${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/coupon/print-icon.svg",
+				"${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/coupon/qrcode.min.js",
+				"${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/coupon/rere.main.min.js",
+				"${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/coupon/save-to-google-pay.svg",
+				"${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/coupon/socket.io.js",
+				"${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/coupon/vue.js",
+				"${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/GeoOffersSDK-GoogleService-Info.geoconfig",
+				"${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/GeoOffersSDK.storyboard",
+				"${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/index.html",
+				"${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/ListingJSTemplate.js",
+				"${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/offerslist/offerslist.html",
+				"${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/offerslist/offerslist_files/app.css",
+				"${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/offerslist/offerslist_files/app.js",
+				"${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/offerslist/offerslist_files/geo-gmap-icon.svg",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/app.css",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/blank-bcode.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/coupon.html",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/google-pay-logo.svg",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/jquery.min.js",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/JsBarcode.all.min.js",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/map-icon.svg",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/print-icon.svg",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/qrcode.min.js",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/rere.main.min.js",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/save-to-google-pay.svg",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/socket.io.js",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/vue.js",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GeoOffersSDK-GoogleService-Info.geoconfig",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GeoOffersSDK.storyboardc",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/index.html",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ListingJSTemplate.js",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/offerslist.html",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/app.js",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/geo-gmap-icon.svg",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GeoOffersSampleApp/Pods-GeoOffersSampleApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		85B18A6C7AB71B60307C7F06 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

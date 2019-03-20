@@ -13,6 +13,15 @@ struct GeoOffersPushData: Codable {
     let messageIndex: Int
     let messageID: String
     let timestamp: Double
+    
+    init(message: String, totalParts: Int, scheduleID: Int, messageIndex: Int, messageID: String, timestamp: Double) {
+        self.message = message
+        self.totalParts = totalParts
+        self.scheduleID = scheduleID
+        self.messageIndex = messageIndex
+        self.messageID = messageID
+        self.timestamp = timestamp
+    }
 
     enum CodingKeys: String, CodingKey {
         case message = "geoRewardsPushMessageJson"
