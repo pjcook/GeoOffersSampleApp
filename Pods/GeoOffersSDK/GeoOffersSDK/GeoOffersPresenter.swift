@@ -62,7 +62,7 @@ class GeoOffersPresenterDefault: GeoOffersPresenter {
         let jsonData = cacheService.buildCouponRequestJson(scheduleID: scheduleID)
         vc.presenter = self
         vc.delegate = viewControllerDelegate
-        let javascript = dataParser.buildJavascriptForWebView(listingData: "", couponData: jsonData, authToken: configuration.authToken, tabBackgroundColor: configuration.selectedCategoryTabBackgroundColor, alreadyDeliveredOfferData: "{}")
+        let javascript = dataParser.buildJavascriptForWebView(listingData: "", couponData: jsonData, authToken: configuration.authToken, tabBackgroundColor: configuration.selectedCategoryTabBackgroundColor, alreadyDeliveredOfferData: "")
         let queryString = dataParser.buildCouponQuerystring(configuration: configuration, locationService: locationService)
         vc.loadRequest(url: url, javascript: javascript, querystring: queryString)
         return vc

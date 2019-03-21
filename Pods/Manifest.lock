@@ -32,7 +32,7 @@ PODS:
     - GoogleUtilities/Reachability (~> 5.3)
     - GoogleUtilities/UserDefaults (~> 5.3)
     - Protobuf (~> 3.1)
-  - GeoOffersSDK (0.0.1):
+  - GeoOffersSDK (0.0.3):
     - Firebase/Core
     - Firebase/Messaging
   - GoogleAppMeasurement (5.8.0):
@@ -77,12 +77,11 @@ SPEC REPOS:
     - FirebaseCore
     - FirebaseInstanceID
     - FirebaseMessaging
+    - GeoOffersSDK
     - GoogleAppMeasurement
     - GoogleUtilities
     - nanopb
     - Protobuf
-  https://github.com/pjcook/ZappitPodSpecs.git:
-    - GeoOffersSDK
 
 SPEC CHECKSUMS:
   Firebase: c60d49e9c2630875a96207d15e2affb8364996d1
@@ -91,12 +90,12 @@ SPEC CHECKSUMS:
   FirebaseCore: 22a79a961c3951ef2f77b67bfbc99e454247b319
   FirebaseInstanceID: cf488df2f4b79782f0e430b04a0e17c0aa7979b2
   FirebaseMessaging: 2d53d08d752fbe63ce0820428d70be5ab87c11fb
-  GeoOffersSDK: 6182e9bf4a1246fe96a2b3d76470a99e53db967f
+  GeoOffersSDK: 124e8b539e86d221fe6eaf5795bfd5a4f4d3c8aa
   GoogleAppMeasurement: 1624046ab1bcc5e170061a56ef5679000b079c8e
   GoogleUtilities: 6481e6318c5fcabaaa8513ef8120f329055d7c10
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Protobuf: 7a877b7f3e5964e3fce995e2eb323dbc6831bb5a
 
-PODFILE CHECKSUM: c17ae66ab9e0b5b00096e706a0f3f05400434725
+PODFILE CHECKSUM: c3938974db56719f900d54e08c0414203bb1e00e
 
 COCOAPODS: 1.6.1

@@ -388,8 +388,8 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-GeoOffersSampleApp/Pods-GeoOffersSampleApp-resources.sh",
-				"${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/coupon/app.css",
 				"${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/coupon/blank-bcode.png",
+				"${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/coupon/coupon.css",
 				"${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/coupon/coupon.html",
 				"${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/coupon/google-pay-logo.svg",
 				"${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/coupon/jquery.min.js",
@@ -414,8 +414,8 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/app.css",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/blank-bcode.png",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/coupon.css",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/coupon.html",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/google-pay-logo.svg",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/jquery.min.js",
@@ -432,6 +432,7 @@
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/index.html",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/ListingJSTemplate.js",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/offerslist.html",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/app.css",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/app.js",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/geo-gmap-icon.svg",
 			);

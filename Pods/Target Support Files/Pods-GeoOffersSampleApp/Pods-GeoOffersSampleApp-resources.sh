@@ -97,8 +97,8 @@ EOM
   esac
 }
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_resource "${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/coupon/app.css"
   install_resource "${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/coupon/blank-bcode.png"
+  install_resource "${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/coupon/coupon.css"
   install_resource "${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/coupon/coupon.html"
   install_resource "${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/coupon/google-pay-logo.svg"
   install_resource "${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/coupon/jquery.min.js"
@@ -120,8 +120,8 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/offerslist/offerslist_files/geo-gmap-icon.svg"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_resource "${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/coupon/app.css"
   install_resource "${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/coupon/blank-bcode.png"
+  install_resource "${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/coupon/coupon.css"
   install_resource "${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/coupon/coupon.html"
   install_resource "${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/coupon/google-pay-logo.svg"
   install_resource "${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/coupon/jquery.min.js"
