@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,10 +17,40 @@
                     <view key="view" contentMode="scaleToFill" id="fhV-yT-kIc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ojv-qQ-qiN">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qHQ-fZ-sLh">
+                                        <rect key="frame" x="16" y="312.5" width="343" height="42.5"/>
+                                        <string key="text">Busy finding offers,
+please check back again soon.</string>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="qHQ-fZ-sLh" secondAttribute="trailing" constant="16" id="YZJ-aT-8om"/>
+                                    <constraint firstItem="qHQ-fZ-sLh" firstAttribute="leading" secondItem="Ojv-qQ-qiN" secondAttribute="leading" constant="16" id="aIb-2M-iA6"/>
+                                    <constraint firstItem="qHQ-fZ-sLh" firstAttribute="centerY" secondItem="Ojv-qQ-qiN" secondAttribute="centerY" id="bxr-z3-Vu7"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Ojv-qQ-qiN" secondAttribute="trailing" id="6ae-8T-q5P"/>
+                            <constraint firstAttribute="bottom" secondItem="Ojv-qQ-qiN" secondAttribute="bottom" id="bWu-EO-kbh"/>
+                            <constraint firstItem="Ojv-qQ-qiN" firstAttribute="leading" secondItem="fhV-yT-kIc" secondAttribute="leading" id="kv3-ez-RwG"/>
+                            <constraint firstItem="Ojv-qQ-qiN" firstAttribute="top" secondItem="fhV-yT-kIc" secondAttribute="top" id="vyD-jT-FU0"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ubn-NM-TBa"/>
                     </view>
                     <navigationItem key="navigationItem" id="l2V-FG-E0G"/>
+                    <connections>
+                        <outlet property="loadingOverlay" destination="Ojv-qQ-qiN" id="WDY-VI-GGG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iwn-0U-geC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -8,6 +8,8 @@ protocol GeoOffersViewControllerDelegate: class {
 }
 
 class GeoOffersViewController: UIViewController {
+    @IBOutlet private var loadingOverlay: UIView!
+    
     private var webView: WKWebView!
     private(set) var pageLoaded = false
     private(set) var pendingURL: URL?
@@ -16,6 +18,7 @@ class GeoOffersViewController: UIViewController {
     private var contentController = WKUserContentController()
     weak var presenter: GeoOffersPresenter?
     weak var delegate: GeoOffersViewControllerDelegate?
+    private var showLoadingOverlay = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,11 +44,13 @@ class GeoOffersViewController: UIViewController {
         contentController.add(self, name: "deleteOffer")
 
         pageLoaded = true
+        loadingOverlay.isHidden = !showLoadingOverlay
         guard let url = pendingURL else { return }
         load(url)
     }
 
     private func load(_ url: URL) {
+        loadingOverlay.isHidden = !showLoadingOverlay
         if let script = pendingScriptForStart {
             contentController.addUserScript(script)
         }
@@ -62,8 +67,13 @@ class GeoOffersViewController: UIViewController {
     @IBAction private func close() {
         dismiss(animated: true, completion: nil)
     }
+    
+    func noOffers() {
+        showLoadingOverlay = true
+    }
 
     func loadRequest(url: URL, javascript: String?, querystring: String?) {
+        showLoadingOverlay = false
         pendingQuerystring = querystring
         var script: WKUserScript?
         if let javascript = javascript {
