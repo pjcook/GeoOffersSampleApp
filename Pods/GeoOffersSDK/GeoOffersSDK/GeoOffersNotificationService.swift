@@ -65,7 +65,13 @@ class GeoOffersNotificationServiceDefault: GeoOffersNotificationService {
         guard !title.isEmpty else { return }
         #if targetEnvironment(simulator)
         #else
-            guard UIApplication.shared.applicationState != .active else { return }
+        guard Thread.isMainThread else {
+            DispatchQueue.main.async {
+                self.sendNotification(title: title, subtitle: subtitle, delayMs: delayMs, identifier: identifier, isSilent: isSilent)
+            }
+            return
+        }
+        guard UIApplication.shared.applicationState != .active else { return }
         #endif
         let notificationContent = UNMutableNotificationContent()
         notificationContent.title = title
@@ -73,7 +79,7 @@ class GeoOffersNotificationServiceDefault: GeoOffersNotificationService {
         notificationContent.sound = isSilent ? nil : UNNotificationSound.default
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: max(1, delayMs / 1000), repeats: false)
         let request = UNNotificationRequest(identifier: identifier, content: notificationContent, trigger: trigger)
-        notificationCenter.add(request) { error in
+        self.notificationCenter.add(request) { error in
             if let error = error {
                 geoOffersLog("GeoOffersSDK.failedToSendNotification Error: \(error)")
             }

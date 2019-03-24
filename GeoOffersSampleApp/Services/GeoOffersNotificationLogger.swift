@@ -27,12 +27,12 @@ class GeoOffersNotificationMessage {
     }()
 
     lazy var formattedDate: String = {
-        notificationSummaryCellDateFormatter.string(from: Date(timeIntervalSinceReferenceDate: createdAt))
+        notificationSummaryCellDateFormatter.string(from: Date(timeIntervalSince1970: createdAt))
     }()
 
     init(message: [String: AnyObject]) {
         id = UUID().uuidString
-        createdAt = Date().timeIntervalSinceReferenceDate
+        createdAt = Date().timeIntervalSince1970
         self.message = message
     }
 

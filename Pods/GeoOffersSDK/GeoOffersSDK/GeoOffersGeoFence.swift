@@ -1,6 +1,7 @@
 //  Copyright © 2019 Zappit. All rights reserved.
 
 import Foundation
+import CoreLocation
 
 struct GeoOffersGeoFence: Codable {
     let logoImageUrl: String
@@ -15,6 +16,15 @@ struct GeoOffersGeoFence: Codable {
     let notificationDeliveryDelayMs: Double
     let doesNotNotify: Bool
     let notifiesSilently: Bool
+    
+    var location: CLLocation {
+        return CLLocation(latitude: latitude, longitude: longitude)
+    }
+    
+    var coordinate: CLLocationCoordinate2D {
+        return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+
+    }
 
     enum CodingKeys: String, CodingKey {
         case logoImageUrl

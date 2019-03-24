@@ -109,7 +109,7 @@ class GeoOffersAPIServiceDefault: NSObject, GeoOffersAPIService {
 
         var request = generateRequest(url: url, method: HTTPMethod.post)
 
-        let data = GeoOffersCountdownsStarted(timezone: configuration.timezone, timestamp: Date().timeIntervalSinceReferenceDate * 1000, hashes: hashes)
+        let data = GeoOffersCountdownsStarted(timezone: configuration.timezone, timestamp: Date().timeIntervalSince1970 * 1000, hashes: hashes)
         guard let jsonData = encode(data) else {
             completionHandler?(.failure(GeoOffersAPIErrors.failedToBuildJsonForPost))
             return

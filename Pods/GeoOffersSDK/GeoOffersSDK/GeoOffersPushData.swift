@@ -43,7 +43,7 @@ struct GeoOffersPushData: Codable {
     }
 
     var isOutOfDate: Bool {
-        return abs((Date().timeIntervalSinceReferenceDate * 1000) - timestamp) > Double.oneDaySeconds
+        return abs((Date().timeIntervalSince1970 * 1000) - timestamp) > Double.oneDaySeconds
     }
 }
 

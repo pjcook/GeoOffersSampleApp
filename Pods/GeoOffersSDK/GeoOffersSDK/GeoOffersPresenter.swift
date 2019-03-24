@@ -12,11 +12,16 @@ protocol GeoOffersPresenter: class {
 class GeoOffersPresenterDefault: GeoOffersPresenter {
     private let configuration: GeoOffersSDKConfiguration
     private let locationService: GeoOffersLocationService
-    private let cacheService: GeoOffersCacheService
+    private let cacheService: GeoOffersWebViewCache
     private let dataParser: GeoOffersDataParser
     weak var viewControllerDelegate: GeoOffersViewControllerDelegate?
 
-    init(configuration: GeoOffersSDKConfiguration, locationService: GeoOffersLocationService, cacheService: GeoOffersCacheService, dataParser: GeoOffersDataParser) {
+    init(
+        configuration: GeoOffersSDKConfiguration,
+        locationService: GeoOffersLocationService,
+        cacheService: GeoOffersWebViewCache,
+        dataParser: GeoOffersDataParser
+    ) {
         self.configuration = configuration
         self.locationService = locationService
         self.cacheService = cacheService

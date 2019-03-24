@@ -1,7 +1,6 @@
 //  Copyright © 2019 Zappit. All rights reserved.
 
 import CoreLocation
-import Foundation
 
 protocol GeoOffersLocationServiceDelegate: class {
     func userDidMoveSignificantDistance()
@@ -65,6 +64,21 @@ class GeoOffersLocationService: NSObject {
 
     var monitoredRegions: Set<CLRegion> {
         return locationManager.monitoredRegions
+    }
+    
+    func monitor(regions: [GeoOffersGeoFence]) {
+        guard let location = latestLocation, !regions.isEmpty else { return }
+        let previouslyMonitoredRegions = monitoredRegions
+        let currentLocation = CLLocation(latitude: location.latitude, longitude: location.longitude)
+        stopMonitoringAllRegions()
+        let sortedRegions = regions.sorted { (f1, f2) -> Bool in
+            f1.location.distance(from: currentLocation) < f2.location.distance(from: currentLocation)
+        }
+        for region in sortedRegions {
+            let key = GeoOffersPendingOffer.generateKey(scheduleID: region.scheduleID, scheduleDeviceID: region.scheduleDeviceID)
+            let ignoreIfInside = previouslyMonitoredRegions.contains(where: { $0.identifier == key })
+            monitor(center: region.coordinate, radiusMeters: Double(region.radiusKm * 1000), identifier: key, ignoreIfInside: ignoreIfInside)
+        }
     }
 
     /*
