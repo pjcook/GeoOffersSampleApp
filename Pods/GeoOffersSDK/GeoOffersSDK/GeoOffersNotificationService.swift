@@ -14,14 +14,14 @@ public protocol GeoOffersUserNotificationCenter {
 
 extension UNUserNotificationCenter: GeoOffersUserNotificationCenter {}
 
-protocol GeoOffersNotificationService {
+protocol GeoOffersNotificationServiceProtocol {
     func requestNotificationPermissions()
     func applicationDidBecomeActive(_ application: UIApplication)
     func sendNotification(title: String, subtitle: String, delayMs: Double, identifier: String, isSilent: Bool)
     func removeNotification(with identifier: String)
 }
 
-class GeoOffersNotificationServiceDefault: GeoOffersNotificationService {
+class GeoOffersNotificationService: GeoOffersNotificationServiceProtocol {
     private var notificationCenter: GeoOffersUserNotificationCenter
 
     init(notificationCenter: GeoOffersUserNotificationCenter = UNUserNotificationCenter.current()) {

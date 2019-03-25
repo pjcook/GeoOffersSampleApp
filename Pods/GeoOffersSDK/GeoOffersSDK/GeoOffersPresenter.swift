@@ -3,14 +3,14 @@
 import UIKit
 import WebKit
 
-protocol GeoOffersPresenter: class {
-    func buildOfferListViewController(service: GeoOffersSDKService?) -> UIViewController
+protocol GeoOffersPresenterProtocol: class {
+    func buildOfferListViewController(service: GeoOffersSDKServiceProtocol?) -> UIViewController
     func refreshOfferListViewController(_ viewController: GeoOffersViewController)
     func buildCouponViewController(scheduleID: Int) -> UIViewController
     var viewControllerDelegate: GeoOffersViewControllerDelegate? { get set }
 }
 
-class GeoOffersPresenterDefault: GeoOffersPresenter {
+class GeoOffersPresenter: GeoOffersPresenterProtocol {
     private let configuration: GeoOffersSDKConfiguration
     private let locationService: GeoOffersLocationService
     private let cacheService: GeoOffersWebViewCache
@@ -30,17 +30,17 @@ class GeoOffersPresenterDefault: GeoOffersPresenter {
     }
 
     private func offersURL() -> URL? {
-        let baseURL = Bundle(for: GeoOffersPresenterDefault.self).url(forResource: "offerslist", withExtension: "html")
+        let baseURL = Bundle(for: GeoOffersPresenter.self).url(forResource: "offerslist", withExtension: "html")
         return baseURL
     }
 
     private func couponURL() -> URL? {
-        let baseURL = Bundle(for: GeoOffersPresenterDefault.self).url(forResource: "coupon", withExtension: "html")
+        let baseURL = Bundle(for: GeoOffersPresenter.self).url(forResource: "coupon", withExtension: "html")
         return baseURL
     }
 
-    func buildOfferListViewController(service: GeoOffersSDKService?) -> UIViewController {
-        let storyboard = UIStoryboard(name: "GeoOffersSDK", bundle: Bundle(for: GeoOffersPresenterDefault.self))
+    func buildOfferListViewController(service: GeoOffersSDKServiceProtocol?) -> UIViewController {
+        let storyboard = UIStoryboard(name: "GeoOffersSDK", bundle: Bundle(for: GeoOffersPresenter.self))
         guard let vc = storyboard.instantiateInitialViewController() as? GeoOffersViewController
         else {
             geoOffersLog("Failed to buildOfferListViewController")
@@ -74,7 +74,7 @@ class GeoOffersPresenterDefault: GeoOffersPresenter {
     }
 
     func buildCouponViewController(scheduleID: Int) -> UIViewController {
-        let storyboard = UIStoryboard(name: "GeoOffersSDK", bundle: Bundle(for: GeoOffersPresenterDefault.self))
+        let storyboard = UIStoryboard(name: "GeoOffersSDK", bundle: Bundle(for: GeoOffersPresenter.self))
         guard let url = couponURL(),
             let vc = storyboard.instantiateInitialViewController() as? GeoOffersViewController
         else {

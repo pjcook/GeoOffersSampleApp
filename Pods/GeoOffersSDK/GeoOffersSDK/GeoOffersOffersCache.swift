@@ -9,7 +9,7 @@ public protocol GeoOffersOffersCacheDelegate: class {
 class GeoOffersOffersCache {
     private var pendingOffersTimer: Timer?
     private var cache: GeoOffersCache
-    private let apiService: GeoOffersAPIService
+    private let apiService: GeoOffersAPIServiceProtocol
     private var fencesCache: GeoOffersGeoFencesCache
     
     weak var delegate: GeoOffersOffersCacheDelegate?
@@ -17,7 +17,7 @@ class GeoOffersOffersCache {
     init(
         cache: GeoOffersCache,
         fencesCache: GeoOffersGeoFencesCache,
-        apiService: GeoOffersAPIService
+        apiService: GeoOffersAPIServiceProtocol
         ) {
         self.cache = cache
         self.fencesCache = fencesCache

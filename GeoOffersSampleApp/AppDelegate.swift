@@ -9,6 +9,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Initialise the GeoOffersSDK, simply using the Wrapper singleton for simplifying the Sample App, use your own preferred dependency injection pattern
+        
         // Call the matching method on the GeoOffersSDK instance
         GeoOffersWrapper.shared.geoOffers.application(application, didFinishLaunchingWithOptions: launchOptions)
 
@@ -53,13 +54,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
-        // If you are receiving a notification message while your app is in the background,
-        // this callback will not be fired till the user taps on the notification launching the application.
-        // TODO: Handle data of notification
-        
-        // With swizzling disabled you must let Messaging know about the message, for Analytics
-        // Messaging.messaging().appDidReceiveMessage(userInfo)
-        
         GeoOffersWrapper.shared.geoOffers.application(application, didReceiveRemoteNotification: userInfo, fetchCompletionHandler: nil)
         
         // Sample app test code. Log push notifications for testing

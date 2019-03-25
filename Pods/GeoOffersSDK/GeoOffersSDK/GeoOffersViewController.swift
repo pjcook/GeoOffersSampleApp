@@ -16,11 +16,11 @@ class GeoOffersViewController: UIViewController {
     private(set) var pendingQuerystring: String?
     private(set) var pendingScriptForStart: WKUserScript?
     private var contentController = WKUserContentController()
-    weak var presenter: GeoOffersPresenter?
+    weak var presenter: GeoOffersPresenterProtocol?
     weak var delegate: GeoOffersViewControllerDelegate?
     private var showLoadingOverlay = false
     
-    var service: GeoOffersSDKService?
+    var service: GeoOffersSDKServiceProtocol?
 
     override func viewDidLoad() {
         super.viewDidLoad()

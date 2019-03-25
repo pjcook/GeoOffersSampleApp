@@ -8,7 +8,7 @@ public protocol GeoOffersSDKServiceDelegate: class {
     func hasAvailableOffers()
 }
 
-public protocol GeoOffersSDKService {
+public protocol GeoOffersSDKServiceProtocol {
     var delegate: GeoOffersSDKServiceDelegate? { get set }
     var offersUpdatedDelegate: GeoOffersOffersCacheDelegate? { get set }
     func requestLocationPermissions()
@@ -28,13 +28,13 @@ private var isRunningTests: Bool {
     return ProcessInfo.processInfo.environment["XCTestConfigurationFilePath"] != nil
 }
 
-public class GeoOffersSDKServiceDefault: GeoOffersSDKService {
+public class GeoOffersSDKService: GeoOffersSDKServiceProtocol {
     private let maxNumberOfRegionsThatCanBeMonitoredPerApp = 20
     private var configuration: GeoOffersSDKConfiguration
-    private let notificationService: GeoOffersNotificationService
+    private let notificationService: GeoOffersNotificationServiceProtocol
     fileprivate let locationService: GeoOffersLocationService
-    fileprivate var apiService: GeoOffersAPIService
-    private let presentationService: GeoOffersPresenter
+    fileprivate var apiService: GeoOffersAPIServiceProtocol
+    private let presentationService: GeoOffersPresenterProtocol
     private let dataParser: GeoOffersDataParser
     private var firebaseWrapper: GeoOffersFirebaseWrapperProtocol
     private let offersCache: GeoOffersOffersCache
@@ -47,14 +47,14 @@ public class GeoOffersSDKServiceDefault: GeoOffersSDKService {
     public weak var offersUpdatedDelegate: GeoOffersOffersCacheDelegate?
 
     public init(
-        configuration: GeoOffersConfiguration,
+        configuration: GeoOffersConfigurationProtocol,
         userNotificationCenter: GeoOffersUserNotificationCenter = UNUserNotificationCenter.current()
     ) {
         let lastKnownLocation = GeoOffersSDKUserDefaults.shared.lastKnownLocation
         self.configuration = configuration as! GeoOffersSDKConfiguration
-        notificationService = GeoOffersNotificationServiceDefault(notificationCenter: userNotificationCenter)
+        notificationService = GeoOffersNotificationService(notificationCenter: userNotificationCenter)
         locationService = GeoOffersLocationService(latestLocation: lastKnownLocation)
-        apiService = GeoOffersAPIServiceDefault(configuration: self.configuration)
+        apiService = GeoOffersAPIService(configuration: self.configuration)
         let cache = GeoOffersCache()
         fencesCache = GeoOffersGeoFencesCache(cache: cache)
         offersCache = GeoOffersOffersCache(cache: cache, fencesCache: fencesCache, apiService: apiService)
@@ -62,7 +62,7 @@ public class GeoOffersSDKServiceDefault: GeoOffersSDKService {
         listingCache = GeoOffersListingCache(cache: cache)
 
         dataParser = GeoOffersDataParser()
-        presentationService = GeoOffersPresenterDefault(configuration: self.configuration, locationService: locationService, cacheService: GeoOffersWebViewCache(cache: cache, listingCache: listingCache, offersCache: offersCache), dataParser: dataParser)
+        presentationService = GeoOffersPresenter(configuration: self.configuration, locationService: locationService, cacheService: GeoOffersWebViewCache(cache: cache, listingCache: listingCache, offersCache: offersCache), dataParser: dataParser)
         firebaseWrapper = isRunningTests ? GeoOffersFirebaseWrapperEmpty() : GeoOffersFirebaseWrapper(configuration: self.configuration)
         dataProcessor = GeoOffersDataProcessor(
             offersCache: offersCache,
@@ -80,10 +80,10 @@ public class GeoOffersSDKServiceDefault: GeoOffersSDKService {
 
     init(
         configuration: GeoOffersSDKConfiguration,
-        notificationService: GeoOffersNotificationService,
+        notificationService: GeoOffersNotificationServiceProtocol,
         locationService: GeoOffersLocationService,
-        apiService: GeoOffersAPIService,
-        presentationService: GeoOffersPresenter,
+        apiService: GeoOffersAPIServiceProtocol,
+        presentationService: GeoOffersPresenterProtocol,
         dataParser: GeoOffersDataParser,
         firebaseWrapper: GeoOffersFirebaseWrapperProtocol,
         fencesCache: GeoOffersGeoFencesCache,
@@ -336,7 +336,7 @@ public class GeoOffersSDKServiceDefault: GeoOffersSDKService {
     }
 }
 
-extension GeoOffersSDKServiceDefault: GeoOffersLocationServiceDelegate {
+extension GeoOffersSDKService: GeoOffersLocationServiceDelegate {
     func userDidMoveSignificantDistance() {
         GeoOffersSDKUserDefaults.shared.lastKnownLocation = locationService.latestLocation
         retrieveNearbyGeoFences()
@@ -365,7 +365,7 @@ extension GeoOffersSDKServiceDefault: GeoOffersLocationServiceDelegate {
     }
 }
 
-extension GeoOffersSDKServiceDefault: GeoOffersFirebaseWrapperDelegate {
+extension GeoOffersSDKService: GeoOffersFirebaseWrapperDelegate {
     func handleFirebaseNotification(notification: [String: AnyObject]) {
         _ = handleNotification(notification)
     }
@@ -375,19 +375,19 @@ extension GeoOffersSDKServiceDefault: GeoOffersFirebaseWrapperDelegate {
     }
 }
 
-extension GeoOffersSDKServiceDefault: GeoOffersViewControllerDelegate {
+extension GeoOffersSDKService: GeoOffersViewControllerDelegate {
     func deleteOffer(scheduleID: Int) {
         apiService.delete(scheduleID: scheduleID)
     }
 }
 
-extension GeoOffersSDKServiceDefault: GeoOffersOffersCacheDelegate {
+extension GeoOffersSDKService: GeoOffersOffersCacheDelegate {
     public func offersUpdated() {
         offersUpdatedDelegate?.offersUpdated()
     }
 }
 
-extension GeoOffersSDKServiceDefault: GeoOffersListingCacheDelegate {
+extension GeoOffersSDKService: GeoOffersListingCacheDelegate {
     func listingUpdated() {
         offersUpdatedDelegate?.offersUpdated()
     }

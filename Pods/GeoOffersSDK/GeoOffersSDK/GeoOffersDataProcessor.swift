@@ -13,14 +13,14 @@ import CoreLocation
 class GeoOffersDataProcessor {
     private let offersCache: GeoOffersOffersCache
     private let listingCache: GeoOffersListingCache
-    private let notificationService: GeoOffersNotificationService
-    private let apiService: GeoOffersAPIService
+    private let notificationService: GeoOffersNotificationServiceProtocol
+    private let apiService: GeoOffersAPIServiceProtocol
     
     init(
         offersCache: GeoOffersOffersCache,
         listingCache: GeoOffersListingCache,
-        notificationService: GeoOffersNotificationService,
-        apiService: GeoOffersAPIService
+        notificationService: GeoOffersNotificationServiceProtocol,
+        apiService: GeoOffersAPIServiceProtocol
         ) {
         self.offersCache = offersCache
         self.listingCache = listingCache

@@ -2,7 +2,7 @@
 
 import Foundation
 
-protocol GeoOffersAPIService {
+protocol GeoOffersAPIServiceProtocol {
     var backgroundSessionCompletionHandler: (() -> Void)? { get set }
     func pollForNearbyOffers(latitude: Double, longitude: Double, completionHandler: @escaping GeoOffersNetworkResponse)
     func register(pushToken: String, latitude: Double, longitude: Double, clientID: Int, completionHandler: GeoOffersNetworkResponse?)
@@ -40,7 +40,7 @@ class GeoOffersNetworkTask {
     }
 }
 
-class GeoOffersAPIServiceDefault: NSObject, GeoOffersAPIService {
+class GeoOffersAPIService: NSObject, GeoOffersAPIServiceProtocol {
     struct HTTPMethod {
         static let get = "GET"
         static let post = "POST"
@@ -235,7 +235,7 @@ class GeoOffersAPIServiceDefault: NSObject, GeoOffersAPIService {
     }
 }
 
-extension GeoOffersAPIServiceDefault: URLSessionDownloadDelegate {
+extension GeoOffersAPIService: URLSessionDownloadDelegate {
     func urlSession(_: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
         guard let activeTask = activeTasks[task.taskIdentifier] else { return }
         if let error = error {
@@ -264,7 +264,7 @@ extension GeoOffersAPIServiceDefault: URLSessionDownloadDelegate {
     }
 }
 
-extension GeoOffersAPIServiceDefault: URLSessionDelegate {
+extension GeoOffersAPIService: URLSessionDelegate {
     func urlSessionDidFinishEvents(forBackgroundURLSession _: URLSession) {
         backgroundSessionCompletionHandler?()
     }

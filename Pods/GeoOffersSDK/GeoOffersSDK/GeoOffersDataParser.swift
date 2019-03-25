@@ -26,7 +26,7 @@ class GeoOffersDataParser {
         return data
     }
 
-    func buildOfferListQuerystring(configuration: GeoOffersConfiguration, locationService: GeoOffersLocationService) -> String {
+    func buildOfferListQuerystring(configuration: GeoOffersConfigurationProtocol, locationService: GeoOffersLocationService) -> String {
         let registrationCode = configuration.registrationCode
         var latitude = ""
         var longitude = ""
@@ -39,7 +39,7 @@ class GeoOffersDataParser {
         return queryString
     }
 
-    func buildCouponQuerystring(configuration: GeoOffersConfiguration, locationService: GeoOffersLocationService) -> String {
+    func buildCouponQuerystring(configuration: GeoOffersConfigurationProtocol, locationService: GeoOffersLocationService) -> String {
         var latitude = ""
         var longitude = ""
         if let location = locationService.latestLocation {

@@ -4,7 +4,7 @@ import AdSupport
 import CoreLocation
 import Foundation
 
-public protocol GeoOffersConfiguration {
+public protocol GeoOffersConfigurationProtocol {
     var registrationCode: String { get }
     var authToken: String { get }
     var deviceID: String { get }
@@ -23,9 +23,9 @@ protocol GeoOffersInternalConfiguration {
     var pendingPushTokenRegistration: String? { get set }
 }
 
-typealias GeoOffersSDKConfiguration = GeoOffersConfiguration & GeoOffersInternalConfiguration
+typealias GeoOffersSDKConfiguration = GeoOffersConfigurationProtocol & GeoOffersInternalConfiguration
 
-public class GeoOffersConfigurationDefault: GeoOffersConfiguration, GeoOffersInternalConfiguration {
+public class GeoOffersConfiguration: GeoOffersConfigurationProtocol, GeoOffersInternalConfiguration {
     public let registrationCode: String
     public let authToken: String
     public private(set) var deviceID: String
