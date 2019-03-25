@@ -2,8 +2,14 @@
 
 import Foundation
 
+protocol GeoOffersListingCacheDelegate: class {
+    func listingUpdated()
+}
+
 class GeoOffersListingCache {
     private var cache: GeoOffersCache
+    
+    weak var delegate: GeoOffersListingCacheDelegate?
     
     init(cache: GeoOffersCache) {
         self.cache = cache
@@ -34,6 +40,7 @@ class GeoOffersListingCache {
     func replaceCache(_ geoFenceData: GeoOffersListing) {
         cache.cacheData.listing = geoFenceData
         cache.cacheUpdated()
+        delegate?.listingUpdated()
     }
     
     func schedules(for scheduleID: Int, scheduleDeviceID: String) -> [GeoOffersSchedule] {

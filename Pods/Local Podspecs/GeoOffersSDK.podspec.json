@@ -1,6 +1,6 @@
 {
   "name": "GeoOffersSDK",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "summary": "The GeoOffersSDK connects to the GeoOffers API and allows your app to receive location based offers from the GeoOffers services.",
   "homepage": "https://github.com/pjcook/GeoOffersSDK",
   "license": {
@@ -15,7 +15,7 @@
   },
   "source": {
     "git": "https://github.com/pjcook/GeoOffersSDK.git",
-    "tag": "0.0.7"
+    "tag": "0.0.8"
   },
   "source_files": [
     "GeoOffersSDK",

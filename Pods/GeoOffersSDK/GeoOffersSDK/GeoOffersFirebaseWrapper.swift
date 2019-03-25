@@ -45,7 +45,6 @@ class GeoOffersFirebaseWrapper: NSObject, GeoOffersFirebaseWrapperProtocol {
 
         Messaging.messaging().delegate = self
         Messaging.messaging().shouldEstablishDirectChannel = true
-        Messaging.messaging().useMessagingDelegateForDirectChannel = true
         printTokens()
     }
 

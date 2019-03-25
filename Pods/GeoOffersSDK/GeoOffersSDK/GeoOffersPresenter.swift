@@ -4,7 +4,8 @@ import UIKit
 import WebKit
 
 protocol GeoOffersPresenter: class {
-    func buildOfferListViewController() -> UIViewController
+    func buildOfferListViewController(service: GeoOffersSDKService?) -> UIViewController
+    func refreshOfferListViewController(_ viewController: GeoOffersViewController)
     func buildCouponViewController(scheduleID: Int) -> UIViewController
     var viewControllerDelegate: GeoOffersViewControllerDelegate? { get set }
 }
@@ -38,28 +39,38 @@ class GeoOffersPresenterDefault: GeoOffersPresenter {
         return baseURL
     }
 
-    func buildOfferListViewController() -> UIViewController {
+    func buildOfferListViewController(service: GeoOffersSDKService?) -> UIViewController {
         let storyboard = UIStoryboard(name: "GeoOffersSDK", bundle: Bundle(for: GeoOffersPresenterDefault.self))
-        guard let url = offersURL(),
-            let vc = storyboard.instantiateInitialViewController() as? GeoOffersViewController
+        guard let vc = storyboard.instantiateInitialViewController() as? GeoOffersViewController
         else {
             geoOffersLog("Failed to buildOfferListViewController")
             return UIViewController()
         }
-        let jsonData = cacheService.buildListingRequestJson()
+
         vc.presenter = self
         vc.delegate = viewControllerDelegate
-
+        vc.service = service
+        
+        if var service = service {
+            service.offersUpdatedDelegate = vc
+        }
+        
+        refreshOfferListViewController(vc)
+        return vc
+    }
+    
+    func refreshOfferListViewController(_ viewController: GeoOffersViewController) {
+        guard let url = offersURL() else { return }
+        let jsonData = cacheService.buildListingRequestJson()
         guard jsonData != "{}" else {
-            vc.noOffers()
-            return vc
+            viewController.noOffers()
+            return
         }
         
         let queryString = dataParser.buildOfferListQuerystring(configuration: configuration, locationService: locationService)
         let alreadyDeliveredOfferData = cacheService.buildAlreadyDeliveredOfferJson()
         let javascript = dataParser.buildJavascriptForWebView(listingData: jsonData, couponData: "", authToken: configuration.authToken, tabBackgroundColor: configuration.selectedCategoryTabBackgroundColor, alreadyDeliveredOfferData: alreadyDeliveredOfferData)
-        vc.loadRequest(url: url, javascript: javascript, querystring: queryString)
-        return vc
+        viewController.loadRequest(url: url, javascript: javascript, querystring: queryString)
     }
 
     func buildCouponViewController(scheduleID: Int) -> UIViewController {

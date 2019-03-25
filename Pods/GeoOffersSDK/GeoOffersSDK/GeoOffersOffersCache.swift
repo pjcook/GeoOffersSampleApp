@@ -2,11 +2,17 @@
 
 import Foundation
 
+public protocol GeoOffersOffersCacheDelegate: class {
+    func offersUpdated()
+}
+
 class GeoOffersOffersCache {
     private var pendingOffersTimer: Timer?
     private var cache: GeoOffersCache
     private let apiService: GeoOffersAPIService
     private var fencesCache: GeoOffersGeoFencesCache
+    
+    weak var delegate: GeoOffersOffersCacheDelegate?
     
     init(
         cache: GeoOffersCache,
@@ -44,6 +50,7 @@ class GeoOffersOffersCache {
             if let event = buildOfferDeliveredEvent(offer) {
                 apiService.track(events: [event])
             }
+            delegate?.offersUpdated()
         } else {
             cache.cacheData.pendingOffers[key] = offer
         }
@@ -121,6 +128,7 @@ class GeoOffersOffersCache {
         if !events.isEmpty {
             apiService.track(events: events)
             cache.cacheUpdated()
+            delegate?.offersUpdated()
         }
         refreshPendingOffersInProgress = false
         schedulePendingOfferTimeIfRequired()

@@ -10,6 +10,7 @@ public protocol GeoOffersSDKServiceDelegate: class {
 
 public protocol GeoOffersSDKService {
     var delegate: GeoOffersSDKServiceDelegate? { get set }
+    var offersUpdatedDelegate: GeoOffersOffersCacheDelegate? { get set }
     func requestLocationPermissions()
     func applicationDidBecomeActive(_ application: UIApplication)
     func buildOfferListViewController() -> UIViewController
@@ -20,6 +21,7 @@ public protocol GeoOffersSDKService {
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: ((UIBackgroundFetchResult) -> Void)?)
     func application(_ application: UIApplication, performFetchWithCompletionHandler completionHandler: ((UIBackgroundFetchResult) -> Void)?)
     func application(_ application: UIApplication, handleEventsForBackgroundURLSession identifier: String, completionHandler: @escaping () -> Void)
+    func refreshOfferListViewController(_ viewController: UIViewController)
 }
 
 private var isRunningTests: Bool {
@@ -42,6 +44,7 @@ public class GeoOffersSDKServiceDefault: GeoOffersSDKService {
     private let dataProcessor: GeoOffersDataProcessor
 
     public weak var delegate: GeoOffersSDKServiceDelegate?
+    public weak var offersUpdatedDelegate: GeoOffersOffersCacheDelegate?
 
     public init(
         configuration: GeoOffersConfiguration,
@@ -68,6 +71,8 @@ public class GeoOffersSDKServiceDefault: GeoOffersSDKService {
             apiService: apiService
         )
 
+        offersCache.delegate = self
+        listingCache.delegate = self
         firebaseWrapper.delegate = self
         locationService.delegate = self
         presentationService.viewControllerDelegate = self
@@ -232,7 +237,12 @@ public class GeoOffersSDKServiceDefault: GeoOffersSDKService {
     }
 
     public func buildOfferListViewController() -> UIViewController {
-        return presentationService.buildOfferListViewController()
+        return presentationService.buildOfferListViewController(service: self)
+    }
+    
+    public func refreshOfferListViewController(_ viewController: UIViewController) {
+        guard let vc = viewController as? GeoOffersViewController else { return }
+        presentationService.refreshOfferListViewController(vc)
     }
 
     private func refreshPendingOffersCache() {
@@ -368,5 +378,17 @@ extension GeoOffersSDKServiceDefault: GeoOffersFirebaseWrapperDelegate {
 extension GeoOffersSDKServiceDefault: GeoOffersViewControllerDelegate {
     func deleteOffer(scheduleID: Int) {
         apiService.delete(scheduleID: scheduleID)
+    }
+}
+
+extension GeoOffersSDKServiceDefault: GeoOffersOffersCacheDelegate {
+    public func offersUpdated() {
+        offersUpdatedDelegate?.offersUpdated()
+    }
+}
+
+extension GeoOffersSDKServiceDefault: GeoOffersListingCacheDelegate {
+    func listingUpdated() {
+        offersUpdatedDelegate?.offersUpdated()
     }
 }

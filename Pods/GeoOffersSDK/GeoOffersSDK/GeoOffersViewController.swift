@@ -19,6 +19,8 @@ class GeoOffersViewController: UIViewController {
     weak var presenter: GeoOffersPresenter?
     weak var delegate: GeoOffersViewControllerDelegate?
     private var showLoadingOverlay = false
+    
+    var service: GeoOffersSDKService?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +55,7 @@ class GeoOffersViewController: UIViewController {
     private func load(_ url: URL) {
         loadingOverlay.isHidden = !showLoadingOverlay
         if let script = pendingScriptForStart {
+            contentController.removeAllUserScripts()
             contentController.addUserScript(script)
         }
         if url.isFileURL {
@@ -81,10 +84,10 @@ class GeoOffersViewController: UIViewController {
             script = WKUserScript(source: javascript, injectionTime: .atDocumentStart, forMainFrameOnly: false)
         }
 
+        pendingScriptForStart = script
         if pageLoaded {
             load(url)
         } else {
-            pendingScriptForStart = script
             pendingURL = url
         }
     }
@@ -133,5 +136,18 @@ extension GeoOffersViewController: WKNavigationDelegate {
 
     func webView(_: WKWebView, didFail _: WKNavigation!, withError error: Error) {
         geoOffersLog("\(error)")
+    }
+}
+
+extension GeoOffersViewController: GeoOffersOffersCacheDelegate {
+    func offersUpdated() {
+        guard Thread.isMainThread else {
+            DispatchQueue.main.async {
+                self.offersUpdated()
+            }
+            return
+        }
+        geoOffersLog("Offers updated")
+        service?.refreshOfferListViewController(self)
     }
 }
