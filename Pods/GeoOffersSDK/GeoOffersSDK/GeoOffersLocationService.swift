@@ -65,7 +65,7 @@ class GeoOffersLocationService: NSObject {
     var monitoredRegions: Set<CLRegion> {
         return locationManager.monitoredRegions
     }
-    
+
     func monitor(regions: [GeoOffersGeoFence]) {
         guard let location = latestLocation, !regions.isEmpty else { return }
         let previouslyMonitoredRegions = monitoredRegions

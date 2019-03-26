@@ -50,15 +50,15 @@ class GeoOffersPresenter: GeoOffersPresenterProtocol {
         vc.presenter = self
         vc.delegate = viewControllerDelegate
         vc.service = service
-        
+
         if var service = service {
             service.offersUpdatedDelegate = vc
         }
-        
+
         refreshOfferListViewController(vc)
         return vc
     }
-    
+
     func refreshOfferListViewController(_ viewController: GeoOffersViewController) {
         guard let url = offersURL() else { return }
         let jsonData = cacheService.buildListingRequestJson()
@@ -66,7 +66,7 @@ class GeoOffersPresenter: GeoOffersPresenterProtocol {
             viewController.noOffers()
             return
         }
-        
+
         let queryString = dataParser.buildOfferListQuerystring(configuration: configuration, locationService: locationService)
         let alreadyDeliveredOfferData = cacheService.buildAlreadyDeliveredOfferJson()
         let javascript = dataParser.buildJavascriptForWebView(listingData: jsonData, couponData: "", authToken: configuration.authToken, tabBackgroundColor: configuration.selectedCategoryTabBackgroundColor, alreadyDeliveredOfferData: alreadyDeliveredOfferData)

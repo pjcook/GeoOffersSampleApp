@@ -9,7 +9,7 @@ protocol GeoOffersViewControllerDelegate: class {
 
 class GeoOffersViewController: UIViewController {
     @IBOutlet private var loadingOverlay: UIView!
-    
+
     private var webView: WKWebView!
     private(set) var pageLoaded = false
     private(set) var pendingURL: URL?
@@ -19,7 +19,7 @@ class GeoOffersViewController: UIViewController {
     weak var presenter: GeoOffersPresenterProtocol?
     weak var delegate: GeoOffersViewControllerDelegate?
     private var showLoadingOverlay = false
-    
+
     var service: GeoOffersSDKServiceProtocol?
 
     override func viewDidLoad() {
@@ -71,7 +71,7 @@ class GeoOffersViewController: UIViewController {
     @IBAction private func close() {
         dismiss(animated: true, completion: nil)
     }
-    
+
     func noOffers() {
         showLoadingOverlay = true
     }

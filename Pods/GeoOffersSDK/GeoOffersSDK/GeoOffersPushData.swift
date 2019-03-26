@@ -13,7 +13,7 @@ struct GeoOffersPushData: Codable {
     let messageIndex: Int
     let messageID: String
     let timestamp: Double
-    
+
     init(message: String, totalParts: Int, scheduleID: Int, messageIndex: Int, messageID: String, timestamp: Double) {
         self.message = message
         self.totalParts = totalParts

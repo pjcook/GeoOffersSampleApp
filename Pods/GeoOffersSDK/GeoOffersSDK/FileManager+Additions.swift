@@ -12,7 +12,7 @@ public extension FileManager {
         guard let path = urls(for: .documentDirectory, in: .userDomainMask).first else {
             throw FileManagerError.missingDocumentDirectory
         }
-        
+
         if !fileExists(atPath: path.path) {
             do {
                 try createDirectory(at: path, withIntermediateDirectories: true, attributes: nil)
@@ -20,7 +20,7 @@ public extension FileManager {
                 throw FileManagerError.failedToCreateDirectory
             }
         }
-        
+
         return path.appendingPathComponent(filename).path
     }
 }

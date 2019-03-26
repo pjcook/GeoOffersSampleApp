@@ -6,13 +6,13 @@ class GeoOffersWebViewCache {
     private let cache: GeoOffersCache
     private let listingCache: GeoOffersListingCache
     private let offersCache: GeoOffersOffersCache
-    
+
     init(cache: GeoOffersCache, listingCache: GeoOffersListingCache, offersCache: GeoOffersOffersCache) {
         self.cache = cache
         self.listingCache = listingCache
         self.offersCache = offersCache
     }
-    
+
     func buildCouponRequestJson(scheduleID: Int) -> String {
         guard let listing = cache.cacheData.listing else { return "{}" }
         var possibleOffer: GeoOffersOffer?
@@ -33,7 +33,7 @@ class GeoOffersWebViewCache {
             return "{}"
         }
     }
-    
+
     private func updateCampaignTimestamps(timestamp: Double) -> GeoOffersListing? {
         guard var listing = cache.cacheData.listing else { return nil }
         var hashes = [String]()
@@ -48,18 +48,18 @@ class GeoOffersWebViewCache {
                 }
             }
         }
-        
+
         if hashes.count > 0 {
             cache.cacheData.listing = listing
             cache.cacheUpdated()
         }
         return listing
     }
-    
+
     func buildListingRequestJson() -> String {
         let timestamp = Date().timeIntervalSince1970 * 1000
         guard let listing = updateCampaignTimestamps(timestamp: timestamp) else { return "{}" }
-        
+
         do {
             let encoder = JSONEncoder()
             let jsonData = try encoder.encode(listing)
@@ -70,7 +70,7 @@ class GeoOffersWebViewCache {
             return "{}"
         }
     }
-    
+
     func buildAlreadyDeliveredOfferJson() -> String {
         let schedules = listingCache.deliveredSchedules()
         let offers = offersCache.offers()

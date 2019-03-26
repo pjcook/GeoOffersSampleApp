@@ -21,11 +21,12 @@ class GeoOffersCache {
             return ""
         }
     }()
+
     private let fileManager: FileManager
     private var saveTimer: Timer?
     private var hasPendingChanges = false
     private let shouldCacheToDisk: Bool
-    
+
     init(
         fileManager: FileManager = FileManager.default,
         savePeriodSeconds: TimeInterval = 30,
@@ -34,23 +35,23 @@ class GeoOffersCache {
         self.fileManager = fileManager
         self.shouldCacheToDisk = shouldCacheToDisk
         load()
-        
+
         NotificationCenter.default.addObserver(forName: UIApplication.didEnterBackgroundNotification, object: nil, queue: nil) { _ in
             self.save()
         }
-        
+
         setupSaveTimer(savePeriodSeconds: savePeriodSeconds)
     }
-    
+
     func clearCache() {
         cacheData = GeoOffersCacheData()
         cacheUpdated()
     }
-    
+
     func cacheUpdated() {
         hasPendingChanges = true
     }
-    
+
     private func setupSaveTimer(savePeriodSeconds: TimeInterval) {
         guard shouldCacheToDisk else { return }
         let saveTimer = Timer.scheduledTimer(withTimeInterval: savePeriodSeconds, repeats: true) { _ in
@@ -59,12 +60,12 @@ class GeoOffersCache {
         }
         self.saveTimer = saveTimer
     }
-    
+
     deinit {
         saveTimer?.invalidate()
         nonQueuedSave()
     }
-    
+
     private func load() {
         guard shouldCacheToDisk, fileManager.fileExists(atPath: savePath) else { return }
         do {
@@ -77,7 +78,7 @@ class GeoOffersCache {
             geoOffersLog("GeoOffersCacheService.load().Failed to load GeoOffersCacheData: \(error)")
         }
     }
-    
+
     func save() {
         guard shouldCacheToDisk else { return }
         hasPendingChanges = false
@@ -85,7 +86,7 @@ class GeoOffersCache {
             self.nonQueuedSave()
         }
     }
-    
+
     private func nonQueuedSave() {
         guard shouldCacheToDisk else { return }
         let cache = cacheData

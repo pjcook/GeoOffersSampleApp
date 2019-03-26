@@ -30,7 +30,7 @@ extension GeoOffersTrackingEvent {
     static func event(with type: GeoOffersTrackingEventType, region: GeoOffersGeoFence) -> GeoOffersTrackingEvent {
         return event(with: type, scheduleID: region.scheduleID, scheduleDeviceID: region.scheduleDeviceID, latitude: region.latitude, longitude: region.longitude)
     }
-    
+
     static func event(with type: GeoOffersTrackingEventType, scheduleID: Int, scheduleDeviceID: String, latitude: Double, longitude: Double) -> GeoOffersTrackingEvent {
         let event = GeoOffersTrackingEvent(type: type, timestamp: Date().timeIntervalSince1970 * 1000, scheduleDeviceID: scheduleDeviceID, scheduleID: scheduleID, latitude: latitude, longitude: longitude)
         return event

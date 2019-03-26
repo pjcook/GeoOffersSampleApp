@@ -12,7 +12,7 @@ struct GeoOffersPendingOffer: Codable {
     var key: String {
         return GeoOffersPendingOffer.generateKey(scheduleID: scheduleID, scheduleDeviceID: scheduleDeviceID)
     }
-    
+
     static func generateKey(scheduleID: Int, scheduleDeviceID: String) -> String {
         return "\(scheduleID)_\(scheduleDeviceID)"
     }

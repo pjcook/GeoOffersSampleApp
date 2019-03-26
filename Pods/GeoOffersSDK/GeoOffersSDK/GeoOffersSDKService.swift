@@ -141,7 +141,7 @@ public class GeoOffersSDKService: GeoOffersSDKServiceProtocol {
 
     private func shouldProcessRemoteNotification(_ notification: [String: AnyObject]) -> Bool {
         let aps = notification["aps"] as? [String: AnyObject] ?? [:]
-        return aps["content-available"] as? Int == 1
+        return aps["content-available"] as? String == "1"
     }
 
     private func handleNotification(_ notification: [String: AnyObject]) -> Bool {
@@ -190,6 +190,7 @@ public class GeoOffersSDKService: GeoOffersSDKServiceProtocol {
         notificationCache.updateCache(pushData: message)
         notificationCache.remove(messageID)
         processListingData()
+        offersUpdatedDelegate?.offersUpdated()
         return true
     }
 
@@ -239,7 +240,7 @@ public class GeoOffersSDKService: GeoOffersSDKServiceProtocol {
     public func buildOfferListViewController() -> UIViewController {
         return presentationService.buildOfferListViewController(service: self)
     }
-    
+
     public func refreshOfferListViewController(_ viewController: UIViewController) {
         guard let vc = viewController as? GeoOffersViewController else { return }
         presentationService.refreshOfferListViewController(vc)
@@ -327,7 +328,7 @@ public class GeoOffersSDKService: GeoOffersSDKServiceProtocol {
 
         return nil
     }
-    
+
     private func processListingData() {
         if let location = locationService.latestLocation {
             let regionsToBeMonitored = dataProcessor.processListing(at: location)
