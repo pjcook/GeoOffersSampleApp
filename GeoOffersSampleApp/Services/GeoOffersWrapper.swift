@@ -1,6 +1,6 @@
 //  Copyright © 2019 Zappit. All rights reserved.
 
-import Foundation
+import CoreLocation
 import GeoOffersSDK
 
 class GeoOffersWrapper {
@@ -23,6 +23,17 @@ class GeoOffersWrapper {
         set {
             let defaults = UserDefaults.standard
             defaults.set(newValue, forKey: "SampleAppPushToken")
+        }
+    }
+    
+    var lastLocation: CLLocationCoordinate2D? {
+        get {
+            let defaults = UserDefaults.standard
+            let latitude = defaults.double(forKey: "GeoOffers_LastRefreshLatitude")
+            let longitude = defaults.double(forKey: "GeoOffers_LastRefreshLongitude")
+            guard latitude != 0, longitude != 0 else { return nil }
+            let location = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+            return location
         }
     }
 }

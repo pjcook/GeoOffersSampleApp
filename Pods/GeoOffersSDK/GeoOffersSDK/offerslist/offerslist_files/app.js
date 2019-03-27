@@ -38827,7 +38827,7 @@ function appMain() {
 			if (window.Android.getDeliveredToAppTimestampSecondsByScheduleIdAsJsonString) {
 				var deliveredToAppTimestampSecondsByScheduleIdJson = window.Android.getDeliveredToAppTimestampSecondsByScheduleIdAsJsonString();
 	
-				deliveredToAppTimestampSecondsByScheduleId = deliveredToAppTimestampSecondsByScheduleIdJson && JSON.parse(deliveredToAppTimestampSecondsByScheduleIdJson) || {};
+				deliveredToAppTimestampSecondsByScheduleId = deliveredToAppTimestampSecondsByScheduleIdJson && deliveredToAppTimestampSecondsByScheduleIdJson || {};
 			} else {
 				deliveredToAppTimestampSecondsByScheduleId = {};
 			}

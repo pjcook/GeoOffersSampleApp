@@ -51,7 +51,7 @@ class GeoOffersDataParser {
         return queryString
     }
 
-    func buildJavascriptForWebView(listingData: String, couponData: String, authToken: String, tabBackgroundColor: String, alreadyDeliveredOfferData: String) -> String {
+    func buildJavascriptForWebView(listingData: String, couponData: String, authToken: String, tabBackgroundColor: String, alreadyDeliveredOfferData: String, deliveredIdsAndTimestamps: String) -> String {
         guard let url = Bundle(for: GeoOffersDataParser.self).url(forResource: "ListingJSTemplate", withExtension: "js") else { return "" }
         do {
             let template = try String(contentsOf: url, encoding: .utf8)
@@ -61,6 +61,7 @@ class GeoOffersDataParser {
                 .replacingOccurrences(of: "<authToken>", with: authToken)
                 .replacingOccurrences(of: "<tabBackgroundColor>", with: tabBackgroundColor)
                 .replacingOccurrences(of: "<AlreadyDeliveredOfferData>", with: alreadyDeliveredOfferData)
+                .replacingOccurrences(of: "<deliveredIdsAndTimestamps>", with: deliveredIdsAndTimestamps)
         } catch {
             geoOffersLog("\(error)")
             return ""

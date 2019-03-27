@@ -69,7 +69,8 @@ class GeoOffersPresenter: GeoOffersPresenterProtocol {
 
         let queryString = dataParser.buildOfferListQuerystring(configuration: configuration, locationService: locationService)
         let alreadyDeliveredOfferData = cacheService.buildAlreadyDeliveredOfferJson()
-        let javascript = dataParser.buildJavascriptForWebView(listingData: jsonData, couponData: "", authToken: configuration.authToken, tabBackgroundColor: configuration.selectedCategoryTabBackgroundColor, alreadyDeliveredOfferData: alreadyDeliveredOfferData)
+        let deliveredIdsAndTimestamps = cacheService.buildAlreadyDeliveredOfferIdTimestampJson()
+        let javascript = dataParser.buildJavascriptForWebView(listingData: jsonData, couponData: "", authToken: configuration.authToken, tabBackgroundColor: configuration.selectedCategoryTabBackgroundColor, alreadyDeliveredOfferData: alreadyDeliveredOfferData, deliveredIdsAndTimestamps: deliveredIdsAndTimestamps)
         viewController.loadRequest(url: url, javascript: javascript, querystring: queryString)
     }
 
@@ -84,7 +85,7 @@ class GeoOffersPresenter: GeoOffersPresenterProtocol {
         let jsonData = cacheService.buildCouponRequestJson(scheduleID: scheduleID)
         vc.presenter = self
         vc.delegate = viewControllerDelegate
-        let javascript = dataParser.buildJavascriptForWebView(listingData: "", couponData: jsonData, authToken: configuration.authToken, tabBackgroundColor: configuration.selectedCategoryTabBackgroundColor, alreadyDeliveredOfferData: "")
+        let javascript = dataParser.buildJavascriptForWebView(listingData: "", couponData: jsonData, authToken: configuration.authToken, tabBackgroundColor: configuration.selectedCategoryTabBackgroundColor, alreadyDeliveredOfferData: "", deliveredIdsAndTimestamps: "")
         let queryString = dataParser.buildCouponQuerystring(configuration: configuration, locationService: locationService)
         vc.loadRequest(url: url, javascript: javascript, querystring: queryString)
         return vc

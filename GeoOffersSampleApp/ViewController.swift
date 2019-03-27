@@ -2,12 +2,18 @@
 
 import GeoOffersSDK
 import UIKit
+import CoreLocation
 
 class ViewController: UIViewController {
     @IBOutlet private var pushToken: UILabel!
+    @IBOutlet private var locationInfo: UILabel!
+    @IBOutlet private var versionNumber: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        guard let version = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String,
+            let build = Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String else { return }
+        versionNumber.text = "Version: \(version) (\(build))"
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender _: Any?) {
@@ -36,6 +42,17 @@ class ViewController: UIViewController {
         if let token = token {
             UIPasteboard.general.string = token
         }
+    }
+    
+    @IBAction private func toggleLocationInfo() {
+        let location = GeoOffersWrapper.shared.lastLocation
+        var locationString = "No Location"
+        if let location = location {
+            locationString = "lat:\(location.latitude), lng:\(location.longitude)"
+            UIPasteboard.general.string = locationString
+        }
+        locationInfo.text = locationString
+        locationInfo.isHidden = !locationInfo.isHidden
     }
 }
 

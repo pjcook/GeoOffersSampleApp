@@ -36,5 +36,10 @@ window.Android = {
         console.log("isOfferCollectedByScheduleId:" + scheduleId);
         return isAlreadyCollectedById[scheduleId];
     },
+    
+    getDeliveredToAppTimestampSecondsByScheduleIdAsJsonString:
+    function () {
+        return {<deliveredIdsAndTimestamps>}
+    },
 };
 

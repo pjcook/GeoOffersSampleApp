@@ -15,6 +15,11 @@ class GeoOffersListingCache {
         self.cache = cache
     }
 
+    func campaign(by scheduleID: Int) -> GeoOffersCampaign? {
+        guard let listing = cache.cacheData.listing else { return nil }
+        return listing.campaigns.first(where: { $1.offer.scheduleId == scheduleID })?.value
+    }
+
     func deliveredSchedules() -> [GeoOffersDeliveredSchedule] {
         guard let listing = cache.cacheData.listing else { return [] }
         return listing.deliveredSchedules

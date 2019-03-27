@@ -196,6 +196,7 @@ public class GeoOffersSDKService: GeoOffersSDKServiceProtocol {
 
     public func application(_: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         firebaseWrapper.didRegisterForPushNotifications(deviceToken: deviceToken)
+        processListingData()
     }
 
     public func application(_: UIApplication, performFetchWithCompletionHandler completionHandler: ((UIBackgroundFetchResult) -> Void)?) {

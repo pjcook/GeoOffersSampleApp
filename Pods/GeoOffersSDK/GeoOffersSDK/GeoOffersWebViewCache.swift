@@ -72,20 +72,38 @@ class GeoOffersWebViewCache {
     }
 
     func buildAlreadyDeliveredOfferJson() -> String {
+        let scheduleIds = deliveredScheduleIDs()
+        var items = [String]()
+        for id in scheduleIds {
+            items.append("\"\(id)\":true")
+        }
+        let itemsString = items.joined(separator: ", ")
+        return itemsString
+    }
+
+    func buildAlreadyDeliveredOfferIdTimestampJson() -> String {
+        let scheduleIds = deliveredScheduleIDs()
+        var items = [String]()
+        for id in scheduleIds {
+            if let campaign = listingCache.campaign(by: id) {
+                let timestamp = campaign.offer.deliveredToAppTimestampSeconds ?? Date().timeIntervalSince1970 * 1000
+                items.append("\"\(id)\":\(timestamp)")
+            }
+        }
+        let itemsString = items.joined(separator: ", ")
+        return itemsString
+    }
+
+    private func deliveredScheduleIDs() -> Set<Int> {
         let schedules = listingCache.deliveredSchedules()
         let offers = offersCache.offers()
         var scheduleIds: Set<Int> = []
-        var items = [String]()
         for schedule in schedules {
             scheduleIds.insert(schedule.scheduleID)
         }
         for offer in offers {
             scheduleIds.insert(offer.scheduleID)
         }
-        for id in scheduleIds {
-            items.append("\"\(id)\":true")
-        }
-        let itemsString = items.joined(separator: ", ")
-        return itemsString
+        return scheduleIds
     }
 }
