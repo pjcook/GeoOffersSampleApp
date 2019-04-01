@@ -15,7 +15,7 @@ struct GeoOffersCountdownsStarted: Codable {
 }
 
 struct GeoOffersDeleteSchedule: Codable {
-    let scheduleID: Int
+    let scheduleID: ScheduleID
     let deviceID: String
 
     enum CodingKeys: String, CodingKey {

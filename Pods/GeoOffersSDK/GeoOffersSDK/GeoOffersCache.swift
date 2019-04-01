@@ -2,13 +2,16 @@
 
 import Foundation
 
+typealias ScheduleID = Int
+
 class GeoOffersCacheData: Codable {
     var listing: GeoOffersListing?
-    var pendingOffers: [String: GeoOffersPendingOffer] = [:]
-    var offers: [String: GeoOffersPendingOffer] = [:]
-    var dataUpdateMessages: [GeoOffersPushData] = []
+    var pushNotificationSplitMessages: [GeoOffersPushData] = []
     var trackingEvents: [GeoOffersTrackingEvent] = []
-    var regionEntries: [String:GeoOffersRegionCacheItem] = [:]
+    var pendingOffers: [ScheduleID: GeoOffersCacheItem] = [:]
+    var offers: [ScheduleID: GeoOffersCachedOffer] = [:]
+    var pendingNotifications: [ScheduleID: GeoOffersCacheItem] = [:]
+    var enteredRegions: [ScheduleID: GeoOffersCacheItem] = [:]
 }
 
 private let geoOffersCacheSaveQueue = DispatchQueue(label: "GeoOffersCacheServiceDefault.Queue")
@@ -92,11 +95,11 @@ class GeoOffersCache {
     private func nonQueuedSave() {
         guard shouldCacheToDisk else { return }
         let cache = cacheData
-        let savePath = self.savePath
+        let path = self.savePath
         do {
             let jsonEncoder = JSONEncoder()
             let jsonData = try jsonEncoder.encode(cache)
-            try jsonData.write(to: URL(fileURLWithPath: savePath))
+            try jsonData.write(to: URL(fileURLWithPath: path))
             geoOffersLog("GeoOffersCacheService.save().saved")
         } catch {
             geoOffersLog("GeoOffersCacheService.save().Failed to save GeoOffersCacheData: \(error)")

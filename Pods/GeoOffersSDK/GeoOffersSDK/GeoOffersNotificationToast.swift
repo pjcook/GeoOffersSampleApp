@@ -21,6 +21,7 @@ class GeoOffersNotificationToast: UIView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
+        backgroundColor = .clear
         container.layer.cornerRadius = 8
         container.layer.masksToBounds = true
     }
@@ -55,6 +56,7 @@ class GeoOffersNotificationToast: UIView {
 
 class GeoOffersNotificationToastManager {
     private var pendingToasts: [GeoOffersNotificationToast] = []
+    private var presentingToast = false
     
     func presentToast(title: String, subtitle: String, delay: TimeInterval) {
         guard UIApplication.shared.keyWindow != nil else { return }
@@ -69,7 +71,8 @@ class GeoOffersNotificationToastManager {
     }
     
     private func processNextToast() {
-        guard let window = UIApplication.shared.keyWindow, !pendingToasts.isEmpty else { return }
+        guard !presentingToast, let window = UIApplication.shared.keyWindow, !pendingToasts.isEmpty else { return }
+        presentingToast = true
         let view = pendingToasts.removeFirst()
         view.delegate = self
         view.present(in: window, delay: 0)
@@ -78,6 +81,7 @@ class GeoOffersNotificationToastManager {
 
 extension GeoOffersNotificationToastManager: GeoOffersNotificationToastDelegate {
     func finishedDisplay() {
+        presentingToast = false
         processNextToast()
     }
 }

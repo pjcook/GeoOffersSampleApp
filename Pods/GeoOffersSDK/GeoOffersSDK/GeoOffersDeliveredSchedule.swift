@@ -3,7 +3,7 @@
 import Foundation
 
 struct GeoOffersDeliveredSchedule: Codable {
-    let scheduleID: Int
+    let scheduleID: ScheduleID
     let scheduleDeviceID: String
 
     enum CodingKeys: String, CodingKey {

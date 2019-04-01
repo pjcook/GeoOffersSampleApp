@@ -2,7 +2,7 @@
 
 import Foundation
 
-class GeoOffersNotificationCache {
+class GeoOffersPushNotificationCache {
     private var cache: GeoOffersCache
 
     init(cache: GeoOffersCache) {
@@ -10,7 +10,7 @@ class GeoOffersNotificationCache {
     }
 
     func add(_ message: GeoOffersPushData) {
-        cache.cacheData.dataUpdateMessages.append(message)
+        cache.cacheData.pushNotificationSplitMessages.append(message)
         cache.cacheUpdated()
     }
 
@@ -19,17 +19,16 @@ class GeoOffersNotificationCache {
     }
 
     func messages(_ messageID: String) -> [GeoOffersPushData] {
-        return cache.cacheData.dataUpdateMessages.filter { $0.messageID == messageID }
+        return cache.cacheData.pushNotificationSplitMessages.filter { $0.messageID == messageID }
     }
 
     func remove(_ messageID: String) {
-        cache.cacheData.dataUpdateMessages.removeAll(where: { $0.messageID == messageID })
+        cache.cacheData.pushNotificationSplitMessages.removeAll(where: { $0.messageID == messageID })
         cache.cacheUpdated()
     }
-
-    func removeAllPushMessages() {
-        cache.cacheData.dataUpdateMessages.removeAll()
-        cache.cacheUpdated()
+    
+    func cleanUpMessages() {
+        // TODO: remove messages that are more than 1 day old
     }
 
     func updateCache(pushData: GeoOffersPushNotificationDataUpdate) {

@@ -5,7 +5,6 @@ import UserNotifications
 
 public protocol GeoOffersUserNotificationCenter {
     func requestAuthorization(options: UNAuthorizationOptions, completionHandler: @escaping (Bool, Error?) -> Void)
-    func removeAllPendingNotificationRequests()
     func removeAllDeliveredNotifications()
     func add(_ request: UNNotificationRequest, withCompletionHandler completionHandler: ((Error?) -> Void)?)
     func removePendingNotificationRequests(withIdentifiers identifiers: [String])
@@ -18,7 +17,6 @@ protocol GeoOffersNotificationServiceProtocol {
     func requestNotificationPermissions()
     func applicationDidBecomeActive(_ application: UIApplication)
     func sendNotification(title: String, subtitle: String, delaySeconds: Double, identifier: String, isSilent: Bool)
-    func removeNotification(with identifier: String)
 }
 
 class GeoOffersNotificationService: GeoOffersNotificationServiceProtocol {
@@ -45,7 +43,6 @@ class GeoOffersNotificationService: GeoOffersNotificationServiceProtocol {
     }
 
     func applicationDidBecomeActive(_: UIApplication) {
-        notificationCenter.removeAllPendingNotificationRequests()
         notificationCenter.removeAllDeliveredNotifications()
         registerOnLaunch()
     }
@@ -81,10 +78,6 @@ class GeoOffersNotificationService: GeoOffersNotificationServiceProtocol {
                 geoOffersLog("GeoOffersSDK.failedToSendNotification Error: \(error)")
             }
         }
-    }
-
-    func removeNotification(with identifier: String) {
-        notificationCenter.removePendingNotificationRequests(withIdentifiers: [identifier])
     }
 }
 

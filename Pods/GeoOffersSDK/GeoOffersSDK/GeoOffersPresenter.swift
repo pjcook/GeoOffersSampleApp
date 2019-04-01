@@ -6,7 +6,7 @@ import WebKit
 protocol GeoOffersPresenterProtocol: class {
     func buildOfferListViewController(service: GeoOffersSDKServiceProtocol?) -> UIViewController
     func refreshOfferListViewController(_ viewController: GeoOffersViewController)
-    func buildCouponViewController(scheduleID: Int) -> UIViewController
+    func buildCouponViewController(scheduleID: ScheduleID) -> UIViewController
     var viewControllerDelegate: GeoOffersViewControllerDelegate? { get set }
 }
 
@@ -71,7 +71,7 @@ class GeoOffersPresenter: GeoOffersPresenterProtocol {
         viewController.loadRequest(url: url, javascript: javascript, querystring: queryString)
     }
 
-    func buildCouponViewController(scheduleID: Int) -> UIViewController {
+    func buildCouponViewController(scheduleID: ScheduleID) -> UIViewController {
         let storyboard = UIStoryboard(name: "GeoOffersSDK", bundle: Bundle(for: GeoOffersPresenter.self))
         guard let url = couponURL(),
             let vc = storyboard.instantiateInitialViewController() as? GeoOffersViewController

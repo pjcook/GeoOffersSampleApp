@@ -9,12 +9,12 @@ extension Double {
 struct GeoOffersPushData: Codable {
     let message: String
     let totalParts: Int
-    let scheduleID: Int
+    let scheduleID: ScheduleID
     let messageIndex: Int
     let messageID: String
     let timestamp: Double
 
-    init(message: String, totalParts: Int, scheduleID: Int, messageIndex: Int, messageID: String, timestamp: Double) {
+    init(message: String, totalParts: Int, scheduleID: ScheduleID, messageIndex: Int, messageID: String, timestamp: Double) {
         self.message = message
         self.totalParts = totalParts
         self.scheduleID = scheduleID
@@ -49,7 +49,7 @@ struct GeoOffersPushData: Codable {
 
 struct GeoOffersPushNotificationDataUpdate: Codable {
     let type: String
-    let scheduleID: Int
+    let scheduleID: ScheduleID
     let campaign: GeoOffersCampaign?
     let regions: [GeoOffersGeoFence]
     let schedule: GeoOffersSchedule

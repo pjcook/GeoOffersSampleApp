@@ -62,7 +62,7 @@ struct GeoOffersOffer: Codable {
 
     var countdownToExpiryStartedTimestampMsOrNull: Double?
 
-    let scheduleId: Int?
+    let scheduleId: ScheduleID?
     let couponDailyLimit: Int?
     let limitedCouponCountForToday: Int?
     let couponExpiryTimestampMs: TimeInterval?

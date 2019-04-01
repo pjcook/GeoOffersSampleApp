@@ -9,7 +9,7 @@ let geoOffersScheduleDateFormatter: DateFormatter = {
 }()
 
 struct GeoOffersSchedule: Codable {
-    let scheduleID: Int
+    let scheduleID: ScheduleID
     let campaignID: Int
     let startDate: Date
     let endDate: Date
@@ -23,7 +23,7 @@ struct GeoOffersSchedule: Codable {
         case repeatingSchedule
     }
 
-    init(scheduleID: Int, campaignID: Int, startDate: Date, endDate: Date, repeatingSchedule: GeoOffersRepeatingSchedule?) {
+    init(scheduleID: ScheduleID, campaignID: Int, startDate: Date, endDate: Date, repeatingSchedule: GeoOffersRepeatingSchedule?) {
         self.scheduleID = scheduleID
         self.campaignID = campaignID
         self.startDate = startDate

@@ -4,7 +4,7 @@ import UIKit
 import WebKit
 
 protocol GeoOffersViewControllerDelegate: class {
-    func deleteOffer(scheduleID: Int)
+    func deleteOffer(scheduleID: ScheduleID)
 }
 
 class GeoOffersViewController: UIViewController {
@@ -92,12 +92,12 @@ class GeoOffersViewController: UIViewController {
         }
     }
 
-    fileprivate func openCoupon(scheduleID: Int) {
+    fileprivate func openCoupon(scheduleID: ScheduleID) {
         guard let vc = presenter?.buildCouponViewController(scheduleID: scheduleID) else { return }
         navigationController?.pushViewController(vc, animated: true)
     }
 
-    fileprivate func deleteOffer(scheduleID: Int) {
+    fileprivate func deleteOffer(scheduleID: ScheduleID) {
         delegate?.deleteOffer(scheduleID: scheduleID)
     }
 }
@@ -106,17 +106,17 @@ extension GeoOffersViewController: WKScriptMessageHandler {
     func userContentController(_: WKUserContentController, didReceive message: WKScriptMessage) {
         if message.name == "openCoupon",
             let scheduleIDString = message.body as? String,
-            let scheduleID = Int(scheduleIDString) {
+            let scheduleID = ScheduleID(scheduleIDString) {
             openCoupon(scheduleID: scheduleID)
         } else if message.name == "openCoupon",
-            let scheduleID = message.body as? Int {
+            let scheduleID = message.body as? ScheduleID {
             openCoupon(scheduleID: scheduleID)
         } else if message.name == "deleteOffer",
             let scheduleIDString = message.body as? String,
-            let scheduleID = Int(scheduleIDString) {
+            let scheduleID = ScheduleID(scheduleIDString) {
             deleteOffer(scheduleID: scheduleID)
         } else if message.name == "deleteOffer",
-            let scheduleID = message.body as? Int {
+            let scheduleID = message.body as? ScheduleID {
             deleteOffer(scheduleID: scheduleID)
         } else {
             geoOffersLog("\(message.body)")

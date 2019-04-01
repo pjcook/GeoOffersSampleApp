@@ -5,7 +5,7 @@ import Foundation
 
 struct GeoOffersGeoFence: Codable {
     let logoImageUrl: String
-    let scheduleID: Int
+    let scheduleID: ScheduleID
     let scheduleDeviceID: String
     let latitude: Double
     let longitude: Double
@@ -27,7 +27,7 @@ struct GeoOffersGeoFence: Codable {
     let notifiesSilently: Bool
 
     var key: String {
-        return GeoOffersPendingOffer.generateKey(scheduleID: scheduleID, scheduleDeviceID: scheduleDeviceID)
+        return String(scheduleID)
     }
     
     var location: CLLocation {

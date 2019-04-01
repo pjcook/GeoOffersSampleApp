@@ -7,7 +7,7 @@ protocol GeoOffersAPIServiceProtocol {
     func pollForNearbyOffers(latitude: Double, longitude: Double, completionHandler: @escaping GeoOffersNetworkResponse)
     func register(pushToken: String, latitude: Double, longitude: Double, clientID: Int, completionHandler: GeoOffersNetworkResponse?)
     func update(pushToken: String, with newToken: String, completionHandler: GeoOffersNetworkResponse?)
-    func delete(scheduleID: Int)
+    func delete(scheduleID: ScheduleID)
     func track(event: GeoOffersTrackingEvent)
     func track(events: [GeoOffersTrackingEvent])
     func countdownsStarted(hashes: [String], completionHandler: GeoOffersNetworkResponse?)
@@ -167,7 +167,7 @@ class GeoOffersAPIService: NSObject, GeoOffersAPIServiceProtocol {
         startTask(task: task)
     }
 
-    func delete(scheduleID: Int) {
+    func delete(scheduleID: ScheduleID) {
         guard let url = URL(string: configuration.apiURL)?
             .appendingPathComponent(EndPoints.deleteOfferFromUser)
         else { return }

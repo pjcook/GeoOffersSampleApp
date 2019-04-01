@@ -37,7 +37,7 @@ public class GeoOffersSDKService: GeoOffersSDKServiceProtocol {
     private let dataParser: GeoOffersPushNotificationProcessor
     private var firebaseWrapper: GeoOffersFirebaseWrapperProtocol
     private let offersCache: GeoOffersOffersCache
-    private let notificationCache: GeoOffersNotificationCache
+    private let notificationCache: GeoOffersPushNotificationCache
     private let listingCache: GeoOffersListingCache
     private let dataProcessor: GeoOffersDataProcessor
 
@@ -54,9 +54,10 @@ public class GeoOffersSDKService: GeoOffersSDKServiceProtocol {
         locationService = GeoOffersLocationService(latestLocation: lastKnownLocation, configuration: configuration)
         let cache = GeoOffersCache()
         let trackingCache = GeoOffersTrackingCache(cache: cache)
-        let regionCache = GeoOffersRegionCache(cache: cache)
-        notificationCache = GeoOffersNotificationCache(cache: cache)
-        offersCache = GeoOffersOffersCache(cache: cache, trackingCache: trackingCache)
+        let sendNotificationCache = GeoOffersSendNotificationCache(cache: cache)
+        let enteredRegionCache = GeoOffersEnteredRegionCache(cache: cache)
+        notificationCache = GeoOffersPushNotificationCache(cache: cache)
+        offersCache = GeoOffersOffersCache(cache: cache)
         listingCache = GeoOffersListingCache(cache: cache, offersCache: offersCache)
         apiService = GeoOffersAPIService(configuration: self.configuration, trackingCache: trackingCache)
 
@@ -66,7 +67,8 @@ public class GeoOffersSDKService: GeoOffersSDKServiceProtocol {
         dataProcessor = GeoOffersDataProcessor(
             offersCache: offersCache,
             listingCache: listingCache,
-            regionCache: regionCache,
+            sendNotificationCache: sendNotificationCache,
+            enteredRegionCache: enteredRegionCache,
             notificationService: notificationService,
             apiService: apiService
         )
@@ -88,7 +90,7 @@ public class GeoOffersSDKService: GeoOffersSDKServiceProtocol {
         dataParser: GeoOffersPushNotificationProcessor,
         firebaseWrapper: GeoOffersFirebaseWrapperProtocol,
         offersCache: GeoOffersOffersCache,
-        notificationCache: GeoOffersNotificationCache,
+        notificationCache: GeoOffersPushNotificationCache,
         listingCache: GeoOffersListingCache,
         dataProcessor: GeoOffersDataProcessor
     ) {
@@ -180,12 +182,14 @@ extension GeoOffersSDKService: GeoOffersPushNotificationProcessorDelegate {
     
     internal func processListingData() {
         guard let location = locationService.latestLocation else { return }
-        let regionsToBeMonitored = dataProcessor.process(at: location)
+        dataProcessor.process(at: location)
+        
+        guard let regionsToBeMonitored = dataProcessor.regionsToBeMonitored(at: location) else { return }
         locationService.monitor(regions: regionsToBeMonitored)
     }
     
     private func processListingData(for location: CLLocationCoordinate2D) {
-        _ = dataProcessor.process(at: location)
+        dataProcessor.process(at: location)
     }
 }
 
@@ -244,7 +248,7 @@ extension GeoOffersSDKService: GeoOffersFirebaseWrapperDelegate {
 }
 
 extension GeoOffersSDKService: GeoOffersViewControllerDelegate {
-    func deleteOffer(scheduleID: Int) {
+    func deleteOffer(scheduleID: ScheduleID) {
         apiService.delete(scheduleID: scheduleID)
     }
 }
@@ -271,7 +275,7 @@ extension GeoOffersSDKService {
             else {
                 return true
         }
-        let minimumWaitTimePassed = abs(Date(timeIntervalSince1970: lastRefreshTimeInterval).timeIntervalSinceNow) > configuration.minimumRefreshWaitTime
+        let minimumWaitTimePassed = abs(Date(timeIntervalSince1970: lastRefreshTimeInterval).timeIntervalSinceNow) >= configuration.minimumRefreshWaitTime
         let currentLocation = CLLocation(latitude: location.latitude, longitude: location.longitude)
         let refreshLocation = CLLocation(latitude: lastRefreshLocation.latitude, longitude: lastRefreshLocation.longitude)
         let movedMinimumDistance = currentLocation.distance(from: refreshLocation) >= configuration.minimumRefreshDistance

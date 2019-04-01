@@ -19,12 +19,12 @@ struct GeoOffersNotificationMessageType: Codable {
 }
 
 class GeoOffersPushNotificationProcessor {
-    private let notificationCache: GeoOffersNotificationCache
+    private let notificationCache: GeoOffersPushNotificationCache
     private let listingCache: GeoOffersListingCache
     
     weak var delegate: GeoOffersPushNotificationProcessorDelegate?
     
-    init(notificationCache: GeoOffersNotificationCache, listingCache: GeoOffersListingCache) {
+    init(notificationCache: GeoOffersPushNotificationCache, listingCache: GeoOffersListingCache) {
         self.notificationCache = notificationCache
         self.listingCache = listingCache
     }
@@ -46,7 +46,9 @@ class GeoOffersPushNotificationProcessor {
     }
     
     func handleNotification(_ notification: [String: AnyObject]) -> Bool {
-        guard let messageType = processNotificationMessageType(notification) else { return false }
+        guard let messageType = processNotificationMessageType(notification) else {
+            return handleDataNotification(notification)
+        }
         
         switch messageType.type {
         case .couponRedeemed:

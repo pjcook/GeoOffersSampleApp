@@ -155,8 +155,8 @@ extension GeoOffersLocationService: CLLocationManagerDelegate {
         startMonitoringSignificantLocationChanges()
     }
 
-    func locationManager(_: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let latestLocation = locations.first else { return }
+    func locationManager(_ locationManager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let latestLocation = locationManager.location ?? locations.first else { return }
         self.latestLocation = latestLocation.coordinate
         delegate?.userDidMoveSignificantDistance()
         delegate?.didUpdateLocations(locations)
