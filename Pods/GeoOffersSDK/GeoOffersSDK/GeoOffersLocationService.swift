@@ -4,18 +4,24 @@ import CoreLocation
 
 protocol GeoOffersLocationServiceDelegate: class {
     func userDidMoveSignificantDistance()
+    func didUpdateLocations(_ locations: [CLLocation])
     func didEnterRegion(_ identifier: String)
     func didExitRegion(_ identifier: String)
 }
 
-protocol GeoOffersLocationManager {
+protocol GeoOffersLocationManager: class {
+    var location: CLLocation? { get }
+    var activityType: CLActivityType { get set }
+    var desiredAccuracy: CLLocationAccuracy { get set }
+    var distanceFilter: CLLocationDistance { get set }
     var delegate: CLLocationManagerDelegate? { get set }
     var monitoredRegions: Set<CLRegion> { get }
     var maximumRegionMonitoringDistance: CLLocationDistance { get }
     var hasLocationPermission: Bool { get }
     var canMonitorForRegions: Bool { get }
     var allowsBackgroundLocationUpdates: Bool { get set }
-
+    
+    func startUpdatingLocation()
     func requestAlwaysAuthorization()
     func startMonitoringSignificantLocationChanges()
     func startMonitoring(for region: CLRegion)
@@ -35,13 +41,16 @@ extension CLLocationManager: GeoOffersLocationManager {
 class GeoOffersLocationService: NSObject {
     private var locationManager: GeoOffersLocationManager
     private(set) var latestLocation: CLLocationCoordinate2D?
+    private let configuration: GeoOffersConfigurationProtocol
+    private let maxNumberOfRegionsThatCanBeMonitoredPerApp = 20
 
     weak var delegate: GeoOffersLocationServiceDelegate?
 
-    init(latestLocation: CLLocationCoordinate2D?, locationManager: GeoOffersLocationManager = CLLocationManager()) {
+    init(latestLocation: CLLocationCoordinate2D?, locationManager: GeoOffersLocationManager = CLLocationManager(), configuration: GeoOffersConfigurationProtocol) {
+        self.configuration = configuration
         self.locationManager = locationManager
         super.init()
-        self.latestLocation = latestLocation
+        self.latestLocation = latestLocation ?? locationManager.location?.coordinate
         self.locationManager.delegate = self
         startMonitoringSignificantLocationChanges()
     }
@@ -57,9 +66,12 @@ class GeoOffersLocationService: NSObject {
     }
 
     func startMonitoringSignificantLocationChanges() {
-        guard locationManager.hasLocationPermission, locationManager.canMonitorForRegions else { return }
+        guard locationManager.hasLocationPermission else { return }
         locationManager.allowsBackgroundLocationUpdates = true
-        locationManager.startMonitoringSignificantLocationChanges()
+        locationManager.activityType = .other
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        locationManager.distanceFilter = configuration.minimumRefreshDistance
+        locationManager.startUpdatingLocation()
     }
 
     var monitoredRegions: Set<CLRegion> {
@@ -67,18 +79,50 @@ class GeoOffersLocationService: NSObject {
     }
 
     func monitor(regions: [GeoOffersGeoFence]) {
-        guard let location = latestLocation, !regions.isEmpty else { return }
+        guard latestLocation != nil, !regions.isEmpty else { return }
         let previouslyMonitoredRegions = monitoredRegions
-        let currentLocation = CLLocation(latitude: location.latitude, longitude: location.longitude)
         stopMonitoringAllRegions()
+        
+        let regionsToTrack = filterAndReduceCrossedRegions(regions)
+
+        for region in regionsToTrack {
+            let key = region.key
+            let ignoreIfInside = previouslyMonitoredRegions.contains(where: { $0.identifier == key })
+            monitor(center: region.coordinate, radiusMeters: Double(region.radiusMeters), identifier: key, ignoreIfInside: ignoreIfInside)
+        }
+    }
+    
+    func filterAndReduceCrossedRegions(_ regions: [GeoOffersGeoFence]) -> [GeoOffersGeoFence] {
+        guard let location = latestLocation, !regions.isEmpty else { return [] }
+        var regionsToTrack = [GeoOffersGeoFence]()
+        
+        let currentLocation = CLLocation(latitude: location.latitude, longitude: location.longitude)
         let sortedRegions = regions.sorted { (f1, f2) -> Bool in
             f1.location.distance(from: currentLocation) < f2.location.distance(from: currentLocation)
         }
+        
         for region in sortedRegions {
-            let key = GeoOffersPendingOffer.generateKey(scheduleID: region.scheduleID, scheduleDeviceID: region.scheduleDeviceID)
-            let ignoreIfInside = previouslyMonitoredRegions.contains(where: { $0.identifier == key })
-            monitor(center: region.coordinate, radiusMeters: Double(region.radiusKm * 1000), identifier: key, ignoreIfInside: ignoreIfInside)
+            guard regionsToTrack.count < maxNumberOfRegionsThatCanBeMonitoredPerApp else { break }
+            
+            if regionsToTrack.isEmpty {
+                regionsToTrack.append(region)
+                continue
+            }
+            
+            var trackRegion = true
+            for trackedRegion in regionsToTrack {
+                if CLCircularRegion(center: trackedRegion.coordinate, radius: trackedRegion.radiusMeters, identifier: "dummy").contains(region.coordinate) {
+                    trackRegion = false
+                    break
+                }
+            }
+            
+            if trackRegion {
+                regionsToTrack.append(region)
+            }
         }
+        
+        return regionsToTrack
     }
 
     /*
@@ -95,7 +139,7 @@ class GeoOffersLocationService: NSObject {
             delegate?.didEnterRegion(region.identifier)
         }
     }
-
+    
     func stopMonitoringRegion(with identifier: String) {
         for region in locationManager.monitoredRegions {
             if region.identifier == identifier {
@@ -115,6 +159,7 @@ extension GeoOffersLocationService: CLLocationManagerDelegate {
         guard let latestLocation = locations.first else { return }
         self.latestLocation = latestLocation.coordinate
         delegate?.userDidMoveSignificantDistance()
+        delegate?.didUpdateLocations(locations)
     }
 
     func locationManager(_: CLLocationManager, monitoringDidFailFor region: CLRegion?, withError error: Error) {

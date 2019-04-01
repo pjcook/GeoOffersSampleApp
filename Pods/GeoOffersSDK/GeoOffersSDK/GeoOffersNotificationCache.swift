@@ -39,7 +39,7 @@ class GeoOffersNotificationCache {
         var updatedRegions = listing.regions
         for region in pushData.regions {
             if var regionsByScheduleID = updatedRegions[String(region.scheduleID)] {
-                regionsByScheduleID.removeAll(where: { $0.scheduleDeviceID == region.scheduleDeviceID })
+                regionsByScheduleID.removeAll(where: { $0.scheduleID == region.scheduleID && $0.scheduleDeviceID == region.scheduleDeviceID })
                 regionsByScheduleID.append(region)
             } else {
                 updatedRegions[String(region.scheduleID)] = [region]

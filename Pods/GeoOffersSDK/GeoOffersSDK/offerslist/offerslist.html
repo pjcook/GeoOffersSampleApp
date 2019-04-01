@@ -75,6 +75,7 @@
                     <div
                         v-if="allowExpandIconToShow"
                         class="category categoriesGridExpanderContractor"
+                        :class="{ iPhoneCategoriesGridExpanderContractor: isOnIPhone() }"
                         :style="{ background: selectedCategoryTabBackgroundColor || '#000000' }"
                         @mousedown="isCategoriesViewExpanded = !isCategoriesViewExpanded"
                         >

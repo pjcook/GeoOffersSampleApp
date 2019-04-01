@@ -38019,6 +38019,9 @@ function appMain() {
 		},
 
 		methods: {
+                                           isOnIPhone: function() {
+                                           return navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+                                           },
 			getExpiryTimeMessage: function getExpiryTimeMessage(offer) {
 				var couponExpiryTimestampMs = offer.couponExpiryTimestampMs,
 				    msLeft = couponExpiryTimestampMs - this.currentTimestamp * 1000;

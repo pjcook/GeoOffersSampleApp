@@ -7,25 +7,46 @@ public protocol GeoOffersOffersCacheDelegate: class {
 }
 
 class GeoOffersOffersCache {
-    private var pendingOffersTimer: Timer?
     private var cache: GeoOffersCache
-    private let apiService: GeoOffersAPIServiceProtocol
-    private var fencesCache: GeoOffersGeoFencesCache
+    private let trackingCache: GeoOffersTrackingCache
 
     weak var delegate: GeoOffersOffersCacheDelegate?
 
     init(
         cache: GeoOffersCache,
-        fencesCache: GeoOffersGeoFencesCache,
-        apiService: GeoOffersAPIServiceProtocol
+        trackingCache: GeoOffersTrackingCache
     ) {
         self.cache = cache
-        self.fencesCache = fencesCache
-        self.apiService = apiService
+        self.trackingCache = trackingCache
     }
-
-    deinit {
-        pendingOffersTimer?.invalidate()
+    
+    func appendDeliveredSchedules(_ deliveredSchedules: [GeoOffersDeliveredSchedule]) {
+        let now = Date()
+        for offer in deliveredSchedules {
+            let key = GeoOffersPendingOffer.generateKey(scheduleID: offer.scheduleID, scheduleDeviceID: offer.scheduleDeviceID)
+            if cache.cacheData.offers[key] == nil {
+                let deliveredOffer = GeoOffersPendingOffer(
+                    scheduleID: offer.scheduleID,
+                    scheduleDeviceID: offer.scheduleDeviceID,
+                    createdDate: now)
+                cache.cacheData.offers[key] = deliveredOffer
+            }
+            cache.cacheData.pendingOffers.removeValue(forKey: key)
+        }
+    }
+    
+    func pendingoffer(identifier: String) -> GeoOffersPendingOffer? {
+        return cache.cacheData.pendingOffers[identifier]
+    }
+    
+    func promotePendingOffer(identifier: String) {
+        guard let pendingOffer = cache.cacheData.pendingOffers.removeValue(forKey: identifier) else { return }
+        cache.cacheData.offers[identifier] = pendingOffer
+    }
+    
+    func filterPendingOrOffered(from regions:[GeoOffersGeoFence]) -> [GeoOffersGeoFence] {
+        let notPending = regions.compactMap { cache.cacheData.pendingOffers[$0.key] == nil ? $0 : nil }
+        return notPending.compactMap { cache.cacheData.offers[$0.key] == nil ? $0 : nil }
     }
 
     func offers() -> [GeoOffersPendingOffer] {
@@ -35,27 +56,26 @@ class GeoOffersOffersCache {
         return offers
     }
 
-    func addPendingOffer(
-        scheduleID: Int,
-        scheduleDeviceID: String,
-        latitude: Double,
-        longitude: Double,
-        notificationDwellDelayMs: Double
-    ) {
-        let key = GeoOffersPendingOffer.generateKey(scheduleID: scheduleID, scheduleDeviceID: scheduleDeviceID)
+    func addPendingOffer(region: GeoOffersGeoFence) {
+        let key = region.key
         guard cache.cacheData.pendingOffers[key] == nil, cache.cacheData.offers[key] == nil else { return }
-        let offer = GeoOffersPendingOffer(scheduleID: scheduleID, scheduleDeviceID: scheduleDeviceID, latitude: latitude, longitude: longitude, notificationDwellDelay: notificationDwellDelayMs / 1000, createdDate: Date())
-        if notificationDwellDelayMs <= 0 {
+        let offer = GeoOffersPendingOffer(
+            scheduleID: region.scheduleID,
+            scheduleDeviceID: region.scheduleDeviceID,
+            latitude: region.latitude,
+            longitude: region.longitude,
+            notificationDwellDelay: region.notificationDwellDelaySeconds,
+            createdDate: Date())
+        if region.notificationDwellDelaySeconds <= 0 {
             cache.cacheData.offers[key] = offer
             if let event = buildOfferDeliveredEvent(offer) {
-                apiService.track(events: [event])
+                trackingCache.add([event])
             }
             delegate?.offersUpdated()
         } else {
             cache.cacheData.pendingOffers[key] = offer
         }
         cache.cacheUpdated()
-        schedulePendingOfferTimeIfRequired()
     }
 
     func removePendingOffer(identifier: String) {
@@ -63,74 +83,8 @@ class GeoOffersOffersCache {
         cache.cacheUpdated()
     }
 
-    func hasPendingOffers() -> Bool {
-        return !cache.cacheData.pendingOffers.isEmpty
-    }
-
-    func hasOffers() -> Bool {
-        return !cache.cacheData.offers.isEmpty
-    }
-
-    func pendingOffer(_ identifier: String) -> GeoOffersPendingOffer? {
-        return cache.cacheData.pendingOffers.first(where: { $0.value.key == identifier })?.value
-    }
-
-    func clearPendingOffers() {
-        cache.cacheData.pendingOffers.removeAll()
-        cache.cacheUpdated()
-    }
-
     private func buildOfferDeliveredEvent(_ offer: GeoOffersPendingOffer) -> GeoOffersTrackingEvent? {
         let event = GeoOffersTrackingEvent.event(with: .offerDelivered, scheduleID: offer.scheduleID, scheduleDeviceID: offer.scheduleDeviceID, latitude: offer.latitude, longitude: offer.longitude)
         return event
-    }
-
-    private func startPendingOffersTimer() {
-        pendingOffersTimer?.invalidate()
-        let timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { _ in
-            self.queueRefreshPendingOffers()
-        }
-        pendingOffersTimer = timer
-    }
-
-    private var refreshPendingOffersInProgress = false
-    private func queueRefreshPendingOffers() {
-        guard !refreshPendingOffersInProgress else { return }
-        refreshPendingOffersInProgress = true
-        refreshPendingOffers()
-    }
-
-    private func schedulePendingOfferTimeIfRequired() {
-        if !cache.cacheData.pendingOffers.isEmpty {
-            startPendingOffersTimer()
-        }
-    }
-
-    func refreshPendingOffers() {
-        var newOffers = [GeoOffersPendingOffer]()
-        let pendingOffers = cache.cacheData.pendingOffers.values
-        for offer in pendingOffers {
-            if abs(offer.createdDate.timeIntervalSinceNow) >= offer.notificationDwellDelay {
-                newOffers.append(offer)
-            }
-        }
-
-        guard !newOffers.isEmpty else { return }
-        var events = [GeoOffersTrackingEvent]()
-        for offer in newOffers {
-            let key = GeoOffersPendingOffer.generateKey(scheduleID: offer.scheduleID, scheduleDeviceID: offer.scheduleDeviceID)
-            cache.cacheData.pendingOffers.removeValue(forKey: key)
-            cache.cacheData.offers[key] = offer
-            if let event = buildOfferDeliveredEvent(offer) {
-                events.append(event)
-            }
-        }
-        if !events.isEmpty {
-            apiService.track(events: events)
-            cache.cacheUpdated()
-            delegate?.offersUpdated()
-        }
-        refreshPendingOffersInProgress = false
-        schedulePendingOfferTimeIfRequired()
     }
 }

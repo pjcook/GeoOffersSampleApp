@@ -32,7 +32,7 @@ extension GeoOffersTrackingEvent {
     }
 
     static func event(with type: GeoOffersTrackingEventType, scheduleID: Int, scheduleDeviceID: String, latitude: Double, longitude: Double) -> GeoOffersTrackingEvent {
-        let event = GeoOffersTrackingEvent(type: type, timestamp: Date().timeIntervalSince1970 * 1000, scheduleDeviceID: scheduleDeviceID, scheduleID: scheduleID, latitude: latitude, longitude: longitude)
+        let event = GeoOffersTrackingEvent(type: type, timestamp: Date().unixTimeIntervalSince1970, scheduleDeviceID: scheduleDeviceID, scheduleID: scheduleID, latitude: latitude, longitude: longitude)
         return event
     }
 }

@@ -1,6 +1,6 @@
 //  Copyright © 2019 Zappit. All rights reserved.
 
-import Foundation
+import CoreLocation
 
 protocol GeoOffersListingCacheDelegate: class {
     func listingUpdated()
@@ -8,21 +8,39 @@ protocol GeoOffersListingCacheDelegate: class {
 
 class GeoOffersListingCache {
     private var cache: GeoOffersCache
+    private var offersCache: GeoOffersOffersCache
 
     weak var delegate: GeoOffersListingCacheDelegate?
 
-    init(cache: GeoOffersCache) {
+    init(cache: GeoOffersCache, offersCache: GeoOffersOffersCache) {
         self.cache = cache
+        self.offersCache = offersCache
     }
 
     func campaign(by scheduleID: Int) -> GeoOffersCampaign? {
         guard let listing = cache.cacheData.listing else { return nil }
         return listing.campaigns.first(where: { $1.offer.scheduleId == scheduleID })?.value
     }
-
-    func deliveredSchedules() -> [GeoOffersDeliveredSchedule] {
-        guard let listing = cache.cacheData.listing else { return [] }
-        return listing.deliveredSchedules
+    
+    func regions(at location: CLLocationCoordinate2D) -> [GeoOffersGeoFence] {
+        guard let regions = cache.cacheData.listing?.regions else { return [] }
+        return regions.reduce([]) { $0 + $1.value.compactMap { $0.cirularRegion.contains(location) ? $0 : nil } }
+    }
+    
+    func regions(notAt location: CLLocationCoordinate2D) -> [GeoOffersGeoFence] {
+        guard let regions = cache.cacheData.listing?.regions else { return [] }
+        return regions.reduce([]) { $0 + $1.value.compactMap { $0.cirularRegion.contains(location) ? nil : $0 } }
+    }
+    
+    func redeemCoupon(campaignId: Int) {
+        let key = String(campaignId)
+        guard var listing = cache.cacheData.listing, var campaign = listing.campaigns[key]
+        else { return }
+        campaign.offer.isRedeemed = true
+        listing.campaigns[key] = campaign
+        cache.cacheData.listing = listing
+        cache.cacheUpdated()
+        delegate?.listingUpdated()
     }
 
     func clearCache() {
@@ -37,41 +55,18 @@ class GeoOffersListingCache {
         return cache.cacheData.listing
     }
 
-    func schedules() -> [GeoOffersSchedule] {
-        guard let listing = cache.cacheData.listing else { return [] }
-        return listing.schedules
-    }
-
     func replaceCache(_ geoFenceData: GeoOffersListing) {
         cache.cacheData.listing = geoFenceData
+        offersCache.appendDeliveredSchedules(geoFenceData.deliveredSchedules)
         cache.cacheUpdated()
         delegate?.listingUpdated()
     }
-
-    func schedules(for scheduleID: Int, scheduleDeviceID: String) -> [GeoOffersSchedule] {
-        guard let listing = cache.cacheData.listing else { return [] }
-        var schedules = [GeoOffersSchedule]()
-        let cachedSchedules = listing.schedules
-        for schedule in cachedSchedules {
-            if schedule.scheduleID == scheduleID,
-                deliveredSchedule(for: scheduleID, scheduleDeviceID: scheduleDeviceID) == false {
-                schedules.append(schedule)
-            }
+    
+    func hasValidSchedule(by scheduleID: Int, date: Date) -> Bool {
+        guard let schedules = cache.cacheData.listing?.schedules else { return false }
+        let schedule = schedules.first {
+            return $0.scheduleID == scheduleID && $0.isValid(for: date)
         }
-
-        return schedules
-    }
-
-    func deliveredSchedule(for scheduleID: Int, scheduleDeviceID: String) -> Bool {
-        guard let listing = cache.cacheData.listing else { return false }
-        let deliveredSchedules = listing.deliveredSchedules
-
-        for schedule in deliveredSchedules {
-            if schedule.scheduleID == scheduleID, schedule.scheduleDeviceID == scheduleDeviceID {
-                return true
-            }
-        }
-
-        return false
+        return schedule != nil
     }
 }

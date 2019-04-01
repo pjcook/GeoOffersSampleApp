@@ -14,19 +14,16 @@ class GeoOffersPresenter: GeoOffersPresenterProtocol {
     private let configuration: GeoOffersSDKConfiguration
     private let locationService: GeoOffersLocationService
     private let cacheService: GeoOffersWebViewCache
-    private let dataParser: GeoOffersDataParser
     weak var viewControllerDelegate: GeoOffersViewControllerDelegate?
 
     init(
         configuration: GeoOffersSDKConfiguration,
         locationService: GeoOffersLocationService,
-        cacheService: GeoOffersWebViewCache,
-        dataParser: GeoOffersDataParser
+        cacheService: GeoOffersWebViewCache
     ) {
         self.configuration = configuration
         self.locationService = locationService
         self.cacheService = cacheService
-        self.dataParser = dataParser
     }
 
     private func offersURL() -> URL? {
@@ -67,10 +64,10 @@ class GeoOffersPresenter: GeoOffersPresenterProtocol {
             return
         }
 
-        let queryString = dataParser.buildOfferListQuerystring(configuration: configuration, locationService: locationService)
+        let queryString = buildOfferListQuerystring(configuration: configuration, locationService: locationService)
         let alreadyDeliveredOfferData = cacheService.buildAlreadyDeliveredOfferJson()
         let deliveredIdsAndTimestamps = cacheService.buildAlreadyDeliveredOfferIdTimestampJson()
-        let javascript = dataParser.buildJavascriptForWebView(listingData: jsonData, couponData: "", authToken: configuration.authToken, tabBackgroundColor: configuration.selectedCategoryTabBackgroundColor, alreadyDeliveredOfferData: alreadyDeliveredOfferData, deliveredIdsAndTimestamps: deliveredIdsAndTimestamps)
+        let javascript = buildJavascriptForWebView(listingData: jsonData, couponData: "", authToken: configuration.authToken, tabBackgroundColor: configuration.selectedCategoryTabBackgroundColor, alreadyDeliveredOfferData: alreadyDeliveredOfferData, deliveredIdsAndTimestamps: deliveredIdsAndTimestamps)
         viewController.loadRequest(url: url, javascript: javascript, querystring: queryString)
     }
 
@@ -85,9 +82,53 @@ class GeoOffersPresenter: GeoOffersPresenterProtocol {
         let jsonData = cacheService.buildCouponRequestJson(scheduleID: scheduleID)
         vc.presenter = self
         vc.delegate = viewControllerDelegate
-        let javascript = dataParser.buildJavascriptForWebView(listingData: "", couponData: jsonData, authToken: configuration.authToken, tabBackgroundColor: configuration.selectedCategoryTabBackgroundColor, alreadyDeliveredOfferData: "", deliveredIdsAndTimestamps: "")
-        let queryString = dataParser.buildCouponQuerystring(configuration: configuration, locationService: locationService)
+        let javascript = buildJavascriptForWebView(listingData: "", couponData: jsonData, authToken: configuration.authToken, tabBackgroundColor: configuration.selectedCategoryTabBackgroundColor, alreadyDeliveredOfferData: "", deliveredIdsAndTimestamps: "")
+        let queryString = buildCouponQuerystring(configuration: configuration, locationService: locationService)
         vc.loadRequest(url: url, javascript: javascript, querystring: queryString)
         return vc
+    }
+}
+
+extension GeoOffersPresenter {
+    func buildOfferListQuerystring(configuration: GeoOffersConfigurationProtocol, locationService: GeoOffersLocationService) -> String {
+        let registrationCode = configuration.registrationCode
+        var latitude = ""
+        var longitude = ""
+        if let location = locationService.latestLocation {
+            latitude = String(location.latitude)
+            longitude = String(location.longitude)
+        }
+        let deviceID = configuration.deviceID
+        let queryString = "#\(registrationCode),\(latitude),\(longitude),\(deviceID)"
+        return queryString
+    }
+    
+    func buildCouponQuerystring(configuration: GeoOffersConfigurationProtocol, locationService: GeoOffersLocationService) -> String {
+        var latitude = ""
+        var longitude = ""
+        if let location = locationService.latestLocation {
+            latitude = String(location.latitude)
+            longitude = String(location.longitude)
+        }
+        let timezone = configuration.timezone.urlEncode() ?? ""
+        let queryString = "#\(latitude),\(longitude),\(timezone)"
+        return queryString
+    }
+    
+    func buildJavascriptForWebView(listingData: String, couponData: String, authToken: String, tabBackgroundColor: String, alreadyDeliveredOfferData: String, deliveredIdsAndTimestamps: String) -> String {
+        guard let url = Bundle(for: GeoOffersPresenter.self).url(forResource: "ListingJSTemplate", withExtension: "js") else { return "" }
+        do {
+            let template = try String(contentsOf: url, encoding: .utf8)
+            return template
+                .replacingOccurrences(of: "<listingData>", with: listingData)
+                .replacingOccurrences(of: "<couponData>", with: couponData)
+                .replacingOccurrences(of: "<authToken>", with: authToken)
+                .replacingOccurrences(of: "<tabBackgroundColor>", with: tabBackgroundColor)
+                .replacingOccurrences(of: "<AlreadyDeliveredOfferData>", with: alreadyDeliveredOfferData)
+                .replacingOccurrences(of: "<deliveredIdsAndTimestamps>", with: deliveredIdsAndTimestamps)
+        } catch {
+            geoOffersLog("\(error)")
+            return ""
+        }
     }
 }

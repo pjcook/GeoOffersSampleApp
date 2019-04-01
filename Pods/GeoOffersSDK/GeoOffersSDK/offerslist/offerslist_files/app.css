@@ -2389,6 +2389,8 @@ select, [type='text'], [type='password'], [type='date'], [type='datetime'], [typ
     margin: 0;
     bottom: 6px;
     right: 6px; }
+#app #categories-grid .iPhoneCategoriesGridExpanderContractor {
+    padding-bottom: 3.7px; }
 #app #rewards-container {
     -webkit-flex-grow: 1;
     -ms-flex-positive: 1;
@@ -2857,8 +2859,6 @@ select, [type='text'], [type='password'], [type='date'], [type='datetime'], [typ
         padding: 1.5rem 2.25rem 1.2rem 2.25rem;
         z-index: 10001;
         overflow: auto;
-        -webkit-overflow-scrolling: touch;
-        -webkit-transform: translateZ(0);
     }
     body #app #coupons-overlay #categories-grid .sticky {
         position: fixed;

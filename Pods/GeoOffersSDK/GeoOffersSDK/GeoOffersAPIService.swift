@@ -59,10 +59,12 @@ class GeoOffersAPIService: NSObject, GeoOffersAPIServiceProtocol {
     private var activeTasks: [Int: GeoOffersNetworkTask] = [:]
     private let configuration: GeoOffersSDKConfiguration
     private var session: URLSession?
+    private var trackingCache: GeoOffersTrackingCache
 
     var backgroundSessionCompletionHandler: (() -> Void)?
 
-    init(configuration: GeoOffersSDKConfiguration, session: URLSession? = nil) {
+    init(configuration: GeoOffersSDKConfiguration, session: URLSession? = nil, trackingCache: GeoOffersTrackingCache) {
+        self.trackingCache = trackingCache
         self.configuration = configuration
         super.init()
         if let session = session {
@@ -109,7 +111,7 @@ class GeoOffersAPIService: NSObject, GeoOffersAPIServiceProtocol {
 
         var request = generateRequest(url: url, method: HTTPMethod.post)
 
-        let data = GeoOffersCountdownsStarted(timezone: configuration.timezone, timestamp: Date().timeIntervalSince1970 * 1000, hashes: hashes)
+        let data = GeoOffersCountdownsStarted(timezone: configuration.timezone, timestamp: Date().unixTimeIntervalSince1970, hashes: hashes)
         guard let jsonData = encode(data) else {
             completionHandler?(.failure(GeoOffersAPIErrors.failedToBuildJsonForPost))
             return
@@ -185,11 +187,16 @@ class GeoOffersAPIService: NSObject, GeoOffersAPIServiceProtocol {
         track(events: [event])
     }
 
+    private var trackingRequestInProgress = false
     func track(events: [GeoOffersTrackingEvent]) {
+        guard !trackingRequestInProgress else {
+            trackingCache.add(events)
+            return
+        }
         guard let url = URL(string: configuration.apiURL)?
             .appendingPathComponent(EndPoints.tracking)
         else { return }
-
+        trackingRequestInProgress = true
         var request = generateRequest(url: url, method: HTTPMethod.post)
 
         let trackingWrapper = GeoOffersTrackingWrapper(deviceID: configuration.deviceID, timezone: configuration.timezone, events: events)
@@ -197,8 +204,25 @@ class GeoOffersAPIService: NSObject, GeoOffersAPIServiceProtocol {
         request.httpBody = jsonData
 
         guard let dataTask = session?.dataTask(with: request) else { return }
-        let task = GeoOffersNetworkTask(id: dataTask.taskIdentifier, task: dataTask, isDataTask: true, completionHandler: nil)
+        let task = GeoOffersNetworkTask(id: dataTask.taskIdentifier, task: dataTask, isDataTask: true) { response in
+            DispatchQueue.main.async {
+                self.trackingRequestInProgress = false
+                switch response {
+                case .failure:
+                    self.trackingCache.add(events)
+                default:
+                    self.checkForPendingTrackingEvents()
+                }
+            }
+        }
         startTask(task: task)
+    }
+    
+    private func checkForPendingTrackingEvents() {
+        guard trackingCache.hasCachedEvents() else { return }
+        let pendingEvents = trackingCache.popCachedEvents()
+        guard !pendingEvents.isEmpty else { return }
+        track(events: pendingEvents)
     }
 
     private func encode<T>(_ object: T) -> Data? where T: Encodable {
