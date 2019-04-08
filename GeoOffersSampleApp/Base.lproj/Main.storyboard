@@ -248,22 +248,23 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="OiF-oV-Okn">
                                         <rect key="frame" x="0.0" y="0.0" width="83" height="33"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Only monitored" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSe-dr-qd2">
-                                                <rect key="frame" x="0.0" y="0.0" width="79" height="33"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Only monitored" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSe-dr-qd2">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="33"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P60-Xw-6VJ">
-                                                <rect key="frame" x="83" y="0.0" width="2" height="33"/>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P60-Xw-6VJ">
+                                                <rect key="frame" x="34" y="0.0" width="51" height="33"/>
                                                 <connections>
                                                     <action selector="didToggle" destination="pgq-rJ-bY0" eventType="valueChanged" id="2Ja-cG-t14"/>
                                                 </connections>
                                             </switch>
                                         </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </stackView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="OiF-oV-Okn" firstAttribute="leading" secondItem="gkB-0O-EP3" secondAttribute="leading" id="6EU-uB-S08"/>
                                     <constraint firstItem="OiF-oV-Okn" firstAttribute="top" secondItem="gkB-0O-EP3" secondAttribute="top" id="C4d-ii-OLh"/>

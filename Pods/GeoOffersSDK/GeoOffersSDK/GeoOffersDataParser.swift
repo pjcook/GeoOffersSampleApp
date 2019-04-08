@@ -21,19 +21,19 @@ struct GeoOffersNotificationMessageType: Codable {
 class GeoOffersPushNotificationProcessor {
     private let notificationCache: GeoOffersPushNotificationCache
     private let listingCache: GeoOffersListingCache
-    
+
     weak var delegate: GeoOffersPushNotificationProcessorDelegate?
-    
+
     init(notificationCache: GeoOffersPushNotificationCache, listingCache: GeoOffersListingCache) {
         self.notificationCache = notificationCache
         self.listingCache = listingCache
     }
-    
+
     func shouldProcessRemoteNotification(_ notification: [String: AnyObject]) -> Bool {
         let aps = notification["aps"] as? [String: AnyObject] ?? [:]
         return aps["content-available"] as? String == "1"
     }
-    
+
     func parseNearbyFences(jsonData: Data) -> GeoOffersListing? {
         let decoder = JSONDecoder()
         var data: GeoOffersListing?
@@ -44,12 +44,12 @@ class GeoOffersPushNotificationProcessor {
         }
         return data
     }
-    
+
     func handleNotification(_ notification: [String: AnyObject]) -> Bool {
         guard let messageType = processNotificationMessageType(notification) else {
             return handleDataNotification(notification)
         }
-        
+
         switch messageType.type {
         case .couponRedeemed:
             if let campaignId = messageType.campaignId {
@@ -63,22 +63,22 @@ class GeoOffersPushNotificationProcessor {
             return handleDataNotification(notification)
         }
     }
-    
+
     private func processCouponRedeemed(campaignId: Int) {
         listingCache.redeemCoupon(campaignId: campaignId)
         delegate?.processListingData()
     }
-    
+
     private func handleDelayedDeliveryNotification() {
         delegate?.processListingData()
     }
-    
+
     private func processNotificationMessageType(_ notification: [String: AnyObject]) -> GeoOffersNotificationMessageType? {
         guard
             let messageData = notification["geoRewardsPushMessageJson"] as? String,
             let jsonData = messageData.data(using: .utf8)
         else { return nil }
-        
+
         do {
             let decoder = JSONDecoder()
             let message = try decoder.decode(GeoOffersNotificationMessageType.self, from: jsonData)
@@ -88,7 +88,7 @@ class GeoOffersPushNotificationProcessor {
         }
         return nil
     }
-    
+
     private func handleDataNotification(_ notification: [String: AnyObject]) -> Bool {
         do {
             let data = try JSONSerialization.data(withJSONObject: notification, options: .prettyPrinted)
@@ -99,7 +99,7 @@ class GeoOffersPushNotificationProcessor {
         }
         return false
     }
-    
+
     private func processPushNotificationData(pushData: GeoOffersPushData) -> Bool {
         if pushData.totalParts == 1 {
             guard let message = buildMessage(messages: [pushData]) else { return false }
@@ -113,7 +113,7 @@ class GeoOffersPushNotificationProcessor {
             return processPushNotificationMessage(message: message, messageID: pushData.messageID)
         }
     }
-    
+
     private func buildMessage(messages: [GeoOffersPushData]) -> GeoOffersPushNotificationDataUpdate? {
         let sorted = messages.sorted { $0.messageIndex < $1.messageIndex }
         var messageString = ""
@@ -130,7 +130,7 @@ class GeoOffersPushNotificationProcessor {
         }
         return nil
     }
-    
+
     private func processPushNotificationMessage(message: GeoOffersPushNotificationDataUpdate, messageID: String) -> Bool {
         notificationCache.updateCache(pushData: message)
         notificationCache.remove(messageID)

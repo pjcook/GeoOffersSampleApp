@@ -56,7 +56,7 @@ class GeoOffersCache {
     func cacheUpdated() {
         hasPendingChanges = true
     }
-    
+
     private func setupSaveTimer(savePeriodSeconds: TimeInterval) {
         guard shouldCacheToDisk else { return }
         let saveTimer = Timer.scheduledTimer(withTimeInterval: savePeriodSeconds, repeats: true) { _ in
@@ -95,7 +95,7 @@ class GeoOffersCache {
     private func nonQueuedSave() {
         guard shouldCacheToDisk else { return }
         let cache = cacheData
-        let path = self.savePath
+        let path = savePath
         do {
             let jsonEncoder = JSONEncoder()
             let jsonData = try jsonEncoder.encode(cache)

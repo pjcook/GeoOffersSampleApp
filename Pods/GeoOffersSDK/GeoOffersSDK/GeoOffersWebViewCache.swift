@@ -85,7 +85,7 @@ extension GeoOffersWebViewCache {
                 }
             }
         }
-        
+
         if hashes.count > 0 {
             cache.cacheData.listing = listing
             cache.cacheUpdated()

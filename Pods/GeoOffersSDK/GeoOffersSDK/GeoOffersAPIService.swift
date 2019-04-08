@@ -217,7 +217,7 @@ class GeoOffersAPIService: NSObject, GeoOffersAPIServiceProtocol {
         }
         startTask(task: task)
     }
-    
+
     private func checkForPendingTrackingEvents() {
         guard trackingCache.hasCachedEvents() else { return }
         let pendingEvents = trackingCache.popCachedEvents()

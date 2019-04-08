@@ -26,7 +26,7 @@ class GeoOffersPushNotificationCache {
         cache.cacheData.pushNotificationSplitMessages.removeAll(where: { $0.messageID == messageID })
         cache.cacheUpdated()
     }
-    
+
     func cleanUpMessages() {
         // TODO: remove messages that are more than 1 day old
     }

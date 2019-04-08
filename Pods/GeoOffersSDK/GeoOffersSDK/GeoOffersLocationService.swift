@@ -20,7 +20,7 @@ protocol GeoOffersLocationManager: class {
     var hasLocationPermission: Bool { get }
     var canMonitorForRegions: Bool { get }
     var allowsBackgroundLocationUpdates: Bool { get set }
-    
+
     func startUpdatingLocation()
     func requestAlwaysAuthorization()
     func startMonitoringSignificantLocationChanges()
@@ -80,66 +80,60 @@ class GeoOffersLocationService: NSObject {
 
     func monitor(regions: [GeoOffersGeoFence]) {
         guard latestLocation != nil, !regions.isEmpty else { return }
-        let previouslyMonitoredRegions = monitoredRegions
         stopMonitoringAllRegions()
-        
+
         let regionsToTrack = filterAndReduceCrossedRegions(regions)
 
         for region in regionsToTrack {
-            let key = region.key
-            let ignoreIfInside = previouslyMonitoredRegions.contains(where: { $0.identifier == key })
-            monitor(center: region.coordinate, radiusMeters: Double(region.radiusMeters), identifier: key, ignoreIfInside: ignoreIfInside)
+            let key = region.regionIdentifier
+            monitor(center: region.coordinate, radiusMeters: Double(region.radiusMeters), identifier: key)
         }
     }
-    
+
     func filterAndReduceCrossedRegions(_ regions: [GeoOffersGeoFence]) -> [GeoOffersGeoFence] {
         guard let location = latestLocation, !regions.isEmpty else { return [] }
         var regionsToTrack = [GeoOffersGeoFence]()
-        
+
         let currentLocation = CLLocation(latitude: location.latitude, longitude: location.longitude)
         let sortedRegions = regions.sorted { (f1, f2) -> Bool in
             f1.location.distance(from: currentLocation) < f2.location.distance(from: currentLocation)
         }
-        
+
         for region in sortedRegions {
             guard regionsToTrack.count < maxNumberOfRegionsThatCanBeMonitoredPerApp else { break }
-            
             if regionsToTrack.isEmpty {
                 regionsToTrack.append(region)
                 continue
             }
-            
+
             var trackRegion = true
             for trackedRegion in regionsToTrack {
-                if CLCircularRegion(center: trackedRegion.coordinate, radius: trackedRegion.radiusMeters, identifier: "dummy").contains(region.coordinate) {
+                if CLCircularRegion(center: trackedRegion.coordinate, radius: 10, identifier: "dummy").contains(region.coordinate) {
                     trackRegion = false
                     break
                 }
             }
-            
+
             if trackRegion {
                 regionsToTrack.append(region)
             }
         }
-        
+
         return regionsToTrack
     }
 
     /*
      Note: A single app can only monitor up to 20 regions
      */
-    func monitor(center: CLLocationCoordinate2D, radiusMeters: Double, identifier: String, ignoreIfInside: Bool) {
+    func monitor(center: CLLocationCoordinate2D, radiusMeters: Double, identifier: String) {
         guard locationManager.hasLocationPermission, locationManager.canMonitorForRegions else { return }
         let region = CLCircularRegion(center: center, radius: min(radiusMeters, locationManager.maximumRegionMonitoringDistance), identifier: identifier)
         region.notifyOnEntry = true
         region.notifyOnExit = true
 
         locationManager.startMonitoring(for: region)
-        if !ignoreIfInside, let latestLocation = latestLocation, region.contains(latestLocation) {
-            delegate?.didEnterRegion(region.identifier)
-        }
     }
-    
+
     func stopMonitoringRegion(with identifier: String) {
         for region in locationManager.monitoredRegions {
             if region.identifier == identifier {

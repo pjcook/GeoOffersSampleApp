@@ -102,7 +102,7 @@ extension GeoOffersPresenter {
         let queryString = "#\(registrationCode),\(latitude),\(longitude),\(deviceID)"
         return queryString
     }
-    
+
     func buildCouponQuerystring(configuration: GeoOffersConfigurationProtocol, locationService: GeoOffersLocationService) -> String {
         var latitude = ""
         var longitude = ""
@@ -114,7 +114,7 @@ extension GeoOffersPresenter {
         let queryString = "#\(latitude),\(longitude),\(timezone)"
         return queryString
     }
-    
+
     func buildJavascriptForWebView(listingData: String, couponData: String, authToken: String, tabBackgroundColor: String, alreadyDeliveredOfferData: String, deliveredIdsAndTimestamps: String) -> String {
         guard let url = Bundle(for: GeoOffersPresenter.self).url(forResource: "ListingJSTemplate", withExtension: "js") else { return "" }
         do {

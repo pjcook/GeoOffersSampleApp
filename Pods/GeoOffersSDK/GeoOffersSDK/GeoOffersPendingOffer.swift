@@ -5,9 +5,9 @@ import Foundation
 struct GeoOffersCacheItem: Codable {
     let region: GeoOffersGeoFence
     let createdDate: Date
-    
+
     init(region: GeoOffersGeoFence) {
         self.region = region
-        self.createdDate = Date()
+        createdDate = Date()
     }
 }

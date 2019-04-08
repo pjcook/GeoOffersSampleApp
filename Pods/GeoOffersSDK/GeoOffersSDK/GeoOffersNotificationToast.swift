@@ -16,7 +16,7 @@ class GeoOffersNotificationToast: UIView {
     @IBOutlet private var title: UILabel!
     @IBOutlet private var message: UILabel!
     @IBOutlet private var widthConstraint: NSLayoutConstraint!
-    
+
     weak var delegate: GeoOffersNotificationToastDelegate?
 
     override func layoutSubviews() {
@@ -25,12 +25,12 @@ class GeoOffersNotificationToast: UIView {
         container.layer.cornerRadius = 8
         container.layer.masksToBounds = true
     }
-    
+
     func configure(viewData: GeoOffersNotificationToastViewData) {
         title.text = viewData.title
         message.text = viewData.message
     }
-    
+
     func present(in window: UIWindow, delay: TimeInterval) {
         let padding: CGFloat = 16
         let doublePadding = padding * 2
@@ -57,19 +57,19 @@ class GeoOffersNotificationToast: UIView {
 class GeoOffersNotificationToastManager {
     private var pendingToasts: [GeoOffersNotificationToast] = []
     private var presentingToast = false
-    
-    func presentToast(title: String, subtitle: String, delay: TimeInterval) {
+
+    func presentToast(title: String, subtitle: String, delay _: TimeInterval) {
         guard UIApplication.shared.keyWindow != nil else { return }
-        
+
         let view = GeoOffersNotificationToast()
         view.xibSetup()
         let viewData = GeoOffersNotificationToastViewData(title: title, message: subtitle)
         view.configure(viewData: viewData)
-        
+
         pendingToasts.append(view)
         processNextToast()
     }
-    
+
     private func processNextToast() {
         guard !presentingToast, let window = UIApplication.shared.keyWindow, !pendingToasts.isEmpty else { return }
         presentingToast = true

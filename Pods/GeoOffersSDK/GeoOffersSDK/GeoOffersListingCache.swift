@@ -21,12 +21,12 @@ class GeoOffersListingCache {
         guard let regions = cache.cacheData.listing?.regions else { return [] }
         return regions.reduce([]) { $0 + $1.value.compactMap { $0.cirularRegion.contains(location) ? $0 : nil } }
     }
-    
+
     func regionsNot(at location: CLLocationCoordinate2D) -> [GeoOffersGeoFence] {
         guard let regions = cache.cacheData.listing?.regions else { return [] }
         return regions.reduce([]) { $0 + $1.value.compactMap { $0.cirularRegion.contains(location) ? nil : $0 } }
     }
-    
+
     func redeemCoupon(campaignId: Int) {
         let key = String(campaignId)
         guard var listing = cache.cacheData.listing, var campaign = listing.campaigns[key]
@@ -56,11 +56,11 @@ class GeoOffersListingCache {
         cache.cacheUpdated()
         delegate?.listingUpdated()
     }
-    
+
     func hasValidSchedule(by scheduleID: ScheduleID, date: Date) -> Bool {
         guard let schedules = cache.cacheData.listing?.schedules else { return false }
         let schedule = schedules.first {
-            return $0.scheduleID == scheduleID && $0.isValid(for: date)
+            $0.scheduleID == scheduleID && $0.isValid(for: date)
         }
         return schedule != nil
     }

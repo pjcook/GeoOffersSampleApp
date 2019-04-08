@@ -25,7 +25,7 @@ class GeoOffersNotificationService: GeoOffersNotificationServiceProtocol {
 
     init(
         notificationCenter: GeoOffersUserNotificationCenter = UNUserNotificationCenter.current(),
-         toastManager: GeoOffersNotificationToastManager = GeoOffersNotificationToastManager()
+        toastManager: GeoOffersNotificationToastManager = GeoOffersNotificationToastManager()
     ) {
         self.notificationCenter = notificationCenter
         self.toastManager = toastManager
@@ -60,7 +60,7 @@ class GeoOffersNotificationService: GeoOffersNotificationServiceProtocol {
                 }
                 return
             }
-        
+
             guard UIApplication.shared.applicationState != .active else {
                 toastManager.presentToast(title: title, subtitle: subtitle, delay: delaySeconds)
                 return
@@ -87,7 +87,7 @@ extension GeoOffersNotificationService {
             UIApplication.shared.registerForRemoteNotifications()
         }
     }
-    
+
     private func registerOnLaunch() {
         notificationCenter.getNotificationSettings { settings in
             guard settings.authorizationStatus == .authorized else { return }

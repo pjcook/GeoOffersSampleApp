@@ -13,23 +13,30 @@ struct GeoOffersGeoFence: Codable {
     var radiusMeters: Double {
         return radiusKm * 1000
     }
+
     let notificationTitle: String
     let notificationMessage: String
     let notificationDwellDelayMs: Double
     var notificationDwellDelaySeconds: Double {
         return notificationDwellDelayMs / 1000
     }
+
     let notificationDeliveryDelayMs: Double
     var notificationDeliveryDelaySeconds: Double {
         return notificationDeliveryDelayMs / 1000
     }
+
     let doesNotNotify: Bool
     let notifiesSilently: Bool
+
+    var regionIdentifier: String {
+        return "\(scheduleID)_\(scheduleDeviceID)"
+    }
 
     var key: String {
         return String(scheduleID)
     }
-    
+
     var location: CLLocation {
         return CLLocation(latitude: latitude, longitude: longitude)
     }
@@ -37,7 +44,7 @@ struct GeoOffersGeoFence: Codable {
     var coordinate: CLLocationCoordinate2D {
         return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     }
-    
+
     var cirularRegion: CLCircularRegion {
         return CLCircularRegion(center: coordinate, radius: radiusMeters, identifier: key)
     }

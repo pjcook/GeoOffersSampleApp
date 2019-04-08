@@ -126,11 +126,11 @@ public class GeoOffersSDKService: GeoOffersSDKServiceProtocol {
     public func application(_: UIApplication, handleEventsForBackgroundURLSession _: String, completionHandler: @escaping () -> Void) {
         apiService.backgroundSessionCompletionHandler = completionHandler
     }
-    
+
     public func requestPushNotificationPermissions() {
         notificationService.requestNotificationPermissions()
     }
-    
+
     public func application(_: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: ((UIBackgroundFetchResult) -> Void)?) {
         guard let notification = userInfo as? [String: AnyObject],
             dataParser.shouldProcessRemoteNotification(notification) else {
@@ -172,6 +172,11 @@ public class GeoOffersSDKService: GeoOffersSDKServiceProtocol {
         guard let vc = viewController as? GeoOffersViewController else { return }
         presentationService.refreshOfferListViewController(vc)
     }
+
+    public func debugRegionLocations() -> [GeoOffersDebugRegion] {
+        let regions = listingCache.listing()?.regions.reduce([]) { $0 + $1.value } ?? []
+        return regions.map { GeoOffersDebugRegion(region: $0) }
+    }
 }
 
 extension GeoOffersSDKService: GeoOffersPushNotificationProcessorDelegate {
@@ -179,15 +184,15 @@ extension GeoOffersSDKService: GeoOffersPushNotificationProcessorDelegate {
         GeoOffersSDKUserDefaults.shared.lastRefreshTimeInterval = Date().timeIntervalSince1970
         GeoOffersSDKUserDefaults.shared.lastRefreshLocation = location
     }
-    
+
     internal func processListingData() {
         guard let location = locationService.latestLocation else { return }
         dataProcessor.process(at: location)
-        
+
         guard let regionsToBeMonitored = dataProcessor.regionsToBeMonitored(at: location) else { return }
         locationService.monitor(regions: regionsToBeMonitored)
     }
-    
+
     private func processListingData(for location: CLLocationCoordinate2D) {
         dataProcessor.process(at: location)
     }
@@ -199,19 +204,19 @@ extension GeoOffersSDKService: GeoOffersLocationServiceDelegate {
         retrieveNearbyGeoFences()
         processListingData()
     }
-    
+
     func didUpdateLocations(_ locations: [CLLocation]) {
         for location in locations {
             processListingData(for: location.coordinate)
         }
     }
 
-    func didEnterRegion(_ identifier: String) {
+    func didEnterRegion(_: String) {
         retrieveNearbyGeoFences()
         processListingData()
     }
 
-    func didExitRegion(_ identifier: String) {
+    func didExitRegion(_: String) {
         retrieveNearbyGeoFences()
         processListingData()
     }
@@ -223,14 +228,14 @@ extension GeoOffersSDKService: GeoOffersFirebaseWrapperDelegate {
             let token = configuration.pendingPushTokenRegistration,
             let location = locationService.latestLocation,
             let clientID = configuration.clientID
-            else { return }
+        else { return }
         let currentToken = configuration.pushToken
         let completionHandler: GeoOffersNetworkResponse = { response in
             guard case .success = response else { return }
             self.configuration.pushToken = token
             self.configuration.pendingPushTokenRegistration = nil
         }
-        
+
         if let currentToken = currentToken {
             apiService.update(pushToken: currentToken, with: token, completionHandler: completionHandler)
         } else {
@@ -261,19 +266,20 @@ extension GeoOffersSDKService: GeoOffersOffersCacheDelegate {
 
 extension GeoOffersSDKService: GeoOffersListingCacheDelegate {
     func listingUpdated() {
-        //offersUpdatedDelegate?.offersUpdated()
+        // offersUpdatedDelegate?.offersUpdated()
         // updates too frequently
     }
 }
 
-// MARK:- Process data
+// MARK: - Process data
+
 extension GeoOffersSDKService {
     private func shouldPollNearbyGeoFences(location: CLLocationCoordinate2D) -> Bool {
         let lastRefreshTimeInterval = GeoOffersSDKUserDefaults.shared.lastRefreshTimeInterval
         guard
             let lastRefreshLocation = GeoOffersSDKUserDefaults.shared.lastRefreshLocation
-            else {
-                return true
+        else {
+            return true
         }
         let minimumWaitTimePassed = abs(Date(timeIntervalSince1970: lastRefreshTimeInterval).timeIntervalSinceNow) >= configuration.minimumRefreshWaitTime
         let currentLocation = CLLocation(latitude: location.latitude, longitude: location.longitude)
@@ -281,7 +287,7 @@ extension GeoOffersSDKService {
         let movedMinimumDistance = currentLocation.distance(from: refreshLocation) >= configuration.minimumRefreshDistance
         return minimumWaitTimePassed || movedMinimumDistance
     }
-    
+
     private func retrieveNearbyGeoFences() {
         guard let location = locationService.latestLocation, shouldPollNearbyGeoFences(location: location) else { return }
         updateLastRefreshTime(location: location)
@@ -304,7 +310,7 @@ extension GeoOffersSDKService {
             }
         }
     }
-    
+
     internal func processDownloadedData(data: Data) {
         guard let parsedData = self.dataParser.parseNearbyFences(jsonData: data) else {
             geoOffersLog("Invalid fences data")

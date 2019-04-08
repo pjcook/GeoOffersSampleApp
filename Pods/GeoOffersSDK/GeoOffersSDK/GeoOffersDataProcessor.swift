@@ -27,7 +27,7 @@ class GeoOffersDataProcessor {
         self.notificationService = notificationService
         self.apiService = apiService
     }
-    
+
     func process(at currentLocation: CLLocationCoordinate2D) {
         geoOffersDataProcessorQueue.sync {
             checkPendingOffersToSeeIfDwellTimeExpired()
@@ -36,25 +36,25 @@ class GeoOffersDataProcessor {
             processRegionEntries(at: currentLocation)
         }
     }
-    
-    func regionsToBeMonitored(at location: CLLocationCoordinate2D) -> [GeoOffersGeoFence]? {
-        return listingCache.regionsNot(at: location)
+
+    func regionsToBeMonitored(at _: CLLocationCoordinate2D) -> [GeoOffersGeoFence]? {
+        return listingCache.listing()?.regions.reduce([]) { $0 + $1.value }
     }
-    
+
     private func processRegionEntries(at location: CLLocationCoordinate2D) {
         let regions = listingCache.regions(at: location)
         let now = Date()
         regions.forEach {
             guard
                 !enteredRegionCache.exists($0.scheduleID),
-                listingCache.hasValidSchedule(by: $0.scheduleID, date: now)            
+                listingCache.hasValidSchedule(by: $0.scheduleID, date: now)
             else { return }
             apiService.track(event: GeoOffersTrackingEvent.event(with: .geoFenceEntry, region: $0))
             enteredRegionCache.add($0)
             processRegionForDwellTime($0)
         }
     }
-    
+
     private func processRegionForDwellTime(_ region: GeoOffersGeoFence) {
         guard !offersCache.hasOfferAlready(region.scheduleID) else { return }
         if region.notificationDwellDelaySeconds > 0 {
@@ -63,7 +63,7 @@ class GeoOffersDataProcessor {
             checkAndSendNotification(region)
         }
     }
-    
+
     private func processEnteredRegionState(at location: CLLocationCoordinate2D) {
         let regionsIDs = listingCache.regions(at: location).map { $0.scheduleID }
         let enteredRegions = enteredRegionCache.all()
@@ -74,7 +74,7 @@ class GeoOffersDataProcessor {
             }
         }
     }
-    
+
     private func checkPendingNotificationsToSeeIfDelayTimeExpired() {
         let pendingNotifications = sendNotificationCache.pendingNotifications()
         pendingNotifications.forEach {
@@ -84,7 +84,7 @@ class GeoOffersDataProcessor {
             }
         }
     }
-    
+
     private func checkPendingOffersToSeeIfDwellTimeExpired() {
         let pendingOffers = offersCache.pendingOffers()
         pendingOffers.forEach {
@@ -93,7 +93,7 @@ class GeoOffersDataProcessor {
             }
         }
     }
-    
+
     private func checkAndSendNotification(_ region: GeoOffersGeoFence) {
         if region.notificationDeliveryDelaySeconds > 0 {
             sendNotificationCache.add(region)
@@ -101,14 +101,14 @@ class GeoOffersDataProcessor {
             sendNotification(region)
         }
     }
-    
+
     private func sendNotification(_ region: GeoOffersGeoFence) {
         DispatchQueue.main.async {
             self.notificationService.sendNotification(title: region.notificationTitle, subtitle: region.notificationMessage, delaySeconds: region.notificationDeliveryDelaySeconds, identifier: region.key, isSilent: region.notifiesSilently)
         }
-        
+
         offersCache.addOffer(region.scheduleID)
-        
+
         apiService.track(event: GeoOffersTrackingEvent.event(with: .offerDelivered, region: region))
     }
 }
