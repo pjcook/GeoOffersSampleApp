@@ -1,6 +1,35 @@
 <?xml version="1.0"?>
 <gpx version="1.1" creator="Xcode">
-    <wpt lat="51.7034864" lon="-0.19154809999998">
+    <!--wpt lat="51.7034864" lon="-0.19154809999998">
       <name>GeoOffers Location</name>
+      <time>2010-01-01T00:00:00Z</time>
+    </wpt-->
+    <wpt lat="51.100521" lon="-0.157553">
+        <name>PJ001</name>
+        <time>2010-01-01T00:00:00Z</time>
+    </wpt>
+    <wpt lat="51.101397" lon="-0.157553">
+        <name>PJ002</name>
+        <time>2010-01-01T00:00:05Z</time>
+    </wpt>
+    <wpt lat="51.105517" lon="-0.152485">
+        <name>PJ003</name>
+        <time>2010-01-01T00:00:10Z</time>
+    </wpt>
+    <wpt lat="51.106405" lon="-0.148618">
+        <name>PJ004</name>
+        <time>2010-01-01T00:00:15Z</time>
+    </wpt>
+    <wpt lat="51.106498" lon="-0.151444">
+        <name>PJ005</name>
+        <time>2010-01-01T00:00:20Z</time>
+    </wpt>
+    <wpt lat="51.105257" lon="-0.154313">
+        <name>PJ006</name>
+        <time>2010-01-01T00:00:25Z</time>
+    </wpt>
+    <wpt lat="51.102473815384" lon="-0.15902078341432">
+        <name>RI00020</name>
+        <time>2010-01-01T00:00:30Z</time>
     </wpt>
 </gpx>

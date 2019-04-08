@@ -20,6 +20,7 @@
 		D5C271C7221A952E00104FCA /* GeoOffersNotificationLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C271C6221A952E00104FCA /* GeoOffersNotificationLogger.swift */; };
 		D5C271C9221AB4A900104FCA /* NotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C271C8221AB4A900104FCA /* NotificationsViewController.swift */; };
 		D5C271CB221AB58200104FCA /* NotificationSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5C271CA221AB58200104FCA /* NotificationSummaryCell.swift */; };
+		D5CB265D225B3EF600FC62AD /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CB265C225B3EF600FC62AD /* MapViewController.swift */; };
 		D5F38DC621F71DE800531B7F /* GeoOffersWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F38DC521F71DE800531B7F /* GeoOffersWrapper.swift */; };
 		D5F38DC821F71E3200531B7F /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = D5F38DC721F71E2100531B7F /* LICENSE */; };
 		DC8374ADC0FFC35AF75E7C5D /* libPods-GeoOffersSampleApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EE835F73813279369F615F6 /* libPods-GeoOffersSampleApp.a */; };
@@ -74,6 +75,7 @@
 		D5C271C6221A952E00104FCA /* GeoOffersNotificationLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoOffersNotificationLogger.swift; sourceTree = "<group>"; };
 		D5C271C8221AB4A900104FCA /* NotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsViewController.swift; sourceTree = "<group>"; };
 		D5C271CA221AB58200104FCA /* NotificationSummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSummaryCell.swift; sourceTree = "<group>"; };
+		D5CB265C225B3EF600FC62AD /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		D5F38DC521F71DE800531B7F /* GeoOffersWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoOffersWrapper.swift; sourceTree = "<group>"; };
 		D5F38DC721F71E2100531B7F /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -189,6 +191,7 @@
 			children = (
 				D58C095F21E8A9B000D503D2 /* ViewController.swift */,
 				D5C271C8221AB4A900104FCA /* NotificationsViewController.swift */,
+				D5CB265C225B3EF600FC62AD /* MapViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -510,6 +513,7 @@
 				D5C271CB221AB58200104FCA /* NotificationSummaryCell.swift in Sources */,
 				D5F38DC621F71DE800531B7F /* GeoOffersWrapper.swift in Sources */,
 				D58C095E21E8A9B000D503D2 /* AppDelegate.swift in Sources */,
+				D5CB265D225B3EF600FC62AD /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
