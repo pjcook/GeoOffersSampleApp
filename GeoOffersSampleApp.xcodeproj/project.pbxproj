@@ -23,6 +23,11 @@
 		D5CB265D225B3EF600FC62AD /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CB265C225B3EF600FC62AD /* MapViewController.swift */; };
 		D5F38DC621F71DE800531B7F /* GeoOffersWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F38DC521F71DE800531B7F /* GeoOffersWrapper.swift */; };
 		D5F38DC821F71E3200531B7F /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = D5F38DC721F71E2100531B7F /* LICENSE */; };
+		D5FF9B76226C430700020C55 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FF9B74226C430700020C55 /* Cache.swift */; };
+		D5FF9B77226C430700020C55 /* DiskCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FF9B75226C430700020C55 /* DiskCache.swift */; };
+		D5FF9B79226C432500020C55 /* GeoOffersTrackingDebugCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FF9B78226C432500020C55 /* GeoOffersTrackingDebugCache.swift */; };
+		D5FF9B7B226C438A00020C55 /* TrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FF9B7A226C438A00020C55 /* TrackingViewController.swift */; };
+		D5FF9B7D226C448900020C55 /* TrackingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FF9B7C226C448900020C55 /* TrackingCell.swift */; };
 		DC8374ADC0FFC35AF75E7C5D /* libPods-GeoOffersSampleApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EE835F73813279369F615F6 /* libPods-GeoOffersSampleApp.a */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +83,11 @@
 		D5CB265C225B3EF600FC62AD /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		D5F38DC521F71DE800531B7F /* GeoOffersWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoOffersWrapper.swift; sourceTree = "<group>"; };
 		D5F38DC721F71E2100531B7F /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		D5FF9B74226C430700020C55 /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		D5FF9B75226C430700020C55 /* DiskCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiskCache.swift; sourceTree = "<group>"; };
+		D5FF9B78226C432500020C55 /* GeoOffersTrackingDebugCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoOffersTrackingDebugCache.swift; sourceTree = "<group>"; };
+		D5FF9B7A226C438A00020C55 /* TrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingViewController.swift; sourceTree = "<group>"; };
+		D5FF9B7C226C448900020C55 /* TrackingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackingCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +202,7 @@
 				D58C095F21E8A9B000D503D2 /* ViewController.swift */,
 				D5C271C8221AB4A900104FCA /* NotificationsViewController.swift */,
 				D5CB265C225B3EF600FC62AD /* MapViewController.swift */,
+				D5FF9B7A226C438A00020C55 /* TrackingViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -200,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				D5C271CA221AB58200104FCA /* NotificationSummaryCell.swift */,
+				D5FF9B7C226C448900020C55 /* TrackingCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -240,6 +252,9 @@
 			children = (
 				D5F38DC521F71DE800531B7F /* GeoOffersWrapper.swift */,
 				D5C271C6221A952E00104FCA /* GeoOffersNotificationLogger.swift */,
+				D5FF9B74226C430700020C55 /* Cache.swift */,
+				D5FF9B75226C430700020C55 /* DiskCache.swift */,
+				D5FF9B78226C432500020C55 /* GeoOffersTrackingDebugCache.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -445,28 +460,28 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-GeoOffersSampleApp/Pods-GeoOffersSampleApp-resources.sh",
-				"${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/coupon/blank-bcode.png",
-				"${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/coupon/coupon.css",
-				"${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/coupon/coupon.html",
-				"${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/coupon/google-pay-logo.svg",
-				"${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/coupon/jquery.min.js",
-				"${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/coupon/JsBarcode.all.min.js",
-				"${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/coupon/map-icon.svg",
-				"${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/coupon/print-icon.svg",
-				"${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/coupon/qrcode.min.js",
-				"${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/coupon/rere.main.min.js",
-				"${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/coupon/save-to-google-pay.svg",
-				"${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/coupon/socket.io.js",
-				"${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/coupon/vue.js",
-				"${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/GeoOffersNotificationToast.xib",
-				"${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/GeoOffersSDK-GoogleService-Info.geoconfig",
-				"${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/GeoOffersSDK.storyboard",
-				"${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/index.html",
-				"${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/ListingJSTemplate.js",
-				"${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/offerslist/offerslist.html",
-				"${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/offerslist/offerslist_files/app.css",
-				"${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/offerslist/offerslist_files/app.js",
-				"${PODS_ROOT}/GeoOffersSDK/GeoOffersSDK/offerslist/offerslist_files/geo-gmap-icon.svg",
+				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/blank-bcode.png",
+				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/coupon.css",
+				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/coupon.html",
+				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/google-pay-logo.svg",
+				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/jquery.min.js",
+				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/JsBarcode.all.min.js",
+				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/map-icon.svg",
+				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/print-icon.svg",
+				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/qrcode.min.js",
+				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/rere.main.min.js",
+				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/save-to-google-pay.svg",
+				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/socket.io.js",
+				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/coupon/vue.js",
+				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/GeoOffersNotificationToast.xib",
+				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/GeoOffersSDK-GoogleService-Info.geoconfig",
+				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/GeoOffersSDK.storyboard",
+				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/index.html",
+				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/ListingJSTemplate.js",
+				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/offerslist/offerslist.html",
+				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/offerslist/offerslist_files/app.css",
+				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/offerslist/offerslist_files/app.js",
+				"${PODS_ROOT}/../../SDK/GeoOffersSDK/GeoOffersSDK/offerslist/offerslist_files/geo-gmap-icon.svg",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
@@ -507,10 +522,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5FF9B7D226C448900020C55 /* TrackingCell.swift in Sources */,
+				D5FF9B79226C432500020C55 /* GeoOffersTrackingDebugCache.swift in Sources */,
 				D5C271C9221AB4A900104FCA /* NotificationsViewController.swift in Sources */,
+				D5FF9B7B226C438A00020C55 /* TrackingViewController.swift in Sources */,
 				D58C096021E8A9B000D503D2 /* ViewController.swift in Sources */,
+				D5FF9B76226C430700020C55 /* Cache.swift in Sources */,
 				D5C271C7221A952E00104FCA /* GeoOffersNotificationLogger.swift in Sources */,
 				D5C271CB221AB58200104FCA /* NotificationSummaryCell.swift in Sources */,
+				D5FF9B77226C430700020C55 /* DiskCache.swift in Sources */,
 				D5F38DC621F71DE800531B7F /* GeoOffersWrapper.swift in Sources */,
 				D58C095E21E8A9B000D503D2 /* AppDelegate.swift in Sources */,
 				D5CB265D225B3EF600FC62AD /* MapViewController.swift in Sources */,
