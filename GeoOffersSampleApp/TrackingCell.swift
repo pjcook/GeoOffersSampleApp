@@ -14,7 +14,6 @@ extension GeoOffersTrackingEvent {
         default:
             return type.rawValue
         }
-        return "\(type.rawValue): (\(scheduleID))"
     }
 }
 

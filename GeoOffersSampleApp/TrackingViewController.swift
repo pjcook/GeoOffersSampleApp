@@ -14,12 +14,27 @@ class TrackingViewController: UIViewController {
     
     private func reloadData() {
         let cacheData = GeoOffersTrackingDebugCache(filename: "GeoOffersTrackingDebugCache.data")
-        tracking = cacheData.cacheData ?? []
+        tracking = (cacheData.cacheData ?? []).reversed()
         tableView.reloadData()
     }
     
     @IBAction private func refreshAction() {
         reloadData()
+    }
+    
+    @IBAction private func shareData(_ sender: UIBarButtonItem) {
+        var data: Data?
+        do {
+            data = try JSONEncoder().encode(tracking)
+        } catch {
+            print(error)
+        }
+        
+        guard let strongData = data, let shareData = String(data: strongData, encoding: .utf8) else { return }
+        let shareContent: [Any] = [shareData as Any]
+        let activityViewController = UIActivityViewController(activityItems: shareContent, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.barButtonItem = sender
+        present(activityViewController, animated: true, completion: nil)
     }
 }
 
