@@ -6,6 +6,7 @@ class TrackingViewController: UIViewController {
     @IBOutlet private var tableView: UITableView!
     
     private var tracking: [GeoOffersTrackingEvent] = []
+    private let cache = GeoOffersTrackingDebugCache()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -13,8 +14,8 @@ class TrackingViewController: UIViewController {
     }
     
     private func reloadData() {
-        let cacheData = GeoOffersTrackingDebugCache(filename: "GeoOffersTrackingDebugCache.data")
-        tracking = (cacheData.cacheData ?? []).reversed()
+        let cacheData = cache.load()
+        tracking = cacheData.reversed()
         tableView.reloadData()
     }
     

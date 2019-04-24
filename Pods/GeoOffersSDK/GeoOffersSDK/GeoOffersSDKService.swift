@@ -52,7 +52,7 @@ public class GeoOffersSDKService: GeoOffersSDKServiceProtocol {
         self.configuration = configuration as! GeoOffersSDKConfiguration
         notificationService = GeoOffersNotificationService(notificationCenter: userNotificationCenter)
         locationService = GeoOffersLocationService(latestLocation: lastKnownLocation, configuration: configuration)
-        let cache = GeoOffersCache()
+        let cache = GeoOffersCache(storage: GeoOffersDiskCacheStorage())
         let trackingCache = GeoOffersTrackingCache(cache: cache)
         let sendNotificationCache = GeoOffersSendNotificationCache(cache: cache)
         let enteredRegionCache = GeoOffersEnteredRegionCache(cache: cache)
@@ -70,7 +70,8 @@ public class GeoOffersSDKService: GeoOffersSDKServiceProtocol {
             sendNotificationCache: sendNotificationCache,
             enteredRegionCache: enteredRegionCache,
             notificationService: notificationService,
-            apiService: apiService
+            apiService: apiService,
+            trackingCache: trackingCache
         )
 
         dataParser.delegate = self
@@ -189,7 +190,10 @@ extension GeoOffersSDKService: GeoOffersPushNotificationProcessorDelegate {
         guard let location = locationService.latestLocation else { return }
         dataProcessor.process(at: location)
 
-        guard let regionsToBeMonitored = dataProcessor.regionsToBeMonitored(at: location) else { return }
+        guard let regionsToBeMonitored = dataProcessor.regionsToBeMonitored(at: location) else {
+            locationService.stopMonitoringAllRegions()
+            return
+        }
         locationService.monitor(regions: regionsToBeMonitored)
     }
 
@@ -284,7 +288,7 @@ extension GeoOffersSDKService {
         let minimumWaitTimePassed = abs(Date(timeIntervalSince1970: lastRefreshTimeInterval).timeIntervalSinceNow) >= configuration.minimumRefreshWaitTime
         let currentLocation = CLLocation(latitude: location.latitude, longitude: location.longitude)
         let refreshLocation = CLLocation(latitude: lastRefreshLocation.latitude, longitude: lastRefreshLocation.longitude)
-        let movedMinimumDistance = currentLocation.distance(from: refreshLocation) >= configuration.minimumRefreshDistance
+        let movedMinimumDistance = currentLocation.distance(from: refreshLocation) >= listingCache.minimumMovementDistance
         return minimumWaitTimePassed || movedMinimumDistance
     }
 

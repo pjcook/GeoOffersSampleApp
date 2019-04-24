@@ -8,8 +8,7 @@ protocol GeoOffersAPIServiceProtocol {
     func register(pushToken: String, latitude: Double, longitude: Double, clientID: Int, completionHandler: GeoOffersNetworkResponse?)
     func update(pushToken: String, with newToken: String, completionHandler: GeoOffersNetworkResponse?)
     func delete(scheduleID: ScheduleID)
-    func track(event: GeoOffersTrackingEvent)
-    func track(events: [GeoOffersTrackingEvent])
+    func checkForPendingTrackingEvents()
     func countdownsStarted(hashes: [String], completionHandler: GeoOffersNetworkResponse?)
 }
 
@@ -24,19 +23,26 @@ enum GeoOffersNetworkResponseType {
     case success
 }
 
+enum GeoOffersTaskType {
+    case getOffersData
+    case general
+}
+
 typealias GeoOffersNetworkResponse = ((GeoOffersNetworkResponseType) -> Void)
 
 class GeoOffersNetworkTask {
     let id: Int
     let task: URLSessionTask
     let isDataTask: Bool
+    let taskType: GeoOffersTaskType
     var completionHandler: GeoOffersNetworkResponse?
 
-    init(id: Int, task: URLSessionTask, isDataTask: Bool, completionHandler: GeoOffersNetworkResponse?) {
+    init(id: Int, task: URLSessionTask, isDataTask: Bool, taskType: GeoOffersTaskType = .general, completionHandler: GeoOffersNetworkResponse?) {
         self.id = id
         self.task = task
         self.isDataTask = isDataTask
         self.completionHandler = completionHandler
+        self.taskType = taskType
     }
 }
 
@@ -70,7 +76,10 @@ class GeoOffersAPIService: NSObject, GeoOffersAPIServiceProtocol {
         if let session = session {
             self.session = session
         } else {
-            self.session = URLSession(configuration: .background(withIdentifier: "GeoOffersSDK.background.urlsession"), delegate: self, delegateQueue: nil)
+            let configuration = URLSessionConfiguration.background(withIdentifier: "GeoOffersSDK.background.urlsession")
+            configuration.waitsForConnectivity = true
+            configuration.networkServiceType = .background
+            self.session = URLSession(configuration: configuration, delegate: self, delegateQueue: nil)
         }
     }
 
@@ -81,6 +90,15 @@ class GeoOffersAPIService: NSObject, GeoOffersAPIServiceProtocol {
 
     private func taskFinished(task: GeoOffersNetworkTask) {
         activeTasks.removeValue(forKey: task.id)
+    }
+    
+    private func cancelTasks(of taskType: GeoOffersTaskType) {
+        activeTasks.forEach {
+            if $0.value.taskType == taskType {
+                $0.value.task.cancel()
+                activeTasks.removeValue(forKey: $0.key)
+            }
+        }
     }
 
     func pollForNearbyOffers(latitude: Double, longitude: Double, completionHandler: @escaping GeoOffersNetworkResponse) {
@@ -97,7 +115,8 @@ class GeoOffersAPIService: NSObject, GeoOffersAPIServiceProtocol {
 
         let request = generateRequest(url: url, method: HTTPMethod.get)
         guard let downloadTask = session?.downloadTask(with: request) else { return }
-        let task = GeoOffersNetworkTask(id: downloadTask.taskIdentifier, task: downloadTask, isDataTask: true, completionHandler: completionHandler)
+        trackingCache.add(GeoOffersTrackingEvent(type: .polledForNearbyOffers, timestamp: Date().timeIntervalSince1970, scheduleDeviceID: "", scheduleID: 0, latitude: latitude, longitude: longitude))
+        let task = GeoOffersNetworkTask(id: downloadTask.taskIdentifier, task: downloadTask, isDataTask: true, taskType: .getOffersData, completionHandler: completionHandler)
         startTask(task: task)
     }
 
@@ -154,7 +173,7 @@ class GeoOffersAPIService: NSObject, GeoOffersAPIServiceProtocol {
         }
 
         var request = generateRequest(url: url, method: HTTPMethod.post)
-
+        cancelTasks(of: .getOffersData)
         let tokenData = GeoOffersChangePushToken(oldToken: pushToken, newToken: newToken)
         guard let jsonData = encode(tokenData) else {
             completionHandler?(.failure(GeoOffersAPIErrors.failedToBuildJsonForPost))
@@ -183,17 +202,9 @@ class GeoOffersAPIService: NSObject, GeoOffersAPIServiceProtocol {
         startTask(task: task)
     }
 
-    func track(event: GeoOffersTrackingEvent) {
-        track(events: [event])
-    }
-
     private var trackingRequestInProgress = false
-    func track(events: [GeoOffersTrackingEvent]) {
-        guard !trackingRequestInProgress else {
-            trackingCache.add(events)
-            return
-        }
-        guard let url = URL(string: configuration.apiURL)?
+    private func track(events: [GeoOffersTrackingEvent]) {
+        guard !trackingRequestInProgress, let url = URL(string: configuration.apiURL)?
             .appendingPathComponent(EndPoints.tracking)
         else { return }
         trackingRequestInProgress = true
@@ -218,8 +229,8 @@ class GeoOffersAPIService: NSObject, GeoOffersAPIServiceProtocol {
         startTask(task: task)
     }
 
-    private func checkForPendingTrackingEvents() {
-        guard trackingCache.hasCachedEvents() else { return }
+    func checkForPendingTrackingEvents() {
+        guard !trackingRequestInProgress, trackingCache.hasCachedEvents() else { return }
         let pendingEvents = trackingCache.popCachedEvents()
         guard !pendingEvents.isEmpty else { return }
         track(events: pendingEvents)
@@ -260,16 +271,6 @@ class GeoOffersAPIService: NSObject, GeoOffersAPIServiceProtocol {
 }
 
 extension GeoOffersAPIService: URLSessionDownloadDelegate {
-    func urlSession(_: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
-        guard let activeTask = activeTasks[task.taskIdentifier] else { return }
-        if let error = error {
-            activeTask.completionHandler?(.failure(error))
-        } else {
-            activeTask.completionHandler?(.success)
-        }
-        taskFinished(task: activeTask)
-    }
-
     func urlSession(_: URLSession, downloadTask: URLSessionDownloadTask,
                     didFinishDownloadingTo location: URL) {
         guard let activeTask = activeTasks[downloadTask.taskIdentifier] else { return }
@@ -288,8 +289,23 @@ extension GeoOffersAPIService: URLSessionDownloadDelegate {
     }
 }
 
+extension GeoOffersAPIService: URLSessionTaskDelegate {
+    func urlSession(_: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
+        guard let activeTask = activeTasks[task.taskIdentifier] else { return }
+        if let error = error {
+            activeTask.completionHandler?(.failure(error))
+        } else {
+            activeTask.completionHandler?(.success)
+        }
+        taskFinished(task: activeTask)
+    }
+}
+
 extension GeoOffersAPIService: URLSessionDelegate {
     func urlSessionDidFinishEvents(forBackgroundURLSession _: URLSession) {
-        backgroundSessionCompletionHandler?()
+        guard let completionHandler = backgroundSessionCompletionHandler else { return }
+        DispatchQueue.main.async {
+            completionHandler()
+        }
     }
 }

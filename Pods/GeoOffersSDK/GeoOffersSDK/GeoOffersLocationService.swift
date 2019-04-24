@@ -79,7 +79,10 @@ class GeoOffersLocationService: NSObject {
     }
 
     func monitor(regions: [GeoOffersGeoFence]) {
-        guard latestLocation != nil, !regions.isEmpty else { return }
+        guard latestLocation != nil, !regions.isEmpty else {
+            stopMonitoringAllRegions()
+            return
+        }
         stopMonitoringAllRegions()
 
         let regionsToTrack = filterAndReduceCrossedRegions(regions)

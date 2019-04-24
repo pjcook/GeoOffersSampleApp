@@ -37,9 +37,26 @@ struct GeoOffersTrackingEvent: Codable {
     }
 }
 
-class GeoOffersTrackingDebugCache: DiskCache<[GeoOffersTrackingEvent]> {
-    override init(filename: String, fileManager: FileManager = FileManager.default, savePeriodSeconds: TimeInterval = 30) {
-        super.init(filename: filename, fileManager: fileManager, savePeriodSeconds: savePeriodSeconds)
+class GeoOffersTrackingDebugCache {
+    var cacheData: [GeoOffersTrackingEvent] = []
+    let savePath: String
+    private let fileManager = FileManager.default
+    
+    init() {
+        savePath = try! fileManager.documentPath(for: "GeoOffersTrackingDebugCache.data")
         print(savePath)
+    }
+    
+    func load() -> [GeoOffersTrackingEvent] {
+        guard fileManager.fileExists(atPath: savePath) else { return [] }
+        do {
+            let jsonData = try Data(contentsOf: URL(fileURLWithPath: savePath))
+            let jsonDecoder = JSONDecoder()
+            let cacheData = try jsonDecoder.decode([GeoOffersTrackingEvent].self, from: jsonData)
+            return cacheData
+        } catch {
+            print("DiskCache.load().Failed to load \(savePath): \(error)")
+        }
+        return []
     }
 }

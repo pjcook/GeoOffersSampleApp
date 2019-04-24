@@ -4,7 +4,7 @@ import Foundation
 
 protocol CacheStorage {
     associatedtype CacheData: Codable
-    var cacheData: CacheData? { get set }
+    var cacheData: CacheData { get set }
     func save()
     func cacheUpdated()
 }

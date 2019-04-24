@@ -24,8 +24,6 @@
 		D5CB265D225B3EF600FC62AD /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CB265C225B3EF600FC62AD /* MapViewController.swift */; };
 		D5F38DC621F71DE800531B7F /* GeoOffersWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5F38DC521F71DE800531B7F /* GeoOffersWrapper.swift */; };
 		D5F38DC821F71E3200531B7F /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = D5F38DC721F71E2100531B7F /* LICENSE */; };
-		D5FF9B76226C430700020C55 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FF9B74226C430700020C55 /* Cache.swift */; };
-		D5FF9B77226C430700020C55 /* DiskCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FF9B75226C430700020C55 /* DiskCache.swift */; };
 		D5FF9B79226C432500020C55 /* GeoOffersTrackingDebugCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FF9B78226C432500020C55 /* GeoOffersTrackingDebugCache.swift */; };
 		D5FF9B7B226C438A00020C55 /* TrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FF9B7A226C438A00020C55 /* TrackingViewController.swift */; };
 		D5FF9B7D226C448900020C55 /* TrackingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FF9B7C226C448900020C55 /* TrackingCell.swift */; };
@@ -85,8 +83,6 @@
 		D5CB265C225B3EF600FC62AD /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		D5F38DC521F71DE800531B7F /* GeoOffersWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoOffersWrapper.swift; sourceTree = "<group>"; };
 		D5F38DC721F71E2100531B7F /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		D5FF9B74226C430700020C55 /* Cache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
-		D5FF9B75226C430700020C55 /* DiskCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiskCache.swift; sourceTree = "<group>"; };
 		D5FF9B78226C432500020C55 /* GeoOffersTrackingDebugCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoOffersTrackingDebugCache.swift; sourceTree = "<group>"; };
 		D5FF9B7A226C438A00020C55 /* TrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingViewController.swift; sourceTree = "<group>"; };
 		D5FF9B7C226C448900020C55 /* TrackingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackingCell.swift; sourceTree = "<group>"; };
@@ -255,8 +251,6 @@
 			children = (
 				D5F38DC521F71DE800531B7F /* GeoOffersWrapper.swift */,
 				D5C271C6221A952E00104FCA /* GeoOffersNotificationLogger.swift */,
-				D5FF9B74226C430700020C55 /* Cache.swift */,
-				D5FF9B75226C430700020C55 /* DiskCache.swift */,
 				D5FF9B78226C432500020C55 /* GeoOffersTrackingDebugCache.swift */,
 			);
 			path = Services;
@@ -531,10 +525,8 @@
 				D5C271C9221AB4A900104FCA /* NotificationsViewController.swift in Sources */,
 				D5FF9B7B226C438A00020C55 /* TrackingViewController.swift in Sources */,
 				D58C096021E8A9B000D503D2 /* ViewController.swift in Sources */,
-				D5FF9B76226C430700020C55 /* Cache.swift in Sources */,
 				D5C271C7221A952E00104FCA /* GeoOffersNotificationLogger.swift in Sources */,
 				D5C271CB221AB58200104FCA /* NotificationSummaryCell.swift in Sources */,
-				D5FF9B77226C430700020C55 /* DiskCache.swift in Sources */,
 				D5F38DC621F71DE800531B7F /* GeoOffersWrapper.swift in Sources */,
 				D58C095E21E8A9B000D503D2 /* AppDelegate.swift in Sources */,
 				D5CB265D225B3EF600FC62AD /* MapViewController.swift in Sources */,

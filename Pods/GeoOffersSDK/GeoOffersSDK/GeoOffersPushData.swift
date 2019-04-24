@@ -35,11 +35,25 @@ struct GeoOffersPushData: Codable {
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         message = try values.decode(String.self, forKey: .message)
-        messageID = try values.decode(String.self, forKey: .messageID)
-        totalParts = try values.geoValueFromString(.totalParts)
         scheduleID = try values.geoValueFromString(.scheduleID)
-        messageIndex = try values.geoValueFromString(.messageIndex)
         timestamp = try values.geoValueFromString(.timestamp)
+        if let messageID: String = try? values.decode(String.self, forKey: .messageID) {
+            self.messageID = messageID
+        } else {
+            self.messageID = ""
+        }
+        
+        if let totalParts: String = try? values.decode(String.self, forKey: .totalParts) {
+            self.totalParts = Int(totalParts) ?? 1
+        } else {
+            self.totalParts = 1
+        }
+        
+        if let messageIndex: String = try? values.decode(String.self, forKey: .messageIndex) {
+            self.messageIndex = Int(messageIndex) ?? 0
+        } else {
+            self.messageIndex = 1
+        }
     }
 
     var isOutOfDate: Bool {
