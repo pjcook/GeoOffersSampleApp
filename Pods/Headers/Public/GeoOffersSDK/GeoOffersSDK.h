@@ -1,1 +1,1 @@
-../../../../../SDK/GeoOffersSDK/GeoOffersSDK/GeoOffersSDK.h
+../../../GeoOffersSDK/GeoOffersSDK/GeoOffersSDK.h

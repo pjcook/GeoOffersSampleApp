@@ -67,7 +67,7 @@ PODS:
   - Protobuf (3.7.0)
 
 DEPENDENCIES:
-  - GeoOffersSDK (from `~/Library/Mobile Documents/com~apple~CloudDocs/Private Projects/Zappit/Geo-Offers.com/SDK/GeoOffersSDK`)
+  - GeoOffersSDK
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -77,14 +77,11 @@ SPEC REPOS:
     - FirebaseCore
     - FirebaseInstanceID
     - FirebaseMessaging
+    - GeoOffersSDK
     - GoogleAppMeasurement
     - GoogleUtilities
     - nanopb
     - Protobuf
-
-EXTERNAL SOURCES:
-  GeoOffersSDK:
-    :path: "~/Library/Mobile Documents/com~apple~CloudDocs/Private Projects/Zappit/Geo-Offers.com/SDK/GeoOffersSDK"
 
 SPEC CHECKSUMS:
   Firebase: 0c8cf33f266410c61ab3e2265cfa412200351d9c
@@ -99,6 +96,6 @@ SPEC CHECKSUMS:
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Protobuf: 7a877b7f3e5964e3fce995e2eb323dbc6831bb5a
 
-PODFILE CHECKSUM: 65cabea3fac36968b7bdf0aad6c268db9d080836
+PODFILE CHECKSUM: 06502368476ca534c465656d3f5eae9e2a047b61
 
 COCOAPODS: 1.6.1
