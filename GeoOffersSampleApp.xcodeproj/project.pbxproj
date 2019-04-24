@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9419625B0FA7502BB19EA33F /* libPods-GeoOffersSampleAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8743B0A76D74131CE44BA5 /* libPods-GeoOffersSampleAppTests.a */; };
 		AAB16376253C3D16CF65BC7D /* libPods-GeoOffersSampleAppUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7CB45D207E7AE45C426C4EFB /* libPods-GeoOffersSampleAppUITests.a */; };
+		D52AB8A82270479100763DCD /* Crawley.gpx in Resources */ = {isa = PBXBuildFile; fileRef = D52AB8A72270479100763DCD /* Crawley.gpx */; };
 		D58C095E21E8A9B000D503D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58C095D21E8A9B000D503D2 /* AppDelegate.swift */; };
 		D58C096021E8A9B000D503D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58C095F21E8A9B000D503D2 /* ViewController.swift */; };
 		D58C096321E8A9B000D503D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58C096121E8A9B000D503D2 /* Main.storyboard */; };
@@ -58,6 +59,7 @@
 		B6E17D3897CEEB2EE712AA76 /* Pods-GeoOffersSampleAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoOffersSampleAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GeoOffersSampleAppTests/Pods-GeoOffersSampleAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BD8743B0A76D74131CE44BA5 /* libPods-GeoOffersSampleAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GeoOffersSampleAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D205E020B4D120072DB088D9 /* Pods-GeoOffersSampleAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoOffersSampleAppUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GeoOffersSampleAppUITests/Pods-GeoOffersSampleAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D52AB8A72270479100763DCD /* Crawley.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Crawley.gpx; sourceTree = "<group>"; };
 		D58C095A21E8A9B000D503D2 /* GeoOffersSampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeoOffersSampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D58C095D21E8A9B000D503D2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D58C095F21E8A9B000D503D2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 				D5AE1A3621F9A8C4005F86CF /* Apple.gpx */,
 				D59B9A5222268A9E00B0DEBB /* Norwich.gpx */,
 				D5AE1A3721F9A8C4005F86CF /* GeoOffersLocation.gpx */,
+				D52AB8A72270479100763DCD /* Crawley.gpx */,
 				D5AE1A3821F9A8C4005F86CF /* Google.gpx */,
 			);
 			name = "Support Files";
@@ -375,6 +378,7 @@
 				D58C096821E8A9B200D503D2 /* LaunchScreen.storyboard in Resources */,
 				D58C096521E8A9B200D503D2 /* Assets.xcassets in Resources */,
 				D5F38DC821F71E3200531B7F /* LICENSE in Resources */,
+				D52AB8A82270479100763DCD /* Crawley.gpx in Resources */,
 				D59B9A5322268A9E00B0DEBB /* Norwich.gpx in Resources */,
 				D58C096321E8A9B000D503D2 /* Main.storyboard in Resources */,
 			);
