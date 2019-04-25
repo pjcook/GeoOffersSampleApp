@@ -5,7 +5,7 @@ import UIKit
 private let diskCacheSaveQueue = DispatchQueue(label: "DiskCache.queue")
 class DiskCache<CacheData: Codable>: CacheStorage {
     var cacheData: CacheData
-    
+
     private let savePath: String
     private let fileManager: FileManager
     private var saveTimer: Timer?
@@ -18,7 +18,7 @@ class DiskCache<CacheData: Codable>: CacheStorage {
         cacheData = emptyData
         savePath = try! fileManager.documentPath(for: filename)
         load()
-        
+
         NotificationCenter.default.addObserver(forName: UIApplication.didEnterBackgroundNotification, object: nil, queue: nil) { _ in
             self.nonQueuedSave(self.cacheData)
         }
@@ -36,7 +36,7 @@ class DiskCache<CacheData: Codable>: CacheStorage {
             self.nonQueuedSave(cacheData)
         }
     }
-    
+
     func cacheUpdated() {
         hasPendingChanges = true
     }

@@ -4,9 +4,9 @@ import UIKit
 
 extension GeoOffersTrackingEvent {
     var formattedDate: String {
-        return notificationSummaryCellDateFormatter.string(from: Date(timeIntervalSince1970: timestamp))
+        return notificationSummaryCellDateFormatter.string(from: Date(timeIntervalSince1970: timestamp / 1000))
     }
-    
+
     var messageString: String {
         switch type {
         case .geoFenceEntry, .geoFenceExit, .offerDelivered, .regionDwellTime:

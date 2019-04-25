@@ -4,6 +4,7 @@ import Foundation
 
 class GeoOffersPushNotificationCache {
     private var cache: GeoOffersCache
+    private let deleteMessagesAfterSeconds: Double = 60 * 60 * 24 * 2
 
     init(cache: GeoOffersCache) {
         self.cache = cache
@@ -28,7 +29,10 @@ class GeoOffersPushNotificationCache {
     }
 
     func cleanUpMessages() {
-        // TODO: remove messages that are more than 1 day old
+        cache.cacheData.pushNotificationSplitMessages.removeAll(where: {
+            abs(Date(timeIntervalSince1970: $0.timestamp).timeIntervalSinceNow) > deleteMessagesAfterSeconds
+        })
+        cache.cacheUpdated()
     }
 
     func updateCache(pushData: GeoOffersPushNotificationDataUpdate) {

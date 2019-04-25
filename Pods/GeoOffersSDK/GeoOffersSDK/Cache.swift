@@ -16,4 +16,3 @@ protocol Cache {
     func cacheUpdated()
     func save()
 }
-

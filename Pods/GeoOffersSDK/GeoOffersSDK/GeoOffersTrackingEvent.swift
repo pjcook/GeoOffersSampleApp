@@ -8,7 +8,7 @@ enum GeoOffersTrackingEventType: String, Codable {
     case offerDelivered = "Delivered"
     case regionDwellTime = "GeofenceDwell"
     case polledForNearbyOffers = "PolledForNearbyOffers"
-    
+
     var shouldSendToServer: Bool {
         switch self {
         case .geoFenceEntry, .offerDelivered: return true

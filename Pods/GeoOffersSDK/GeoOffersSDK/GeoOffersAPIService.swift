@@ -91,7 +91,7 @@ class GeoOffersAPIService: NSObject, GeoOffersAPIServiceProtocol {
     private func taskFinished(task: GeoOffersNetworkTask) {
         activeTasks.removeValue(forKey: task.id)
     }
-    
+
     private func cancelTasks(of taskType: GeoOffersTaskType) {
         activeTasks.forEach {
             if $0.value.taskType == taskType {
@@ -115,7 +115,7 @@ class GeoOffersAPIService: NSObject, GeoOffersAPIServiceProtocol {
 
         let request = generateRequest(url: url, method: HTTPMethod.get)
         guard let downloadTask = session?.downloadTask(with: request) else { return }
-        trackingCache.add(GeoOffersTrackingEvent(type: .polledForNearbyOffers, timestamp: Date().timeIntervalSince1970, scheduleDeviceID: "", scheduleID: 0, latitude: latitude, longitude: longitude))
+        trackingCache.add(GeoOffersTrackingEvent(type: .polledForNearbyOffers, timestamp: Date().unixTimeIntervalSince1970, scheduleDeviceID: "", scheduleID: 0, latitude: latitude, longitude: longitude))
         let task = GeoOffersNetworkTask(id: downloadTask.taskIdentifier, task: downloadTask, isDataTask: true, taskType: .getOffersData, completionHandler: completionHandler)
         startTask(task: task)
     }

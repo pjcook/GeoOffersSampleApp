@@ -9,7 +9,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Initialise the GeoOffersSDK, simply using the Wrapper singleton for simplifying the Sample App, use your own preferred dependency injection pattern
-        
+
         // Call the matching method on the GeoOffersSDK instance
         GeoOffersWrapper.shared.geoOffers.application(application, didFinishLaunchingWithOptions: launchOptions)
 
@@ -52,10 +52,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Call the matching method on the GeoOffersSDK instance
         GeoOffersWrapper.shared.geoOffers.application(application, didRegisterForRemoteNotificationsWithDeviceToken: deviceToken)
     }
-    
+
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
         GeoOffersWrapper.shared.geoOffers.application(application, didReceiveRemoteNotification: userInfo, fetchCompletionHandler: nil)
-        
+
         // Sample app test code. Log push notifications for testing
         guard let notification = userInfo as? [String: AnyObject] else { return }
         GeoOffersNotificationLogger.shared.log(notification)

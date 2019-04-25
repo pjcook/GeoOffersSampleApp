@@ -40,19 +40,19 @@ struct GeoOffersPushData: Codable {
         if let messageID: String = try? values.decode(String.self, forKey: .messageID) {
             self.messageID = messageID
         } else {
-            self.messageID = ""
+            messageID = ""
         }
-        
+
         if let totalParts: String = try? values.decode(String.self, forKey: .totalParts) {
             self.totalParts = Int(totalParts) ?? 1
         } else {
-            self.totalParts = 1
+            totalParts = 1
         }
-        
+
         if let messageIndex: String = try? values.decode(String.self, forKey: .messageIndex) {
             self.messageIndex = Int(messageIndex) ?? 0
         } else {
-            self.messageIndex = 1
+            messageIndex = 1
         }
     }
 

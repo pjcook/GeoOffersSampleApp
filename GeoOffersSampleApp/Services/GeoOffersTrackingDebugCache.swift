@@ -10,7 +10,7 @@ enum GeoOffersTrackingEventType: String, Codable {
     case offerDelivered = "Delivered"
     case regionDwellTime = "GeofenceDwell"
     case polledForNearbyOffers = "PolledForNearbyOffers"
-    
+
     var shouldSendToServer: Bool {
         switch self {
         case .geoFenceEntry, .offerDelivered: return true
@@ -26,7 +26,7 @@ struct GeoOffersTrackingEvent: Codable {
     let scheduleID: ScheduleID
     let latitude: Double
     let longitude: Double
-    
+
     enum CodingKeys: String, CodingKey {
         case type
         case timestamp = "timestampMs"
@@ -41,12 +41,12 @@ class GeoOffersTrackingDebugCache {
     var cacheData: [GeoOffersTrackingEvent] = []
     let savePath: String
     private let fileManager = FileManager.default
-    
+
     init() {
         savePath = try! fileManager.documentPath(for: "GeoOffersTrackingDebugCache.data")
         print(savePath)
     }
-    
+
     func load() -> [GeoOffersTrackingEvent] {
         guard fileManager.fileExists(atPath: savePath) else { return [] }
         do {

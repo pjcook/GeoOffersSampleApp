@@ -163,6 +163,7 @@ public class GeoOffersSDKService: GeoOffersSDKServiceProtocol {
         retrieveNearbyGeoFences()
         processListingData()
         registerPendingPushToken()
+        notificationCache.cleanUpMessages()
     }
 
     public func buildOfferListViewController() -> UIViewController {

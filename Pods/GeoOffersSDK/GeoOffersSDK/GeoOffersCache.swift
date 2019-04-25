@@ -28,13 +28,13 @@ class GeoOffersDiskCacheStorage: GeoOffersCacheStorage {
             diskCache.cacheUpdated()
         }
     }
-    
+
     override init() {
         diskCache = DiskCache<GeoOffersCacheData>(filename: "GeoOffersCache.data", emptyData: GeoOffersCacheData())
         super.init()
         cacheData = diskCache.cacheData
     }
-    
+
     override func save() {
         diskCache.save()
     }

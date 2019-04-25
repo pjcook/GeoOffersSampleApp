@@ -14,7 +14,7 @@ class GeoOffersListingCache {
     var minimumMovementDistance: Double {
         return Double(listing()?.catchmentRadius ?? 1 * 1000) / 2
     }
-    
+
     init(cache: GeoOffersCache, offersCache: GeoOffersOffersCache) {
         self.cache = cache
         self.offersCache = offersCache

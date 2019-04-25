@@ -1,8 +1,8 @@
 //  Copyright © 2019 Zappit. All rights reserved.
 
+import CoreLocation
 import GeoOffersSDK
 import UIKit
-import CoreLocation
 
 class ViewController: UIViewController {
     @IBOutlet private var pushToken: UILabel!
@@ -43,7 +43,7 @@ class ViewController: UIViewController {
             UIPasteboard.general.string = token
         }
     }
-    
+
     @IBAction private func toggleLocationInfo() {
         let location = GeoOffersWrapper.shared.lastLocation
         var locationString = "No Location"
