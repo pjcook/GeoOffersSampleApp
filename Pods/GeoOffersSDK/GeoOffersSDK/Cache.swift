@@ -1,4 +1,4 @@
-//  Copyright © 2019 Software101. All rights reserved.
+//  Copyright © 2019 Zappit. All rights reserved.
 
 import Foundation
 
