@@ -1,6 +1,7 @@
 //  Copyright © 2019 Zappit. All rights reserved.
 
 import CoreLocation
+import GeoOffersPrivateSDK
 import GeoOffersSDK
 import MapKit
 import UIKit

@@ -1,6 +1,7 @@
 //  Copyright © 2019 Zappit. All rights reserved.
 
 import CoreLocation
+import GeoOffersPrivateSDK
 import UIKit
 import UserNotifications
 
@@ -45,11 +46,11 @@ public class GeoOffersSDKService: GeoOffersSDKServiceProtocol {
     public weak var offersUpdatedDelegate: GeoOffersOffersCacheDelegate?
 
     public init(
-        configuration: GeoOffersConfigurationProtocol,
+        config: GeoOffersConfig,
         userNotificationCenter: GeoOffersUserNotificationCenter = UNUserNotificationCenter.current()
     ) {
         let lastKnownLocation = GeoOffersSDKUserDefaults.shared.lastKnownLocation
-        self.configuration = configuration as! GeoOffersSDKConfiguration
+        configuration = config.internalConfiguration()
         notificationService = GeoOffersNotificationService(notificationCenter: userNotificationCenter)
         locationService = GeoOffersLocationService(latestLocation: lastKnownLocation, configuration: configuration)
         let cache = GeoOffersCache(storage: GeoOffersDiskCacheStorage())
@@ -59,11 +60,11 @@ public class GeoOffersSDKService: GeoOffersSDKServiceProtocol {
         notificationCache = GeoOffersPushNotificationCache(cache: cache)
         offersCache = GeoOffersOffersCache(cache: cache)
         listingCache = GeoOffersListingCache(cache: cache, offersCache: offersCache)
-        apiService = GeoOffersAPIService(configuration: self.configuration, trackingCache: trackingCache)
+        apiService = GeoOffersAPIService(configuration: configuration, trackingCache: trackingCache)
 
         dataParser = GeoOffersPushNotificationProcessor(notificationCache: notificationCache, listingCache: listingCache)
-        presentationService = GeoOffersPresenter(configuration: self.configuration, locationService: locationService, cacheService: GeoOffersWebViewCache(cache: cache, listingCache: listingCache, offersCache: offersCache))
-        firebaseWrapper = isRunningTests ? GeoOffersFirebaseWrapperEmpty() : GeoOffersFirebaseWrapper(configuration: self.configuration)
+        presentationService = GeoOffersPresenter(configuration: configuration, locationService: locationService, cacheService: GeoOffersWebViewCache(cache: cache, listingCache: listingCache, offersCache: offersCache))
+        firebaseWrapper = isRunningTests ? GeoOffersFirebaseWrapperEmpty() : GeoOffersFirebaseWrapper(configuration: configuration)
         dataProcessor = GeoOffersDataProcessor(
             offersCache: offersCache,
             listingCache: listingCache,
@@ -83,7 +84,7 @@ public class GeoOffersSDKService: GeoOffersSDKServiceProtocol {
     }
 
     init(
-        configuration: GeoOffersSDKConfiguration,
+        config: GeoOffersConfig,
         notificationService: GeoOffersNotificationServiceProtocol,
         locationService: GeoOffersLocationService,
         apiService: GeoOffersAPIServiceProtocol,
@@ -95,7 +96,7 @@ public class GeoOffersSDKService: GeoOffersSDKServiceProtocol {
         listingCache: GeoOffersListingCache,
         dataProcessor: GeoOffersDataProcessor
     ) {
-        self.configuration = configuration
+        configuration = config.internalConfiguration()
         self.notificationService = notificationService
         self.locationService = locationService
         self.apiService = apiService
@@ -176,8 +177,7 @@ public class GeoOffersSDKService: GeoOffersSDKServiceProtocol {
     }
 
     public func debugRegionLocations() -> [GeoOffersDebugRegion] {
-        let regions = listingCache.listing()?.regions.reduce([]) { $0 + $1.value } ?? []
-        return regions.map { GeoOffersDebugRegion(region: $0) }
+        return listingCache.debugRegionLocations()
     }
 }
 
@@ -187,41 +187,35 @@ extension GeoOffersSDKService: GeoOffersPushNotificationProcessorDelegate {
         GeoOffersSDKUserDefaults.shared.lastRefreshLocation = location
     }
 
-    internal func processListingData() {
+    public func processListingData() {
         guard let location = locationService.latestLocation else { return }
-        dataProcessor.process(at: location)
-
-        guard let regionsToBeMonitored = dataProcessor.regionsToBeMonitored(at: location) else {
-            locationService.stopMonitoringAllRegions()
-            return
-        }
-        locationService.monitor(regions: regionsToBeMonitored)
+        dataProcessor.process(at: location, locationService: locationService)
     }
 
     private func processListingData(for location: CLLocationCoordinate2D) {
-        dataProcessor.process(at: location)
+        dataProcessor.process(at: location, locationService: nil)
     }
 }
 
 extension GeoOffersSDKService: GeoOffersLocationServiceDelegate {
-    func userDidMoveSignificantDistance() {
+    public func userDidMoveSignificantDistance() {
         GeoOffersSDKUserDefaults.shared.lastKnownLocation = locationService.latestLocation
         retrieveNearbyGeoFences()
         processListingData()
     }
 
-    func didUpdateLocations(_ locations: [CLLocation]) {
+    public func didUpdateLocations(_ locations: [CLLocation]) {
         for location in locations {
             processListingData(for: location.coordinate)
         }
     }
 
-    func didEnterRegion(_: String) {
+    public func didEnterRegion(_: String) {
         retrieveNearbyGeoFences()
         processListingData()
     }
 
-    func didExitRegion(_: String) {
+    public func didExitRegion(_: String) {
         retrieveNearbyGeoFences()
         processListingData()
     }
@@ -270,7 +264,7 @@ extension GeoOffersSDKService: GeoOffersOffersCacheDelegate {
 }
 
 extension GeoOffersSDKService: GeoOffersListingCacheDelegate {
-    func listingUpdated() {
+    public func listingUpdated() {
         // offersUpdatedDelegate?.offersUpdated()
         // updates too frequently
     }
@@ -315,12 +309,11 @@ extension GeoOffersSDKService {
     }
 
     internal func processDownloadedData(data: Data) {
-        guard let parsedData = self.dataParser.parseNearbyFences(jsonData: data) else {
+        guard let clientID = self.dataParser.parseNearbyFences(jsonData: data) else {
             geoOffersLog("Invalid fences data")
             return
         }
-        configuration.clientID = parsedData.clientID
-        listingCache.replaceCache(parsedData)
+        configuration.clientID = clientID
         processListingData()
         registerPendingPushToken()
     }

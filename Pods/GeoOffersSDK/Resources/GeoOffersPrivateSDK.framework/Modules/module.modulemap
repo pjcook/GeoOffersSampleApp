@@ -1,0 +1,11 @@
+framework module GeoOffersPrivateSDK {
+  umbrella header "GeoOffersPrivateSDK.h"
+
+  export *
+  module * { export * }
+}
+
+module GeoOffersPrivateSDK.Swift {
+    header "GeoOffersPrivateSDK-Swift.h"
+    requires objc
+}

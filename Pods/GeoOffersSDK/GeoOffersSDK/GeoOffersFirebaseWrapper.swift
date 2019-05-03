@@ -3,6 +3,7 @@
 import FirebaseCore
 import FirebaseMessaging
 import Foundation
+import GeoOffersPrivateSDK
 
 protocol GeoOffersFirebaseWrapperDelegate: class {
     func handleFirebaseNotification(notification: [String: AnyObject])

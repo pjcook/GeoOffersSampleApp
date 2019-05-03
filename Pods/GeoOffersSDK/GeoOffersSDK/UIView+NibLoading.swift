@@ -3,7 +3,7 @@
 import UIKit
 
 extension UIView {
-    func xibSetup() {
+    public func xibSetup() {
         let className = NSStringFromClass(type(of: self))
         guard let nibName = className.components(separatedBy: ".").last else {
             assertionFailure("Could not find nibName for class \(className)")

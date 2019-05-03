@@ -1,10 +1,4 @@
-//
-//  GeoOffersSampleAppUITests.swift
-//  GeoOffersSampleAppUITests
-//
-//  Created by PJ COOK on 11/01/2019.
 //  Copyright © 2019 Zappit. All rights reserved.
-//
 
 import XCTest
 

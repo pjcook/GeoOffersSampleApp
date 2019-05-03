@@ -1,6 +1,7 @@
 //  Copyright © 2019 Zappit. All rights reserved.
 
 import Foundation
+import GeoOffersPrivateSDK
 import UserNotifications
 
 public protocol GeoOffersUserNotificationCenter {
@@ -12,12 +13,6 @@ public protocol GeoOffersUserNotificationCenter {
 }
 
 extension UNUserNotificationCenter: GeoOffersUserNotificationCenter {}
-
-protocol GeoOffersNotificationServiceProtocol {
-    func requestNotificationPermissions()
-    func applicationDidBecomeActive(_ application: UIApplication)
-    func sendNotification(title: String, subtitle: String, delaySeconds: Double, identifier: String, isSilent: Bool)
-}
 
 class GeoOffersNotificationService: GeoOffersNotificationServiceProtocol {
     private var notificationCenter: GeoOffersUserNotificationCenter
