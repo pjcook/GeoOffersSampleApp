@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="Xcode">
+    
+    <!--
+     Provide one or more waypoints containing a latitude/longitude pair. If you provide one
+     waypoint, Xcode will simulate that specific location. If you provide multiple waypoints,
+     Xcode will simulate a route visiting each waypoint.
+     -->
+    <!--wpt lat="37.331705" lon="-122.030237">
+        <name>Cupertino</name-->
+        
+        <!--
+         Optionally provide a time element for each waypoint. Xcode will interpolate movement
+         at a rate of speed based on the time elapsed between each waypoint. If you do not provide
+         a time element, then Xcode will use a fixed rate of speed.
+         
+         Waypoints must be sorted by time in ascending order.
+         -->
+        <!--time>2014-09-24T14:55:30Z</time>
+    </wpt-->
+    
+    <wpt lat="51.1024" lon="-0.1593" />
+    <wpt lat="51.1022" lon="-0.1578" />
+    <wpt lat="51.1067" lon="-0.1571" />
+    <wpt lat="51.1095" lon="-0.1575" />
+    <wpt lat="51.1112" lon="-0.1597" />
+    <wpt lat="51.1148" lon="-0.1603" />
+    <wpt lat="51.1186" lon="-0.1603" />
+    <wpt lat="51.1183" lon="-0.1616" />
+    <wpt lat="51.1143" lon="-0.1701" />
+    <wpt lat="51.1142" lon="-0.1806" />
+    <wpt lat="51.1140" lon="-0.1829" />
+    <wpt lat="51.1135" lon="-0.1849" />
+    <wpt lat="51.1135" lon="-0.1855" />
+    <wpt lat="51.1135" lon="-0.1864" />
+    <wpt lat="51.1151" lon="-0.1865" />
+    <wpt lat="51.1152" lon="-0.1882" />
+    <wpt lat="51.1165" lon="-0.1881" />
+    <wpt lat="51.1166" lon="-0.1898" />
+    <wpt lat="51.1189" lon="-0.1891" />
+    <wpt lat="51.1208" lon="-0.1895" />
+    <wpt lat="51.1189" lon="-0.1891" />
+    <wpt lat="51.1166" lon="-0.1898" />
+    <wpt lat="51.1165" lon="-0.1881" />
+    <wpt lat="51.1152" lon="-0.1882" />
+    <wpt lat="51.1151" lon="-0.1865" />
+    <wpt lat="51.1135" lon="-0.1864" />
+    <wpt lat="51.1135" lon="-0.1855" />
+    <wpt lat="51.1135" lon="-0.1849" />
+    <wpt lat="51.1140" lon="-0.1829" />
+    <wpt lat="51.1142" lon="-0.1806" />
+    <wpt lat="51.1143" lon="-0.1701" />
+    <wpt lat="51.1183" lon="-0.1616" />
+    <wpt lat="51.1186" lon="-0.1603" />
+    <wpt lat="51.1148" lon="-0.1603" />
+    <wpt lat="51.1112" lon="-0.1597" />
+    <wpt lat="51.1095" lon="-0.1575" />
+    <wpt lat="51.1067" lon="-0.1571" />
+    <wpt lat="51.1022" lon="-0.1578" />
+    <wpt lat="51.1024" lon="-0.1593" />
+</gpx>

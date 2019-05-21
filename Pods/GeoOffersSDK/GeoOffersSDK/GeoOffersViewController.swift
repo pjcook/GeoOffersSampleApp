@@ -1,6 +1,5 @@
 //  Copyright © 2019 Zappit. All rights reserved.
 
-import GeoOffersPrivateSDK
 import UIKit
 import WebKit
 

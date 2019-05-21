@@ -1,6 +1,5 @@
 //  Copyright © 2019 Zappit. All rights reserved.
 
-import GeoOffersPrivateSDK
 import UIKit
 import WebKit
 
@@ -12,13 +11,13 @@ protocol GeoOffersPresenterProtocol: class {
 }
 
 class GeoOffersPresenter: GeoOffersPresenterProtocol {
-    private let configuration: GeoOffersSDKConfiguration
+    private let configuration: GeoOffersInternalConfiguration
     private let locationService: GeoOffersLocationService
     private let cacheService: GeoOffersWebViewCache
     weak var viewControllerDelegate: GeoOffersViewControllerDelegate?
 
     init(
-        configuration: GeoOffersSDKConfiguration,
+        configuration: GeoOffersInternalConfiguration,
         locationService: GeoOffersLocationService,
         cacheService: GeoOffersWebViewCache
     ) {
@@ -91,7 +90,7 @@ class GeoOffersPresenter: GeoOffersPresenterProtocol {
 }
 
 extension GeoOffersPresenter {
-    func buildOfferListQuerystring(configuration: GeoOffersConfigurationProtocol, locationService: GeoOffersLocationService) -> String {
+    func buildOfferListQuerystring(configuration: GeoOffersInternalConfiguration, locationService: GeoOffersLocationService) -> String {
         let registrationCode = configuration.registrationCode
         var latitude = ""
         var longitude = ""
@@ -104,7 +103,7 @@ extension GeoOffersPresenter {
         return queryString
     }
 
-    func buildCouponQuerystring(configuration: GeoOffersConfigurationProtocol, locationService: GeoOffersLocationService) -> String {
+    func buildCouponQuerystring(configuration: GeoOffersInternalConfiguration, locationService: GeoOffersLocationService) -> String {
         var latitude = ""
         var longitude = ""
         if let location = locationService.latestLocation {

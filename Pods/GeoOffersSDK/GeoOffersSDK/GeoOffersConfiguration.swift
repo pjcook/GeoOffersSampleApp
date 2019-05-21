@@ -3,9 +3,8 @@
 import AdSupport
 import CoreLocation
 import Foundation
-import GeoOffersPrivateSDK
 
-public struct GeoOffersConfig {
+public struct GeoOffersConfiguration: GeoOffersConfigurationProtocol {
     public let registrationCode: String
     public let authToken: String
     public let testing: Bool
@@ -30,19 +29,5 @@ public struct GeoOffersConfig {
         self.minimumRefreshWaitTime = minimumRefreshWaitTime
         self.mainAppUsesFirebase = mainAppUsesFirebase
         minimumRefreshDistance = minimumDistance
-    }
-}
-
-extension GeoOffersConfig {
-    func internalConfiguration() -> GeoOffersSDKConfiguration {
-        return GeoOffersConfiguration(
-            registrationCode: registrationCode,
-            authToken: authToken,
-            testing: testing,
-            selectedCategoryTabBackgroundColor: selectedCategoryTabBackgroundColor,
-            minimumRefreshWaitTime: minimumRefreshWaitTime,
-            minimumDistance: minimumRefreshDistance,
-            mainAppUsesFirebase: mainAppUsesFirebase
-        )
     }
 }

@@ -1,7 +1,6 @@
 //  Copyright © 2019 Zappit. All rights reserved.
 
 import Foundation
-import GeoOffersPrivateSDK
 import UserNotifications
 
 public protocol GeoOffersUserNotificationCenter {

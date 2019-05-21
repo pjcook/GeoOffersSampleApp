@@ -3,7 +3,6 @@
 import FirebaseCore
 import FirebaseMessaging
 import Foundation
-import GeoOffersPrivateSDK
 
 protocol GeoOffersFirebaseWrapperDelegate: class {
     func handleFirebaseNotification(notification: [String: AnyObject])
@@ -25,10 +24,10 @@ class GeoOffersFirebaseWrapperEmpty: GeoOffersFirebaseWrapperProtocol {
 }
 
 class GeoOffersFirebaseWrapper: NSObject, GeoOffersFirebaseWrapperProtocol {
-    private var configuration: GeoOffersSDKConfiguration
+    private var configuration: GeoOffersInternalConfiguration
     weak var delegate: GeoOffersFirebaseWrapperDelegate?
 
-    init(configuration: GeoOffersSDKConfiguration) {
+    init(configuration: GeoOffersInternalConfiguration) {
         self.configuration = configuration
     }
 

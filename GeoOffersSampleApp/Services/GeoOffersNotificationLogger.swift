@@ -59,14 +59,14 @@ class GeoOffersNotificationLogger {
     private var notifications: [GeoOffersNotificationMessage] = []
 
     func clearCache() {
-        GeoOffersNotificationLoggerQueue.sync {
+        GeoOffersNotificationLoggerQueue.async {
             self.notifications = []
         }
         save()
     }
 
     func remove(_ id: String) {
-        GeoOffersNotificationLoggerQueue.sync {
+        GeoOffersNotificationLoggerQueue.async {
             self.notifications.removeAll(where: { $0.id == id })
         }
         save()
@@ -78,7 +78,7 @@ class GeoOffersNotificationLogger {
 
     func log(_ notification: [String: AnyObject]) {
         let message = GeoOffersNotificationMessage(message: notification)
-        GeoOffersNotificationLoggerQueue.sync {
+        GeoOffersNotificationLoggerQueue.async {
             self.notifications.append(message)
             while self.notifications.count > self.maxMessagesToCache {
                 _ = self.notifications.removeFirst()
@@ -104,7 +104,7 @@ class GeoOffersNotificationLogger {
 
     private func load() {
         guard let savePath = savePath, FileManager.default.fileExists(atPath: savePath) else { return }
-        GeoOffersNotificationLoggerQueue.sync {
+        GeoOffersNotificationLoggerQueue.async {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: savePath))
                 guard let cachedData = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [[String: AnyObject]] else { return }
@@ -123,7 +123,7 @@ class GeoOffersNotificationLogger {
     private func save() {
         guard let savePath = savePath else { return }
         let cache = notifications
-        GeoOffersNotificationLoggerQueue.sync {
+        GeoOffersNotificationLoggerQueue.async {
             let url = URL(fileURLWithPath: savePath)
             do {
                 var array: [[String: AnyObject]] = []
