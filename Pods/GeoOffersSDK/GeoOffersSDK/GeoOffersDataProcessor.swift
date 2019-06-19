@@ -120,6 +120,7 @@ class GeoOffersDataProcessor {
             if abs($0.createdDate.timeIntervalSinceNow) > $0.region.notificationDwellDelaySeconds {
                 track(GeoOffersTrackingEvent.event(with: .regionDwellTime, region: $0.region, location: location))
                 checkAndSendNotification($0.region, location: location)
+                offersCache.removePendingOffer(scheduleID: $0.region.scheduleID)
             }
         }
     }

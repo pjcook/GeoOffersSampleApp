@@ -33,6 +33,11 @@ public class GeoOffersOffersCache {
     func pendingOffers() -> [GeoOffersCacheItem] {
         return cache.cacheData.pendingOffers.reduce([]) { $0 + [$1.value] }
     }
+    
+    func removePendingOffer(scheduleID: ScheduleID) {
+        cache.cacheData.pendingOffers.removeValue(forKey: scheduleID)
+        cache.cacheUpdated()
+    }
 
     func hasOfferAlready(_ scheduleID: ScheduleID) -> Bool {
         return cache.cacheData.offers[scheduleID] != nil
