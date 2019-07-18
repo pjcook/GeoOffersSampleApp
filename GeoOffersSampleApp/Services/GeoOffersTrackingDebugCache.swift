@@ -10,6 +10,7 @@ enum GeoOffersTrackingEventType: String, Codable {
     case offerDelivered = "Delivered"
     case regionDwellTime = "GeofenceDwell"
     case polledForNearbyOffers = "PolledForNearbyOffers"
+    case couponOpened = "CouponOpened"
 
     var shouldSendToServer: Bool {
         switch self {
@@ -26,6 +27,7 @@ struct GeoOffersTrackingEvent: Codable {
     let scheduleID: ScheduleID
     let latitude: Double
     let longitude: Double
+    let clientCouponHash: String?
 
     enum CodingKeys: String, CodingKey {
         case type
@@ -34,6 +36,7 @@ struct GeoOffersTrackingEvent: Codable {
         case scheduleID = "rewardScheduleId"
         case latitude = "userLatitude"
         case longitude = "userLongitude"
+        case clientCouponHash = "clientCouponHashIfApplicable"
     }
 }
 
