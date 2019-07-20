@@ -29,6 +29,7 @@ class GeoOffersViewController: UIViewController {
         configuration.userContentController = contentController
         let webView = WKWebView(frame: view.bounds, configuration: configuration)
         webView.navigationDelegate = self
+        webView.uiDelegate = self
         webView.contentMode = .scaleAspectFit
 
         view.addSubview(webView)
@@ -121,6 +122,15 @@ extension GeoOffersViewController: WKScriptMessageHandler {
         } else {
             geoOffersLog("\(message.body)")
         }
+    }
+}
+
+extension GeoOffersViewController: WKUIDelegate {
+    func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
+        if let url = navigationAction.request.url {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+        return nil
     }
 }
 

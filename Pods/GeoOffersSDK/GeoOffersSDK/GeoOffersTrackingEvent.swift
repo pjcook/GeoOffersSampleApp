@@ -8,10 +8,11 @@ enum GeoOffersTrackingEventType: String, Codable {
     case offerDelivered = "Delivered"
     case regionDwellTime = "GeofenceDwell"
     case polledForNearbyOffers = "PolledForNearbyOffers"
+    case couponOpened = "CouponOpened"
 
     var shouldSendToServer: Bool {
         switch self {
-        case .geoFenceEntry, .offerDelivered: return true
+        case .geoFenceEntry, .offerDelivered, .couponOpened: return true
         default: return false
         }
     }
@@ -24,6 +25,7 @@ struct GeoOffersTrackingEvent: Codable {
     let scheduleID: ScheduleID
     let latitude: Double
     let longitude: Double
+    let clientCouponHash: String?
 
     enum CodingKeys: String, CodingKey {
         case type
@@ -32,6 +34,7 @@ struct GeoOffersTrackingEvent: Codable {
         case scheduleID = "rewardScheduleId"
         case latitude = "userLatitude"
         case longitude = "userLongitude"
+        case clientCouponHash = "clientCouponHashIfApplicable"
     }
 }
 
@@ -41,7 +44,7 @@ extension GeoOffersTrackingEvent {
     }
 
     static func event(with type: GeoOffersTrackingEventType, scheduleID: ScheduleID, scheduleDeviceID: String, latitude: Double, longitude: Double) -> GeoOffersTrackingEvent {
-        let event = GeoOffersTrackingEvent(type: type, timestamp: Date().unixTimeIntervalSince1970, scheduleDeviceID: scheduleDeviceID, scheduleID: scheduleID, latitude: latitude, longitude: longitude)
+        let event = GeoOffersTrackingEvent(type: type, timestamp: Date().unixTimeIntervalSince1970, scheduleDeviceID: scheduleDeviceID, scheduleID: scheduleID, latitude: latitude, longitude: longitude, clientCouponHash: nil)
         return event
     }
 }

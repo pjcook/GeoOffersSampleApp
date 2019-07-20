@@ -12,9 +12,9 @@ public class GeoOffersWebViewCache {
         self.listingCache = listingCache
         self.offersCache = offersCache
     }
-
-    public func buildCouponRequestJson(scheduleID: ScheduleID) -> String {
-        guard let listing = cache.cacheData.listing else { return "{}" }
+    
+    func offer(scheduleID: ScheduleID) -> GeoOffersOffer? {
+        guard let listing = cache.cacheData.listing else { return nil }
         var possibleOffer: GeoOffersOffer?
         for campaign in listing.campaigns.values {
             if campaign.offer.scheduleId == scheduleID {
@@ -22,7 +22,11 @@ public class GeoOffersWebViewCache {
                 break
             }
         }
-        guard let offer = possibleOffer else { return "{}" }
+        return possibleOffer
+    }
+
+    func buildCouponRequestJson(offer: GeoOffersOffer?) -> String {
+        guard let offer = offer else { return "{}" }
         do {
             let encoder = JSONEncoder()
             let jsonData = try encoder.encode(offer)

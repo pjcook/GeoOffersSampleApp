@@ -14,16 +14,23 @@ class GeoOffersPresenter: GeoOffersPresenterProtocol {
     private let configuration: GeoOffersInternalConfiguration
     private let locationService: GeoOffersLocationService
     private let cacheService: GeoOffersWebViewCache
+    private let trackingCache: GeoOffersTrackingCache
+    private let apiService: GeoOffersAPIServiceProtocol
+    
     weak var viewControllerDelegate: GeoOffersViewControllerDelegate?
 
     init(
         configuration: GeoOffersInternalConfiguration,
         locationService: GeoOffersLocationService,
-        cacheService: GeoOffersWebViewCache
+        cacheService: GeoOffersWebViewCache,
+        trackingCache: GeoOffersTrackingCache,
+        apiService: GeoOffersAPIServiceProtocol
     ) {
         self.configuration = configuration
         self.locationService = locationService
         self.cacheService = cacheService
+        self.trackingCache = trackingCache
+        self.apiService = apiService
     }
 
     private func offersURL() -> URL? {
@@ -79,13 +86,22 @@ class GeoOffersPresenter: GeoOffersPresenterProtocol {
             geoOffersLog("Failed to buildOfferListViewController")
             return UIViewController()
         }
-        let jsonData = cacheService.buildCouponRequestJson(scheduleID: scheduleID)
+        let offer = cacheService.offer(scheduleID: scheduleID)
+        let jsonData = cacheService.buildCouponRequestJson(offer: offer)
         vc.presenter = self
         vc.delegate = viewControllerDelegate
         let javascript = buildJavascriptForWebView(listingData: "", couponData: jsonData, authToken: configuration.authToken, tabBackgroundColor: configuration.selectedCategoryTabBackgroundColor, alreadyDeliveredOfferData: "", deliveredIdsAndTimestamps: "")
         let queryString = buildCouponQuerystring(configuration: configuration, locationService: locationService)
         vc.loadRequest(url: url, javascript: javascript, querystring: queryString)
+        trackCouponOpened(scheduleID, offer: offer)
         return vc
+    }
+    
+    private func trackCouponOpened(_ scheduleID: ScheduleID, offer: GeoOffersOffer?) {
+        let location = locationService.latestLocation
+        let trackingEvent = GeoOffersTrackingEvent(type: .couponOpened, timestamp: Date().unixTimeIntervalSince1970, scheduleDeviceID: offer?.deviceUid ?? "", scheduleID: scheduleID, latitude: location?.latitude ?? 0, longitude: location?.longitude ?? 0, clientCouponHash: offer?.clientCouponHash)
+        trackingCache.add(trackingEvent)
+        apiService.checkForPendingTrackingEvents()
     }
 }
 

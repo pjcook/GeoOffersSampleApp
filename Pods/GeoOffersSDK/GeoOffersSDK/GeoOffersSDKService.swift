@@ -42,7 +42,7 @@ public class GeoOffersSDKService: GeoOffersSDKServiceProtocol {
         apiService = GeoOffersAPIService(configuration: self.configuration, trackingCache: trackingCache)
 
         dataParser = GeoOffersPushNotificationProcessor(notificationCache: notificationCache, listingCache: listingCache)
-        presentationService = GeoOffersPresenter(configuration: self.configuration, locationService: locationService, cacheService: GeoOffersWebViewCache(cache: cache, listingCache: listingCache, offersCache: offersCache))
+        presentationService = GeoOffersPresenter(configuration: self.configuration, locationService: locationService, cacheService: GeoOffersWebViewCache(cache: cache, listingCache: listingCache, offersCache: offersCache), trackingCache: trackingCache, apiService: apiService)
         firebaseWrapper = isRunningTests ? GeoOffersFirebaseWrapperEmpty() : GeoOffersFirebaseWrapper(configuration: self.configuration)
         dataProcessor = GeoOffersDataProcessor(
             offersCache: offersCache,
@@ -144,6 +144,7 @@ public class GeoOffersSDKService: GeoOffersSDKServiceProtocol {
         processListingData()
         registerPendingPushToken()
         notificationCache.cleanUpMessages()
+        apiService.checkForPendingTrackingEvents()
     }
 
     public func buildOfferListViewController() -> UIViewController {

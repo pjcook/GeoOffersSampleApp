@@ -121,7 +121,7 @@ class GeoOffersAPIService: NSObject, GeoOffersAPIServiceProtocol {
         
         pendingPollForNearbyOffers = {
             self.pollingForNearbyOffers = true
-            self.trackingCache.add(GeoOffersTrackingEvent(type: .polledForNearbyOffers, timestamp: Date().unixTimeIntervalSince1970, scheduleDeviceID: "", scheduleID: 0, latitude: latitude, longitude: longitude))
+            self.trackingCache.add(GeoOffersTrackingEvent(type: .polledForNearbyOffers, timestamp: Date().unixTimeIntervalSince1970, scheduleDeviceID: "", scheduleID: 0, latitude: latitude, longitude: longitude, clientCouponHash: nil))
             let task = GeoOffersNetworkTask(id: downloadTask.taskIdentifier, task: downloadTask, isDataTask: true, taskType: .getOffersData, completionHandler: { response in
                 DispatchQueue.main.async {
                     completionHandler(response)
