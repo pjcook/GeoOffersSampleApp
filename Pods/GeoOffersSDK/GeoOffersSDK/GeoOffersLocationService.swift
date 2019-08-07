@@ -78,18 +78,22 @@ class GeoOffersLocationService: NSObject {
         return locationManager.monitoredRegions
     }
 
-    func monitor(regions: [GeoOffersGeoFence]) {
+    func monitor(regions: [GeoOffersGeoFence], completionHandler: (() -> Void)?) {
         guard latestLocation != nil, !regions.isEmpty else {
             stopMonitoringAllRegions()
             return
         }
         stopMonitoringAllRegions()
 
-        let regionsToTrack = filterAndReduceCrossedRegions(regions)
-
-        for region in regionsToTrack {
-            let key = region.regionIdentifier
-            monitor(center: region.coordinate, radiusMeters: Double(region.radiusMeters), identifier: key)
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
+            let regionsToTrack = self.filterAndReduceCrossedRegions(regions)
+            
+            for region in regionsToTrack {
+                let key = region.regionIdentifier
+                self.monitor(center: region.coordinate, radiusMeters: Double(region.radiusMeters), identifier: key)
+            }
+            
+            completionHandler?()
         }
     }
 

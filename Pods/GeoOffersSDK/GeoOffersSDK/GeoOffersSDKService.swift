@@ -54,7 +54,6 @@ public class GeoOffersSDKService: GeoOffersSDKServiceProtocol {
             trackingCache: trackingCache
         )
 
-        dataParser.delegate = self
         offersCache.delegate = self
         listingCache.delegate = self
         firebaseWrapper.delegate = self
@@ -88,7 +87,6 @@ public class GeoOffersSDKService: GeoOffersSDKServiceProtocol {
         self.notificationCache = notificationCache
         self.listingCache = listingCache
 
-        dataParser.delegate = self
         self.firebaseWrapper.delegate = self
         self.locationService.delegate = self
         self.presentationService.viewControllerDelegate = self
@@ -119,7 +117,9 @@ public class GeoOffersSDKService: GeoOffersSDKServiceProtocol {
             return
         }
         let success = dataParser.handleNotification(notification)
-        completionHandler?(success ? .newData : .failed)
+        processListingData {
+            completionHandler?(success ? .newData : .failed)
+        }
     }
 
     public func application(_: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
@@ -161,19 +161,19 @@ public class GeoOffersSDKService: GeoOffersSDKServiceProtocol {
     }
 }
 
-extension GeoOffersSDKService: GeoOffersPushNotificationProcessorDelegate {
+extension GeoOffersSDKService {
     private func updateLastRefreshTime(location: CLLocationCoordinate2D) {
         GeoOffersSDKUserDefaults.shared.lastRefreshTimeInterval = Date().timeIntervalSince1970
         GeoOffersSDKUserDefaults.shared.lastRefreshLocation = location
     }
 
-    public func processListingData() {
+    public func processListingData(_ completionHandler: (() -> Void)? = nil) {
         guard let location = locationService.latestLocation else { return }
-        dataProcessor.process(at: location, locationService: locationService)
+        dataProcessor.process(at: location, locationService: locationService, completionHandler: completionHandler)
     }
 
-    private func processListingData(for location: CLLocationCoordinate2D) {
-        dataProcessor.process(at: location, locationService: nil)
+    private func processListingData(for location: CLLocationCoordinate2D, _ completionHandler: (() -> Void)? = nil) {
+        dataProcessor.process(at: location, locationService: nil, completionHandler: completionHandler)
     }
 }
 
@@ -254,15 +254,17 @@ extension GeoOffersSDKService: GeoOffersListingCacheDelegate {
 
 extension GeoOffersSDKService {
     private func shouldPollNearbyGeoFences(location: CLLocationCoordinate2D) -> Bool {
+        let lastRefreshTimeInterval = GeoOffersSDKUserDefaults.shared.lastRefreshTimeInterval
         guard
             let lastRefreshLocation = GeoOffersSDKUserDefaults.shared.lastRefreshLocation
         else {
             return true
         }
+        let minimumWaitTimePassed = abs(Date(timeIntervalSince1970: lastRefreshTimeInterval).timeIntervalSinceNow) >= configuration.minimumRefreshWaitTime
         let currentLocation = CLLocation(latitude: location.latitude, longitude: location.longitude)
         let refreshLocation = CLLocation(latitude: lastRefreshLocation.latitude, longitude: lastRefreshLocation.longitude)
         let movedMinimumDistance = currentLocation.distance(from: refreshLocation) >= listingCache.minimumMovementDistance
-        return movedMinimumDistance
+        return minimumWaitTimePassed || movedMinimumDistance
     }
 
     private func retrieveNearbyGeoFences() {

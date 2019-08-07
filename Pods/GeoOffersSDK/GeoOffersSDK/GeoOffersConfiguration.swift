@@ -18,7 +18,7 @@ public struct GeoOffersConfiguration: GeoOffersConfigurationProtocol {
         authToken: String,
         testing: Bool = false,
         selectedCategoryTabBackgroundColor: String = "#FF0000",
-        minimumRefreshWaitTime: Double = 30,
+        minimumRefreshWaitTime: Double = 30 * 60,
         minimumDistance: Double = 50,
         mainAppUsesFirebase: Bool = false
     ) {

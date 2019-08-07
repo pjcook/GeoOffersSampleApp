@@ -33,7 +33,7 @@ PODS:
     - GoogleUtilities/Reachability (~> 6.2)
     - GoogleUtilities/UserDefaults (~> 6.2)
     - Protobuf (~> 3.1)
-  - GeoOffersSDK (0.3.9):
+  - GeoOffersSDK (0.4.0):
     - Firebase/Core
     - Firebase/Messaging
   - GoogleAppMeasurement (6.0.4):
@@ -91,7 +91,7 @@ SPEC CHECKSUMS:
   FirebaseCore: aecf02fb2274ec361b9bebeac112f5daa18273bd
   FirebaseInstanceID: 662b8108a09fe9ed01aafdedba100fde8536b0f6
   FirebaseMessaging: 6bb0bdaf64c55fef7a219b7bb1e94e94a0855ced
-  GeoOffersSDK: 2811ffa41e794e0da89d10dfa97d019a0578ce10
+  GeoOffersSDK: fcc8e086c144061fb506ffd8e8a318ef54a5d065
   GoogleAppMeasurement: 183bd916af7f80deb67c01888368f1108d641832
   GoogleUtilities: d2b0e277a95962e09bb27f5cd42f5f0b6a506c7d
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48

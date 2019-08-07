@@ -31,7 +31,7 @@ class GeoOffersDataProcessor {
         self.trackingCache = trackingCache
     }
 
-    public func process(at location: CLLocationCoordinate2D, locationService: GeoOffersLocationService?) {
+    public func process(at location: CLLocationCoordinate2D, locationService: GeoOffersLocationService?, completionHandler: (() -> Void)? = nil) {
         geoOffersDataProcessorQueue.async {
             self.checkPendingOffersToSeeIfDwellTimeExpired(at: location)
             self.checkPendingNotificationsToSeeIfDelayTimeExpired(at: location)
@@ -41,10 +41,16 @@ class GeoOffersDataProcessor {
 
             guard let locationService = locationService else { return }
             if let regionsToBeMonitored = self.regionsToBeMonitored(at: location) {
-                locationService.monitor(regions: regionsToBeMonitored)
+                let group = DispatchGroup()
+                group.enter()
+                locationService.monitor(regions: regionsToBeMonitored) {
+                    group.leave()
+                }
+                group.wait()
             } else {
                 locationService.stopMonitoringAllRegions()
             }
+            DispatchQueue.main.async { completionHandler?() }
         }
     }
 

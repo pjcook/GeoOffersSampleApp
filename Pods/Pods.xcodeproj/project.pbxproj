@@ -62,6 +62,7 @@
 		02289DF86EE9F1F188DE8AFA0DA0C05B /* SourceContext.pbobjc.h in Headers */ = {isa = PBXBuildFile; fileRef = C17D89513703C211265C58FBC58DF814 /* SourceContext.pbobjc.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		0273A25FC42397E3A423E3889FCB8C5D /* pb_decode.c in Sources */ = {isa = PBXBuildFile; fileRef = 819DBDCC8C7F0B8934728995D0DE5BD8 /* pb_decode.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc -fno-objc-arc"; }; };
 		03BBF14B03169CC45BBAF2DB31AC2DC2 /* GULAppEnvironmentUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C33040B90DD4D7E715C1F749C5A6596 /* GULAppEnvironmentUtil.m */; };
+		042570A105E43DE6E9D786023D43D263 /* GeoOffersConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F974BB9F8066745B55A7A1622027A0C2 /* GeoOffersConfiguration.swift */; };
 		04EBD13B60CBB3E92D1EEA4431F25656 /* SourceContext.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = D428F2B68EBDB5FE254064D015D87751 /* SourceContext.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		05EF7B63C46D318AEF6A6924F55D5F90 /* GULNetworkLoggerProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 93C9C6711A1615B3E682390726322FF0 /* GULNetworkLoggerProtocol.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		0657AD7DCDEB860C217D5DBEDF00BD01 /* GPBBootstrap.h in Headers */ = {isa = PBXBuildFile; fileRef = 627EBFBFFD130D5D03A60FA317034851 /* GPBBootstrap.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -78,6 +79,7 @@
 		0D3FD423853D135224AFA336528FD035 /* GPBWellKnownTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F8C8C3382BA5B15AAA6D768A54269F /* GPBWellKnownTypes.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0DE91D1F159407CB9E7432A14F8B4DF4 /* GPBUnknownField.m in Sources */ = {isa = PBXBuildFile; fileRef = BB7A2EDA7F844BC72E2DF961C076AD6B /* GPBUnknownField.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		0EA42FDFD70A61E5174A014AD1355DC0 /* GPBCodedOutputStream_PackagePrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9E64709411E018CF9B78A2F3D7E4CF0A /* GPBCodedOutputStream_PackagePrivate.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		0EE1DC641CD8FF7B0B7411765B9CF2BD /* Date+UnixTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6885F361B434BA9F1CDCD5E768D371E /* Date+UnixTime.swift */; };
 		101EBEC4211DA2B97B88757B6148A2A4 /* GPBProtocolBuffers.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E4279D578C607F4B6D3FA74F9B45F2D /* GPBProtocolBuffers.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		106AD9450F1908BECFBD0D8E09BA7D63 /* FirebaseMessaging.h in Headers */ = {isa = PBXBuildFile; fileRef = 2BE707E56586EDE0AF9482929DE004CE /* FirebaseMessaging.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		10EE0CC304843BFD755ADD0AAB3E67BB /* FIRErrors.h in Headers */ = {isa = PBXBuildFile; fileRef = 757C4460FFB6E267A9FAA8E0C7F84B7F /* FIRErrors.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -85,24 +87,19 @@
 		11BE8C117DF9522789F31C25FA575B0B /* FIRInstanceIDKeyPair.m in Sources */ = {isa = PBXBuildFile; fileRef = 70A31F92DD5C5840A200AB1356F72DA8 /* FIRInstanceIDKeyPair.m */; };
 		11D20F3C4F0DB4040EC6B186047CAF9E /* FIRMessagingClient.m in Sources */ = {isa = PBXBuildFile; fileRef = AB94F2C7E461E020D5A848557CA94EEE /* FIRMessagingClient.m */; };
 		12B75FF88376B6886C05D327027068C7 /* FIRInstanceID.m in Sources */ = {isa = PBXBuildFile; fileRef = 0B5AB07FD2ADC49641B72C077FE8C05F /* FIRInstanceID.m */; };
-		13A7FF79D3A5349B11DE786F1B4AD0E8 /* GeoOffersSDKServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82293262BD4D9B67375AA18B002AB81 /* GeoOffersSDKServiceProtocol.swift */; };
 		14263E945B07667851BEB244ABF8DC9B /* FIRMessagingSecureSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 91E495F641811848275C84D11C1325DC /* FIRMessagingSecureSocket.m */; };
-		14EC9E74878DC2E3E662068612944EA7 /* GeoOffersConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8A2C61B3CA2EC31D13B3BB106779E1 /* GeoOffersConfiguration.swift */; };
 		157D475BB1E665C2A67941684EBD9769 /* FIRMessagingTopicOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F019E67C3560607E630CB4C1637A8E2A /* FIRMessagingTopicOperation.m */; };
 		15C3D4C3DE027BA2D7F678264BA5C152 /* GPBUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = E3231EEE6A36F44987B8D963895A640B /* GPBUtilities.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		161189A6236C247C3197465E354117C6 /* GPBMessage_PackagePrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 590E10D122FBCA6E0DF4619BF431F0E4 /* GPBMessage_PackagePrivate.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		1666EED97C95136F7F243C7966DB6002 /* GeoOffersOffersCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549C45CB04B1E3160968ED78E9A3FDC3 /* GeoOffersOffersCache.swift */; };
 		1734FC617341A0C33CC77399C1B1C10A /* Type.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = B494CC698EE7419C6F88281E9308D37D /* Type.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		177DC1E72D1463E81F864071ECBB76B8 /* FIRMessagingCodedInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = EEBD70974D168E8CC46A4D81FCCB2CC0 /* FIRMessagingCodedInputStream.m */; };
 		1803C466EBFE2CA4A18DB366A1B1157A /* GULUserDefaults.h in Headers */ = {isa = PBXBuildFile; fileRef = 83265DE4178EF2B4D5BEBEE2179DB953 /* GULUserDefaults.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		18CC6FB89F3AC2617B68055D93B08F2B /* Timestamp.pbobjc.h in Headers */ = {isa = PBXBuildFile; fileRef = A13C91BFF92528735FD236B989AFA180 /* Timestamp.pbobjc.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		1900563DDAC7F4B9C085A3A05A3F3C73 /* GULSwizzler.m in Sources */ = {isa = PBXBuildFile; fileRef = 608EC73AB1D071C0E97F4EC4852E62F4 /* GULSwizzler.m */; };
 		195F79B7D122ED29647AEFEDFF9EA514 /* FIRMessagingUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 1078561797CE9FCA62EDE25D2119879B /* FIRMessagingUtilities.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		1A06ED7AC927CEC3E1F2C68970902CE4 /* GeoOffersSDKService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249ED1DAE89C8C27E26D08C082D7E97D /* GeoOffersSDKService.swift */; };
-		1A1854C0DBC86C65AD798E2325C1AF96 /* GeoOffersListing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 981BE0F5F6794644D671A46209FD4A50 /* GeoOffersListing.swift */; };
+		1A126BB6E12D97AA18EAFF7CBC2B0393 /* GeoOffersEnteredRegionCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2FF4DF1888821986E2F364D8763EE1 /* GeoOffersEnteredRegionCache.swift */; };
 		1A2B6D1A542273CC5794C2EB899E068B /* FIRInstanceIDBackupExcludedPlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C74556A4AAAEA3F8E669559AC45D1BF /* FIRInstanceIDBackupExcludedPlist.m */; };
 		1A6E2AC32DFBE3F80078730D425A4E53 /* GPBExtensionInternals.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DC4D80D2613DF6CEB11EE948B3C3268 /* GPBExtensionInternals.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		1A93D35DFA843B2A9784B1615E07544C /* GeoOffersNotificationToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76EAD6FBB6ED7B58BA5CDB684DF17D9D /* GeoOffersNotificationToast.swift */; };
 		1ADB003CF98859D2F08777602546A087 /* FieldMask.pbobjc.h in Headers */ = {isa = PBXBuildFile; fileRef = 57C5429BDD33330800583BCBCD6FEA48 /* FieldMask.pbobjc.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		1B27FD4C107EF6CAA013F221E26D603F /* FIRInstanceIDCombinedHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8CB85994F8C2659C624F2512AF49D9 /* FIRInstanceIDCombinedHandler.m */; };
 		1BE99EF79E16827F51C9F90DCA6DEB14 /* FIRInstanceIDTokenInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A0DD3B62E8C3F9BB85821BA9BA443D3 /* FIRInstanceIDTokenInfo.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -120,22 +117,23 @@
 		239D2EB491966C78919E0421A0A4F5B5 /* FirebaseMessaging.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A1C30659616BBABBEBE672F44A28CB0 /* FirebaseMessaging.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		2491E4662BEB6E4671D07F5A4C7B6E99 /* FIRMessagingReceiver.h in Headers */ = {isa = PBXBuildFile; fileRef = 938E9385D38DFAF19E3AB48B518FE8CF /* FIRMessagingReceiver.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		249B2D5B37C93ECD63056485592D3AEC /* FIRApp.h in Headers */ = {isa = PBXBuildFile; fileRef = ACEB08D87FC89878D46DA1645A572FD6 /* FIRApp.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		24DA0211369B88C7D4698183BF32CE8F /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6D692699A37E85F8862D4BBCA7A6B85 /* Cache.swift */; };
 		258CC9C48F083209313CD3A4BE368F91 /* pb_common.c in Sources */ = {isa = PBXBuildFile; fileRef = C86D0616F564CCBA0D013B8611A64AA8 /* pb_common.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc -fno-objc-arc -fno-objc-arc"; }; };
-		26466BC0ABD0BC809A25B6698EE93167 /* GeoOffersEnteredRegionCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD8F0833153C03B7499BDF56B2153A5 /* GeoOffersEnteredRegionCache.swift */; };
 		2700802CE4BE5EE6BBFACF60789DDBB1 /* FIRMessagingPendingTopicsList.m in Sources */ = {isa = PBXBuildFile; fileRef = A19A8E40C43004835A40F63ACB393C91 /* FIRMessagingPendingTopicsList.m */; };
 		27A1DC5E86873A4B755B3B94AE18A649 /* Empty.pbobjc.h in Headers */ = {isa = PBXBuildFile; fileRef = D3AE7CCDA60C327DDB6F2EF3734931AB /* Empty.pbobjc.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		27DBEC7625220BF92261C8361F8D3E8F /* GULMutableDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = 513BC1042CECFDE9720990D3D82B46D3 /* GULMutableDictionary.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		27E1680D7E5D6779F65AEBE820EBC754 /* GeoOffersOffersCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4E3DD2C8BCFDC1E63077ECFEC08620 /* GeoOffersOffersCache.swift */; };
 		2843999968854C54EB02409521348F67 /* GULLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = F82D55FC9048F3A34587ED44FADEAEA6 /* GULLogger.m */; };
 		28C048427D1AEDEC765EC05E8A0CAEE0 /* FIRMessagingPersistentSyncMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DBF52BC9501C69186080BBD0BE1A677 /* FIRMessagingPersistentSyncMessage.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		293C633567C1E7F9CCA355224D9BFF4A /* GPBRuntimeTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = C5ADED79D50FCB26BB9B62775250E5A8 /* GPBRuntimeTypes.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		2AA470A35CE2EC82E13077B381C71D12 /* FileManager+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0427083883C9D6CE70BE6982BC11568 /* FileManager+Additions.swift */; };
 		2AF1BCEB873238585C8AC05A4A1C126D /* FIRErrorCode.h in Headers */ = {isa = PBXBuildFile; fileRef = D887AA21255EA1FE205312E1FC49EB47 /* FIRErrorCode.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		2BF1C8D4E3FC8A6A314AFCC736B5E11B /* FIRDependency.h in Headers */ = {isa = PBXBuildFile; fileRef = 55F0948C7DE4A313C9BAF584CF754780 /* FIRDependency.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		2BFA28F912487E742477F5E671FC07CC /* NSError+FIRInstanceID.h in Headers */ = {isa = PBXBuildFile; fileRef = AA551D9ED3D9B1F151258C16509AA0DD /* NSError+FIRInstanceID.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		2E889F368CF65FFDB70547B16DFA8355 /* GPBDictionary_PackagePrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 7064F3A620C8595586CC79FB0EE93E25 /* GPBDictionary_PackagePrivate.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		2FFC74ADCF690A9E57AB2BFD6A47A5FC /* GPBDescriptor_PackagePrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = FD36FEA0B76730ED91C79F3B00D31AF7 /* GPBDescriptor_PackagePrivate.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		305CFE7C399A3114975F4ECB0ED171AD /* FIRInstanceIDAuthKeyChain.h in Headers */ = {isa = PBXBuildFile; fileRef = D568DE5A1ADA21E32F4FBB519075EC35 /* FIRInstanceIDAuthKeyChain.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		321E8C93E1D4F0F31E8210644EF19BB1 /* GeoOffersDataProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718411F49CD033FD7EDE394AC2FCBB12 /* GeoOffersDataProcessor.swift */; };
+		312D3AD961C4523C61704BCCE42E3DD3 /* GeoOffersTrackingCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737D14F23A0245AEF3A66023D8C469BB /* GeoOffersTrackingCache.swift */; };
+		321A50B20A2E224E80C27AFE79B223EE /* String+URLEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0812BBF470C3C794FC980D9E3F2D7B73 /* String+URLEncoding.swift */; };
 		322DF5A80BBD3FF98F10569BD78E3998 /* GPBUnknownField.h in Headers */ = {isa = PBXBuildFile; fileRef = 51911C885348D92CE529900B49CB202A /* GPBUnknownField.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		32E2598B788CFDC31F95775A3F385646 /* Protobuf-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 37A65EE897CAEFE394423C8A6A365B0B /* Protobuf-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		333B1B335351C2F421730FFD7294A75F /* FIRInstanceIDConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BEA50B191033B005CBA0534A99D2F59 /* FIRInstanceIDConstants.m */; };
@@ -148,95 +146,98 @@
 		3635449A9ED8422234F74EFBD4E14242 /* GULNSData+zlib.h in Headers */ = {isa = PBXBuildFile; fileRef = C56ABE351ABDCCC6C0631FD5975307E7 /* GULNSData+zlib.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		3652B00014C2A628302DB9D04DBC2F66 /* GULNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = D75E948B0D6585C1EB40FA12B0C2834D /* GULNetwork.m */; };
 		36AAB031EECB6C416B9A1458BB44CDEF /* FirebaseCore-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F07F15043F68BDC84092C97B979D19A2 /* FirebaseCore-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		36F1ED9A309EDE1954831C4BB57FDE7A /* GeoOffersDeliveredSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE016A8D471EC64522BC85CA3EA8286 /* GeoOffersDeliveredSchedule.swift */; };
 		379D2A44F6148295C2B2288A6243F3F4 /* FIRInstanceIDURLQueryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FE3E82F568DC21A2655F85F3F1B50E /* FIRInstanceIDURLQueryItem.m */; };
 		3896445A2E680DBE2D2CDDAE85774C0C /* FIRAnalyticsConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = 4263260AE936B54D74B4641A25AEC09A /* FIRAnalyticsConfiguration.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		38C9BFCC8601013A4D58541250C78992 /* FIRInstanceIDUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AB892A46976A6218C4822E558419A94 /* FIRInstanceIDUtilities.m */; };
+		390F923AE800F291044DE486534BDC4D /* GeoOffersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD238C339F340D7C1502A3FB386929BA /* GeoOffersViewController.swift */; };
 		398CE0EC8FD65431E7ADDE0F9D8D79A1 /* Struct.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 02ACF81A00F036128F1ABD0C5BD8566E /* Struct.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		3A9C494C4D8F3EBE6EE830145EFE5763 /* FIRMessagingPendingTopicsList.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F19B5A8E5446140E1198A23CB7440A7 /* FIRMessagingPendingTopicsList.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		3B36BA7160B41A05C16B026C525F39B6 /* GULAppDelegateSwizzler.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F889C4FF314BEC20AA566FF441C0628 /* GULAppDelegateSwizzler.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		3BA33FE3A7FAD8621482985E18685424 /* FIRMessagingDataMessageManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 24AC8A0389C5488417BF60248E19E0DE /* FIRMessagingDataMessageManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		3BF6A93B80183F8B88EE923E554CAAC6 /* GeoOffersInternalConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A29B386ECDB8951479090B1489E5ACD /* GeoOffersInternalConfiguration.swift */; };
 		3E7D8FE4AEAC6DF1655955E7905FF019 /* GULNetworkMessageCode.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BEC0230AD3DAE4918B8F1AC83AE9273 /* GULNetworkMessageCode.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		3EC64CC80DA91E1E1E3BA48C9147D364 /* FIRMessaging_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 7717D8C43C94E0B4158BEB1000D93A9A /* FIRMessaging_Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		3EF24A2335022721CAF7A4A202D836EA /* FIRMessagingInternalUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = F5743DCFB320BCAB99CAD1B69CEBD979 /* FIRMessagingInternalUtilities.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		3F2E3002FEA16F5736CB40FD4F8B82D8 /* Duration.pbobjc.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F60DCC4D79CE734584145E133F194BD /* Duration.pbobjc.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		3F913BB09D03BFD845E21441194933E3 /* GeoOffersServiceModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2662D3E5C722A0140E19A762554B747C /* GeoOffersServiceModels.swift */; };
 		41E2FEF8C8C7046E493EFAAE6683197A /* FIRInstanceIDCheckinService.h in Headers */ = {isa = PBXBuildFile; fileRef = E466C6C287A16F540A5B4FFDC7EFF30E /* FIRInstanceIDCheckinService.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		4217BD354E0DEDBC94DB0A8A651C964B /* GeoOffersSendNotificationCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8680C1EE4A2C2792041C9F3BD6EA5A /* GeoOffersSendNotificationCache.swift */; };
 		421812E9C6F25E8B122E4F86182F35F3 /* FIRLibrary.h in Headers */ = {isa = PBXBuildFile; fileRef = E4918822269D28B7F007E51AC53DB73A /* FIRLibrary.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		4349CDD8823242F83A4380178F0B04AB /* FirebaseCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C99CFA22D0FF333628F0791F8069B8E /* FirebaseCore.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		44786C5D87E5193C8DBED8528DFACF89 /* FIRInstanceIDTokenManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B2011DBFA37D5050CF9D1B349E605C4 /* FIRInstanceIDTokenManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		44E2B40AD13D27D1F04A9E0DC85054BB /* GPBUtilities_PackagePrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = BC7995BB2571637F291E338AC100F48C /* GPBUtilities_PackagePrivate.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		4710A8FD58F407C138C88843682AFA87 /* GeoOffersAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F73B4AE6EE316F8B22245542E5104B6F /* GeoOffersAPIService.swift */; };
 		48131A6EE15A3C72A3ACD4169CA599CD /* Protobuf-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 90F672C0CF6EEDA8026A6307873C1929 /* Protobuf-dummy.m */; };
 		4A0309EBF7A2937D3DC88FB9E62D1F7C /* Any.pbobjc.h in Headers */ = {isa = PBXBuildFile; fileRef = A42C4FBAB80B09A53A55058CACD959A4 /* Any.pbobjc.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		4C3D9F0C36987153B53C5A38C7D3B8CA /* NSDictionary+FIRMessaging.m in Sources */ = {isa = PBXBuildFile; fileRef = AF3FB169400357C14222EF2117FC28D0 /* NSDictionary+FIRMessaging.m */; };
+		4EC2EE1C262A457988632EFDF4260C9C /* GeoOffersNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E28C530EE55C686BFA82A05E4E2E20E /* GeoOffersNotificationService.swift */; };
 		4EE5C8D4FC2BBDC14BE57F8D13908C52 /* FIRMessagingRmqManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5533E2A7C694D78FAE1677E401B09E7D /* FIRMessagingRmqManager.m */; };
+		500F482882EBA3A8A98F18E67E9FA8AF /* GeoOffersInternalConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0D06758FF763126FE56C4FEC91003E /* GeoOffersInternalConfiguration.swift */; };
 		50E2D77BC4E7C2C81E6E4D4511549CFC /* FIRComponent.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D6F1B8691195616EC52901EA1EBA5EB /* FIRComponent.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		5177D6A85B619B0F1EB433073C0679B7 /* FIRInstanceIDAuthKeyChain.m in Sources */ = {isa = PBXBuildFile; fileRef = DA43946B2D2020F97EA43FF28A185205 /* FIRInstanceIDAuthKeyChain.m */; };
 		52997CF5838D9C296557F279B746A1D8 /* FIRInstanceIDCheckinPreferences+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BCE4364322983AE4D6A2DF68E097052 /* FIRInstanceIDCheckinPreferences+Internal.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		52B362DA9D9AC02D4A59A1F26BE76611 /* FIRMessagingContextManagerService.m in Sources */ = {isa = PBXBuildFile; fileRef = 86D3F48BA751C0E7C65B9EC76F224B73 /* FIRMessagingContextManagerService.m */; };
+		5394BC253F0F037A90C5C7281693390C /* GeoOffersOffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A532FD045796163B98A4F4EDD9CECF1 /* GeoOffersOffer.swift */; };
 		549030DF386664D88FA44BE9BADFF0A0 /* FIRInstanceIDTokenStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D51C46EB76145C36D8B640B96B208436 /* FIRInstanceIDTokenStore.m */; };
 		54AB3684A224AD3D3FBC8E76CAE018ED /* FIRMessagingLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 194B6EC3BCE9721A1430B6108698F208 /* FIRMessagingLogger.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		54D8F0044656DB9DB7BBC45467EBA9A5 /* GULLoggerLevel.h in Headers */ = {isa = PBXBuildFile; fileRef = 11B14C83190FA05B9F0D1EAD12FDFB90 /* GULLoggerLevel.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		54F90B86A70E44188175A4949C401880 /* FIRMessagingExtensionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B63F6F252A8ABD4E25E5401FEE22C78B /* FIRMessagingExtensionHelper.m */; };
-		55D9571FC7F8D48D06842DCA47B3BCC9 /* GeoOffersSDK-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9A01B290A0D1D2E3A5A768DCD67E41E8 /* GeoOffersSDK-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		55D9571FC7F8D48D06842DCA47B3BCC9 /* GeoOffersSDK-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A47DDA105055B53F1AA8F9DD37799D9 /* GeoOffersSDK-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		57969C53D82BA9C3579ADB439B11DE7A /* FIRLoggerLevel.h in Headers */ = {isa = PBXBuildFile; fileRef = 14196DFFE06DBCD437B845BEE258B747 /* FIRLoggerLevel.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		57C1F4CAE4D5227003988DD468F02411 /* FIRInstanceIDStore.m in Sources */ = {isa = PBXBuildFile; fileRef = A42A692C7A036D8E3C2A447813584F4E /* FIRInstanceIDStore.m */; };
 		585BECF82D1A4597A105A5100FCD5681 /* Api.pbobjc.h in Headers */ = {isa = PBXBuildFile; fileRef = FACC5584C6B0EF416E24E6FDF5276464 /* Api.pbobjc.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		5860FFE026508CB3D02D7EED8C0DCC6D /* GPBUnknownFieldSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 2385F71B067451EA1C91B734E55FD042 /* GPBUnknownFieldSet.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		58DB4B766AEE5CC2C0E386EE5E31A3F2 /* FIRConfiguration.h in Headers */ = {isa = PBXBuildFile; fileRef = A92057AEA6497F5F4F702CDC012F77A2 /* FIRConfiguration.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		593F36FAF4F530DCF385262E5795CFC7 /* String+URLEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDA3234411423FDA28D7D02027FDCE5E /* String+URLEncoding.swift */; };
 		5941CEE72ACF90A90EE65CD9BCD7A407 /* GPBMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = A8E5EA9523FB4756ADCD5BB5D4CC21F6 /* GPBMessage.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		59563A60CD1FE5569A50F4B3E7C0E6CE /* GPBUnknownField_PackagePrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E107AC4B3C0EFDA18B3DE92637FF1D0 /* GPBUnknownField_PackagePrivate.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		5983D307951BEEA494B7585F6CB9864A /* FIRMessagingRmq2PersistentStore.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C7EC21FFD53B02ADFFEDE7706EEE0E /* FIRMessagingRmq2PersistentStore.m */; };
+		59CC23F964C46B188771936C6DD5A51C /* GeoOffersLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25018E3ABE32B385B88734094BF6674 /* GeoOffersLocationService.swift */; };
 		5A0BC29C36A20B4CC7EB910391ECB939 /* GPBCodedOutputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B70F28541CEC712EF82BB5384CFF0B /* GPBCodedOutputStream.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		5A1437AE97837635B5A41DCF209CB3AE /* FirebaseMessaging-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 45071A9330F2A9987C71BD0BEC4B9933 /* FirebaseMessaging-dummy.m */; };
 		5D65231D35ACA62E6440DD8F0AB2B938 /* FIRMessagingConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A9FFF7A772BF32CE4417E8DE0675DE0 /* FIRMessagingConnection.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		60896D7E9491FEDA66301E7DB818878A /* GeoOffersPushData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB160B2A3136AD3A873140D89B1071BB /* GeoOffersPushData.swift */; };
 		609876638FC24EE5270F58F6B5338AC0 /* FIRMessagingRemoteNotificationsProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = C71818D6B87EF06565CF3DF349B8297A /* FIRMessagingRemoteNotificationsProxy.m */; };
-		618BF4B8762C54E4FE1B676C57C7FE5B /* GeoOffersCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F733595E5EF1889C79CDCEB5E50C8C3 /* GeoOffersCache.swift */; };
 		6224FDB2B43DCB97185F8A55E00586A8 /* FIRInstanceIDDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = D7A9F0103A79D2DCF38BD4D7BD8DF677 /* FIRInstanceIDDefines.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		644F0DE077FBF880A1711D7542EF8AF7 /* FIRBundleUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 916353D1B1B7A4E2A6B2C3FFAF0BA2C1 /* FIRBundleUtil.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		64A5E3ABAFB040D1277C79E20AFF5705 /* GeoOffersNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27D84BCB305FCFA0B172CBA2F751179 /* GeoOffersNotificationService.swift */; };
 		64CFC7B39DB5FE614B25D92B13A2F06C /* GPBExtensionInternals.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F2D76A97D89BF81573DF702BE286E5B /* GPBExtensionInternals.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		67532FDEEFC5F88FADFE4D965FC7B3D0 /* FIRMessagingConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 069756E64710F220492BA84BA172D251 /* FIRMessagingConnection.m */; };
+		676FF3505F53D661A0BEFBA39EC676B5 /* GeoOffersWebViewCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C45D0A5F6C0D5C3D0EA794D47AF8395 /* GeoOffersWebViewCache.swift */; };
 		68138CF2139274D5C0C7B275F30281A2 /* FIRMessagingDataMessageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F76058B0E8138FAF6028D110057C083 /* FIRMessagingDataMessageManager.m */; };
-		68D3661A7CA844CD48FDB0B1C8673402 /* GeoOffersOffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F9528EA043F47BFD7EB90E0573F7F0 /* GeoOffersOffer.swift */; };
+		685A009A932E0AA330C9CF3412220674 /* GeoOffersSDKService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8B5201A854BC77A488AAE389130ABD0 /* GeoOffersSDKService.swift */; };
 		69B27D1143064DFD01F6D68B00D8B69A /* FIRVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 2187CD7DE065901F34EC54EF019102CC /* FIRVersion.m */; };
 		69C6295EA23A4B3E195C23D948350656 /* GPBRootObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A87E0927700500CE612DCEE00D090A2 /* GPBRootObject.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		6A26B8FE80F917FA30CF5ABD4AC73429 /* FIRMessagingSyncMessageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DCA93DE0ADFD6EB5B7522D007DFBF98 /* FIRMessagingSyncMessageManager.m */; };
-		6C85958054E51555895FE782DD217842 /* GeoOffersTrackingEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C514142619772BAB6CC90C1C7C735D4D /* GeoOffersTrackingEvent.swift */; };
 		6DEF3268C3C91C892E9E4AD0BBE971AD /* FIRMessagingAnalytics.h in Headers */ = {isa = PBXBuildFile; fileRef = 43AA42A3F437BC2C2B57659DDA66820E /* FIRMessagingAnalytics.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		6EB6417D38922D64FAE44479D2526E63 /* FIRMessagingExtensionHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 45F97C4F9912B614080C5ADBF4E7227A /* FIRMessagingExtensionHelper.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		6EF5D0E8E2EFB95F15CF78C93E3B1BA1 /* FIRInstanceIDStringEncoding.h in Headers */ = {isa = PBXBuildFile; fileRef = BAAD80B9A5856404DAD6ED13456FB548 /* FIRInstanceIDStringEncoding.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		6FFE3EE8CE58FB86189902E6B13A6803 /* FIRInstanceIDCheckinPreferences.h in Headers */ = {isa = PBXBuildFile; fileRef = DD958B2BA3515AC6852EB950039B897E /* FIRInstanceIDCheckinPreferences.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		7240CCBAA45F3C6ED73A12B54FC56B05 /* GeoOffersGeoFence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02B9093BB5E4E3124D357D28EECDB4C1 /* GeoOffersGeoFence.swift */; };
+		70B2DBA6EF07B999E1DF0EF62A2AA325 /* UIView+NibLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F4845971EEA70BA33C234EE536F7F32 /* UIView+NibLoading.swift */; };
 		72C5524DB2C3482587D6582984F85DF3 /* FIRMessagingAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BEC642FE661BF7E1AE2739870659A26 /* FIRMessagingAnalytics.m */; };
 		7351513468F66AD1FEF371BC5627B2C5 /* Struct.pbobjc.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E39A2459E293ED1C582DD40A02674EF /* Struct.pbobjc.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		73D6A7A5B88C980404AB31E943796252 /* FIRComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = ADFB70B729AE5CD5CD228C669E8677DB /* FIRComponent.m */; };
 		7439D0252424907334A4A43FBCBA19C3 /* FirebaseInstanceID-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B168AD156D7DDAB6AC688989508B8976 /* FirebaseInstanceID-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		74B5F78E033CAD671DC47CC855DACDE4 /* FIRAppAssociationRegistration.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E0CA9A5217FC348AEBDFD7CC964EB24 /* FIRAppAssociationRegistration.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		753205CB9BFA0C0F4B0E46EDE3ED233C /* GeoOffersDebugRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA11B89D5306B58FF21693B453801B5 /* GeoOffersDebugRegion.swift */; };
 		75AB090F0B4CE622A087B5C8E336EAC0 /* NSError+FIRInstanceID.m in Sources */ = {isa = PBXBuildFile; fileRef = E1803F4F5C39568CE5B5F4C8A8DE1A73 /* NSError+FIRInstanceID.m */; };
+		7670854304BEAED8F2B087C18A54E3CB /* GeoOffersPushNotificationProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC796C34625FE5EC1D27E01E446EACF5 /* GeoOffersPushNotificationProcessor.swift */; };
 		76C393D118C735C841DB55817B6F0E05 /* FirebaseInstanceID.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A77DFC853D5E89816683BABF75BD513 /* FirebaseInstanceID.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		782F544B9AF88960D062278934ECC9E3 /* GeoOffersPushData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15196208798FC1EDBE52F4D7F63F038B /* GeoOffersPushData.swift */; };
 		78691426A1CFC932B4D5259300586537 /* GPBDescriptor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B82F89CE05A914B76B76CB4725504B7 /* GPBDescriptor.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		7940EEEA030E47B6F26523E1A3EBAD8B /* GeoOffersLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B5D2B23E7E7C71063E5E8C55CEA2547 /* GeoOffersLocationService.swift */; };
+		7CFAA85AC6DC18945AFA5BAADBC6FC80 /* GeoOffersSDKServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073BCA9377776FF306A8C63A6EB3A28A /* GeoOffersSDKServiceProtocol.swift */; };
 		829A965B579574B0A740CA2FFFAAA98E /* FIRMessagingCodedInputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = CAD9BEF1642498BE2FA9B5D278F047FA /* FIRMessagingCodedInputStream.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		82BE0F6B98C5FB8D041D71F47AB1DD79 /* FIRInstanceIDCheckinPreferences+Internal.m in Sources */ = {isa = PBXBuildFile; fileRef = C03FFF8019E70E1A74912A54FC470506 /* FIRInstanceIDCheckinPreferences+Internal.m */; };
 		848AE13CF3218C20C2D02105179CF479 /* GULReachabilityChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = F2CE4A147983592CBFED3A453794352C /* GULReachabilityChecker.m */; };
+		850BC8373AC9F2EDA775A48451DFAA00 /* GeoOffersSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A05BDC8AE30E014440792258A0A2D4 /* GeoOffersSchedule.swift */; };
 		8704B196F5A8C385BA37184E282DF0CC /* GULNetworkURLSession.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A01B2272673A108EE2B9AC9152C380D /* GULNetworkURLSession.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		8729445CD8781DDA4BA84B3313A7CB9E /* FIRInstanceIDAuthService.h in Headers */ = {isa = PBXBuildFile; fileRef = 762DC10679FB38F5FD223DCB2ADFBF75 /* FIRInstanceIDAuthService.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		8BB5EA0079E055CC552D0D1F8EC91184 /* GeoOffersNotificationServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D1FCEE814BC8FD533BC95E451DBE7AD /* GeoOffersNotificationServiceProtocol.swift */; };
 		8C705076761ACB13D2B0CEC692D945DB /* FIRInstanceIDTokenStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A077347B4DA63B8CA0D2BED68740071 /* FIRInstanceIDTokenStore.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		8CDD45C98901CEE228FFB32EEEF64C33 /* FIRMessaging.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F97191EDA0E1FCD100FFBBCFAAEC28D /* FIRMessaging.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		8CFC657ACFB5FA54B639E93A9FD95B26 /* GPBUnknownFieldSet_PackagePrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = D55898943CF8AB2B1A56C9BC11A5E86D /* GPBUnknownFieldSet_PackagePrivate.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		8E457415A17B2382C868C766F5CF0927 /* FIRLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = A1E99EA905284DAFD8661B740C003C72 /* FIRLogger.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		8EACCCD66600046D8F63DD1376BD73E0 /* GPBArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FA052E7CA28F64B9286512CA1B24263 /* GPBArray.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		8F2D98CD2BE557423BB601BD8444A01F /* FIRMessagingClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 4BAF32DFEE3C7882CA2B097923A92CD3 /* FIRMessagingClient.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		8F6295B5D0CAE3107B0395A962C4A2B9 /* GeoOffersListingCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = E22397DCE59A0060C12A25B35053CAE3 /* GeoOffersListingCache.swift */; };
 		8FCFF0B42D35F16063B2CB70393A0E23 /* GPBRootObject_PackagePrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = FF2FE31AB42834065E254D35628D6C9C /* GPBRootObject_PackagePrivate.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		904FFE7101D18B4D5B1A6CFE2D80F03C /* GPBWellKnownTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 101EC03CBF966FF7FB1AB6D6889BF133 /* GPBWellKnownTypes.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		90506DF972423EFB36AE40C89153FD6B /* FIROptionsInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 5922957D7DD89A7AAF05500D07DF15E7 /* FIROptionsInternal.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		90AFD812F73348544A1F41CBA9A92388 /* Pods-GeoOffersSampleAppTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 46E61EA13BFDDFA6EB6B9E32DA27D5C7 /* Pods-GeoOffersSampleAppTests-dummy.m */; };
-		9108EDBBF2463A22B7EDE1FAA20B3ABB /* GeoOffersFirebaseWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95BB003207A13D28C02F0098E514580F /* GeoOffersFirebaseWrapper.swift */; };
 		92F16F249B6AC0970F9C2B287E123ACE /* FIRIMessageCode.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A4FB084917917D4192200D81EFFD149 /* FIRIMessageCode.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		94BD597DC43C51DC1B4B9FFED59DEC89 /* GPBExtensionRegistry.h in Headers */ = {isa = PBXBuildFile; fileRef = F19C3408C7F6E9ABC5E2005CE0C293FE /* GPBExtensionRegistry.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		95D751940AB14248C50DC0CE67F47E70 /* FIRAppAssociationRegistration.m in Sources */ = {isa = PBXBuildFile; fileRef = F9664B2318CF90700C0561DD3CD7F3EC /* FIRAppAssociationRegistration.m */; };
@@ -247,77 +248,76 @@
 		99D1FE80AE90DEF43823C72AA81A27AC /* FIRInstanceIDCheckinPreferences.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B2429ACE1CA2155C9972E2FA5E5DB6C /* FIRInstanceIDCheckinPreferences.m */; };
 		9AD7604C6D8ADC31D655B37A808E9CA0 /* FIRInstanceIDAPNSInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 38B88C8395D8EFE1B82843780C839370 /* FIRInstanceIDAPNSInfo.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		9B459274514787C3FE2FFADE9FF08F46 /* FIRInstanceIDKeyPair.h in Headers */ = {isa = PBXBuildFile; fileRef = 71390C89D14A0D3D616F489F7ACB3DCC /* FIRInstanceIDKeyPair.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		9EB12219D4A0A0D3C63136D7D416EB7D /* GeoOffersListing.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC3C2FA752D77ECB49C6CE3762B38451 /* GeoOffersListing.swift */; };
 		9EEC31CCE3EE122BD8C86097049141AA /* FIRMessagingSecureSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = D47CFE69B97B0376C841DC73C2015993 /* FIRMessagingSecureSocket.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		A1987FB729DAB4F48D28DADA895E8EAD /* Timestamp.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 2919A31C544BDB8025204A017E4752AB /* Timestamp.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		A2053E22D0F5451053B9A9E3C7C3C7BE /* UIView+NibLoading.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37C020FFD7D3B6E9C4FBF9F56418784 /* UIView+NibLoading.swift */; };
 		A21576EAD4E026173C7F82D5AF6656A6 /* GULLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = A8EFC34442DBD002670282E446C1BC9E /* GULLogger.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		A2A136B7002E2EA2B7BF51D5304BFB26 /* FIRAppInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 543DAD00071155E551EE8D74FB3C3FB0 /* FIRAppInternal.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		A2BD141C77F7CBF84157526F4733486B /* FIRMessagingPubSubRegistrar.h in Headers */ = {isa = PBXBuildFile; fileRef = B4B96234EC61A5BBC242CF7C693AF216 /* FIRMessagingPubSubRegistrar.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		A2FCBE1C67FF6E48DC2A802C8053C99A /* FIRInstanceIDKeychain.h in Headers */ = {isa = PBXBuildFile; fileRef = 30EBB1DB5191887775869313351DB854 /* FIRInstanceIDKeychain.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		A4EEEF1FB469F64645604545D86723EF /* GeoOffersPushNotificationCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DE5607DC98FB80535A4661A9FDE417 /* GeoOffersPushNotificationCache.swift */; };
+		A4FB44723F12592BE874803D5B2548DC /* GeoOffersSDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A624458AE221B702788FA11E671D740A /* GeoOffersSDK-dummy.m */; };
 		A51E5737C77A82C4952F9AB671D9D3DF /* FIRApp.m in Sources */ = {isa = PBXBuildFile; fileRef = C391257BA1BD289058C93AC17C9B7587 /* FIRApp.m */; };
+		A52A0D61086AE67138031D8E52AC8FBB /* GeoOffersPushNotificationCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7533B8CD4CD95F901A3D608B9100C28 /* GeoOffersPushNotificationCache.swift */; };
 		A5BD3A0E75B27B2BAE9012474F52505C /* FIRInstanceIDCheckinPreferences_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = D5015E934E7AE9E10C39451799401539 /* FIRInstanceIDCheckinPreferences_Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A70D60B315A185E89D451036C52502B6 /* GeoOffersGeoFence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBFE9D58809A0CB39104E7091520A11 /* GeoOffersGeoFence.swift */; };
 		A7FBC4BB9030A564AE74CA5F6992E66C /* FIRMessagingPacketQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C731FA10D5037DEDC58F00C5DCB70E2 /* FIRMessagingPacketQueue.m */; };
 		A8868C2034FDC9FF3B53609C485A1122 /* GULAppDelegateSwizzler.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E9B1E642A0BB25A6E4B9D8C602B73B0 /* GULAppDelegateSwizzler.m */; };
 		A9DE0B5818D9563ED8F1EEDCAED723A0 /* FIRMessagingTopicOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 54AC5EBC3BA17610F1CCEA55A39398EF /* FIRMessagingTopicOperation.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		AC8F421434D310C670AFC532C6051611 /* FIRMMessageCode.h in Headers */ = {isa = PBXBuildFile; fileRef = 197AD43CCDBC519CDE56C6801A49387D /* FIRMMessageCode.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		AF314CF2E881641C63C783C7F67E3905 /* FIRInstanceIDCheckinStore.m in Sources */ = {isa = PBXBuildFile; fileRef = AF2B5553F13BF1CFF9D757C43CB767A7 /* FIRInstanceIDCheckinStore.m */; };
 		AFFCB5D662BAC6E371B7508EF12C1432 /* FIRInstanceIDTokenOperation+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = CE6D5B115DC0ABE2AABD462BA96AECF7 /* FIRInstanceIDTokenOperation+Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		B10AE1F33EE5306E801E7BFC21161618 /* GeoOffersLogging.swift in Sources */ = {isa = PBXBuildFile; fileRef = C135CC3F81F8D107B0FB45FE6525DB4A /* GeoOffersLogging.swift */; };
+		B00FAC7366135161824AE69849619574 /* GeoOffersPendingOffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F3B59E902A14037B4C7A5F6274FC4BD /* GeoOffersPendingOffer.swift */; };
 		B3205A5E1C8628E891D0B6F6694C6E88 /* FIRInstanceIDTokenOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 427EF4E5FCE9C4B8E7BB20E069632D7F /* FIRInstanceIDTokenOperation.m */; };
 		B35E05E699A12C71EAE40622F04BC703 /* NSError+FIRMessaging.h in Headers */ = {isa = PBXBuildFile; fileRef = A519A108411C5CA2E78F5E2E2D56B43A /* NSError+FIRMessaging.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		B3ED0D20DF3AA057D2A3B55BDCB1235F /* FIRInstanceIDCheckinStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 01AED6417AFD10376D1359345581A6AE /* FIRInstanceIDCheckinStore.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		B47262CF11D9B0E55142E924712E1719 /* Wrappers.pbobjc.h in Headers */ = {isa = PBXBuildFile; fileRef = 661789BB1E4B8B3B880CCC85D0820323 /* Wrappers.pbobjc.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		B61B216635894570ADE13E3826BADC08 /* Empty.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 4512B81CE3583CA8A7A5A150E968398F /* Empty.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B668FC06C99C9CDE28FF9B21116F62E6 /* GULAppEnvironmentUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 1EDEFF03B0E5877605EBDB9E106A7977 /* GULAppEnvironmentUtil.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		B755401ECDC9DC4B3C19C83C011B8BB8 /* GeoOffersWebViewCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56815AE7BB46DBA5C8D269D54694B07B /* GeoOffersWebViewCache.swift */; };
+		B71A3985787D1DB0260859B574922DEA /* GeoOffersNotificationToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7306ED46CAA2DD58A5DD44B340DA22A /* GeoOffersNotificationToast.swift */; };
 		B769036705B9EBDE83A2450EAE69215C /* FIRComponentContainerInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = DCB1278C5CCF12DC7C74FB78DB615353 /* FIRComponentContainerInternal.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		B78273193B7B941348917802BDCE74B6 /* GeoOffersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61A10C897D6B2223330A83D72C6C9D2A /* GeoOffersPresenter.swift */; };
 		B78E0EA95C527C8BA0E4095CB43B8615 /* FIRMessagingDelayedMessageQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = 1960E66BB80D9C5E979AA585C72373E3 /* FIRMessagingDelayedMessageQueue.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		B854A6788A7221FEB5C69FB2FA041A0B /* NSDictionary+FIRMessaging.h in Headers */ = {isa = PBXBuildFile; fileRef = FB91907380EA37DD13183FE44B9573FD /* NSDictionary+FIRMessaging.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		B857E11EFE8AEF426ED546FAC88F652B /* FIRMessagingConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DE3E70F88E7DA921BDA2411F437CE8 /* FIRMessagingConstants.m */; };
+		B895DDF8CF6B617A73FBFD65D9481AED /* GeoOffersServiceModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD707B8013A49A7954DB3B4AD47BB34 /* GeoOffersServiceModels.swift */; };
 		B90CE83079C9CA6D5A95A14820060D9E /* pb_encode.c in Sources */ = {isa = PBXBuildFile; fileRef = 7F4AA5469657DB8E52F5CAE249C606B2 /* pb_encode.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc -fno-objc-arc"; }; };
-		B9D967631BA462D4F41D5E0EC36766D9 /* DiskCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D05584AE8DE7C24677818839C015D6 /* DiskCache.swift */; };
 		BA8520471885E652D646D08E5B9814DD /* FIRInstanceIDAPNSInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0133873E92A18BBC020B38AF5AA049A5 /* FIRInstanceIDAPNSInfo.m */; };
 		BAC405670D0F01DBE4449B5304B3DD14 /* FIRMessagingPersistentSyncMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B0C458DB9A3C71223303735C023EDFD /* FIRMessagingPersistentSyncMessage.m */; };
-		BB56D77204AF2A96CC4E8000839D000A /* GeoOffersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68742B1915136CB5133032251CE04E32 /* GeoOffersViewController.swift */; };
 		BBE3C3559E2F5DDE31A9A2AA158F3EB9 /* FIRInstanceIDCombinedHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A9E2D79D434D258EAC2D08CAE1E1235 /* FIRInstanceIDCombinedHandler.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		BC1D6880E92539FCD3ABBACFA9CCCBF4 /* FileManager+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553B8CAF62E180261EF3C846A08C006C /* FileManager+Additions.swift */; };
 		BC6B687229B999C2CE7E4E7572915D48 /* FIRMessagingReceiver.m in Sources */ = {isa = PBXBuildFile; fileRef = 737368484E1790791D3C09A8E858E491 /* FIRMessagingReceiver.m */; };
 		BD04F4D795B33ED6CDD9F2873DBDB58B /* FIRConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = A96F2AC43B8CDFF5848D1ECBA24479EA /* FIRConfiguration.m */; };
 		BD2E6CC92DC1D99DDCE0EE532FD3720C /* FIRMessagingPubSub.h in Headers */ = {isa = PBXBuildFile; fileRef = E6BA89A7ECF9C8CA2B6E5EB752BB9D56 /* FIRMessagingPubSub.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		BDB7A885B01059CEC2B3D23A7CB2BF34 /* GPBWireFormat.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C88B0770EBA531D775BC7F7BDFB45F0 /* GPBWireFormat.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		BE5EE098D18D7E05AE8B1D96E7C85769 /* FIRErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = D89B35B8820DC2D4011F00FB21677BE4 /* FIRErrors.m */; };
 		BE5FDB6EF058BD50B0580A205679FEA2 /* FIRInstanceIDTokenFetchOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 345F26B87C50DF06F7057CBCBFA8D4CB /* FIRInstanceIDTokenFetchOperation.m */; };
-		BE9DB9A6E07926E81BFD45B777D859FF /* KeyedDecodingContainerProtocol+PHPJSONEncoderHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F57E39CB53B73FA4BD179B93054E0E /* KeyedDecodingContainerProtocol+PHPJSONEncoderHelper.swift */; };
 		BEA7CF436073A0C77240136269802FCE /* FIRMessagingPacketQueue.h in Headers */ = {isa = PBXBuildFile; fileRef = DF09DE717D064D61336316C018527A8F /* FIRMessagingPacketQueue.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		BF1F789334A630F4CA54CF28BB6451AF /* GULMutableDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = AEE2BD0F38C8C36B8359852913A90511 /* GULMutableDictionary.m */; };
 		BF66C55614A9CCED7BBBA45B80661052 /* FIRInstanceID+Private.m in Sources */ = {isa = PBXBuildFile; fileRef = 009BB5BE22BC1A41143F358F6F8CC0F2 /* FIRInstanceID+Private.m */; };
-		BFE1AB5F62DBDA2441805538C900F3A2 /* GeoOffersSDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CD2E710B11BE9A8261A3FF5901CAB564 /* GeoOffersSDK-dummy.m */; };
+		BFEF8288BA368C8E811CAC672279A3E2 /* GeoOffersLogging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 450198382B801B6FC4B8288E5D02F0C4 /* GeoOffersLogging.swift */; };
 		C058434AD2A77DDFD9C0ECB650E994DC /* GULNetworkURLSession.m in Sources */ = {isa = PBXBuildFile; fileRef = F7B56042CA25EBAD73D036FDAAABCDC2 /* GULNetworkURLSession.m */; };
 		C096DCE54333153245761E36A422E8CB /* GULReachabilityChecker+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = 8FDFE347944584E16CEF2E53203AAE53 /* GULReachabilityChecker+Internal.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		C13AEDAE65C8BF94360C6FD7DBA6DEC1 /* FIRMessagingTopicsCommon.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F14EFA14BB5759F0AE858F581760A02 /* FIRMessagingTopicsCommon.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		C1CC55083C2555E284848494F1502C71 /* GPBRootObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 7750428FC012A4F083F0DAE0098BC788 /* GPBRootObject.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		C395E47E1F4A64AE96E744CDE52B07FD /* Type.pbobjc.h in Headers */ = {isa = PBXBuildFile; fileRef = BBE355CE90E69D6739637FEE7CD8F17E /* Type.pbobjc.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		C63959FF11D1A1CBFACEB5FB76CD0713 /* GeoOffersListingCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAC763D39B3CF3F913E246F587203579 /* GeoOffersListingCache.swift */; };
-		C6AA1B815CB648F45B6C84FFE5657280 /* GeoOffersPendingOffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77343F8CBC7F3D9284AAA5F46E4677B2 /* GeoOffersPendingOffer.swift */; };
 		C6E2443B9ED9690F1AFD3352FB04173E /* FIRConfigurationInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = A783689AC9CEF7133409FD65E61D7EEA /* FIRConfigurationInternal.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		C7B6E4B596A327E14041BBBB6A022641 /* FieldMask.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = BDC704C4FE0CD9A72D31FF216F05FD68 /* FieldMask.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		C8DD31356B18CE0414D59BF1631CA53C /* FIRInstanceIDTokenOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 241235510B006BC96F13FD2450AC246C /* FIRInstanceIDTokenOperation.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		CB3872F518BAA2B54EBB142F65728383 /* pb_decode.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DBB463DA717F999A4BE7C3187F3613E /* pb_decode.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		CCC59F70E740D24505AB9FDE9489B4ED /* FIRInstanceIDVersionUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 066EF8D95A4D49172EAAA4DEA6A31021 /* FIRInstanceIDVersionUtilities.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		CD81B0A36603B3BE7CC4E20B8B425569 /* GULOriginalIMPConvenienceMacros.h in Headers */ = {isa = PBXBuildFile; fileRef = 4B9A6CA2300E22627B7C1C071EA36ADC /* GULOriginalIMPConvenienceMacros.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		CEE267691E54933B9822D2DEB97C0947 /* GeoOffersTrackingCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4BC2461B5D2E562739CBD13105CE9E /* GeoOffersTrackingCache.swift */; };
-		CF9431E1F5C6B64254251E075716BBC0 /* GeoOffersSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C36ED8BCABA061FD2E4572210DC0E97 /* GeoOffersSchedule.swift */; };
+		CF53BE8B6CF563EDEDF84D4030B488D2 /* GeoOffersFirebaseWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A56B501A9C75F8D9A86E57B270CD934 /* GeoOffersFirebaseWrapper.swift */; };
 		D03E86425238E516F5735DF5B127AD79 /* Pods-GeoOffersSampleApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DA8E6E8F5F6FB7F66E232E1F3EAA4BE7 /* Pods-GeoOffersSampleApp-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		D060C08DF7B151C88AEEAEF6405ED7C8 /* FIRInstanceIDKeyPairUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C419553BEFB15F8185BAC438489C7D7 /* FIRInstanceIDKeyPairUtilities.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		D06BB7F7A44DE7945ECD523648DDB092 /* FIRInstanceIDLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 21A39445A93907DB9F170FAD289C2BD6 /* FIRInstanceIDLogger.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		D1001F6B07D06ECC2C3BA5A6A2FBEAC4 /* GeoOffersPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2118C3DB66D4FE029634D25E28D73FF8 /* GeoOffersPresenter.swift */; };
 		D1330AE232F295A3783E8ECCA5B654E4 /* FIRInstanceIDKeyPairUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 58871F414F4E4A7BECF2C7B52ED55950 /* FIRInstanceIDKeyPairUtilities.m */; };
 		D1801CE443F8895366AC41A8F0B0DCD9 /* FIRInstanceIDKeyPairStore.m in Sources */ = {isa = PBXBuildFile; fileRef = C401A89ACF4B6ECBA096DB1E001DABEE /* FIRInstanceIDKeyPairStore.m */; };
+		D1A1B2938520FD1E37043E4287CCB51E /* KeyedDecodingContainerProtocol+PHPJSONEncoderHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D49061B03DC1DDFA9F593DE7A6E582 /* KeyedDecodingContainerProtocol+PHPJSONEncoderHelper.swift */; };
 		D35C4DE74F245DD821EC98BA4C7D9F6F /* FIRInstanceID+Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E2F03DCD7A3A8F7145F14C920D1F4FA /* FIRInstanceID+Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		D4186364259F71E8AA312EF54F1CFCA3 /* FIRInstanceIDCheckinService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FB9B579D87C2EF557B547AB0D53EE1A /* FIRInstanceIDCheckinService.m */; };
-		D4BACB158BAD9DAB5DC29BE58743CD94 /* GeoOffersDebugRegion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37BAEE240D157EC489441163D1FB7AF0 /* GeoOffersDebugRegion.swift */; };
+		D4D367F4997924EE864785D323DAFB5F /* DiskCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504169F7CE91D5246D1A1C2EE6826BE1 /* DiskCache.swift */; };
 		D6413B44198C13CBEAEE9910274CBBD2 /* GPBUnknownFieldSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 698AFDF142E6C921250ABB1C70C35A76 /* GPBUnknownFieldSet.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		D660D495553E1161B0CC960BFA4A9C64 /* GeoOffersDeliveredSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45B001EBD568696E8C7A8BE6636FB714 /* GeoOffersDeliveredSchedule.swift */; };
+		D732154F5C6A7D7764C44F70D8F6B428 /* GeoOffersCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B9DA524ED29D3034738C1E7BE44722 /* GeoOffersCache.swift */; };
 		D77E79FD650EF6D8778E85227F52FB50 /* FIRInstanceIDAuthService.m in Sources */ = {isa = PBXBuildFile; fileRef = 1109747A2CC4D7A00851A8C3A0AACB93 /* FIRInstanceIDAuthService.m */; };
 		D82B97B6E3DE04FE8942131A464118B7 /* FIRMessagingPubSub.m in Sources */ = {isa = PBXBuildFile; fileRef = ABCC9693EB596BCBDE2FC6E7C571907A /* FIRMessagingPubSub.m */; };
 		D846C781CD34B239EA6878E5D56ED84C /* FIRInstanceIDURLQueryItem.h in Headers */ = {isa = PBXBuildFile; fileRef = C9B81DC3F126F602D630FFCA6FD015B2 /* FIRInstanceIDURLQueryItem.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -326,7 +326,7 @@
 		D8AF51C8D303595EF16F5554AE9D81C4 /* Pods-GeoOffersSampleApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 16C324364593B3D52ED54A39FF24D21D /* Pods-GeoOffersSampleApp-dummy.m */; };
 		D8F3FB22A13994646C5C760D08B689E7 /* pb.h in Headers */ = {isa = PBXBuildFile; fileRef = 46D83A91D12CAE6D87370CD3D3317FDF /* pb.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		D90A83AFBC4DA55316A360EAB6377375 /* FIRMessaging.m in Sources */ = {isa = PBXBuildFile; fileRef = F19058E55A8034E2269A187B0893CB9E /* FIRMessaging.m */; };
-		D9C7DFDCDF106E595BD7D5A69A60BD85 /* GeoOffersSendNotificationCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EB10618E3854DB43734498993849CC /* GeoOffersSendNotificationCache.swift */; };
+		D9254A1B72F42E4CF978DDF84A09426E /* GeoOffersDataProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F7684C91A92D0C180ED415AF4B86D89 /* GeoOffersDataProcessor.swift */; };
 		DA62359C7F27AD378C14DCF35A8B12EF /* FIRInstanceID_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = E8D71C27E44962AF2F8681B4837AADEF /* FIRInstanceID_Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		DC920B6B2148D62153FFD1437043E10A /* FIRInstanceIDKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = 04E2FC9F259A680D2B2968CAC4CD0F21 /* FIRInstanceIDKeychain.m */; };
 		DEECBCB4F54D6ADBAD9EBC67735A4294 /* GPBArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 3D415DD3AE8E908A03647D30D49EB6C8 /* GPBArray.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -341,7 +341,6 @@
 		E283EC23A6148E72A4B7A1710789B1BA /* FIRVersion.h in Headers */ = {isa = PBXBuildFile; fileRef = EDDA0AE6C7FD553956D06CDFA0921188 /* FIRVersion.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		E36336F42406DFE3BAF32E3F3D3A4D90 /* FIRInstanceIDTokenManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CBF0DE969A38C6D6552F84B6E023B302 /* FIRInstanceIDTokenManager.m */; };
 		E3FF6E75D276B42F529E2E19B0218218 /* GULSwizzler.h in Headers */ = {isa = PBXBuildFile; fileRef = E957288F34B2B4B4BDEC48E2C5242FFB /* GULSwizzler.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		E5039F8BABD50F064AECA8AEF0FD188B /* Date+UnixTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A30DD473874CBA73540F42E147672C /* Date+UnixTime.swift */; };
 		E5179A47E73456ADDC138CF0B1676C7C /* FIRInstanceIDConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = EBC04D8F2DAFBBDCE319EFBF697F58C3 /* FIRInstanceIDConstants.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		E65B11712F7A74DB1B04CFB510B236F4 /* FIRInstanceIDVersionUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 34D4BDBA310F8F50F4FA782FA1F510CE /* FIRInstanceIDVersionUtilities.m */; };
 		E75AC5E9F829762BFFF8E8A1F2FF74E7 /* nanopb-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 689E1182F9CEF902B7BCF08CF09A8B16 /* nanopb-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -354,29 +353,30 @@
 		E94AC7353291705C0CC106BE9745841E /* GULNSData+zlib.m in Sources */ = {isa = PBXBuildFile; fileRef = 429AD50D85B471B1B32DF4317215DA0E /* GULNSData+zlib.m */; };
 		EADA4A103ABDE8C0D2FC1872236B1043 /* GPBCodedInputStream_PackagePrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = BC09809A444453628D65CE8A1C84E3A5 /* GPBCodedInputStream_PackagePrivate.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		EAE3291B1546DE0F74C53ECBAB9F3B3E /* GPBDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = E3716FBF00EF3C84F921D7FE0E2D8F43 /* GPBDictionary.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		EC281E0E12F12AFD5908BCC4947787B2 /* GeoOffersDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE40AF4275E39D4CD98CC8EAA9D88ECA /* GeoOffersDataParser.swift */; };
 		EE4C9676C66C60CBCC3770E761CE7470 /* FirebaseInstanceID-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 836E3AE33B72D5D69DEAB001521FBED4 /* FirebaseInstanceID-dummy.m */; };
 		EE8B6E39E72B117C950D29E7EFB2FB89 /* FIRBundleUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 72775F649B46D8AD2D26662F81073A5F /* FIRBundleUtil.m */; };
 		F08A4D1D5BAB80EF786232442480CBF6 /* FIRMessagingUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 983ED4381EACD29C7CCFB4FE6C838EFA /* FIRMessagingUtilities.m */; };
 		F3403E890AAE40FFF14C87B34BB2D999 /* FIRComponentType.m in Sources */ = {isa = PBXBuildFile; fileRef = CAC6226C083D3D40318D4C013AEF31E4 /* FIRComponentType.m */; };
 		F3A4F440E6F4C56DEE9A51DB7335B925 /* GPBCodedInputStream.h in Headers */ = {isa = PBXBuildFile; fileRef = 826CA3FAA1BDC0FE13D9C5646467B4A1 /* GPBCodedInputStream.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F3E79ACC39E4AAF1DB5DFE8D2C6124EF /* GeoOffersSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = CF2122126A3D17B78AA2E10EA4B05B51 /* GeoOffersSDK.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		F3E79ACC39E4AAF1DB5DFE8D2C6124EF /* GeoOffersSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 5429952826D74FCE3CB7154EB164A60C /* GeoOffersSDK.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		F562A48300F7F298DAC809209840C4DA /* FIRMessagingVersionUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B23DFAA6E91A5F02CECC4C05EA4003 /* FIRMessagingVersionUtilities.m */; };
 		F58C7E35E83304693902F3E7585D84C7 /* GULNetworkConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = C523DD0C19B770BFBC933A38B5C4440A /* GULNetworkConstants.m */; };
+		F58E7964624B591C86A60A55F7A9C2F0 /* GeoOffersTrackingEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC7863C64253D0CE7B0A133EC567055 /* GeoOffersTrackingEvent.swift */; };
 		F5F686606ADC745C064AF3D946E40AB5 /* FIRInstanceIDTokenInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 03FE5C8F7AAB3C59C186C1E8F1AEFF13 /* FIRInstanceIDTokenInfo.m */; };
 		F6C34C9F4E7019F6FA6FCCE05FB40415 /* FIRAnalyticsConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D773AA38D6DEE27A87D1F1776E450D7 /* FIRAnalyticsConfiguration.m */; };
 		F736D38E1BC13748B731C11F49D58845 /* pb_encode.h in Headers */ = {isa = PBXBuildFile; fileRef = 8740410FB2C9561075C38217B95EDBBC /* pb_encode.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		F88268105BDCBEC7CE30D84AA9B06455 /* FIRInstanceIDTokenFetchOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 5BB388D288DB5DCC1545B656A654A59D /* FIRInstanceIDTokenFetchOperation.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		F8C21AC6CB76602C1C26A944A360D3AE /* GeoOffersAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6F9B4847CCF2FC365E67C58C2CCAC0 /* GeoOffersAPIService.swift */; };
 		F90619DEEC0D22D16D958D3FE6944C67 /* FIRMessagingDelayedMessageQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 440E2C358F02E8669FA934C517357B44 /* FIRMessagingDelayedMessageQueue.m */; };
 		F9420776325C8590A4BC1D9F53F437A5 /* GULAppDelegateSwizzler_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = 331424FE6CEB226C6A765B5BD6963FD4 /* GULAppDelegateSwizzler_Private.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		F94D0135E378BB7C715923C6ADF80DA1 /* GtalkCore.pbobjc.h in Headers */ = {isa = PBXBuildFile; fileRef = 244823D663902C8E538B3667A0048830 /* GtalkCore.pbobjc.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		F999304570785BBDC45AFFB614A86FBC /* Pods-GeoOffersSampleAppUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FBBA029FB3D6314643B1B99151AEA179 /* Pods-GeoOffersSampleAppUITests-dummy.m */; };
+		FA0B7513058AAF8BE9E44A9E54EC6C54 /* GeoOffersNotificationServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01DC073072C4D8E224D055E435C65E08 /* GeoOffersNotificationServiceProtocol.swift */; };
 		FAA719D953771F3633DF04CBF33754D4 /* FIRMessagingRmqManager.h in Headers */ = {isa = PBXBuildFile; fileRef = B072ED44E9C3B25557C378DCBE61ADD1 /* FIRMessagingRmqManager.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		FB580DEAAD10AF28EA96F73091988F5C /* FIRInstanceID.h in Headers */ = {isa = PBXBuildFile; fileRef = 496F41E36718F379878F32D25E0E55BC /* FIRInstanceID.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		FC8F0BCE39E13C10FBB6500976278775 /* pb_common.h in Headers */ = {isa = PBXBuildFile; fileRef = 542674386A829BBD3DFF88519FBEFAD0 /* pb_common.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		FD69D8E37D482F30593C0C0FC2C9766A /* FIRInstanceIDKeyPairStore.h in Headers */ = {isa = PBXBuildFile; fileRef = 7FAFF915CC7220D28540E81BF0043411 /* FIRInstanceIDKeyPairStore.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		FEDCA61760B95B582E42DA328306605B /* NSError+FIRMessaging.m in Sources */ = {isa = PBXBuildFile; fileRef = F87F348AA674C7AF03FD567BEAEE0BFB /* NSError+FIRMessaging.m */; };
+		FF24C5B04A30D9E0A4671744EFE33377 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3127C0180921C1A9BB34C5A2F632F5 /* Cache.swift */; };
 		FF32C8A73AB12F6DFCD602DF6E3F72FD /* GULReachabilityMessageCode.h in Headers */ = {isa = PBXBuildFile; fileRef = 417B3295B963E8EE115B633E467D4B59 /* GULReachabilityMessageCode.h */; settings = {ATTRIBUTES = (Project, ); }; };
 /* End PBXBuildFile section */
 
@@ -611,47 +611,41 @@
 		009BB5BE22BC1A41143F358F6F8CC0F2 /* FIRInstanceID+Private.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "FIRInstanceID+Private.m"; path = "Firebase/InstanceID/FIRInstanceID+Private.m"; sourceTree = "<group>"; };
 		0133873E92A18BBC020B38AF5AA049A5 /* FIRInstanceIDAPNSInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRInstanceIDAPNSInfo.m; path = Firebase/InstanceID/FIRInstanceIDAPNSInfo.m; sourceTree = "<group>"; };
 		01AED6417AFD10376D1359345581A6AE /* FIRInstanceIDCheckinStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceIDCheckinStore.h; path = Firebase/InstanceID/FIRInstanceIDCheckinStore.h; sourceTree = "<group>"; };
-		02453132F5E43908AC9FC6DA53306765 /* GeoOffersSDK.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = GeoOffersSDK.storyboard; path = GeoOffersSDK/GeoOffersSDK.storyboard; sourceTree = "<group>"; };
+		01DC073072C4D8E224D055E435C65E08 /* GeoOffersNotificationServiceProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersNotificationServiceProtocol.swift; path = GeoOffersSDK/GeoOffersNotificationServiceProtocol.swift; sourceTree = "<group>"; };
 		02ACF81A00F036128F1ABD0C5BD8566E /* Struct.pbobjc.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Struct.pbobjc.m; path = objectivec/google/protobuf/Struct.pbobjc.m; sourceTree = "<group>"; };
-		02B9093BB5E4E3124D357D28EECDB4C1 /* GeoOffersGeoFence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersGeoFence.swift; path = GeoOffersSDK/GeoOffersGeoFence.swift; sourceTree = "<group>"; };
-		02D05584AE8DE7C24677818839C015D6 /* DiskCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DiskCache.swift; path = GeoOffersSDK/DiskCache.swift; sourceTree = "<group>"; };
-		02DE58086E9F385F213924A728F57DCF /* index.html */ = {isa = PBXFileReference; includeInIndex = 1; name = index.html; path = GeoOffersSDK/index.html; sourceTree = "<group>"; };
 		03FE5C8F7AAB3C59C186C1E8F1AEFF13 /* FIRInstanceIDTokenInfo.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRInstanceIDTokenInfo.m; path = Firebase/InstanceID/FIRInstanceIDTokenInfo.m; sourceTree = "<group>"; };
 		04E2FC9F259A680D2B2968CAC4CD0F21 /* FIRInstanceIDKeychain.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRInstanceIDKeychain.m; path = Firebase/InstanceID/FIRInstanceIDKeychain.m; sourceTree = "<group>"; };
-		055093C1A5BA34A34D699DC53AB7260F /* GeoOffersSDK-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GeoOffersSDK-prefix.pch"; sourceTree = "<group>"; };
-		0570E9295041AFD4DDD698957EE8C231 /* ListingJSTemplate.js */ = {isa = PBXFileReference; includeInIndex = 1; name = ListingJSTemplate.js; path = GeoOffersSDK/ListingJSTemplate.js; sourceTree = "<group>"; };
 		066EF8D95A4D49172EAAA4DEA6A31021 /* FIRInstanceIDVersionUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceIDVersionUtilities.h; path = Firebase/InstanceID/FIRInstanceIDVersionUtilities.h; sourceTree = "<group>"; };
 		069756E64710F220492BA84BA172D251 /* FIRMessagingConnection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRMessagingConnection.m; path = Firebase/Messaging/FIRMessagingConnection.m; sourceTree = "<group>"; };
 		06FC5C9CF96D60C50FCD47D339C91951 /* libnanopb.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libnanopb.a; path = libnanopb.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		0741938AD01E842EF26A0D52DFF89C05 /* geo-gmap-icon.svg */ = {isa = PBXFileReference; includeInIndex = 1; name = "geo-gmap-icon.svg"; path = "GeoOffersSDK/offerslist/offerslist_files/geo-gmap-icon.svg"; sourceTree = "<group>"; };
-		07DE5607DC98FB80535A4661A9FDE417 /* GeoOffersPushNotificationCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersPushNotificationCache.swift; path = GeoOffersSDK/GeoOffersPushNotificationCache.swift; sourceTree = "<group>"; };
+		073BCA9377776FF306A8C63A6EB3A28A /* GeoOffersSDKServiceProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersSDKServiceProtocol.swift; path = GeoOffersSDK/GeoOffersSDKServiceProtocol.swift; sourceTree = "<group>"; };
+		0812BBF470C3C794FC980D9E3F2D7B73 /* String+URLEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+URLEncoding.swift"; path = "GeoOffersSDK/String+URLEncoding.swift"; sourceTree = "<group>"; };
 		09329598B1ED2EF698B4F2FEE3D41784 /* FIRComponentType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRComponentType.h; path = Firebase/Core/Private/FIRComponentType.h; sourceTree = "<group>"; };
 		0A16C6D287C5480883C7404F0A3777B6 /* FirebaseMessaging.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FirebaseMessaging.modulemap; sourceTree = "<group>"; };
 		0B5AB07FD2ADC49641B72C077FE8C05F /* FIRInstanceID.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRInstanceID.m; path = Firebase/InstanceID/FIRInstanceID.m; sourceTree = "<group>"; };
 		0BCE4364322983AE4D6A2DF68E097052 /* FIRInstanceIDCheckinPreferences+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FIRInstanceIDCheckinPreferences+Internal.h"; path = "Firebase/InstanceID/FIRInstanceIDCheckinPreferences+Internal.h"; sourceTree = "<group>"; };
 		0C33040B90DD4D7E715C1F749C5A6596 /* GULAppEnvironmentUtil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GULAppEnvironmentUtil.m; path = GoogleUtilities/Environment/third_party/GULAppEnvironmentUtil.m; sourceTree = "<group>"; };
 		0C419553BEFB15F8185BAC438489C7D7 /* FIRInstanceIDKeyPairUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceIDKeyPairUtilities.h; path = Firebase/InstanceID/FIRInstanceIDKeyPairUtilities.h; sourceTree = "<group>"; };
-		0C4C450A47756D709C57A67CA889DA4D /* qrcode.min.js */ = {isa = PBXFileReference; includeInIndex = 1; name = qrcode.min.js; path = GeoOffersSDK/coupon/qrcode.min.js; sourceTree = "<group>"; };
 		0C731FA10D5037DEDC58F00C5DCB70E2 /* FIRMessagingPacketQueue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRMessagingPacketQueue.m; path = Firebase/Messaging/FIRMessagingPacketQueue.m; sourceTree = "<group>"; };
 		0D6CA18CE9A3D73451930D3F80A9A4A6 /* FIRAnalyticsInteropListener.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRAnalyticsInteropListener.h; path = Interop/Analytics/Public/FIRAnalyticsInteropListener.h; sourceTree = "<group>"; };
 		0E4279D578C607F4B6D3FA74F9B45F2D /* GPBProtocolBuffers.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPBProtocolBuffers.h; path = objectivec/GPBProtocolBuffers.h; sourceTree = "<group>"; };
 		0F14EFA14BB5759F0AE858F581760A02 /* FIRMessagingTopicsCommon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRMessagingTopicsCommon.h; path = Firebase/Messaging/FIRMessagingTopicsCommon.h; sourceTree = "<group>"; };
 		101EC03CBF966FF7FB1AB6D6889BF133 /* GPBWellKnownTypes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPBWellKnownTypes.h; path = objectivec/GPBWellKnownTypes.h; sourceTree = "<group>"; };
 		1078561797CE9FCA62EDE25D2119879B /* FIRMessagingUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRMessagingUtilities.h; path = Firebase/Messaging/FIRMessagingUtilities.h; sourceTree = "<group>"; };
+		10E6981EBCA932CDCFF720B3FD78C607 /* GeoOffersNotificationToast.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = GeoOffersNotificationToast.xib; path = GeoOffersSDK/GeoOffersNotificationToast.xib; sourceTree = "<group>"; };
 		1109747A2CC4D7A00851A8C3A0AACB93 /* FIRInstanceIDAuthService.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRInstanceIDAuthService.m; path = Firebase/InstanceID/FIRInstanceIDAuthService.m; sourceTree = "<group>"; };
 		11B14C83190FA05B9F0D1EAD12FDFB90 /* GULLoggerLevel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GULLoggerLevel.h; path = GoogleUtilities/Logger/Public/GULLoggerLevel.h; sourceTree = "<group>"; };
 		11CAB20182F17F9DBE860FDC388D1018 /* FirebaseCore.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FirebaseCore.modulemap; sourceTree = "<group>"; };
 		12441CDE4E77F5032D1130D023DC4750 /* Pods-GeoOffersSampleApp-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GeoOffersSampleApp-acknowledgements.plist"; sourceTree = "<group>"; };
-		13A30DD473874CBA73540F42E147672C /* Date+UnixTime.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Date+UnixTime.swift"; path = "GeoOffersSDK/Date+UnixTime.swift"; sourceTree = "<group>"; };
 		14196DFFE06DBCD437B845BEE258B747 /* FIRLoggerLevel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRLoggerLevel.h; path = Firebase/Core/Public/FIRLoggerLevel.h; sourceTree = "<group>"; };
 		144FA7CA9790BA4A89FD294867D4DCEA /* GULNetwork.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GULNetwork.h; path = GoogleUtilities/Network/Private/GULNetwork.h; sourceTree = "<group>"; };
-		15196208798FC1EDBE52F4D7F63F038B /* GeoOffersPushData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersPushData.swift; path = GeoOffersSDK/GeoOffersPushData.swift; sourceTree = "<group>"; };
-		154E204A08AA1EAC47BAFDAAD49A53F8 /* vue.js */ = {isa = PBXFileReference; includeInIndex = 1; name = vue.js; path = GeoOffersSDK/coupon/vue.js; sourceTree = "<group>"; };
+		147B2D6052B873F7ACB9C5AC831186BA /* GeoOffersSDK.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GeoOffersSDK.xcconfig; sourceTree = "<group>"; };
+		1550ECC59E71281AC8A7803A6A9462E6 /* jquery.min.js */ = {isa = PBXFileReference; includeInIndex = 1; name = jquery.min.js; path = GeoOffersSDK/coupon/jquery.min.js; sourceTree = "<group>"; };
 		16C324364593B3D52ED54A39FF24D21D /* Pods-GeoOffersSampleApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GeoOffersSampleApp-dummy.m"; sourceTree = "<group>"; };
-		18EB10618E3854DB43734498993849CC /* GeoOffersSendNotificationCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersSendNotificationCache.swift; path = GeoOffersSDK/GeoOffersSendNotificationCache.swift; sourceTree = "<group>"; };
 		194B6EC3BCE9721A1430B6108698F208 /* FIRMessagingLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRMessagingLogger.h; path = Firebase/Messaging/FIRMessagingLogger.h; sourceTree = "<group>"; };
 		1960E66BB80D9C5E979AA585C72373E3 /* FIRMessagingDelayedMessageQueue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRMessagingDelayedMessageQueue.h; path = Firebase/Messaging/FIRMessagingDelayedMessageQueue.h; sourceTree = "<group>"; };
 		197AD43CCDBC519CDE56C6801A49387D /* FIRMMessageCode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRMMessageCode.h; path = Firebase/Messaging/FIRMMessageCode.h; sourceTree = "<group>"; };
+		1A56B501A9C75F8D9A86E57B270CD934 /* GeoOffersFirebaseWrapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersFirebaseWrapper.swift; path = GeoOffersSDK/GeoOffersFirebaseWrapper.swift; sourceTree = "<group>"; };
 		1AD6D9B6903CBE962F5C74852A7A050C /* GPBUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPBUtilities.m; path = objectivec/GPBUtilities.m; sourceTree = "<group>"; };
 		1B2429ACE1CA2155C9972E2FA5E5DB6C /* FIRInstanceIDCheckinPreferences.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRInstanceIDCheckinPreferences.m; path = Firebase/InstanceID/FIRInstanceIDCheckinPreferences.m; sourceTree = "<group>"; };
 		1B51180EB4CE71B3F065F89BBFC13357 /* FIROptions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIROptions.h; path = Firebase/Core/Public/FIROptions.h; sourceTree = "<group>"; };
@@ -661,27 +655,24 @@
 		1EDEFF03B0E5877605EBDB9E106A7977 /* GULAppEnvironmentUtil.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GULAppEnvironmentUtil.h; path = GoogleUtilities/Environment/third_party/GULAppEnvironmentUtil.h; sourceTree = "<group>"; };
 		1EE37463CAEB30D782A2BF974334DD66 /* FirebaseCore.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FirebaseCore.xcconfig; sourceTree = "<group>"; };
 		20223E0885C260C2D0155FAB758CDB75 /* Wrappers.pbobjc.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Wrappers.pbobjc.m; path = objectivec/google/protobuf/Wrappers.pbobjc.m; sourceTree = "<group>"; };
+		20B9DA524ED29D3034738C1E7BE44722 /* GeoOffersCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersCache.swift; path = GeoOffersSDK/GeoOffersCache.swift; sourceTree = "<group>"; };
 		21082672F8AE6160A85D3B5ECBAB59EB /* FIRInteropParameterNames.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInteropParameterNames.h; path = Interop/Analytics/Public/FIRInteropParameterNames.h; sourceTree = "<group>"; };
-		2118C3DB66D4FE029634D25E28D73FF8 /* GeoOffersPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersPresenter.swift; path = GeoOffersSDK/GeoOffersPresenter.swift; sourceTree = "<group>"; };
 		2187CD7DE065901F34EC54EF019102CC /* FIRVersion.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRVersion.m; path = Firebase/Core/FIRVersion.m; sourceTree = "<group>"; };
 		21A39445A93907DB9F170FAD289C2BD6 /* FIRInstanceIDLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceIDLogger.h; path = Firebase/InstanceID/FIRInstanceIDLogger.h; sourceTree = "<group>"; };
 		2385F71B067451EA1C91B734E55FD042 /* GPBUnknownFieldSet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPBUnknownFieldSet.h; path = objectivec/GPBUnknownFieldSet.h; sourceTree = "<group>"; };
 		241235510B006BC96F13FD2450AC246C /* FIRInstanceIDTokenOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceIDTokenOperation.h; path = Firebase/InstanceID/FIRInstanceIDTokenOperation.h; sourceTree = "<group>"; };
 		244823D663902C8E538B3667A0048830 /* GtalkCore.pbobjc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GtalkCore.pbobjc.h; path = Firebase/Messaging/Protos/GtalkCore.pbobjc.h; sourceTree = "<group>"; };
-		249ED1DAE89C8C27E26D08C082D7E97D /* GeoOffersSDKService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersSDKService.swift; path = GeoOffersSDK/GeoOffersSDKService.swift; sourceTree = "<group>"; };
+		24A6EED45FFAD033507DCF94A0E4E498 /* print-icon.svg */ = {isa = PBXFileReference; includeInIndex = 1; name = "print-icon.svg"; path = "GeoOffersSDK/coupon/print-icon.svg"; sourceTree = "<group>"; };
 		24AC8A0389C5488417BF60248E19E0DE /* FIRMessagingDataMessageManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRMessagingDataMessageManager.h; path = Firebase/Messaging/FIRMessagingDataMessageManager.h; sourceTree = "<group>"; };
-		24F57E39CB53B73FA4BD179B93054E0E /* KeyedDecodingContainerProtocol+PHPJSONEncoderHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "KeyedDecodingContainerProtocol+PHPJSONEncoderHelper.swift"; path = "GeoOffersSDK/KeyedDecodingContainerProtocol+PHPJSONEncoderHelper.swift"; sourceTree = "<group>"; };
-		2662D3E5C722A0140E19A762554B747C /* GeoOffersServiceModels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersServiceModels.swift; path = GeoOffersSDK/GeoOffersServiceModels.swift; sourceTree = "<group>"; };
 		2692A75DB54528B330C694C8B6D6D42D /* Pods-GeoOffersSampleApp.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GeoOffersSampleApp.modulemap"; sourceTree = "<group>"; };
 		28E64612275C6C208D3D34DD37C70CBA /* Protobuf.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Protobuf.xcconfig; sourceTree = "<group>"; };
 		2919A31C544BDB8025204A017E4752AB /* Timestamp.pbobjc.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Timestamp.pbobjc.m; path = objectivec/google/protobuf/Timestamp.pbobjc.m; sourceTree = "<group>"; };
 		293FF082A7320C6DAA174ABB5370817D /* FIRInstanceIDStringEncoding.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRInstanceIDStringEncoding.m; path = Firebase/InstanceID/FIRInstanceIDStringEncoding.m; sourceTree = "<group>"; };
 		299079AE38FCACDB203D088CB50FD018 /* FIRDependency.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRDependency.m; path = Firebase/Core/FIRDependency.m; sourceTree = "<group>"; };
+		2A532FD045796163B98A4F4EDD9CECF1 /* GeoOffersOffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersOffer.swift; path = GeoOffersSDK/GeoOffersOffer.swift; sourceTree = "<group>"; };
 		2A8DB075BC48779BCC9D55B4D16E42AC /* Pods-GeoOffersSampleAppUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GeoOffersSampleAppUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		2AB892A46976A6218C4822E558419A94 /* FIRInstanceIDUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRInstanceIDUtilities.m; path = Firebase/InstanceID/FIRInstanceIDUtilities.m; sourceTree = "<group>"; };
-		2B5D2B23E7E7C71063E5E8C55CEA2547 /* GeoOffersLocationService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersLocationService.swift; path = GeoOffersSDK/GeoOffersLocationService.swift; sourceTree = "<group>"; };
 		2B606FC049C12BE645A0A2D357981518 /* FIRMessagingVersionUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRMessagingVersionUtilities.h; path = Firebase/Messaging/FIRMessagingVersionUtilities.h; sourceTree = "<group>"; };
-		2BD8F0833153C03B7499BDF56B2153A5 /* GeoOffersEnteredRegionCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersEnteredRegionCache.swift; path = GeoOffersSDK/GeoOffersEnteredRegionCache.swift; sourceTree = "<group>"; };
 		2BE707E56586EDE0AF9482929DE004CE /* FirebaseMessaging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FirebaseMessaging.h; path = Firebase/Messaging/FirebaseMessaging.h; sourceTree = "<group>"; };
 		2BEC642FE661BF7E1AE2739870659A26 /* FIRMessagingAnalytics.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRMessagingAnalytics.m; path = Firebase/Messaging/FIRMessagingAnalytics.m; sourceTree = "<group>"; };
 		2C74556A4AAAEA3F8E669559AC45D1BF /* FIRInstanceIDBackupExcludedPlist.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRInstanceIDBackupExcludedPlist.m; path = Firebase/InstanceID/FIRInstanceIDBackupExcludedPlist.m; sourceTree = "<group>"; };
@@ -689,8 +680,8 @@
 		2CDD99E04979CADB606A11E3B6062405 /* nanopb-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "nanopb-dummy.m"; sourceTree = "<group>"; };
 		2DA0D814DFCB860D31D7BCD63D795858 /* libFirebaseInstanceID.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libFirebaseInstanceID.a; path = libFirebaseInstanceID.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E2F03DCD7A3A8F7145F14C920D1F4FA /* FIRInstanceID+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FIRInstanceID+Private.h"; path = "Firebase/InstanceID/FIRInstanceID+Private.h"; sourceTree = "<group>"; };
-		2E4BC2461B5D2E562739CBD13105CE9E /* GeoOffersTrackingCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersTrackingCache.swift; path = GeoOffersSDK/GeoOffersTrackingCache.swift; sourceTree = "<group>"; };
 		2F026C05F5DEA064AE28E0F5C3990CC9 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		2F3B59E902A14037B4C7A5F6274FC4BD /* GeoOffersPendingOffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersPendingOffer.swift; path = GeoOffersSDK/GeoOffersPendingOffer.swift; sourceTree = "<group>"; };
 		2F76058B0E8138FAF6028D110057C083 /* FIRMessagingDataMessageManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRMessagingDataMessageManager.m; path = Firebase/Messaging/FIRMessagingDataMessageManager.m; sourceTree = "<group>"; };
 		2F97191EDA0E1FCD100FFBBCFAAEC28D /* FIRMessaging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRMessaging.h; path = Firebase/Messaging/Public/FIRMessaging.h; sourceTree = "<group>"; };
 		301669530050F25F39B87E600B9C63B0 /* Pods-GeoOffersSampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GeoOffersSampleApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -703,28 +694,32 @@
 		351EBFB89C4A63E16DDD62F2F6F0138D /* GoogleUtilities-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GoogleUtilities-prefix.pch"; sourceTree = "<group>"; };
 		3780831AE99E297466F3875392D24C0D /* GoogleAppMeasurement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleAppMeasurement.framework; path = Frameworks/GoogleAppMeasurement.framework; sourceTree = "<group>"; };
 		37A65EE897CAEFE394423C8A6A365B0B /* Protobuf-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Protobuf-umbrella.h"; sourceTree = "<group>"; };
-		37BAEE240D157EC489441163D1FB7AF0 /* GeoOffersDebugRegion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersDebugRegion.swift; path = GeoOffersSDK/GeoOffersDebugRegion.swift; sourceTree = "<group>"; };
 		38B88C8395D8EFE1B82843780C839370 /* FIRInstanceIDAPNSInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceIDAPNSInfo.h; path = Firebase/InstanceID/FIRInstanceIDAPNSInfo.h; sourceTree = "<group>"; };
 		3AAB6946AB37DFE15AF0E17278F1EB55 /* GtalkCore.pbobjc.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GtalkCore.pbobjc.m; path = Firebase/Messaging/Protos/GtalkCore.pbobjc.m; sourceTree = "<group>"; };
+		3AB097F28479440CE75E5DDAD0B42484 /* save-to-google-pay.svg */ = {isa = PBXFileReference; includeInIndex = 1; name = "save-to-google-pay.svg"; path = "GeoOffersSDK/coupon/save-to-google-pay.svg"; sourceTree = "<group>"; };
 		3BAFF686C2995F7E47FA87EC123B6A52 /* nanopb.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = nanopb.xcconfig; sourceTree = "<group>"; };
-		3D1FCEE814BC8FD533BC95E451DBE7AD /* GeoOffersNotificationServiceProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersNotificationServiceProtocol.swift; path = GeoOffersSDK/GeoOffersNotificationServiceProtocol.swift; sourceTree = "<group>"; };
+		3C65F8991F6FA08D04D261EF2E92C4F7 /* ListingJSTemplate.js */ = {isa = PBXFileReference; includeInIndex = 1; name = ListingJSTemplate.js; path = GeoOffersSDK/ListingJSTemplate.js; sourceTree = "<group>"; };
 		3D415DD3AE8E908A03647D30D49EB6C8 /* GPBArray.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPBArray.h; path = objectivec/GPBArray.h; sourceTree = "<group>"; };
 		3DB95DC80F5CBE5A78A4D8F06D1CA192 /* GPBCodedInputStream.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPBCodedInputStream.m; path = objectivec/GPBCodedInputStream.m; sourceTree = "<group>"; };
 		3DC4D80D2613DF6CEB11EE948B3C3268 /* GPBExtensionInternals.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPBExtensionInternals.m; path = objectivec/GPBExtensionInternals.m; sourceTree = "<group>"; };
+		3DD707B8013A49A7954DB3B4AD47BB34 /* GeoOffersServiceModels.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersServiceModels.swift; path = GeoOffersSDK/GeoOffersServiceModels.swift; sourceTree = "<group>"; };
+		3E0D06758FF763126FE56C4FEC91003E /* GeoOffersInternalConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersInternalConfiguration.swift; path = GeoOffersSDK/GeoOffersInternalConfiguration.swift; sourceTree = "<group>"; };
 		3EFBE4E1EB7D9A887C3FCBECC31B4F94 /* GoogleUtilities-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GoogleUtilities-dummy.m"; sourceTree = "<group>"; };
-		3F733595E5EF1889C79CDCEB5E50C8C3 /* GeoOffersCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersCache.swift; path = GeoOffersSDK/GeoOffersCache.swift; sourceTree = "<group>"; };
+		411F10E9452660B7F17F3458EB7E87D3 /* GeoOffersSDK.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = GeoOffersSDK.modulemap; sourceTree = "<group>"; };
+		4126F2C7BDF357AE68F31F28635EB5EF /* app.css */ = {isa = PBXFileReference; includeInIndex = 1; name = app.css; path = GeoOffersSDK/offerslist/offerslist_files/app.css; sourceTree = "<group>"; };
 		417B3295B963E8EE115B633E467D4B59 /* GULReachabilityMessageCode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GULReachabilityMessageCode.h; path = GoogleUtilities/Reachability/Private/GULReachabilityMessageCode.h; sourceTree = "<group>"; };
 		41A8BFB7FFBF29B0C6AFBFF19BB8D179 /* FirebaseCore-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FirebaseCore-dummy.m"; sourceTree = "<group>"; };
 		4263260AE936B54D74B4641A25AEC09A /* FIRAnalyticsConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRAnalyticsConfiguration.h; path = Firebase/Core/Private/FIRAnalyticsConfiguration.h; sourceTree = "<group>"; };
 		427EF4E5FCE9C4B8E7BB20E069632D7F /* FIRInstanceIDTokenOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRInstanceIDTokenOperation.m; path = Firebase/InstanceID/FIRInstanceIDTokenOperation.m; sourceTree = "<group>"; };
 		429AD50D85B471B1B32DF4317215DA0E /* GULNSData+zlib.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "GULNSData+zlib.m"; path = "GoogleUtilities/NSData+zlib/GULNSData+zlib.m"; sourceTree = "<group>"; };
 		43AA42A3F437BC2C2B57659DDA66820E /* FIRMessagingAnalytics.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRMessagingAnalytics.h; path = Firebase/Messaging/FIRMessagingAnalytics.h; sourceTree = "<group>"; };
-		43B297C98F82768885C99399525D217E /* socket.io.js */ = {isa = PBXFileReference; includeInIndex = 1; name = socket.io.js; path = GeoOffersSDK/coupon/socket.io.js; sourceTree = "<group>"; };
 		440E2C358F02E8669FA934C517357B44 /* FIRMessagingDelayedMessageQueue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRMessagingDelayedMessageQueue.m; path = Firebase/Messaging/FIRMessagingDelayedMessageQueue.m; sourceTree = "<group>"; };
 		445B26DA1EB7216349EA292232B61ECA /* GtalkExtensions.pbobjc.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GtalkExtensions.pbobjc.m; path = Firebase/Messaging/Protos/GtalkExtensions.pbobjc.m; sourceTree = "<group>"; };
+		450198382B801B6FC4B8288E5D02F0C4 /* GeoOffersLogging.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersLogging.swift; path = GeoOffersSDK/GeoOffersLogging.swift; sourceTree = "<group>"; };
 		45071A9330F2A9987C71BD0BEC4B9933 /* FirebaseMessaging-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FirebaseMessaging-dummy.m"; sourceTree = "<group>"; };
 		4512B81CE3583CA8A7A5A150E968398F /* Empty.pbobjc.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Empty.pbobjc.m; path = objectivec/google/protobuf/Empty.pbobjc.m; sourceTree = "<group>"; };
 		456E890FCC18FDD5E217EB1AD7BC2407 /* FIRMessagingConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRMessagingConstants.h; path = Firebase/Messaging/FIRMessagingConstants.h; sourceTree = "<group>"; };
+		45B001EBD568696E8C7A8BE6636FB714 /* GeoOffersDeliveredSchedule.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersDeliveredSchedule.swift; path = GeoOffersSDK/GeoOffersDeliveredSchedule.swift; sourceTree = "<group>"; };
 		45F97C4F9912B614080C5ADBF4E7227A /* FIRMessagingExtensionHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRMessagingExtensionHelper.h; path = Firebase/Messaging/Public/FIRMessagingExtensionHelper.h; sourceTree = "<group>"; };
 		46D83A91D12CAE6D87370CD3D3317FDF /* pb.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = pb.h; sourceTree = "<group>"; };
 		46E61EA13BFDDFA6EB6B9E32DA27D5C7 /* Pods-GeoOffersSampleAppTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GeoOffersSampleAppTests-dummy.m"; sourceTree = "<group>"; };
@@ -732,35 +727,30 @@
 		496F41E36718F379878F32D25E0E55BC /* FIRInstanceID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceID.h; path = Firebase/InstanceID/Public/FIRInstanceID.h; sourceTree = "<group>"; };
 		4A077347B4DA63B8CA0D2BED68740071 /* FIRInstanceIDTokenStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceIDTokenStore.h; path = Firebase/InstanceID/FIRInstanceIDTokenStore.h; sourceTree = "<group>"; };
 		4A0DD3B62E8C3F9BB85821BA9BA443D3 /* FIRInstanceIDTokenInfo.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceIDTokenInfo.h; path = Firebase/InstanceID/FIRInstanceIDTokenInfo.h; sourceTree = "<group>"; };
-		4A29B386ECDB8951479090B1489E5ACD /* GeoOffersInternalConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersInternalConfiguration.swift; path = GeoOffersSDK/GeoOffersInternalConfiguration.swift; sourceTree = "<group>"; };
 		4AB92226E1570763F472B6533E480ACC /* FIRInstanceIDBackupExcludedPlist.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceIDBackupExcludedPlist.h; path = Firebase/InstanceID/FIRInstanceIDBackupExcludedPlist.h; sourceTree = "<group>"; };
 		4B2011DBFA37D5050CF9D1B349E605C4 /* FIRInstanceIDTokenManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceIDTokenManager.h; path = Firebase/InstanceID/FIRInstanceIDTokenManager.h; sourceTree = "<group>"; };
-		4B931B73EC599A8152B9269348F4733A /* coupon.css */ = {isa = PBXFileReference; includeInIndex = 1; name = coupon.css; path = GeoOffersSDK/coupon/coupon.css; sourceTree = "<group>"; };
 		4B9A6CA2300E22627B7C1C071EA36ADC /* GULOriginalIMPConvenienceMacros.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GULOriginalIMPConvenienceMacros.h; path = GoogleUtilities/MethodSwizzler/Private/GULOriginalIMPConvenienceMacros.h; sourceTree = "<group>"; };
 		4BAF32DFEE3C7882CA2B097923A92CD3 /* FIRMessagingClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRMessagingClient.h; path = Firebase/Messaging/FIRMessagingClient.h; sourceTree = "<group>"; };
 		4BEA50B191033B005CBA0534A99D2F59 /* FIRInstanceIDConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRInstanceIDConstants.m; path = Firebase/InstanceID/FIRInstanceIDConstants.m; sourceTree = "<group>"; };
 		4BEC0230AD3DAE4918B8F1AC83AE9273 /* GULNetworkMessageCode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GULNetworkMessageCode.h; path = GoogleUtilities/Network/Private/GULNetworkMessageCode.h; sourceTree = "<group>"; };
-		4CC804E08F1D1C2359E677BDA4CC0512 /* GeoOffersSDK.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = GeoOffersSDK.modulemap; sourceTree = "<group>"; };
+		4C45D0A5F6C0D5C3D0EA794D47AF8395 /* GeoOffersWebViewCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersWebViewCache.swift; path = GeoOffersSDK/GeoOffersWebViewCache.swift; sourceTree = "<group>"; };
 		4CCA6810C502C5535549607FD22DB19A /* Pods-GeoOffersSampleAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GeoOffersSampleAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4DDCA1C1BA74D5EE0E72EF645AE4F083 /* FIRInstanceIDStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceIDStore.h; path = Firebase/InstanceID/FIRInstanceIDStore.h; sourceTree = "<group>"; };
 		4E0CA9A5217FC348AEBDFD7CC964EB24 /* FIRAppAssociationRegistration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRAppAssociationRegistration.h; path = Firebase/Core/Private/FIRAppAssociationRegistration.h; sourceTree = "<group>"; };
-		4E2DF61874232415F95DD216DED3527D /* JsBarcode.all.min.js */ = {isa = PBXFileReference; includeInIndex = 1; name = JsBarcode.all.min.js; path = GeoOffersSDK/coupon/JsBarcode.all.min.js; sourceTree = "<group>"; };
 		4EA0AE5AC6A051CDD63CEDDA6A367961 /* FirebaseCoreDiagnostics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCoreDiagnostics.framework; path = Frameworks/FirebaseCoreDiagnostics.framework; sourceTree = "<group>"; };
+		4F4845971EEA70BA33C234EE536F7F32 /* UIView+NibLoading.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+NibLoading.swift"; path = "GeoOffersSDK/UIView+NibLoading.swift"; sourceTree = "<group>"; };
 		4F60DCC4D79CE734584145E133F194BD /* Duration.pbobjc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Duration.pbobjc.h; path = objectivec/google/protobuf/Duration.pbobjc.h; sourceTree = "<group>"; };
 		4FA052E7CA28F64B9286512CA1B24263 /* GPBArray.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPBArray.m; path = objectivec/GPBArray.m; sourceTree = "<group>"; };
+		504169F7CE91D5246D1A1C2EE6826BE1 /* DiskCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DiskCache.swift; path = GeoOffersSDK/DiskCache.swift; sourceTree = "<group>"; };
 		513BC1042CECFDE9720990D3D82B46D3 /* GULMutableDictionary.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GULMutableDictionary.h; path = GoogleUtilities/Network/Private/GULMutableDictionary.h; sourceTree = "<group>"; };
 		51911C885348D92CE529900B49CB202A /* GPBUnknownField.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPBUnknownField.h; path = objectivec/GPBUnknownField.h; sourceTree = "<group>"; };
-		524D258B71D91EB452E085B6BDDBA1F6 /* google-pay-logo.svg */ = {isa = PBXFileReference; includeInIndex = 1; name = "google-pay-logo.svg"; path = "GeoOffersSDK/coupon/google-pay-logo.svg"; sourceTree = "<group>"; };
 		5305670D00CB63EE242443F7BADA6969 /* Protobuf.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Protobuf.modulemap; sourceTree = "<group>"; };
 		542674386A829BBD3DFF88519FBEFAD0 /* pb_common.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = pb_common.h; sourceTree = "<group>"; };
-		5434618C8044767CBFB08995BDBC466E /* coupon.html */ = {isa = PBXFileReference; includeInIndex = 1; name = coupon.html; path = GeoOffersSDK/coupon/coupon.html; sourceTree = "<group>"; };
+		5429952826D74FCE3CB7154EB164A60C /* GeoOffersSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GeoOffersSDK.h; path = GeoOffersSDK/GeoOffersSDK.h; sourceTree = "<group>"; };
 		543DAD00071155E551EE8D74FB3C3FB0 /* FIRAppInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRAppInternal.h; path = Firebase/Core/Private/FIRAppInternal.h; sourceTree = "<group>"; };
-		549C45CB04B1E3160968ED78E9A3FDC3 /* GeoOffersOffersCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersOffersCache.swift; path = GeoOffersSDK/GeoOffersOffersCache.swift; sourceTree = "<group>"; };
 		54AC5EBC3BA17610F1CCEA55A39398EF /* FIRMessagingTopicOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRMessagingTopicOperation.h; path = Firebase/Messaging/FIRMessagingTopicOperation.h; sourceTree = "<group>"; };
 		5533E2A7C694D78FAE1677E401B09E7D /* FIRMessagingRmqManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRMessagingRmqManager.m; path = Firebase/Messaging/FIRMessagingRmqManager.m; sourceTree = "<group>"; };
-		553B8CAF62E180261EF3C846A08C006C /* FileManager+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "FileManager+Additions.swift"; path = "GeoOffersSDK/FileManager+Additions.swift"; sourceTree = "<group>"; };
 		55F0948C7DE4A313C9BAF584CF754780 /* FIRDependency.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRDependency.h; path = Firebase/Core/Private/FIRDependency.h; sourceTree = "<group>"; };
-		56815AE7BB46DBA5C8D269D54694B07B /* GeoOffersWebViewCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersWebViewCache.swift; path = GeoOffersSDK/GeoOffersWebViewCache.swift; sourceTree = "<group>"; };
 		57C5429BDD33330800583BCBCD6FEA48 /* FieldMask.pbobjc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FieldMask.pbobjc.h; path = objectivec/google/protobuf/FieldMask.pbobjc.h; sourceTree = "<group>"; };
 		58871F414F4E4A7BECF2C7B52ED55950 /* FIRInstanceIDKeyPairUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRInstanceIDKeyPairUtilities.m; path = Firebase/InstanceID/FIRInstanceIDKeyPairUtilities.m; sourceTree = "<group>"; };
 		58CD331F2AC5A4EBAEFFA8DFC9CB543A /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = CoreOnly/Sources/Firebase.h; sourceTree = "<group>"; };
@@ -771,19 +761,18 @@
 		5B0C458DB9A3C71223303735C023EDFD /* FIRMessagingPersistentSyncMessage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRMessagingPersistentSyncMessage.m; path = Firebase/Messaging/FIRMessagingPersistentSyncMessage.m; sourceTree = "<group>"; };
 		5B654B4B042BA7DC93766943A643E42B /* libFirebaseMessaging.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libFirebaseMessaging.a; path = libFirebaseMessaging.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BB388D288DB5DCC1545B656A654A59D /* FIRInstanceIDTokenFetchOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceIDTokenFetchOperation.h; path = Firebase/InstanceID/FIRInstanceIDTokenFetchOperation.h; sourceTree = "<group>"; };
-		5C5243888F3A4B908D3A96A158DA7EDF /* GeoOffersNotificationToast.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = GeoOffersNotificationToast.xib; path = GeoOffersSDK/GeoOffersNotificationToast.xib; sourceTree = "<group>"; };
 		5C7FF4B0CEACBFF6E69BDC5913737618 /* GPBProtocolBuffers_RuntimeSupport.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPBProtocolBuffers_RuntimeSupport.h; path = objectivec/GPBProtocolBuffers_RuntimeSupport.h; sourceTree = "<group>"; };
-		5CC8D31872D992377F5DD77F6CACA4CE /* GeoOffersSDK-GoogleService-Info.geoconfig */ = {isa = PBXFileReference; includeInIndex = 1; name = "GeoOffersSDK-GoogleService-Info.geoconfig"; path = "GeoOffersSDK/GeoOffersSDK-GoogleService-Info.geoconfig"; sourceTree = "<group>"; };
 		5DBB463DA717F999A4BE7C3187F3613E /* pb_decode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = pb_decode.h; sourceTree = "<group>"; };
+		5E4E3DD2C8BCFDC1E63077ECFEC08620 /* GeoOffersOffersCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersOffersCache.swift; path = GeoOffersSDK/GeoOffersOffersCache.swift; sourceTree = "<group>"; };
 		5E8CB85994F8C2659C624F2512AF49D9 /* FIRInstanceIDCombinedHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRInstanceIDCombinedHandler.m; path = Firebase/InstanceID/FIRInstanceIDCombinedHandler.m; sourceTree = "<group>"; };
 		5E9B1E642A0BB25A6E4B9D8C602B73B0 /* GULAppDelegateSwizzler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GULAppDelegateSwizzler.m; path = GoogleUtilities/AppDelegateSwizzler/GULAppDelegateSwizzler.m; sourceTree = "<group>"; };
 		5F19B5A8E5446140E1198A23CB7440A7 /* FIRMessagingPendingTopicsList.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRMessagingPendingTopicsList.h; path = Firebase/Messaging/FIRMessagingPendingTopicsList.h; sourceTree = "<group>"; };
 		5FE474BA91CFA6E70FE193F443379699 /* Duration.pbobjc.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Duration.pbobjc.m; path = objectivec/google/protobuf/Duration.pbobjc.m; sourceTree = "<group>"; };
 		608EC73AB1D071C0E97F4EC4852E62F4 /* GULSwizzler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GULSwizzler.m; path = GoogleUtilities/MethodSwizzler/GULSwizzler.m; sourceTree = "<group>"; };
+		61A10C897D6B2223330A83D72C6C9D2A /* GeoOffersPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersPresenter.swift; path = GeoOffersSDK/GeoOffersPresenter.swift; sourceTree = "<group>"; };
 		627EBFBFFD130D5D03A60FA317034851 /* GPBBootstrap.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPBBootstrap.h; path = objectivec/GPBBootstrap.h; sourceTree = "<group>"; };
-		6413209C85B8637A5D3A6928AC8E547A /* blank-bcode.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "blank-bcode.png"; path = "GeoOffersSDK/coupon/blank-bcode.png"; sourceTree = "<group>"; };
 		661789BB1E4B8B3B880CCC85D0820323 /* Wrappers.pbobjc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Wrappers.pbobjc.h; path = objectivec/google/protobuf/Wrappers.pbobjc.h; sourceTree = "<group>"; };
-		68742B1915136CB5133032251CE04E32 /* GeoOffersViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersViewController.swift; path = GeoOffersSDK/GeoOffersViewController.swift; sourceTree = "<group>"; };
+		671A30C514923FF95AA95B0815D94B45 /* GeoOffersSDK-GoogleService-Info.geoconfig */ = {isa = PBXFileReference; includeInIndex = 1; name = "GeoOffersSDK-GoogleService-Info.geoconfig"; path = "GeoOffersSDK/GeoOffersSDK-GoogleService-Info.geoconfig"; sourceTree = "<group>"; };
 		689E1182F9CEF902B7BCF08CF09A8B16 /* nanopb-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "nanopb-umbrella.h"; sourceTree = "<group>"; };
 		698AFDF142E6C921250ABB1C70C35A76 /* GPBUnknownFieldSet.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPBUnknownFieldSet.m; path = objectivec/GPBUnknownFieldSet.m; sourceTree = "<group>"; };
 		6A1C30659616BBABBEBE672F44A28CB0 /* FirebaseMessaging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FirebaseMessaging.h; path = Firebase/Messaging/Public/FirebaseMessaging.h; sourceTree = "<group>"; };
@@ -791,32 +780,31 @@
 		6A77DFC853D5E89816683BABF75BD513 /* FirebaseInstanceID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FirebaseInstanceID.h; path = Firebase/InstanceID/Public/FirebaseInstanceID.h; sourceTree = "<group>"; };
 		6A87E0927700500CE612DCEE00D090A2 /* GPBRootObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPBRootObject.m; path = objectivec/GPBRootObject.m; sourceTree = "<group>"; };
 		6A9FFF7A772BF32CE4417E8DE0675DE0 /* FIRMessagingConnection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRMessagingConnection.h; path = Firebase/Messaging/FIRMessagingConnection.h; sourceTree = "<group>"; };
-		6C36ED8BCABA061FD2E4572210DC0E97 /* GeoOffersSchedule.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersSchedule.swift; path = GeoOffersSDK/GeoOffersSchedule.swift; sourceTree = "<group>"; };
 		6DCA93DE0ADFD6EB5B7522D007DFBF98 /* FIRMessagingSyncMessageManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRMessagingSyncMessageManager.m; path = Firebase/Messaging/FIRMessagingSyncMessageManager.m; sourceTree = "<group>"; };
 		6E107AC4B3C0EFDA18B3DE92637FF1D0 /* GPBUnknownField_PackagePrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPBUnknownField_PackagePrivate.h; path = objectivec/GPBUnknownField_PackagePrivate.h; sourceTree = "<group>"; };
+		6E28C530EE55C686BFA82A05E4E2E20E /* GeoOffersNotificationService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersNotificationService.swift; path = GeoOffersSDK/GeoOffersNotificationService.swift; sourceTree = "<group>"; };
+		6EE54DE3CE1BAB29979070017A908C1E /* GeoOffersSDK-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GeoOffersSDK-prefix.pch"; sourceTree = "<group>"; };
 		6F1887125662B38CA2E3461AA9BEDEE3 /* Pods-GeoOffersSampleApp-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GeoOffersSampleApp-resources.sh"; sourceTree = "<group>"; };
 		6FB9B579D87C2EF557B547AB0D53EE1A /* FIRInstanceIDCheckinService.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRInstanceIDCheckinService.m; path = Firebase/InstanceID/FIRInstanceIDCheckinService.m; sourceTree = "<group>"; };
 		7064F3A620C8595586CC79FB0EE93E25 /* GPBDictionary_PackagePrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPBDictionary_PackagePrivate.h; path = objectivec/GPBDictionary_PackagePrivate.h; sourceTree = "<group>"; };
 		70A31F92DD5C5840A200AB1356F72DA8 /* FIRInstanceIDKeyPair.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRInstanceIDKeyPair.m; path = Firebase/InstanceID/FIRInstanceIDKeyPair.m; sourceTree = "<group>"; };
 		71390C89D14A0D3D616F489F7ACB3DCC /* FIRInstanceIDKeyPair.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceIDKeyPair.h; path = Firebase/InstanceID/FIRInstanceIDKeyPair.h; sourceTree = "<group>"; };
 		717EC4A81AD89C2FF8873C822241324F /* GULLoggerCodes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GULLoggerCodes.h; path = GoogleUtilities/Common/GULLoggerCodes.h; sourceTree = "<group>"; };
-		718411F49CD033FD7EDE394AC2FCBB12 /* GeoOffersDataProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersDataProcessor.swift; path = GeoOffersSDK/GeoOffersDataProcessor.swift; sourceTree = "<group>"; };
 		726CE4C6D70BEE08F15176289C51DB88 /* GoogleUtilities.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleUtilities.xcconfig; sourceTree = "<group>"; };
 		72775F649B46D8AD2D26662F81073A5F /* FIRBundleUtil.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRBundleUtil.m; path = Firebase/Core/FIRBundleUtil.m; sourceTree = "<group>"; };
 		737368484E1790791D3C09A8E858E491 /* FIRMessagingReceiver.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRMessagingReceiver.m; path = Firebase/Messaging/FIRMessagingReceiver.m; sourceTree = "<group>"; };
+		737D14F23A0245AEF3A66023D8C469BB /* GeoOffersTrackingCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersTrackingCache.swift; path = GeoOffersSDK/GeoOffersTrackingCache.swift; sourceTree = "<group>"; };
 		73C11B9427552BD0C7A253474D351306 /* Pods-GeoOffersSampleAppTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GeoOffersSampleAppTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		73C84C74A054E4BD8837EFD8B96CDD42 /* print-icon.svg */ = {isa = PBXFileReference; includeInIndex = 1; name = "print-icon.svg"; path = "GeoOffersSDK/coupon/print-icon.svg"; sourceTree = "<group>"; };
 		757C4460FFB6E267A9FAA8E0C7F84B7F /* FIRErrors.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRErrors.h; path = Firebase/Core/Private/FIRErrors.h; sourceTree = "<group>"; };
 		762DC10679FB38F5FD223DCB2ADFBF75 /* FIRInstanceIDAuthService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceIDAuthService.h; path = Firebase/InstanceID/FIRInstanceIDAuthService.h; sourceTree = "<group>"; };
-		76EAD6FBB6ED7B58BA5CDB684DF17D9D /* GeoOffersNotificationToast.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersNotificationToast.swift; path = GeoOffersSDK/GeoOffersNotificationToast.swift; sourceTree = "<group>"; };
 		7717D8C43C94E0B4158BEB1000D93A9A /* FIRMessaging_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRMessaging_Private.h; path = Firebase/Messaging/FIRMessaging_Private.h; sourceTree = "<group>"; };
-		77343F8CBC7F3D9284AAA5F46E4677B2 /* GeoOffersPendingOffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersPendingOffer.swift; path = GeoOffersSDK/GeoOffersPendingOffer.swift; sourceTree = "<group>"; };
 		7750428FC012A4F083F0DAE0098BC788 /* GPBRootObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPBRootObject.h; path = objectivec/GPBRootObject.h; sourceTree = "<group>"; };
+		777E3A699E32F163EF015AD510883677 /* index.html */ = {isa = PBXFileReference; includeInIndex = 1; name = index.html; path = GeoOffersSDK/index.html; sourceTree = "<group>"; };
 		787F2CF609903CC255817A194D984A36 /* FIRComponentContainer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRComponentContainer.m; path = Firebase/Core/FIRComponentContainer.m; sourceTree = "<group>"; };
 		79720FED4B86AEB3E6B5F3A5EFE47CFD /* GoogleUtilities-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GoogleUtilities-umbrella.h"; sourceTree = "<group>"; };
+		7A47DDA105055B53F1AA8F9DD37799D9 /* GeoOffersSDK-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GeoOffersSDK-umbrella.h"; sourceTree = "<group>"; };
 		7A51D22173F640E5DBF94CE9A1F2AD2A /* FIRComponentContainer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRComponentContainer.h; path = Firebase/Core/Private/FIRComponentContainer.h; sourceTree = "<group>"; };
 		7B82F89CE05A914B76B76CB4725504B7 /* GPBDescriptor.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPBDescriptor.m; path = objectivec/GPBDescriptor.m; sourceTree = "<group>"; };
-		7B8A2C61B3CA2EC31D13B3BB106779E1 /* GeoOffersConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersConfiguration.swift; path = GeoOffersSDK/GeoOffersConfiguration.swift; sourceTree = "<group>"; };
 		7D5978E93655FBF68E46B8EBBC314E70 /* Api.pbobjc.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Api.pbobjc.m; path = objectivec/google/protobuf/Api.pbobjc.m; sourceTree = "<group>"; };
 		7D773AA38D6DEE27A87D1F1776E450D7 /* FIRAnalyticsConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRAnalyticsConfiguration.m; path = Firebase/Core/FIRAnalyticsConfiguration.m; sourceTree = "<group>"; };
 		7E6F4E3F91770B0BE536FB0E8757E7DF /* FirebaseInstanceID.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FirebaseInstanceID.xcconfig; sourceTree = "<group>"; };
@@ -824,25 +812,21 @@
 		7F4AA5469657DB8E52F5CAE249C606B2 /* pb_encode.c */ = {isa = PBXFileReference; includeInIndex = 1; path = pb_encode.c; sourceTree = "<group>"; };
 		7F889C4FF314BEC20AA566FF441C0628 /* GULAppDelegateSwizzler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GULAppDelegateSwizzler.h; path = GoogleUtilities/AppDelegateSwizzler/Private/GULAppDelegateSwizzler.h; sourceTree = "<group>"; };
 		7FAFF915CC7220D28540E81BF0043411 /* FIRInstanceIDKeyPairStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceIDKeyPairStore.h; path = Firebase/InstanceID/FIRInstanceIDKeyPairStore.h; sourceTree = "<group>"; };
-		80047C1F1E5DD1D41157AC53650AF7FD /* app.css */ = {isa = PBXFileReference; includeInIndex = 1; name = app.css; path = GeoOffersSDK/offerslist/offerslist_files/app.css; sourceTree = "<group>"; };
 		819DBDCC8C7F0B8934728995D0DE5BD8 /* pb_decode.c */ = {isa = PBXFileReference; includeInIndex = 1; path = pb_decode.c; sourceTree = "<group>"; };
 		826CA3FAA1BDC0FE13D9C5646467B4A1 /* GPBCodedInputStream.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPBCodedInputStream.h; path = objectivec/GPBCodedInputStream.h; sourceTree = "<group>"; };
 		82ECB7A271F5FCD25605725C8FAA48E1 /* FIRInstanceIDTokenDeleteOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRInstanceIDTokenDeleteOperation.m; path = Firebase/InstanceID/FIRInstanceIDTokenDeleteOperation.m; sourceTree = "<group>"; };
 		83265DE4178EF2B4D5BEBEE2179DB953 /* GULUserDefaults.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GULUserDefaults.h; path = GoogleUtilities/UserDefaults/Private/GULUserDefaults.h; sourceTree = "<group>"; };
 		836E3AE33B72D5D69DEAB001521FBED4 /* FirebaseInstanceID-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "FirebaseInstanceID-dummy.m"; sourceTree = "<group>"; };
 		859C6F001E63863B2898D8CD4D070E8D /* GPBExtensionRegistry.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPBExtensionRegistry.m; path = objectivec/GPBExtensionRegistry.m; sourceTree = "<group>"; };
+		85B70CA24CE356D2B3FF538FA207852D /* rere.main.min.js */ = {isa = PBXFileReference; includeInIndex = 1; name = rere.main.min.js; path = GeoOffersSDK/coupon/rere.main.min.js; sourceTree = "<group>"; };
 		85D295C5151E6A8F0369FBF512783C93 /* GULNetworkConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GULNetworkConstants.h; path = GoogleUtilities/Network/Private/GULNetworkConstants.h; sourceTree = "<group>"; };
-		864083C1B99FF3F52CA291C5D4C35411 /* map-icon.svg */ = {isa = PBXFileReference; includeInIndex = 1; name = "map-icon.svg"; path = "GeoOffersSDK/coupon/map-icon.svg"; sourceTree = "<group>"; };
 		86D3F48BA751C0E7C65B9EC76F224B73 /* FIRMessagingContextManagerService.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRMessagingContextManagerService.m; path = Firebase/Messaging/FIRMessagingContextManagerService.m; sourceTree = "<group>"; };
 		8740410FB2C9561075C38217B95EDBBC /* pb_encode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = pb_encode.h; sourceTree = "<group>"; };
-		8770B4363AD4CC545304518DC5D9117C /* save-to-google-pay.svg */ = {isa = PBXFileReference; includeInIndex = 1; name = "save-to-google-pay.svg"; path = "GeoOffersSDK/coupon/save-to-google-pay.svg"; sourceTree = "<group>"; };
-		8804EE93CC98968D6CEF96F1D26E4CD6 /* offerslist.html */ = {isa = PBXFileReference; includeInIndex = 1; name = offerslist.html; path = GeoOffersSDK/offerslist/offerslist.html; sourceTree = "<group>"; };
 		898FF626E2E4F1F8441D437D98237F7F /* FIRMessagingLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRMessagingLogger.m; path = Firebase/Messaging/FIRMessagingLogger.m; sourceTree = "<group>"; };
 		8A9E2D79D434D258EAC2D08CAE1E1235 /* FIRInstanceIDCombinedHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceIDCombinedHandler.h; path = Firebase/InstanceID/FIRInstanceIDCombinedHandler.h; sourceTree = "<group>"; };
 		8AC1B9E920D33BBC16570F940BC677F4 /* FIRInstanceIDUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceIDUtilities.h; path = Firebase/InstanceID/FIRInstanceIDUtilities.h; sourceTree = "<group>"; };
-		8AC7DF615ED77FE4295B692E247BDC13 /* rere.main.min.js */ = {isa = PBXFileReference; includeInIndex = 1; name = rere.main.min.js; path = GeoOffersSDK/coupon/rere.main.min.js; sourceTree = "<group>"; };
-		8B6F9B4847CCF2FC365E67C58C2CCAC0 /* GeoOffersAPIService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersAPIService.swift; path = GeoOffersSDK/GeoOffersAPIService.swift; sourceTree = "<group>"; };
 		8C02212B3501A8D2B58B9838D4330CE7 /* Pods-GeoOffersSampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GeoOffersSampleApp.debug.xcconfig"; sourceTree = "<group>"; };
+		8CBFE9D58809A0CB39104E7091520A11 /* GeoOffersGeoFence.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersGeoFence.swift; path = GeoOffersSDK/GeoOffersGeoFence.swift; sourceTree = "<group>"; };
 		8D9EDD08D5CB4169D78AFD89AB051196 /* Any.pbobjc.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Any.pbobjc.m; path = objectivec/google/protobuf/Any.pbobjc.m; sourceTree = "<group>"; };
 		8F1318FAD2710FCBF9C310A86C5BED05 /* FIRMessagingRmq2PersistentStore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRMessagingRmq2PersistentStore.h; path = Firebase/Messaging/FIRMessagingRmq2PersistentStore.h; sourceTree = "<group>"; };
 		8FDFE347944584E16CEF2E53203AAE53 /* GULReachabilityChecker+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GULReachabilityChecker+Internal.h"; path = "GoogleUtilities/Reachability/GULReachabilityChecker+Internal.h"; sourceTree = "<group>"; };
@@ -854,35 +838,38 @@
 		938E9385D38DFAF19E3AB48B518FE8CF /* FIRMessagingReceiver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRMessagingReceiver.h; path = Firebase/Messaging/FIRMessagingReceiver.h; sourceTree = "<group>"; };
 		93C9C6711A1615B3E682390726322FF0 /* GULNetworkLoggerProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GULNetworkLoggerProtocol.h; path = GoogleUtilities/Network/Private/GULNetworkLoggerProtocol.h; sourceTree = "<group>"; };
 		958CAF4719EC99A9DC3F278FDC418160 /* GULApplication.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GULApplication.h; path = GoogleUtilities/AppDelegateSwizzler/Private/GULApplication.h; sourceTree = "<group>"; };
-		95BB003207A13D28C02F0098E514580F /* GeoOffersFirebaseWrapper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersFirebaseWrapper.swift; path = GeoOffersSDK/GeoOffersFirebaseWrapper.swift; sourceTree = "<group>"; };
-		981BE0F5F6794644D671A46209FD4A50 /* GeoOffersListing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersListing.swift; path = GeoOffersSDK/GeoOffersListing.swift; sourceTree = "<group>"; };
 		983ED4381EACD29C7CCFB4FE6C838EFA /* FIRMessagingUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRMessagingUtilities.m; path = Firebase/Messaging/FIRMessagingUtilities.m; sourceTree = "<group>"; };
 		98B70F28541CEC712EF82BB5384CFF0B /* GPBCodedOutputStream.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPBCodedOutputStream.m; path = objectivec/GPBCodedOutputStream.m; sourceTree = "<group>"; };
-		9A01B290A0D1D2E3A5A768DCD67E41E8 /* GeoOffersSDK-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GeoOffersSDK-umbrella.h"; sourceTree = "<group>"; };
+		98D49061B03DC1DDFA9F593DE7A6E582 /* KeyedDecodingContainerProtocol+PHPJSONEncoderHelper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "KeyedDecodingContainerProtocol+PHPJSONEncoderHelper.swift"; path = "GeoOffersSDK/KeyedDecodingContainerProtocol+PHPJSONEncoderHelper.swift"; sourceTree = "<group>"; };
 		9A0A30216F61DB3FE3493BEA1A0815B3 /* GPBCodedOutputStream.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPBCodedOutputStream.h; path = objectivec/GPBCodedOutputStream.h; sourceTree = "<group>"; };
 		9C88B0770EBA531D775BC7F7BDFB45F0 /* GPBWireFormat.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPBWireFormat.h; path = objectivec/GPBWireFormat.h; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E64709411E018CF9B78A2F3D7E4CF0A /* GPBCodedOutputStream_PackagePrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPBCodedOutputStream_PackagePrivate.h; path = objectivec/GPBCodedOutputStream_PackagePrivate.h; sourceTree = "<group>"; };
 		9EB844BA0704032F253A87A50A4D08AB /* libPods-GeoOffersSampleAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-GeoOffersSampleAppTests.a"; path = "libPods-GeoOffersSampleAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F41169CF58D9CDA5223CE7840663EB2 /* map-icon.svg */ = {isa = PBXFileReference; includeInIndex = 1; name = "map-icon.svg"; path = "GeoOffersSDK/coupon/map-icon.svg"; sourceTree = "<group>"; };
+		9F7684C91A92D0C180ED415AF4B86D89 /* GeoOffersDataProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersDataProcessor.swift; path = GeoOffersSDK/GeoOffersDataProcessor.swift; sourceTree = "<group>"; };
 		A13C91BFF92528735FD236B989AFA180 /* Timestamp.pbobjc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Timestamp.pbobjc.h; path = objectivec/google/protobuf/Timestamp.pbobjc.h; sourceTree = "<group>"; };
 		A19A8E40C43004835A40F63ACB393C91 /* FIRMessagingPendingTopicsList.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRMessagingPendingTopicsList.m; path = Firebase/Messaging/FIRMessagingPendingTopicsList.m; sourceTree = "<group>"; };
 		A1E99EA905284DAFD8661B740C003C72 /* FIRLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRLogger.h; path = Firebase/Core/Private/FIRLogger.h; sourceTree = "<group>"; };
 		A23AE7F1DBD2F84D7E24865B1E46C5FC /* FIRMessagingPubSubRegistrar.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRMessagingPubSubRegistrar.m; path = Firebase/Messaging/FIRMessagingPubSubRegistrar.m; sourceTree = "<group>"; };
-		A27D84BCB305FCFA0B172CBA2F751179 /* GeoOffersNotificationService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersNotificationService.swift; path = GeoOffersSDK/GeoOffersNotificationService.swift; sourceTree = "<group>"; };
+		A294E9EE7EE1FE1C9049079EE1306468 /* coupon.css */ = {isa = PBXFileReference; includeInIndex = 1; name = coupon.css; path = GeoOffersSDK/coupon/coupon.css; sourceTree = "<group>"; };
 		A341057D4FCFA48CAD7806532ED41191 /* GPBWireFormat.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPBWireFormat.m; path = objectivec/GPBWireFormat.m; sourceTree = "<group>"; };
 		A42A692C7A036D8E3C2A447813584F4E /* FIRInstanceIDStore.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRInstanceIDStore.m; path = Firebase/InstanceID/FIRInstanceIDStore.m; sourceTree = "<group>"; };
 		A42C4FBAB80B09A53A55058CACD959A4 /* Any.pbobjc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Any.pbobjc.h; path = objectivec/google/protobuf/Any.pbobjc.h; sourceTree = "<group>"; };
 		A42C5C5DCE209D16EFB68D02473B3372 /* Pods-GeoOffersSampleApp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GeoOffersSampleApp-acknowledgements.markdown"; sourceTree = "<group>"; };
 		A519A108411C5CA2E78F5E2E2D56B43A /* NSError+FIRMessaging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSError+FIRMessaging.h"; path = "Firebase/Messaging/NSError+FIRMessaging.h"; sourceTree = "<group>"; };
+		A624458AE221B702788FA11E671D740A /* GeoOffersSDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GeoOffersSDK-dummy.m"; sourceTree = "<group>"; };
+		A6A3086EC30E1DF4868696608A494149 /* google-pay-logo.svg */ = {isa = PBXFileReference; includeInIndex = 1; name = "google-pay-logo.svg"; path = "GeoOffersSDK/coupon/google-pay-logo.svg"; sourceTree = "<group>"; };
 		A783689AC9CEF7133409FD65E61D7EEA /* FIRConfigurationInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRConfigurationInternal.h; path = Firebase/Core/Private/FIRConfigurationInternal.h; sourceTree = "<group>"; };
-		A82293262BD4D9B67375AA18B002AB81 /* GeoOffersSDKServiceProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersSDKServiceProtocol.swift; path = GeoOffersSDK/GeoOffersSDKServiceProtocol.swift; sourceTree = "<group>"; };
 		A833109C9565D6716C641B1416DAA641 /* FIRMessagingRemoteNotificationsProxy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRMessagingRemoteNotificationsProxy.h; path = Firebase/Messaging/FIRMessagingRemoteNotificationsProxy.h; sourceTree = "<group>"; };
 		A8E5EA9523FB4756ADCD5BB5D4CC21F6 /* GPBMessage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPBMessage.m; path = objectivec/GPBMessage.m; sourceTree = "<group>"; };
 		A8EFC34442DBD002670282E446C1BC9E /* GULLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GULLogger.h; path = GoogleUtilities/Logger/Private/GULLogger.h; sourceTree = "<group>"; };
 		A92057AEA6497F5F4F702CDC012F77A2 /* FIRConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRConfiguration.h; path = Firebase/Core/Public/FIRConfiguration.h; sourceTree = "<group>"; };
 		A96F2AC43B8CDFF5848D1ECBA24479EA /* FIRConfiguration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRConfiguration.m; path = Firebase/Core/FIRConfiguration.m; sourceTree = "<group>"; };
 		A9927608862B64515FEC7B522BE1E57D /* FIRMessagingContextManagerService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRMessagingContextManagerService.h; path = Firebase/Messaging/FIRMessagingContextManagerService.h; sourceTree = "<group>"; };
+		A9A05BDC8AE30E014440792258A0A2D4 /* GeoOffersSchedule.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersSchedule.swift; path = GeoOffersSDK/GeoOffersSchedule.swift; sourceTree = "<group>"; };
 		AA551D9ED3D9B1F151258C16509AA0DD /* NSError+FIRInstanceID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSError+FIRInstanceID.h"; path = "Firebase/InstanceID/NSError+FIRInstanceID.h"; sourceTree = "<group>"; };
+		AB160B2A3136AD3A873140D89B1071BB /* GeoOffersPushData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersPushData.swift; path = GeoOffersSDK/GeoOffersPushData.swift; sourceTree = "<group>"; };
 		AB6F9DC17AE938B3F450C6ACD774400B /* libGeoOffersSDK.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libGeoOffersSDK.a; path = libGeoOffersSDK.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB94F2C7E461E020D5A848557CA94EEE /* FIRMessagingClient.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRMessagingClient.m; path = Firebase/Messaging/FIRMessagingClient.m; sourceTree = "<group>"; };
 		ABCC9693EB596BCBDE2FC6E7C571907A /* FIRMessagingPubSub.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRMessagingPubSub.m; path = Firebase/Messaging/FIRMessagingPubSub.m; sourceTree = "<group>"; };
@@ -898,12 +885,12 @@
 		B1C7EC21FFD53B02ADFFEDE7706EEE0E /* FIRMessagingRmq2PersistentStore.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRMessagingRmq2PersistentStore.m; path = Firebase/Messaging/FIRMessagingRmq2PersistentStore.m; sourceTree = "<group>"; };
 		B25E0D20C966624B0327FD31C45B00BB /* FIROptions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIROptions.m; path = Firebase/Core/FIROptions.m; sourceTree = "<group>"; };
 		B29BB091B26692B900377D351521CE72 /* FIRLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRLogger.m; path = Firebase/Core/FIRLogger.m; sourceTree = "<group>"; };
-		B37C020FFD7D3B6E9C4FBF9F56418784 /* UIView+NibLoading.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+NibLoading.swift"; path = "GeoOffersSDK/UIView+NibLoading.swift"; sourceTree = "<group>"; };
-		B3F9528EA043F47BFD7EB90E0573F7F0 /* GeoOffersOffer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersOffer.swift; path = GeoOffersSDK/GeoOffersOffer.swift; sourceTree = "<group>"; };
 		B43874C6CBB50E7134FBEC24BABFE14F /* libGoogleUtilities.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libGoogleUtilities.a; path = libGoogleUtilities.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B494CC698EE7419C6F88281E9308D37D /* Type.pbobjc.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = Type.pbobjc.m; path = objectivec/google/protobuf/Type.pbobjc.m; sourceTree = "<group>"; };
 		B4B96234EC61A5BBC242CF7C693AF216 /* FIRMessagingPubSubRegistrar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRMessagingPubSubRegistrar.h; path = Firebase/Messaging/FIRMessagingPubSubRegistrar.h; sourceTree = "<group>"; };
 		B63F6F252A8ABD4E25E5401FEE22C78B /* FIRMessagingExtensionHelper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRMessagingExtensionHelper.m; path = Firebase/Messaging/FIRMessagingExtensionHelper.m; sourceTree = "<group>"; };
+		B6417CB48D0F6886128639306F7A5A2F /* vue.js */ = {isa = PBXFileReference; includeInIndex = 1; name = vue.js; path = GeoOffersSDK/coupon/vue.js; sourceTree = "<group>"; };
+		B7533B8CD4CD95F901A3D608B9100C28 /* GeoOffersPushNotificationCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersPushNotificationCache.swift; path = GeoOffersSDK/GeoOffersPushNotificationCache.swift; sourceTree = "<group>"; };
 		B8EF36684260352E8A86CEAE2E063482 /* Pods-GeoOffersSampleAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GeoOffersSampleAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B96FEC588C12AE87BAF9B90B10A25B89 /* GoogleAppMeasurement.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GoogleAppMeasurement.xcconfig; sourceTree = "<group>"; };
 		BAAD80B9A5856404DAD6ED13456FB548 /* FIRInstanceIDStringEncoding.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceIDStringEncoding.h; path = Firebase/InstanceID/FIRInstanceIDStringEncoding.h; sourceTree = "<group>"; };
@@ -911,36 +898,43 @@
 		BBE355CE90E69D6739637FEE7CD8F17E /* Type.pbobjc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Type.pbobjc.h; path = objectivec/google/protobuf/Type.pbobjc.h; sourceTree = "<group>"; };
 		BC09809A444453628D65CE8A1C84E3A5 /* GPBCodedInputStream_PackagePrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPBCodedInputStream_PackagePrivate.h; path = objectivec/GPBCodedInputStream_PackagePrivate.h; sourceTree = "<group>"; };
 		BC7995BB2571637F291E338AC100F48C /* GPBUtilities_PackagePrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPBUtilities_PackagePrivate.h; path = objectivec/GPBUtilities_PackagePrivate.h; sourceTree = "<group>"; };
-		BDA3234411423FDA28D7D02027FDCE5E /* String+URLEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+URLEncoding.swift"; path = "GeoOffersSDK/String+URLEncoding.swift"; sourceTree = "<group>"; };
+		BD238C339F340D7C1502A3FB386929BA /* GeoOffersViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersViewController.swift; path = GeoOffersSDK/GeoOffersViewController.swift; sourceTree = "<group>"; };
 		BDC704C4FE0CD9A72D31FF216F05FD68 /* FieldMask.pbobjc.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FieldMask.pbobjc.m; path = objectivec/google/protobuf/FieldMask.pbobjc.m; sourceTree = "<group>"; };
+		BF2FF4DF1888821986E2F364D8763EE1 /* GeoOffersEnteredRegionCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersEnteredRegionCache.swift; path = GeoOffersSDK/GeoOffersEnteredRegionCache.swift; sourceTree = "<group>"; };
 		BFAE123D03C34BB332460B5F3ACB259D /* GULReachabilityChecker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GULReachabilityChecker.h; path = GoogleUtilities/Reachability/Private/GULReachabilityChecker.h; sourceTree = "<group>"; };
+		BFAF3FE5E5A6FFA0ABBC1E9CA3B53A62 /* GeoOffersSDK.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = GeoOffersSDK.storyboard; path = GeoOffersSDK/GeoOffersSDK.storyboard; sourceTree = "<group>"; };
 		C03FFF8019E70E1A74912A54FC470506 /* FIRInstanceIDCheckinPreferences+Internal.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "FIRInstanceIDCheckinPreferences+Internal.m"; path = "Firebase/InstanceID/FIRInstanceIDCheckinPreferences+Internal.m"; sourceTree = "<group>"; };
+		C0427083883C9D6CE70BE6982BC11568 /* FileManager+Additions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "FileManager+Additions.swift"; path = "GeoOffersSDK/FileManager+Additions.swift"; sourceTree = "<group>"; };
 		C0AABB0F7B6B848C171FBC20F941E7D9 /* libPods-GeoOffersSampleAppUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-GeoOffersSampleAppUITests.a"; path = "libPods-GeoOffersSampleAppUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C135CC3F81F8D107B0FB45FE6525DB4A /* GeoOffersLogging.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersLogging.swift; path = GeoOffersSDK/GeoOffersLogging.swift; sourceTree = "<group>"; };
 		C17D89513703C211265C58FBC58DF814 /* SourceContext.pbobjc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SourceContext.pbobjc.h; path = objectivec/google/protobuf/SourceContext.pbobjc.h; sourceTree = "<group>"; };
+		C190BBA24D92B2D4D755E93C5EFA4CC5 /* JsBarcode.all.min.js */ = {isa = PBXFileReference; includeInIndex = 1; name = JsBarcode.all.min.js; path = GeoOffersSDK/coupon/JsBarcode.all.min.js; sourceTree = "<group>"; };
 		C2105C94812B6214B154F54DCEDB72AC /* libProtobuf.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libProtobuf.a; path = libProtobuf.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C25018E3ABE32B385B88734094BF6674 /* GeoOffersLocationService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersLocationService.swift; path = GeoOffersSDK/GeoOffersLocationService.swift; sourceTree = "<group>"; };
 		C2DF7A04270669B256745F5D0EDF3FC0 /* nanopb-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "nanopb-prefix.pch"; sourceTree = "<group>"; };
+		C332EE1134489329369950583503B8C7 /* blank-bcode.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "blank-bcode.png"; path = "GeoOffersSDK/coupon/blank-bcode.png"; sourceTree = "<group>"; };
 		C391257BA1BD289058C93AC17C9B7587 /* FIRApp.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRApp.m; path = Firebase/Core/FIRApp.m; sourceTree = "<group>"; };
 		C401A89ACF4B6ECBA096DB1E001DABEE /* FIRInstanceIDKeyPairStore.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRInstanceIDKeyPairStore.m; path = Firebase/InstanceID/FIRInstanceIDKeyPairStore.m; sourceTree = "<group>"; };
 		C4FE3E82F568DC21A2655F85F3F1B50E /* FIRInstanceIDURLQueryItem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRInstanceIDURLQueryItem.m; path = Firebase/InstanceID/FIRInstanceIDURLQueryItem.m; sourceTree = "<group>"; };
-		C514142619772BAB6CC90C1C7C735D4D /* GeoOffersTrackingEvent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersTrackingEvent.swift; path = GeoOffersSDK/GeoOffersTrackingEvent.swift; sourceTree = "<group>"; };
 		C523DD0C19B770BFBC933A38B5C4440A /* GULNetworkConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GULNetworkConstants.m; path = GoogleUtilities/Network/GULNetworkConstants.m; sourceTree = "<group>"; };
 		C56ABE351ABDCCC6C0631FD5975307E7 /* GULNSData+zlib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GULNSData+zlib.h"; path = "GoogleUtilities/NSData+zlib/GULNSData+zlib.h"; sourceTree = "<group>"; };
 		C5ADED79D50FCB26BB9B62775250E5A8 /* GPBRuntimeTypes.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPBRuntimeTypes.h; path = objectivec/GPBRuntimeTypes.h; sourceTree = "<group>"; };
 		C67029EC3C55CCC329C205EC2113BC22 /* GoogleUtilities.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = GoogleUtilities.modulemap; sourceTree = "<group>"; };
+		C6885F361B434BA9F1CDCD5E768D371E /* Date+UnixTime.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Date+UnixTime.swift"; path = "GeoOffersSDK/Date+UnixTime.swift"; sourceTree = "<group>"; };
 		C71818D6B87EF06565CF3DF349B8297A /* FIRMessagingRemoteNotificationsProxy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRMessagingRemoteNotificationsProxy.m; path = Firebase/Messaging/FIRMessagingRemoteNotificationsProxy.m; sourceTree = "<group>"; };
 		C7E908781ED42FCAF4B86534336ABDCB /* GPBDictionary.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPBDictionary.h; path = objectivec/GPBDictionary.h; sourceTree = "<group>"; };
 		C86D0616F564CCBA0D013B8611A64AA8 /* pb_common.c */ = {isa = PBXFileReference; includeInIndex = 1; path = pb_common.c; sourceTree = "<group>"; };
 		C9B81DC3F126F602D630FFCA6FD015B2 /* FIRInstanceIDURLQueryItem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceIDURLQueryItem.h; path = Firebase/InstanceID/FIRInstanceIDURLQueryItem.h; sourceTree = "<group>"; };
+		C9B9ADA1834A6C41FD896DBA54541F9E /* offerslist.html */ = {isa = PBXFileReference; includeInIndex = 1; name = offerslist.html; path = GeoOffersSDK/offerslist/offerslist.html; sourceTree = "<group>"; };
 		CAC6226C083D3D40318D4C013AEF31E4 /* FIRComponentType.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRComponentType.m; path = Firebase/Core/FIRComponentType.m; sourceTree = "<group>"; };
 		CAD9BEF1642498BE2FA9B5D278F047FA /* FIRMessagingCodedInputStream.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRMessagingCodedInputStream.h; path = Firebase/Messaging/FIRMessagingCodedInputStream.h; sourceTree = "<group>"; };
 		CBF0DE969A38C6D6552F84B6E023B302 /* FIRInstanceIDTokenManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRInstanceIDTokenManager.m; path = Firebase/InstanceID/FIRInstanceIDTokenManager.m; sourceTree = "<group>"; };
-		CD2E710B11BE9A8261A3FF5901CAB564 /* GeoOffersSDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GeoOffersSDK-dummy.m"; sourceTree = "<group>"; };
+		CC796C34625FE5EC1D27E01E446EACF5 /* GeoOffersPushNotificationProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersPushNotificationProcessor.swift; path = GeoOffersSDK/GeoOffersPushNotificationProcessor.swift; sourceTree = "<group>"; };
 		CE6D5B115DC0ABE2AABD462BA96AECF7 /* FIRInstanceIDTokenOperation+Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "FIRInstanceIDTokenOperation+Private.h"; path = "Firebase/InstanceID/FIRInstanceIDTokenOperation+Private.h"; sourceTree = "<group>"; };
-		CF2122126A3D17B78AA2E10EA4B05B51 /* GeoOffersSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GeoOffersSDK.h; path = GeoOffersSDK/GeoOffersSDK.h; sourceTree = "<group>"; };
+		CEA11B89D5306B58FF21693B453801B5 /* GeoOffersDebugRegion.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersDebugRegion.swift; path = GeoOffersSDK/GeoOffersDebugRegion.swift; sourceTree = "<group>"; };
+		CF3D8517A3B093212FC16B87C8FDBD59 /* geo-gmap-icon.svg */ = {isa = PBXFileReference; includeInIndex = 1; name = "geo-gmap-icon.svg"; path = "GeoOffersSDK/offerslist/offerslist_files/geo-gmap-icon.svg"; sourceTree = "<group>"; };
 		D15E12372BBD20DE3F6840CEB50A8836 /* GPBMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPBMessage.h; path = objectivec/GPBMessage.h; sourceTree = "<group>"; };
 		D2B23DFAA6E91A5F02CECC4C05EA4003 /* FIRMessagingVersionUtilities.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRMessagingVersionUtilities.m; path = Firebase/Messaging/FIRMessagingVersionUtilities.m; sourceTree = "<group>"; };
-		D338B726A8BE823BA25D6325AD5DE51B /* GeoOffersSDK.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GeoOffersSDK.xcconfig; sourceTree = "<group>"; };
+		D37096FBCC76D2B6658C65B5A4FB86D5 /* coupon.html */ = {isa = PBXFileReference; includeInIndex = 1; name = coupon.html; path = GeoOffersSDK/coupon/coupon.html; sourceTree = "<group>"; };
 		D3AE7CCDA60C327DDB6F2EF3734931AB /* Empty.pbobjc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Empty.pbobjc.h; path = objectivec/google/protobuf/Empty.pbobjc.h; sourceTree = "<group>"; };
 		D428F2B68EBDB5FE254064D015D87751 /* SourceContext.pbobjc.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SourceContext.pbobjc.m; path = objectivec/google/protobuf/SourceContext.pbobjc.m; sourceTree = "<group>"; };
 		D47CFE69B97B0376C841DC73C2015993 /* FIRMessagingSecureSocket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRMessagingSecureSocket.h; path = Firebase/Messaging/FIRMessagingSecureSocket.h; sourceTree = "<group>"; };
@@ -949,7 +943,7 @@
 		D55898943CF8AB2B1A56C9BC11A5E86D /* GPBUnknownFieldSet_PackagePrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPBUnknownFieldSet_PackagePrivate.h; path = objectivec/GPBUnknownFieldSet_PackagePrivate.h; sourceTree = "<group>"; };
 		D568DE5A1ADA21E32F4FBB519075EC35 /* FIRInstanceIDAuthKeyChain.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceIDAuthKeyChain.h; path = Firebase/InstanceID/FIRInstanceIDAuthKeyChain.h; sourceTree = "<group>"; };
 		D61903AD40306A41DBD9047BC1EA8B99 /* GtalkExtensions.pbobjc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GtalkExtensions.pbobjc.h; path = Firebase/Messaging/Protos/GtalkExtensions.pbobjc.h; sourceTree = "<group>"; };
-		D6692D18D40CDC68A9EF3822D2849E17 /* jquery.min.js */ = {isa = PBXFileReference; includeInIndex = 1; name = jquery.min.js; path = GeoOffersSDK/coupon/jquery.min.js; sourceTree = "<group>"; };
+		D7306ED46CAA2DD58A5DD44B340DA22A /* GeoOffersNotificationToast.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersNotificationToast.swift; path = GeoOffersSDK/GeoOffersNotificationToast.swift; sourceTree = "<group>"; };
 		D758B353E6FC17A81A1CD03C8C5650C6 /* Firebase.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Firebase.xcconfig; sourceTree = "<group>"; };
 		D75E948B0D6585C1EB40FA12B0C2834D /* GULNetwork.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GULNetwork.m; path = GoogleUtilities/Network/GULNetwork.m; sourceTree = "<group>"; };
 		D7A9F0103A79D2DCF38BD4D7BD8DF677 /* FIRInstanceIDDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceIDDefines.h; path = Firebase/InstanceID/FIRInstanceIDDefines.h; sourceTree = "<group>"; };
@@ -958,14 +952,18 @@
 		DA43946B2D2020F97EA43FF28A185205 /* FIRInstanceIDAuthKeyChain.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRInstanceIDAuthKeyChain.m; path = Firebase/InstanceID/FIRInstanceIDAuthKeyChain.m; sourceTree = "<group>"; };
 		DA8E6E8F5F6FB7F66E232E1F3EAA4BE7 /* Pods-GeoOffersSampleApp-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GeoOffersSampleApp-umbrella.h"; sourceTree = "<group>"; };
 		DADFF5F6A2C4A47EE25D337B16DA4220 /* FirebaseMessaging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = FirebaseMessaging.xcconfig; sourceTree = "<group>"; };
+		DBC7863C64253D0CE7B0A133EC567055 /* GeoOffersTrackingEvent.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersTrackingEvent.swift; path = GeoOffersSDK/GeoOffersTrackingEvent.swift; sourceTree = "<group>"; };
 		DBCDE258B62FED1D6AFC6E06A599EEE6 /* GPBDescriptor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPBDescriptor.h; path = objectivec/GPBDescriptor.h; sourceTree = "<group>"; };
 		DC297F6D5B88CCF836D20DDF98BC5B80 /* FIRInstanceIDTokenDeleteOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceIDTokenDeleteOperation.h; path = Firebase/InstanceID/FIRInstanceIDTokenDeleteOperation.h; sourceTree = "<group>"; };
 		DCB1278C5CCF12DC7C74FB78DB615353 /* FIRComponentContainerInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRComponentContainerInternal.h; path = Firebase/Core/Private/FIRComponentContainerInternal.h; sourceTree = "<group>"; };
 		DD958B2BA3515AC6852EB950039B897E /* FIRInstanceIDCheckinPreferences.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceIDCheckinPreferences.h; path = Firebase/InstanceID/FIRInstanceIDCheckinPreferences.h; sourceTree = "<group>"; };
 		DF09DE717D064D61336316C018527A8F /* FIRMessagingPacketQueue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRMessagingPacketQueue.h; path = Firebase/Messaging/FIRMessagingPacketQueue.h; sourceTree = "<group>"; };
 		E1803F4F5C39568CE5B5F4C8A8DE1A73 /* NSError+FIRInstanceID.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSError+FIRInstanceID.m"; path = "Firebase/InstanceID/NSError+FIRInstanceID.m"; sourceTree = "<group>"; };
+		E22397DCE59A0060C12A25B35053CAE3 /* GeoOffersListingCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersListingCache.swift; path = GeoOffersSDK/GeoOffersListingCache.swift; sourceTree = "<group>"; };
+		E235B809BA2FF158D6263C31A719B699 /* socket.io.js */ = {isa = PBXFileReference; includeInIndex = 1; name = socket.io.js; path = GeoOffersSDK/coupon/socket.io.js; sourceTree = "<group>"; };
 		E2B63D462DB7F827C4B11FD51E4F8E2D /* libFirebaseCore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libFirebaseCore.a; path = libFirebaseCore.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3231EEE6A36F44987B8D963895A640B /* GPBUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPBUtilities.h; path = objectivec/GPBUtilities.h; sourceTree = "<group>"; };
+		E35A680D6543C7C05E695508ECB36A40 /* app.js */ = {isa = PBXFileReference; includeInIndex = 1; name = app.js; path = GeoOffersSDK/offerslist/offerslist_files/app.js; sourceTree = "<group>"; };
 		E3716FBF00EF3C84F921D7FE0E2D8F43 /* GPBDictionary.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GPBDictionary.m; path = objectivec/GPBDictionary.m; sourceTree = "<group>"; };
 		E466C6C287A16F540A5B4FFDC7EFF30E /* FIRInstanceIDCheckinService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceIDCheckinService.h; path = Firebase/InstanceID/FIRInstanceIDCheckinService.h; sourceTree = "<group>"; };
 		E4918822269D28B7F007E51AC53DB73A /* FIRLibrary.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRLibrary.h; path = Firebase/Core/Private/FIRLibrary.h; sourceTree = "<group>"; };
@@ -974,13 +972,14 @@
 		E4DE3E70F88E7DA921BDA2411F437CE8 /* FIRMessagingConstants.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRMessagingConstants.m; path = Firebase/Messaging/FIRMessagingConstants.m; sourceTree = "<group>"; };
 		E6BA89A7ECF9C8CA2B6E5EB752BB9D56 /* FIRMessagingPubSub.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRMessagingPubSub.h; path = Firebase/Messaging/FIRMessagingPubSub.h; sourceTree = "<group>"; };
 		E82A05D2E45099BF30D9E994CCF4F6BC /* FirebaseMessaging-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FirebaseMessaging-umbrella.h"; sourceTree = "<group>"; };
+		E8B5201A854BC77A488AAE389130ABD0 /* GeoOffersSDKService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersSDKService.swift; path = GeoOffersSDK/GeoOffersSDKService.swift; sourceTree = "<group>"; };
 		E8D71C27E44962AF2F8681B4837AADEF /* FIRInstanceID_Private.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceID_Private.h; path = Firebase/InstanceID/Private/FIRInstanceID_Private.h; sourceTree = "<group>"; };
 		E8E4025B305156812F2F3CB481221185 /* FIRInteropEventNames.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInteropEventNames.h; path = Interop/Analytics/Public/FIRInteropEventNames.h; sourceTree = "<group>"; };
 		E957288F34B2B4B4BDEC48E2C5242FFB /* GULSwizzler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GULSwizzler.h; path = GoogleUtilities/MethodSwizzler/Private/GULSwizzler.h; sourceTree = "<group>"; };
-		EAC763D39B3CF3F913E246F587203579 /* GeoOffersListingCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersListingCache.swift; path = GeoOffersSDK/GeoOffersListingCache.swift; sourceTree = "<group>"; };
 		EBC04D8F2DAFBBDCE319EFBF697F58C3 /* FIRInstanceIDConstants.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceIDConstants.h; path = Firebase/InstanceID/FIRInstanceIDConstants.h; sourceTree = "<group>"; };
+		EC3C2FA752D77ECB49C6CE3762B38451 /* GeoOffersListing.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersListing.swift; path = GeoOffersSDK/GeoOffersListing.swift; sourceTree = "<group>"; };
+		ED855C5BF3519BE04DFECBBFC6456825 /* qrcode.min.js */ = {isa = PBXFileReference; includeInIndex = 1; name = qrcode.min.js; path = GeoOffersSDK/coupon/qrcode.min.js; sourceTree = "<group>"; };
 		EDDA0AE6C7FD553956D06CDFA0921188 /* FIRVersion.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRVersion.h; path = Firebase/Core/Private/FIRVersion.h; sourceTree = "<group>"; };
-		EDE016A8D471EC64522BC85CA3EA8286 /* GeoOffersDeliveredSchedule.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersDeliveredSchedule.swift; path = GeoOffersSDK/GeoOffersDeliveredSchedule.swift; sourceTree = "<group>"; };
 		EEBD70974D168E8CC46A4D81FCCB2CC0 /* FIRMessagingCodedInputStream.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRMessagingCodedInputStream.m; path = Firebase/Messaging/FIRMessagingCodedInputStream.m; sourceTree = "<group>"; };
 		F019E67C3560607E630CB4C1637A8E2A /* FIRMessagingTopicOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRMessagingTopicOperation.m; path = Firebase/Messaging/FIRMessagingTopicOperation.m; sourceTree = "<group>"; };
 		F07F15043F68BDC84092C97B979D19A2 /* FirebaseCore-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "FirebaseCore-umbrella.h"; sourceTree = "<group>"; };
@@ -990,23 +989,24 @@
 		F19C3408C7F6E9ABC5E2005CE0C293FE /* GPBExtensionRegistry.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPBExtensionRegistry.h; path = objectivec/GPBExtensionRegistry.h; sourceTree = "<group>"; };
 		F19E22041BD435F58FDE40C8F0A8D415 /* FIRAnalyticsInterop.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRAnalyticsInterop.h; path = Interop/Analytics/Public/FIRAnalyticsInterop.h; sourceTree = "<group>"; };
 		F2CE4A147983592CBFED3A453794352C /* GULReachabilityChecker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GULReachabilityChecker.m; path = GoogleUtilities/Reachability/GULReachabilityChecker.m; sourceTree = "<group>"; };
-		F56B22CB323AAB3CE9DC457DB6B24295 /* app.js */ = {isa = PBXFileReference; includeInIndex = 1; name = app.js; path = GeoOffersSDK/offerslist/offerslist_files/app.js; sourceTree = "<group>"; };
 		F5743DCFB320BCAB99CAD1B69CEBD979 /* FIRMessagingInternalUtilities.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRMessagingInternalUtilities.h; path = Firebase/Messaging/InternalHeaders/FIRMessagingInternalUtilities.h; sourceTree = "<group>"; };
-		F6D692699A37E85F8862D4BBCA7A6B85 /* Cache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Cache.swift; path = GeoOffersSDK/Cache.swift; sourceTree = "<group>"; };
+		F73B4AE6EE316F8B22245542E5104B6F /* GeoOffersAPIService.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersAPIService.swift; path = GeoOffersSDK/GeoOffersAPIService.swift; sourceTree = "<group>"; };
 		F747C93C114D394583459DA11506A9D5 /* Protobuf-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Protobuf-prefix.pch"; sourceTree = "<group>"; };
 		F7B56042CA25EBAD73D036FDAAABCDC2 /* GULNetworkURLSession.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GULNetworkURLSession.m; path = GoogleUtilities/Network/GULNetworkURLSession.m; sourceTree = "<group>"; };
 		F82D55FC9048F3A34587ED44FADEAEA6 /* GULLogger.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GULLogger.m; path = GoogleUtilities/Logger/GULLogger.m; sourceTree = "<group>"; };
 		F87F348AA674C7AF03FD567BEAEE0BFB /* NSError+FIRMessaging.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSError+FIRMessaging.m"; path = "Firebase/Messaging/NSError+FIRMessaging.m"; sourceTree = "<group>"; };
 		F91719B30DB3FA1283DE317E8916E687 /* libPods-GeoOffersSampleApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-GeoOffersSampleApp.a"; path = "libPods-GeoOffersSampleApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9664B2318CF90700C0561DD3CD7F3EC /* FIRAppAssociationRegistration.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FIRAppAssociationRegistration.m; path = Firebase/Core/FIRAppAssociationRegistration.m; sourceTree = "<group>"; };
+		F974BB9F8066745B55A7A1622027A0C2 /* GeoOffersConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersConfiguration.swift; path = GeoOffersSDK/GeoOffersConfiguration.swift; sourceTree = "<group>"; };
 		F9C908C64D7D9DA37EB8A91D33C19948 /* Pods-GeoOffersSampleAppUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GeoOffersSampleAppUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		FA7F7101087DB950CFD9028FFC56769B /* nanopb.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = nanopb.modulemap; sourceTree = "<group>"; };
 		FACC5584C6B0EF416E24E6FDF5276464 /* Api.pbobjc.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Api.pbobjc.h; path = objectivec/google/protobuf/Api.pbobjc.h; sourceTree = "<group>"; };
+		FB3127C0180921C1A9BB34C5A2F632F5 /* Cache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Cache.swift; path = GeoOffersSDK/Cache.swift; sourceTree = "<group>"; };
 		FB851A1AA477C80F82853024C5BCF3B7 /* FirebaseInstanceID.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = FirebaseInstanceID.modulemap; sourceTree = "<group>"; };
 		FB91907380EA37DD13183FE44B9573FD /* NSDictionary+FIRMessaging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+FIRMessaging.h"; path = "Firebase/Messaging/NSDictionary+FIRMessaging.h"; sourceTree = "<group>"; };
 		FBBA029FB3D6314643B1B99151AEA179 /* Pods-GeoOffersSampleAppUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GeoOffersSampleAppUITests-dummy.m"; sourceTree = "<group>"; };
 		FD36FEA0B76730ED91C79F3B00D31AF7 /* GPBDescriptor_PackagePrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPBDescriptor_PackagePrivate.h; path = objectivec/GPBDescriptor_PackagePrivate.h; sourceTree = "<group>"; };
-		FE40AF4275E39D4CD98CC8EAA9D88ECA /* GeoOffersDataParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersDataParser.swift; path = GeoOffersSDK/GeoOffersDataParser.swift; sourceTree = "<group>"; };
+		FE8680C1EE4A2C2792041C9F3BD6EA5A /* GeoOffersSendNotificationCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GeoOffersSendNotificationCache.swift; path = GeoOffersSDK/GeoOffersSendNotificationCache.swift; sourceTree = "<group>"; };
 		FF2FE31AB42834065E254D35628D6C9C /* GPBRootObject_PackagePrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GPBRootObject_PackagePrivate.h; path = objectivec/GPBRootObject_PackagePrivate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -1084,19 +1084,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		03D0F74CB8D7E14600F02C670F4F6731 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				4CC804E08F1D1C2359E677BDA4CC0512 /* GeoOffersSDK.modulemap */,
-				D338B726A8BE823BA25D6325AD5DE51B /* GeoOffersSDK.xcconfig */,
-				CD2E710B11BE9A8261A3FF5901CAB564 /* GeoOffersSDK-dummy.m */,
-				055093C1A5BA34A34D699DC53AB7260F /* GeoOffersSDK-prefix.pch */,
-				9A01B290A0D1D2E3A5A768DCD67E41E8 /* GeoOffersSDK-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/GeoOffersSDK";
-			sourceTree = "<group>";
-		};
 		04F28FD422A9109744307FB68EC570B9 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -1123,7 +1110,7 @@
 				996266495AF0709C1BA7296611EB5600 /* FirebaseCore */,
 				5D1D5D6074CF3A989C9564AEE277A57E /* FirebaseInstanceID */,
 				8002F5A469FA23DF21D1EB46DEC4FFD0 /* FirebaseMessaging */,
-				8CA541148DA6F3918A63861E92A67C50 /* GeoOffersSDK */,
+				3ED1CE7509D23A6194E91DACCB7F5658 /* GeoOffersSDK */,
 				E85779D1FDDA940FE72E81A7F2E83187 /* GoogleAppMeasurement */,
 				B1D51CDEC7BE712EB9AFD1A3A3E827C1 /* GoogleUtilities */,
 				2FC75F4C6036865F909D891A8137E391 /* nanopb */,
@@ -1143,6 +1130,19 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/GoogleUtilities";
+			sourceTree = "<group>";
+		};
+		0E06AB772EC6AEB91E519BEFB29057F5 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				411F10E9452660B7F17F3458EB7E87D3 /* GeoOffersSDK.modulemap */,
+				147B2D6052B873F7ACB9C5AC831186BA /* GeoOffersSDK.xcconfig */,
+				A624458AE221B702788FA11E671D740A /* GeoOffersSDK-dummy.m */,
+				6EE54DE3CE1BAB29979070017A908C1E /* GeoOffersSDK-prefix.pch */,
+				7A47DDA105055B53F1AA8F9DD37799D9 /* GeoOffersSDK-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/GeoOffersSDK";
 			sourceTree = "<group>";
 		};
 		15AB0CCD98BA39916F67AD9F4B735AA5 /* Protobuf */ = {
@@ -1239,35 +1239,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		1BD1D2DBEE7679F2D42B82EE4ED70CC3 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				80047C1F1E5DD1D41157AC53650AF7FD /* app.css */,
-				F56B22CB323AAB3CE9DC457DB6B24295 /* app.js */,
-				6413209C85B8637A5D3A6928AC8E547A /* blank-bcode.png */,
-				4B931B73EC599A8152B9269348F4733A /* coupon.css */,
-				5434618C8044767CBFB08995BDBC466E /* coupon.html */,
-				0741938AD01E842EF26A0D52DFF89C05 /* geo-gmap-icon.svg */,
-				5C5243888F3A4B908D3A96A158DA7EDF /* GeoOffersNotificationToast.xib */,
-				02453132F5E43908AC9FC6DA53306765 /* GeoOffersSDK.storyboard */,
-				5CC8D31872D992377F5DD77F6CACA4CE /* GeoOffersSDK-GoogleService-Info.geoconfig */,
-				524D258B71D91EB452E085B6BDDBA1F6 /* google-pay-logo.svg */,
-				02DE58086E9F385F213924A728F57DCF /* index.html */,
-				D6692D18D40CDC68A9EF3822D2849E17 /* jquery.min.js */,
-				4E2DF61874232415F95DD216DED3527D /* JsBarcode.all.min.js */,
-				0570E9295041AFD4DDD698957EE8C231 /* ListingJSTemplate.js */,
-				864083C1B99FF3F52CA291C5D4C35411 /* map-icon.svg */,
-				8804EE93CC98968D6CEF96F1D26E4CD6 /* offerslist.html */,
-				73C84C74A054E4BD8837EFD8B96CDD42 /* print-icon.svg */,
-				0C4C450A47756D709C57A67CA889DA4D /* qrcode.min.js */,
-				8AC7DF615ED77FE4295B692E247BDC13 /* rere.main.min.js */,
-				8770B4363AD4CC545304518DC5D9117C /* save-to-google-pay.svg */,
-				43B297C98F82768885C99399525D217E /* socket.io.js */,
-				154E204A08AA1EAC47BAFDAAD49A53F8 /* vue.js */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
 		220AA020496EB3B52414DD29CC0F8FB7 /* Pods-GeoOffersSampleAppTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -1362,6 +1333,57 @@
 				C2105C94812B6214B154F54DCEDB72AC /* libProtobuf.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		3ED1CE7509D23A6194E91DACCB7F5658 /* GeoOffersSDK */ = {
+			isa = PBXGroup;
+			children = (
+				FB3127C0180921C1A9BB34C5A2F632F5 /* Cache.swift */,
+				C6885F361B434BA9F1CDCD5E768D371E /* Date+UnixTime.swift */,
+				504169F7CE91D5246D1A1C2EE6826BE1 /* DiskCache.swift */,
+				C0427083883C9D6CE70BE6982BC11568 /* FileManager+Additions.swift */,
+				F73B4AE6EE316F8B22245542E5104B6F /* GeoOffersAPIService.swift */,
+				20B9DA524ED29D3034738C1E7BE44722 /* GeoOffersCache.swift */,
+				F974BB9F8066745B55A7A1622027A0C2 /* GeoOffersConfiguration.swift */,
+				9F7684C91A92D0C180ED415AF4B86D89 /* GeoOffersDataProcessor.swift */,
+				CEA11B89D5306B58FF21693B453801B5 /* GeoOffersDebugRegion.swift */,
+				45B001EBD568696E8C7A8BE6636FB714 /* GeoOffersDeliveredSchedule.swift */,
+				BF2FF4DF1888821986E2F364D8763EE1 /* GeoOffersEnteredRegionCache.swift */,
+				1A56B501A9C75F8D9A86E57B270CD934 /* GeoOffersFirebaseWrapper.swift */,
+				8CBFE9D58809A0CB39104E7091520A11 /* GeoOffersGeoFence.swift */,
+				3E0D06758FF763126FE56C4FEC91003E /* GeoOffersInternalConfiguration.swift */,
+				EC3C2FA752D77ECB49C6CE3762B38451 /* GeoOffersListing.swift */,
+				E22397DCE59A0060C12A25B35053CAE3 /* GeoOffersListingCache.swift */,
+				C25018E3ABE32B385B88734094BF6674 /* GeoOffersLocationService.swift */,
+				450198382B801B6FC4B8288E5D02F0C4 /* GeoOffersLogging.swift */,
+				6E28C530EE55C686BFA82A05E4E2E20E /* GeoOffersNotificationService.swift */,
+				01DC073072C4D8E224D055E435C65E08 /* GeoOffersNotificationServiceProtocol.swift */,
+				D7306ED46CAA2DD58A5DD44B340DA22A /* GeoOffersNotificationToast.swift */,
+				2A532FD045796163B98A4F4EDD9CECF1 /* GeoOffersOffer.swift */,
+				5E4E3DD2C8BCFDC1E63077ECFEC08620 /* GeoOffersOffersCache.swift */,
+				2F3B59E902A14037B4C7A5F6274FC4BD /* GeoOffersPendingOffer.swift */,
+				61A10C897D6B2223330A83D72C6C9D2A /* GeoOffersPresenter.swift */,
+				AB160B2A3136AD3A873140D89B1071BB /* GeoOffersPushData.swift */,
+				B7533B8CD4CD95F901A3D608B9100C28 /* GeoOffersPushNotificationCache.swift */,
+				CC796C34625FE5EC1D27E01E446EACF5 /* GeoOffersPushNotificationProcessor.swift */,
+				A9A05BDC8AE30E014440792258A0A2D4 /* GeoOffersSchedule.swift */,
+				5429952826D74FCE3CB7154EB164A60C /* GeoOffersSDK.h */,
+				E8B5201A854BC77A488AAE389130ABD0 /* GeoOffersSDKService.swift */,
+				073BCA9377776FF306A8C63A6EB3A28A /* GeoOffersSDKServiceProtocol.swift */,
+				FE8680C1EE4A2C2792041C9F3BD6EA5A /* GeoOffersSendNotificationCache.swift */,
+				3DD707B8013A49A7954DB3B4AD47BB34 /* GeoOffersServiceModels.swift */,
+				737D14F23A0245AEF3A66023D8C469BB /* GeoOffersTrackingCache.swift */,
+				DBC7863C64253D0CE7B0A133EC567055 /* GeoOffersTrackingEvent.swift */,
+				BD238C339F340D7C1502A3FB386929BA /* GeoOffersViewController.swift */,
+				4C45D0A5F6C0D5C3D0EA794D47AF8395 /* GeoOffersWebViewCache.swift */,
+				98D49061B03DC1DDFA9F593DE7A6E582 /* KeyedDecodingContainerProtocol+PHPJSONEncoderHelper.swift */,
+				0812BBF470C3C794FC980D9E3F2D7B73 /* String+URLEncoding.swift */,
+				4F4845971EEA70BA33C234EE536F7F32 /* UIView+NibLoading.swift */,
+				A25C82FAF1DD27093CD5729F9B1EE9E7 /* Resources */,
+				0E06AB772EC6AEB91E519BEFB29057F5 /* Support Files */,
+			);
+			name = GeoOffersSDK;
+			path = GeoOffersSDK;
 			sourceTree = "<group>";
 		};
 		5470292D2C7F5EB96607065944DE2E98 /* Pods-GeoOffersSampleApp */ = {
@@ -1599,57 +1621,6 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		8CA541148DA6F3918A63861E92A67C50 /* GeoOffersSDK */ = {
-			isa = PBXGroup;
-			children = (
-				F6D692699A37E85F8862D4BBCA7A6B85 /* Cache.swift */,
-				13A30DD473874CBA73540F42E147672C /* Date+UnixTime.swift */,
-				02D05584AE8DE7C24677818839C015D6 /* DiskCache.swift */,
-				553B8CAF62E180261EF3C846A08C006C /* FileManager+Additions.swift */,
-				8B6F9B4847CCF2FC365E67C58C2CCAC0 /* GeoOffersAPIService.swift */,
-				3F733595E5EF1889C79CDCEB5E50C8C3 /* GeoOffersCache.swift */,
-				7B8A2C61B3CA2EC31D13B3BB106779E1 /* GeoOffersConfiguration.swift */,
-				FE40AF4275E39D4CD98CC8EAA9D88ECA /* GeoOffersDataParser.swift */,
-				718411F49CD033FD7EDE394AC2FCBB12 /* GeoOffersDataProcessor.swift */,
-				37BAEE240D157EC489441163D1FB7AF0 /* GeoOffersDebugRegion.swift */,
-				EDE016A8D471EC64522BC85CA3EA8286 /* GeoOffersDeliveredSchedule.swift */,
-				2BD8F0833153C03B7499BDF56B2153A5 /* GeoOffersEnteredRegionCache.swift */,
-				95BB003207A13D28C02F0098E514580F /* GeoOffersFirebaseWrapper.swift */,
-				02B9093BB5E4E3124D357D28EECDB4C1 /* GeoOffersGeoFence.swift */,
-				4A29B386ECDB8951479090B1489E5ACD /* GeoOffersInternalConfiguration.swift */,
-				981BE0F5F6794644D671A46209FD4A50 /* GeoOffersListing.swift */,
-				EAC763D39B3CF3F913E246F587203579 /* GeoOffersListingCache.swift */,
-				2B5D2B23E7E7C71063E5E8C55CEA2547 /* GeoOffersLocationService.swift */,
-				C135CC3F81F8D107B0FB45FE6525DB4A /* GeoOffersLogging.swift */,
-				A27D84BCB305FCFA0B172CBA2F751179 /* GeoOffersNotificationService.swift */,
-				3D1FCEE814BC8FD533BC95E451DBE7AD /* GeoOffersNotificationServiceProtocol.swift */,
-				76EAD6FBB6ED7B58BA5CDB684DF17D9D /* GeoOffersNotificationToast.swift */,
-				B3F9528EA043F47BFD7EB90E0573F7F0 /* GeoOffersOffer.swift */,
-				549C45CB04B1E3160968ED78E9A3FDC3 /* GeoOffersOffersCache.swift */,
-				77343F8CBC7F3D9284AAA5F46E4677B2 /* GeoOffersPendingOffer.swift */,
-				2118C3DB66D4FE029634D25E28D73FF8 /* GeoOffersPresenter.swift */,
-				15196208798FC1EDBE52F4D7F63F038B /* GeoOffersPushData.swift */,
-				07DE5607DC98FB80535A4661A9FDE417 /* GeoOffersPushNotificationCache.swift */,
-				6C36ED8BCABA061FD2E4572210DC0E97 /* GeoOffersSchedule.swift */,
-				CF2122126A3D17B78AA2E10EA4B05B51 /* GeoOffersSDK.h */,
-				249ED1DAE89C8C27E26D08C082D7E97D /* GeoOffersSDKService.swift */,
-				A82293262BD4D9B67375AA18B002AB81 /* GeoOffersSDKServiceProtocol.swift */,
-				18EB10618E3854DB43734498993849CC /* GeoOffersSendNotificationCache.swift */,
-				2662D3E5C722A0140E19A762554B747C /* GeoOffersServiceModels.swift */,
-				2E4BC2461B5D2E562739CBD13105CE9E /* GeoOffersTrackingCache.swift */,
-				C514142619772BAB6CC90C1C7C735D4D /* GeoOffersTrackingEvent.swift */,
-				68742B1915136CB5133032251CE04E32 /* GeoOffersViewController.swift */,
-				56815AE7BB46DBA5C8D269D54694B07B /* GeoOffersWebViewCache.swift */,
-				24F57E39CB53B73FA4BD179B93054E0E /* KeyedDecodingContainerProtocol+PHPJSONEncoderHelper.swift */,
-				BDA3234411423FDA28D7D02027FDCE5E /* String+URLEncoding.swift */,
-				B37C020FFD7D3B6E9C4FBF9F56418784 /* UIView+NibLoading.swift */,
-				1BD1D2DBEE7679F2D42B82EE4ED70CC3 /* Resources */,
-				03D0F74CB8D7E14600F02C670F4F6731 /* Support Files */,
-			);
-			name = GeoOffersSDK;
-			path = GeoOffersSDK;
-			sourceTree = "<group>";
-		};
 		996266495AF0709C1BA7296611EB5600 /* FirebaseCore */ = {
 			isa = PBXGroup;
 			children = (
@@ -1691,6 +1662,35 @@
 			);
 			name = FirebaseCore;
 			path = FirebaseCore;
+			sourceTree = "<group>";
+		};
+		A25C82FAF1DD27093CD5729F9B1EE9E7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4126F2C7BDF357AE68F31F28635EB5EF /* app.css */,
+				E35A680D6543C7C05E695508ECB36A40 /* app.js */,
+				C332EE1134489329369950583503B8C7 /* blank-bcode.png */,
+				A294E9EE7EE1FE1C9049079EE1306468 /* coupon.css */,
+				D37096FBCC76D2B6658C65B5A4FB86D5 /* coupon.html */,
+				CF3D8517A3B093212FC16B87C8FDBD59 /* geo-gmap-icon.svg */,
+				10E6981EBCA932CDCFF720B3FD78C607 /* GeoOffersNotificationToast.xib */,
+				BFAF3FE5E5A6FFA0ABBC1E9CA3B53A62 /* GeoOffersSDK.storyboard */,
+				671A30C514923FF95AA95B0815D94B45 /* GeoOffersSDK-GoogleService-Info.geoconfig */,
+				A6A3086EC30E1DF4868696608A494149 /* google-pay-logo.svg */,
+				777E3A699E32F163EF015AD510883677 /* index.html */,
+				1550ECC59E71281AC8A7803A6A9462E6 /* jquery.min.js */,
+				C190BBA24D92B2D4D755E93C5EFA4CC5 /* JsBarcode.all.min.js */,
+				3C65F8991F6FA08D04D261EF2E92C4F7 /* ListingJSTemplate.js */,
+				9F41169CF58D9CDA5223CE7840663EB2 /* map-icon.svg */,
+				C9B9ADA1834A6C41FD896DBA54541F9E /* offerslist.html */,
+				24A6EED45FFAD033507DCF94A0E4E498 /* print-icon.svg */,
+				ED855C5BF3519BE04DFECBBFC6456825 /* qrcode.min.js */,
+				85B70CA24CE356D2B3FF538FA207852D /* rere.main.min.js */,
+				3AB097F28479440CE75E5DDAD0B42484 /* save-to-google-pay.svg */,
+				E235B809BA2FF158D6263C31A719B699 /* socket.io.js */,
+				B6417CB48D0F6886128639306F7A5A2F /* vue.js */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		B1D51CDEC7BE712EB9AFD1A3A3E827C1 /* GoogleUtilities */ = {
@@ -2103,7 +2103,7 @@
 			buildConfigurationList = A1AC7C5365956CBCA46960948C1ABB1E /* Build configuration list for PBXNativeTarget "GeoOffersSDK" */;
 			buildPhases = (
 				E9F79F96597DAA8584695EC22C764853 /* Headers */,
-				ABC2E1B999F108D294534C6D50B7BDAE /* Sources */,
+				273515E4AF777F1C0645F68124572D12 /* Sources */,
 				E40939FE9078C03B5CA23806D5555350 /* Frameworks */,
 				83F5D9CB712C7CE591BD3DF4D56EA026 /* Copy generated compatibility header */,
 			);
@@ -2358,6 +2358,54 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		273515E4AF777F1C0645F68124572D12 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF24C5B04A30D9E0A4671744EFE33377 /* Cache.swift in Sources */,
+				0EE1DC641CD8FF7B0B7411765B9CF2BD /* Date+UnixTime.swift in Sources */,
+				D4D367F4997924EE864785D323DAFB5F /* DiskCache.swift in Sources */,
+				2AA470A35CE2EC82E13077B381C71D12 /* FileManager+Additions.swift in Sources */,
+				4710A8FD58F407C138C88843682AFA87 /* GeoOffersAPIService.swift in Sources */,
+				D732154F5C6A7D7764C44F70D8F6B428 /* GeoOffersCache.swift in Sources */,
+				042570A105E43DE6E9D786023D43D263 /* GeoOffersConfiguration.swift in Sources */,
+				D9254A1B72F42E4CF978DDF84A09426E /* GeoOffersDataProcessor.swift in Sources */,
+				753205CB9BFA0C0F4B0E46EDE3ED233C /* GeoOffersDebugRegion.swift in Sources */,
+				D660D495553E1161B0CC960BFA4A9C64 /* GeoOffersDeliveredSchedule.swift in Sources */,
+				1A126BB6E12D97AA18EAFF7CBC2B0393 /* GeoOffersEnteredRegionCache.swift in Sources */,
+				CF53BE8B6CF563EDEDF84D4030B488D2 /* GeoOffersFirebaseWrapper.swift in Sources */,
+				A70D60B315A185E89D451036C52502B6 /* GeoOffersGeoFence.swift in Sources */,
+				500F482882EBA3A8A98F18E67E9FA8AF /* GeoOffersInternalConfiguration.swift in Sources */,
+				9EB12219D4A0A0D3C63136D7D416EB7D /* GeoOffersListing.swift in Sources */,
+				8F6295B5D0CAE3107B0395A962C4A2B9 /* GeoOffersListingCache.swift in Sources */,
+				59CC23F964C46B188771936C6DD5A51C /* GeoOffersLocationService.swift in Sources */,
+				BFEF8288BA368C8E811CAC672279A3E2 /* GeoOffersLogging.swift in Sources */,
+				4EC2EE1C262A457988632EFDF4260C9C /* GeoOffersNotificationService.swift in Sources */,
+				FA0B7513058AAF8BE9E44A9E54EC6C54 /* GeoOffersNotificationServiceProtocol.swift in Sources */,
+				B71A3985787D1DB0260859B574922DEA /* GeoOffersNotificationToast.swift in Sources */,
+				5394BC253F0F037A90C5C7281693390C /* GeoOffersOffer.swift in Sources */,
+				27E1680D7E5D6779F65AEBE820EBC754 /* GeoOffersOffersCache.swift in Sources */,
+				B00FAC7366135161824AE69849619574 /* GeoOffersPendingOffer.swift in Sources */,
+				B78273193B7B941348917802BDCE74B6 /* GeoOffersPresenter.swift in Sources */,
+				60896D7E9491FEDA66301E7DB818878A /* GeoOffersPushData.swift in Sources */,
+				A52A0D61086AE67138031D8E52AC8FBB /* GeoOffersPushNotificationCache.swift in Sources */,
+				7670854304BEAED8F2B087C18A54E3CB /* GeoOffersPushNotificationProcessor.swift in Sources */,
+				850BC8373AC9F2EDA775A48451DFAA00 /* GeoOffersSchedule.swift in Sources */,
+				A4FB44723F12592BE874803D5B2548DC /* GeoOffersSDK-dummy.m in Sources */,
+				685A009A932E0AA330C9CF3412220674 /* GeoOffersSDKService.swift in Sources */,
+				7CFAA85AC6DC18945AFA5BAADBC6FC80 /* GeoOffersSDKServiceProtocol.swift in Sources */,
+				4217BD354E0DEDBC94DB0A8A651C964B /* GeoOffersSendNotificationCache.swift in Sources */,
+				B895DDF8CF6B617A73FBFD65D9481AED /* GeoOffersServiceModels.swift in Sources */,
+				312D3AD961C4523C61704BCCE42E3DD3 /* GeoOffersTrackingCache.swift in Sources */,
+				F58E7964624B591C86A60A55F7A9C2F0 /* GeoOffersTrackingEvent.swift in Sources */,
+				390F923AE800F291044DE486534BDC4D /* GeoOffersViewController.swift in Sources */,
+				676FF3505F53D661A0BEFBA39EC676B5 /* GeoOffersWebViewCache.swift in Sources */,
+				D1A1B2938520FD1E37043E4287CCB51E /* KeyedDecodingContainerProtocol+PHPJSONEncoderHelper.swift in Sources */,
+				321A50B20A2E224E80C27AFE79B223EE /* String+URLEncoding.swift in Sources */,
+				70B2DBA6EF07B999E1DF0EF62A2AA325 /* UIView+NibLoading.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2D44960369DCA3BF693316950B6F942E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2499,54 +2547,6 @@
 				A1987FB729DAB4F48D28DADA895E8EAD /* Timestamp.pbobjc.m in Sources */,
 				1734FC617341A0C33CC77399C1B1C10A /* Type.pbobjc.m in Sources */,
 				06E7A1EAA42F01B01966A469A7A18057 /* Wrappers.pbobjc.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ABC2E1B999F108D294534C6D50B7BDAE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				24DA0211369B88C7D4698183BF32CE8F /* Cache.swift in Sources */,
-				E5039F8BABD50F064AECA8AEF0FD188B /* Date+UnixTime.swift in Sources */,
-				B9D967631BA462D4F41D5E0EC36766D9 /* DiskCache.swift in Sources */,
-				BC1D6880E92539FCD3ABBACFA9CCCBF4 /* FileManager+Additions.swift in Sources */,
-				F8C21AC6CB76602C1C26A944A360D3AE /* GeoOffersAPIService.swift in Sources */,
-				618BF4B8762C54E4FE1B676C57C7FE5B /* GeoOffersCache.swift in Sources */,
-				14EC9E74878DC2E3E662068612944EA7 /* GeoOffersConfiguration.swift in Sources */,
-				EC281E0E12F12AFD5908BCC4947787B2 /* GeoOffersDataParser.swift in Sources */,
-				321E8C93E1D4F0F31E8210644EF19BB1 /* GeoOffersDataProcessor.swift in Sources */,
-				D4BACB158BAD9DAB5DC29BE58743CD94 /* GeoOffersDebugRegion.swift in Sources */,
-				36F1ED9A309EDE1954831C4BB57FDE7A /* GeoOffersDeliveredSchedule.swift in Sources */,
-				26466BC0ABD0BC809A25B6698EE93167 /* GeoOffersEnteredRegionCache.swift in Sources */,
-				9108EDBBF2463A22B7EDE1FAA20B3ABB /* GeoOffersFirebaseWrapper.swift in Sources */,
-				7240CCBAA45F3C6ED73A12B54FC56B05 /* GeoOffersGeoFence.swift in Sources */,
-				3BF6A93B80183F8B88EE923E554CAAC6 /* GeoOffersInternalConfiguration.swift in Sources */,
-				1A1854C0DBC86C65AD798E2325C1AF96 /* GeoOffersListing.swift in Sources */,
-				C63959FF11D1A1CBFACEB5FB76CD0713 /* GeoOffersListingCache.swift in Sources */,
-				7940EEEA030E47B6F26523E1A3EBAD8B /* GeoOffersLocationService.swift in Sources */,
-				B10AE1F33EE5306E801E7BFC21161618 /* GeoOffersLogging.swift in Sources */,
-				64A5E3ABAFB040D1277C79E20AFF5705 /* GeoOffersNotificationService.swift in Sources */,
-				8BB5EA0079E055CC552D0D1F8EC91184 /* GeoOffersNotificationServiceProtocol.swift in Sources */,
-				1A93D35DFA843B2A9784B1615E07544C /* GeoOffersNotificationToast.swift in Sources */,
-				68D3661A7CA844CD48FDB0B1C8673402 /* GeoOffersOffer.swift in Sources */,
-				1666EED97C95136F7F243C7966DB6002 /* GeoOffersOffersCache.swift in Sources */,
-				C6AA1B815CB648F45B6C84FFE5657280 /* GeoOffersPendingOffer.swift in Sources */,
-				D1001F6B07D06ECC2C3BA5A6A2FBEAC4 /* GeoOffersPresenter.swift in Sources */,
-				782F544B9AF88960D062278934ECC9E3 /* GeoOffersPushData.swift in Sources */,
-				A4EEEF1FB469F64645604545D86723EF /* GeoOffersPushNotificationCache.swift in Sources */,
-				CF9431E1F5C6B64254251E075716BBC0 /* GeoOffersSchedule.swift in Sources */,
-				BFE1AB5F62DBDA2441805538C900F3A2 /* GeoOffersSDK-dummy.m in Sources */,
-				1A06ED7AC927CEC3E1F2C68970902CE4 /* GeoOffersSDKService.swift in Sources */,
-				13A7FF79D3A5349B11DE786F1B4AD0E8 /* GeoOffersSDKServiceProtocol.swift in Sources */,
-				D9C7DFDCDF106E595BD7D5A69A60BD85 /* GeoOffersSendNotificationCache.swift in Sources */,
-				3F913BB09D03BFD845E21441194933E3 /* GeoOffersServiceModels.swift in Sources */,
-				CEE267691E54933B9822D2DEB97C0947 /* GeoOffersTrackingCache.swift in Sources */,
-				6C85958054E51555895FE782DD217842 /* GeoOffersTrackingEvent.swift in Sources */,
-				BB56D77204AF2A96CC4E8000839D000A /* GeoOffersViewController.swift in Sources */,
-				B755401ECDC9DC4B3C19C83C011B8BB8 /* GeoOffersWebViewCache.swift in Sources */,
-				BE9DB9A6E07926E81BFD45B777D859FF /* KeyedDecodingContainerProtocol+PHPJSONEncoderHelper.swift in Sources */,
-				593F36FAF4F530DCF385262E5795CFC7 /* String+URLEncoding.swift in Sources */,
-				A2053E22D0F5451053B9A9E3C7C3C7BE /* UIView+NibLoading.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2787,7 +2787,7 @@
 /* Begin XCBuildConfiguration section */
 		0340A2AEBFAD89F9B10816BBB7C2ABA0 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D338B726A8BE823BA25D6325AD5DE51B /* GeoOffersSDK.xcconfig */;
+			baseConfigurationReference = 147B2D6052B873F7ACB9C5AC831186BA /* GeoOffersSDK.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -3404,7 +3404,7 @@
 		};
 		EDFD0A7899776936CAA465A1D9B82209 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D338B726A8BE823BA25D6325AD5DE51B /* GeoOffersSDK.xcconfig */;
+			baseConfigurationReference = 147B2D6052B873F7ACB9C5AC831186BA /* GeoOffersSDK.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";

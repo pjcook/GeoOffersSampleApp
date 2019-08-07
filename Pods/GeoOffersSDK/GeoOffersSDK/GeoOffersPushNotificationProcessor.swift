@@ -9,10 +9,6 @@ enum GeoOffersNotificationType: String, Codable {
     case delayedDelivery = "DELAYED_DELIVERY_DUE"
 }
 
-public protocol GeoOffersPushNotificationProcessorDelegate: class {
-    func processListingData()
-}
-
 struct GeoOffersNotificationMessageType: Codable {
     let type: GeoOffersNotificationType
     let campaignId: Int?
@@ -21,8 +17,6 @@ struct GeoOffersNotificationMessageType: Codable {
 public class GeoOffersPushNotificationProcessor {
     private let notificationCache: GeoOffersPushNotificationCache
     private let listingCache: GeoOffersListingCache
-
-    public weak var delegate: GeoOffersPushNotificationProcessorDelegate?
 
     public init(notificationCache: GeoOffersPushNotificationCache, listingCache: GeoOffersListingCache) {
         self.notificationCache = notificationCache
@@ -69,12 +63,9 @@ public class GeoOffersPushNotificationProcessor {
 
     private func processCouponRedeemed(campaignId: Int) {
         listingCache.redeemCoupon(campaignId: campaignId)
-        delegate?.processListingData()
     }
 
-    private func handleDelayedDeliveryNotification() {
-        delegate?.processListingData()
-    }
+    private func handleDelayedDeliveryNotification() {}
 
     private func processNotificationMessageType(_ notification: [String: AnyObject]) -> GeoOffersNotificationMessageType? {
         guard
@@ -137,7 +128,6 @@ public class GeoOffersPushNotificationProcessor {
     private func processPushNotificationMessage(message: GeoOffersPushNotificationDataUpdate, messageID: String) -> Bool {
         notificationCache.updateCache(pushData: message)
         notificationCache.remove(messageID)
-        delegate?.processListingData()
         return true
     }
 
