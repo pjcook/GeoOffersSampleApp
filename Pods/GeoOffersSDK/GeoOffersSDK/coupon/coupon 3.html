@@ -1,0 +1,1514 @@
+<!--
+ TODO:
+ 
+ Post analytics from this page, as lat & lng
+ must now be obtained from android directly and not
+ via a symfony call
+ 
+ Page title:
+ 
+ ' . ($customCompanyNameOrNull ? $customCompanyNameOrNull : "%clientCompanyName%") . ' Offer
+ 
+ Do dynamically and set via document.title = ...
+ 
+ 
+ 
+ zcmBaseAddress
+ 
+ regCode: data-client-code, set dynamically on body element
+ 
+ 
+ 
+ check-within-redemption-limit and sendEmail campaignId
+ 
+ 
+ 
+ couponData.hasCountdown
+ 
+ couponData.multipleStoreLogos
+ 
+ couponData.multipleStoreLogosHeading
+ -->
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+                
+                <title>Offer</title>
+                
+                <!--Remote, OK for online-->
+                <!--
+                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+                 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+                 
+                 <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+                 
+                 <script src="//cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+                 <script src="//cdn.jsdelivr.net/jsbarcode/3.3.20/JsBarcode.all.min.js"></script>
+                 
+                 <link rel="stylesheet" href="https://inlinkuk-stg.zappitrewards.com/assets/css/app.css">
+                 -->
+                
+                <!--Local, for SDK (downloaded files, see online section to download)-->
+                
+                <script src="jquery.min.js"></script>
+                <script src="socket.io.js"></script>
+                
+                <script src="vue.js"></script>
+                
+                <script src="qrcode.min.js"></script>
+                <script src="JsBarcode.all.min.js"></script>
+                
+                <link rel="stylesheet" href="coupon.css">
+                    
+                    
+                    <link rel="shortcut icon"
+                        href="/couponfavicon.ico"
+                        >
+                        <style>
+                            #modalwrapper {
+                                display: none;
+                                /* position: absolute;
+                                 flex-direction: column;
+                                 justify-content: center;
+                                 align-items: center;
+                                 text-align: center;
+                                 width: 63%;
+                                 margin: 70% 4%; */
+                            }
+                        #confirmclick {
+                            display: none;
+                            border: 1px solid #aaa;
+                            position: fixed;
+                            /* width: 70%; */
+                            /* margin: 0%; */
+                            width: 88vw;
+                            top: 40%;
+                            left: 6vw;
+                            margin: auto;
+                            padding: 30px 8px;
+                            box-sizing: border-box;
+                            text-align: center;
+                            background: #fff;
+                            z-index: 9999;
+                        }
+                        #confirmclick .modalbutton {
+                            margin: 4px 4px;
+                            text-align: center;
+                            cursor: pointer;
+                            width: 40%;
+                        }
+                        #confirmclick .confirmmessage {
+                            text-align: center;
+                            margin-bottom: 20px;
+                        }
+                        /*.expired {
+                         background: repeating-linear-gradient(45deg, %promoExpiryBackgroundColor%, %promoExpiryBackgroundColor% 10px, #fff 10px, #fff 20px) !important;
+                         }*/
+                        /*
+                         #dema-offer #dema-offer_code .expired span {
+                         color: %promoExpiryBackgroundColor% !important;
+                         }
+                         */
+                        </style>
+                        
+                        </head>
+    <body style="-webkit-overflow-scrolling: touch; -webkit-transform: translateZ(0);" id="dema-offer" data-client-code="535987" >
+        
+        <div id="modalwrapper">
+            <div id="confirmclick">
+                <div class="confirmmessage"></div>
+                <div class="button yes modalbutton">OK</div>
+                <div class="button no modalbutton">No</div>
+            </div>
+        </div>
+        
+        <div id="dema-offer_wrapper">
+            
+            <div id="dema-offer_header-wrapper">
+                
+                <div id="dema-offer_logo">
+                    <img class="logo" :src="couponData.logoImagePath" alt="">
+                        </div>
+                
+                <div class="headline">${ couponData.headline }</div>
+                
+                <div class="sub-headline">${ couponData.subheadline }</div>
+                
+                <div id="dema-offer_countdown" class="not-expired">
+                    
+                    <div id="dema-offer_expires_message" class="headline">Use within</div>
+                    
+                    <div id="countdown-wrapper" data-expiry-datetime-utc="{{ dema_offer.expiry_datetime_utc }}">
+                        <div class="countdown">
+                            <span class="days-wrapper"><span class="days"></span><span class="txt">d<span class="txt-ext">ays</span></span></span><span class="hours"></span><span class="txt">h<span class="txt-ext">rs</span></span><span class="minutes"></span><span class="txt">m<span class="txt-ext">ins</span></span><span class="seconds-wrapper"><span class="seconds"></span><span class="txt">s<span class="txt-ext">ecs</span></span></span>
+                        </div>
+                    </div>
+                    
+                    <div v-if="!couponData.hasCountdown" class="headline" style="padding-top:0.6rem">Ends ${ couponData.scheduleEndDateString }</div>
+                </div>
+                
+                <div
+                    v-if="couponData.mapsLink && couponData.mapsLinkButtonText"
+                    class="map-link-wrapper"
+                    >
+                    <p>
+                    <a
+                        class="map-link"
+                        href="javascript:;"
+                        onclick="openMapLink()"
+                        >
+                        ${ couponData.mapsLinkButtonText }
+                    </a>
+                    </p>
+                </div>
+                
+                <div
+                    v-if="couponData.multipleStoreLogos && couponData.multipleStoreLogos.length"
+                    class="multiple-store-logos-content-wrapper"
+                    >
+                    <div
+                        v-if="couponData.multipleStoreLogosHeading"
+                        class="multiple-store-logos-heading"
+                        >
+                        ${ couponData.multipleStoreLogosHeading }
+                    </div>
+                    <div
+                        class="multiple-store-logos"
+                        >
+                        <img
+                            v-for="multipleStoresLogo in couponData.multipleStoreLogos"
+                            :src="multipleStoresLogo.src"
+                            class="multiple-store-logo-img"
+                            >
+                            </div>
+                </div>
+                
+            </div><!-- #dema-offer_header-wrapper -->
+            
+            
+            <div id="dema-offer_code_and_countdown_wrapper">
+                
+                <div id="dema-offer_code">
+                    
+                    <!--
+                     <div class="headline not-expired code-showing-despite-print">Redemption Code</div>
+                     <div class="headline not-expired code-hidden-where-print" style="display:none">Press "Print at home" to claim your reward</div>
+                     -->
+                    
+                    <div class="not-expired">
+                        <p class="code-showing-despite-print" style="text-align:center">Use the code below to claim your offer</p>
+                        <p class="code-hidden-where-print" style="display:none">Press "Print at home" to claim your reward</p>
+                        
+                        <div
+                            class="dema-offer_redeem-button show-code code-showing-despite-print"
+                            >
+                            <a
+                                onclick="revealCodeToRedeemCheckingLimitIfNecessary()"
+                                class="button expanded"
+                                >
+                                Show code
+                            </a>
+                        </div>
+                        
+                        <div class="qrcode code-shown code-showing-despite-print" style="max-height: 320px">
+                            
+                            <template
+                                v-if="couponData.offerRedemptionMethod=='qr'"
+                                >
+                                <!--
+                                 <img :src="'/qrcodes/'+couponData.codeToUseInHex+'.png'">
+                                 -->
+                                <div class="qrCodeToRender" style="display:flex;align-items:center;justify-content:center"></div>
+                                
+                            </template>
+                            
+                            <template
+                                v-else-if="couponData.offerRedemptionMethod=='barcode'"
+                                >
+                                <svg class="dema-coupon-barcode"
+                                    :jsbarcode-format="couponData.barcodeFormat"
+                                    :jsbarcode-value="couponData.codeToUse"
+                                    jsbarcode-textmargin="0"
+                                    jsbarcode-fontoptions="bold">
+                                </svg>
+                            </template>
+                            
+                            <template
+                                v-else-if="couponData.offerRedemptionMethod=='code'"
+                                >
+                                <div
+                                    style=
+                                    "
+                                    font-size: 1.4rem;
+                                    font-family: Consolas, \'Liberation Mono\', Courier, monospace;
+                                    line-height: 1.9em;
+                                    letter-spacing: 0.1em;
+                                    padding: 1.5rem 0.2em;
+                                    text-align: center;
+                                    border: 1px dashed #333;
+                                    margin: -1.5rem 0rem 0;
+                                    max-width: 100%;
+                                    overflow-wrap: break-word;
+                                    "
+                                    >
+                                    ${ couponData.codeToUse }
+                                </div>
+                            </template>
+                        </div>
+                        
+                        <div
+                            v-if="couponData.humanTypableCode"
+                            class="human-typable-code code-shown"
+                            >
+                            ${ couponData.humanTypableCode }
+                        </div>
+                        
+                        <p id="dema-show_code_submessage" class="code-showing-despite-print">
+                        This offer will expire 30 seconds after “Show code” is pressed.
+                        </p>
+                        
+                        <div
+                            v-if="couponData.showPrintAtHomeButton"
+                            class="print-link-wrapper"
+                            >
+                            <div
+                                class="print-button print-button-selected-possible"
+                                onclick="togglePrintPopupDisplay(event)"
+                                >
+                                <p><a class="print-link">Print at home</a></p>
+                            </div>
+                        </div>
+                        
+                        <div
+                            v-if="couponData.hasSaveToMobileWalletButton && couponData.googlePayJwtOrEmpty"
+                            class="save-to-google-pay-wrapper"
+                            >
+                            <p>
+                            <a
+                                href="javascript:;"
+                                onclick="saveToGooglePay()"
+                                >
+                                &nbsp;
+                            </a>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div
+                        class="expired"
+                        :style="{ background: 'repeating-linear-gradient(45deg, '+couponData.promoExpiryBackgroundColor+', '+couponData.promoExpiryBackgroundColor+' 10px, #fff 10px, #fff 20px) !important', color: couponData.promoExpiryBackgroundColor+' !important' }"
+                        >
+                        <span
+                            v-html="couponData.errorMessageHtml"
+                            id="errorMessage"
+                            >
+                        </span>
+                    </div>
+                    
+                    <div
+                        v-if="couponData.customLinkOnCouponButtonText"
+                        class="custom-link-wrapper"
+                        >
+                        <p><a class="custom-link" href="javascript:;" onclick="openCustomLink()">${ couponData.customLinkOnCouponButtonText }</a></p>
+                    </div>
+                    
+                </div>
+                
+                <div
+                    v-if="couponData.allowsSharing"
+                    id="sharing-wrapper"
+                    class="sharing-wrapper"
+                    >
+                    <a
+                        class="rere rere-recommend"
+                        style=
+                        "
+                        opacity: 0;
+                        transition: all 400ms;
+                        border: none;
+                        text-transform: none;
+                        display: inline-block;
+                        cursor: pointer;
+                        padding:3px
+                        "
+                        :data-uid="couponData.shareLink"
+                        :data-title="couponData.brandName+' - '+couponData.headline"
+                        :data-message="'I recommend... '+couponData.brandName+' - '+couponData.headline"
+                        data-tags="Offers"
+                        :data-redirect-url="couponData.shareLink"
+                        >
+                        <img
+                            class="rere-icon"
+                            src="https://go.rere.live/icon.svg"
+                            title="Recommend to a friend"
+                            alt="Real Recommendations"
+                            style=
+                            "
+                            position: relative;
+                            top: -1px;
+                            "
+                            >
+                            <span
+                                style="padding-left: 5px"
+                                >
+                                Recommend to a friend
+                            </span>
+                            </a>
+                </div>
+                
+            </div>
+            
+            <div
+                v-if="couponData.termsAndConditionsForHtml || couponData.showExpireOfferButton"
+                id="dema-offer_terms_and_redeem_wrapper"
+                >
+                
+                <div
+                    v-html="couponData.termsAndConditionsForHtml"
+                    v-if="couponData.termsAndConditionsForHtml"
+                    id="dema-offer_terms"
+                    >
+                </div>
+                
+                
+                <div
+                    v-if="couponData.showExpireOfferButton"
+                    id="dema-offer_redeem-button"
+                    class="not-expired"
+                    >
+                    <a
+                        href="javascript:;"
+                        class="button expanded"
+                        onclick="redeemNowCheckingLimitIfNecessary()"
+                        >
+                        Cancel this offer
+                    </a>
+                </div>
+                
+            </div>
+            
+        </div><!-- #dema-offer_wrapper -->
+        
+        <div id="dema-offer_print-popup-overlay">
+            <div id="print-popup-content">
+                
+                <div
+                    class="print-email-close-button"
+                    onclick="closePrintPopup()"
+                    >
+                    <svg viewbox="0 0 40 40">
+                        <path class="close-x" d="M 10,10 L 30,30 M 30,10 L 10,30" />
+                    </svg>
+                </div>
+                
+                <div class="content">
+                    
+                    <!-- <div class="headline">Print at home</div> -->
+                    
+                    <div class="sub-headline">We will email you a copy of the reward so you can print it at home.</div>
+                    
+                    <div class="fields">
+                        
+                        <label for="print-email-field">Enter your email</label>
+                        <input
+                            id="print-email-field"
+                            class="email-input"
+                            type="email"
+                            placeholder="john.smith@example.com"
+                            style=
+                            "
+                            margin-bottom: 0.35rem;
+                            "
+                            >
+                            
+                            <div>We will not use your email address for marketing purposes</div>
+                            
+                            <div
+                                onclick="sendEmail()"
+                                class="print-email-send-button button expanded"
+                                >
+                                Send
+                            </div>
+                            
+                            </div><!-- .fields -->
+                    
+                    
+                    <div
+                        class="print-now-wrapper"
+                        >
+                        <p>I'm near a printer, <span onclick="printCoupon()">print now</span></p>
+                    </div>
+                    
+                </div><!-- .content -->
+                
+            </div><!-- #print-popup-content -->
+        </div><!-- #dema-offer_print-popup-overlay -->
+        
+        
+        
+        <div id="dema-offer_email-sent-popup-overlay">
+            <div id="email-sent-popup-content">
+                
+                <div
+                    class="print-email-close-button"
+                    onclick="closeEmailSentPopup()"
+                    >
+                    <svg viewbox="0 0 40 40">
+                        <path class="close-x" d="M 10,10 L 30,30 M 30,10 L 10,30" />
+                    </svg>
+                </div>
+                
+                <div class="content">
+                    
+                    <!-- <div class="headline">Print at home</div> -->
+                    
+                    <p>We have emailed this offer to you as an attachment.</p>
+                    <p>Please open it, print it out, and use it in-store.</p>
+                    
+                    <div
+                        onclick="closeEmailSentPopup()"
+                        class="print-email-send-button button expanded"
+                        >
+                        Close
+                    </div>
+                    
+                </div><!-- .content -->
+            </div><!-- #email-sent-popup-content -->
+        </div><!-- #dema-offer_email-sent-popup-overlay -->
+        
+        <div id="dema-offer_redemption-limit-reached-overlay">
+            <div id="email-sent-popup-content">
+                
+                <div
+                    class="print-email-close-button"
+                    onclick="closeRedemptionLimitReachedPopup()"
+                    >
+                    <svg viewbox="0 0 40 40">
+                        <path class="close-x" d="M 10,10 L 30,30 M 30,10 L 10,30" />
+                    </svg>
+                </div>
+                
+                <div class="content">
+                    
+                    <!-- <div class="headline">Print at home</div> -->
+                    
+                    <p>Sorry, this offer has now been redeemed by too many people. Please check the terms and conditions for more details.</p>
+                    
+                    <div
+                        onclick="closeRedemptionLimitReachedPopup()"
+                        class="print-email-send-button button expanded"
+                        >
+                        OK
+                    </div>
+                    
+                </div><!-- .content -->
+            </div><!-- #email-sent-popup-content -->
+        </div><!-- #dema-offer_redemption-limit-reached-overlay -->
+        
+        <div
+            id="printed-coupon-holder"
+            >
+            <link rel="stylesheet" href="coupon.css">
+                <div
+                    class="printed-coupon"
+                    >
+                    <div
+                        class="printed-coupon-data-section"
+                        >
+                        <div class="printed-offer-logo">
+                            <img :src="couponData.logoSrc" alt="">
+                                </div>
+                        <div class="printed-offer-info-section">
+                            <div class="printed-headline">${ couponData.headline }</div>
+                            <div class="printed-sub-headline">${ couponData.subheadline }</div>
+                            <div class="printed-expiry-date">${ getPrintedCouponExpiryMessage() }</div>
+                        </div>
+                        <div class="printed-offer-logo">
+                            
+                            <!--TODO: factor out this repetition from file-->
+                            
+                            <template
+                                v-if="couponData.offerRedemptionMethod=='qr'"
+                                >
+                                <!--
+                                 <img :src="'/qrcodes/'+couponData.codeToUseInHex+'.png'">
+                                 -->
+                                <div class="qrCodeToRender" style="display:flex;align-items:center;justify-content:center"></div>
+                                
+                            </template>
+                            
+                            <template
+                                v-else-if="couponData.offerRedemptionMethod=='barcode'"
+                                >
+                                <svg class="dema-coupon-barcode"
+                                    :jsbarcode-format="couponData.barcodeFormat"
+                                    :jsbarcode-value="couponData.codeToUse"
+                                    jsbarcode-textmargin="0"
+                                    jsbarcode-fontoptions="bold">
+                                </svg>
+                            </template>
+                            
+                            <template
+                                v-else-if="couponData.offerRedemptionMethod=='code'"
+                                >
+                                <div
+                                    style=
+                                    "
+                                    font-size: 1.4rem;
+                                    font-family: Consolas, \'Liberation Mono\', Courier, monospace;
+                                    line-height: 1.9em;
+                                    letter-spacing: 0.1em;
+                                    padding: 1.5rem 0.2em;
+                                    text-align: center;
+                                    border: 1px dashed #333;
+                                    margin: -1.5rem 0rem 0;
+                                    max-width: 100%;
+                                    overflow-wrap: break-word;
+                                    "
+                                    >
+                                    ${ couponData.codeToUse }
+                                </div>
+                            </template>
+                        </div>
+                    </div>
+                    <div
+                        v-html="couponData.termsAndConditionsForHtml"
+                        class="printed-coupon-terms-section"
+                        >
+                    </div>
+                </div>
+                </div>
+        
+        <script>
+            
+            var
+            app,
+            saveToMobileWallet,
+            jwtForSaveToGooglePay
+            ;
+            
+            function openLink(link){
+                if(
+                   window.Android
+                   &&
+                   window.Android.openUrlInExternalBrowser
+                   ){
+                    window.Android.openUrlInExternalBrowser(link);
+                }
+                   else{
+                       window.open(link);
+                   }
+            }
+        
+        function saveToGooglePay(){
+            app
+            &&
+            app.couponData
+            &&
+            app.couponData.googlePayJwtOrEmpty
+            &&
+            openLink("https://www.android.com/payapp/savetoandroidpay/" + app.couponData.googlePayJwtOrEmpty);
+        }
+        
+        function functionConfirm(msg, myYes, myNo) {
+            var confirmBox = $("#confirmclick");
+            confirmBox.find(".confirmmessage").text(msg);
+            confirmBox.find(".yes,.no").unbind().click(function()
+                                                       {
+                                                       confirmBox.hide();
+                                                       });
+                                                       confirmBox.find(".yes").click(myYes);
+                                                       confirmBox.find(".no").click(myNo);
+                                                       confirmBox.show();
+        }
+        
+        var
+        thisFullUrl = window.location.href,
+        thisFullUrlPiecesDelimitedBySlash = thisFullUrl.split("/"),
+        clientCouponHashIndex = thisFullUrlPiecesDelimitedBySlash.length - 1,
+        clientCouponHash = thisFullUrlPiecesDelimitedBySlash[clientCouponHashIndex],
+        socket
+        ;
+        
+        var zcmBaseAddress;
+        
+        function connectToSocket(){
+            if(
+               !
+               window.Android
+               //Android produces its own event for redemption
+               //The following won't work on the offline geo version
+               //on Android anyway because of CORS issues
+               ){
+                socket =
+                io.connect(
+                           zcmBaseAddress+'?uuid=client-coupon-with-hash-' + clientCouponHash
+                           )
+                           ;
+                           
+                           socket.on('push', function (msg) {
+                                     onRedeemed();
+                                     //location.reload();
+                                     });
+            }
+        }
+        
+        function onCampaignUpdated(campaignId){
+            console.log("COUPON VIEW: ON CAMPAIGN UPDATED CALLED (CAMPAIGN ID " + campaignId + ")");
+            
+            if(
+               app
+               &&
+               app.couponData
+               &&
+               ( app.couponData.campaignId==campaignId )
+               ){
+                loadCouponDataUsingHash();
+            }
+        }
+        
+        function onCouponRedeemed(campaignId){
+            
+            console.log("COUPON VIEW: ON COUPON REDEEMED CALLED (CAMPAIGN ID " + campaignId + ")");
+            
+            if(
+               app
+               &&
+               app.couponData
+               &&
+               ( app.couponData.campaignId==campaignId )
+               ){
+                onRedeemed();
+            }
+        }
+        
+        function onRedeemed(){
+            $("#errorMessage").text("Redeemed");
+            showExpiredState();
+        }
+        
+        function onMobileAppPaused(){
+            socket
+            &&
+            socket.disconnect();
+            console.log("MOBILE APP PAUSED!!! DISCONNECTING SOCKET");
+        }
+        
+        function onMobileAppResumed(){
+            connectToSocket();
+            console.log("MOBILE APP RESUMED!!! CONNECTING SOCKET");
+        }
+        
+        //var couponExpiresUponScheduleEnd = %couponExpiresUponScheduleEnd%;
+        
+        function openMapLink(){
+            openLink(
+                     //app.couponData.mapsLink
+                     'https://map.geo-offers.com/?campaign=' + app.couponData.campaignId
+                     );
+        }
+        
+        function openCustomLink(){
+            openLink(
+                     getUrlReplacingCouponViewPart('c/c/')
+                     );
+        }
+        
+        var hasRedemptionLimit;
+        
+        function getUrlReplacingCouponViewPart(apiSuffix){
+            var
+            thisPageURL = window.location.href,
+            apiSuffixRoot = '/'+apiSuffix,
+            url =
+            thisPageURL
+            .replace('/c/v/', apiSuffixRoot)
+            .replace('/coupon/view/', apiSuffixRoot)
+            .replace('/c/e/', apiSuffixRoot)
+            .replace('/c/r/', apiSuffixRoot)
+            ,
+            urlLengthMinus2 =
+            url.length
+            -
+            2
+            ,
+            last2CharsInUrl =
+            url.substring(
+                          urlLengthMinus2
+                          )
+                          ;
+                          
+                          console.log("URL IS " + url);
+                          
+                          if(
+                             last2CharsInUrl.match(/\/[0-9]/) //e.g. /2, /1, etc.
+                             ){
+                              url = url.substring(0, urlLengthMinus2)
+                          }
+                             
+                             return url;
+        }
+        
+        function getUrlWithApiSuffix(apiSuffix){
+            var
+            thisPageURL = window.location.href,
+            apiSuffixRoot = '/'+apiSuffix,
+            url = window.location.hostname + apiSuffixRoot
+            /*
+             url =
+             thisPageURL
+             .replace('/c/v/', apiSuffixRoot)
+             .replace('/coupon/view/', apiSuffixRoot)
+             */
+            ;
+            
+            console.log("URL IS " + url);
+            
+            return "//" + url;
+        }
+        
+        function checkLimitIfNecessaryThenRunCallbackOrAlert(callback){
+            if(hasRedemptionLimit){
+                console.log("CHECKING WITHIN REDEMPTION LIMIT");
+                $
+                .post(
+                      getUrlWithApiSuffix('api/coupons/check-within-redemption-limit'),
+                      JSON
+                      .stringify(
+                                 {
+                                 offerCampaignId: campaignId
+                                 }
+                                 )
+                      ,
+                      function(data){
+                      
+                      console.log("WITHIN REDEMPTION LIMIT RESPONSE DATA IS " + JSON.stringify(data));
+                      
+                      if(data.redemptionLimitReached){
+                      setRedemptionLimitReachedPopupDisplayProperty('block');
+                      }
+                      else if(data.stillWithinRedemptionLimit){
+                      callback();
+                      }
+                      }
+                      )
+                      .fail(
+                            function(response){
+                            }
+                            )
+                            ;
+            }
+            else{
+                callback();
+            }
+        }
+        
+        function redeemNowCheckingLimitIfNecessary(){
+            console.log("LOOKING TO REDEEM NOW");
+            checkLimitIfNecessaryThenRunCallbackOrAlert(redeemNow);
+        }
+        
+        function revealCodeToRedeemCheckingLimitIfNecessary(){
+            checkLimitIfNecessaryThenRunCallbackOrAlert(revealCodeToRedeem);
+        }
+        
+        function redeemNow(){
+            //confirm('Are you sure? Press OK to cancel this offer.')
+            //&&
+            //window.location.replace('%couponPageLink%');
+            $('#modalwrapper').css('display', 'flex');
+            
+            functionConfirm("Are you sure? Press OK to cancel this offer.", function yes() {
+                            window.location.replace(app.couponData.couponRedeemLink);
+                            }, function no() {
+                            return false;
+                            });
+                            return false;
+        }
+        
+        function revealCodeToRedeem(){
+            //confirm('Are you sure? Press OK to start the 30 second countdown to expiry.')
+            //&&
+            //revealCodeAndRedeemAfterTimeout();
+            //Alberto
+            $('#modalwrapper').css('display', 'flex');
+            
+            functionConfirm("This offer will expire 30 seconds after pressing OK, would you like to continue?", function yes() {
+                            revealCodeAndRedeemAfterTimeout();
+                            }, function no() {
+                            return false;
+                            });
+        }
+        
+        function closeEmailSentPopup(){
+            setEmailSentPopupDisplayProperty('none');
+            closePrintPopup(); //Just to reset the Print at home button's state
+        }
+        
+        function closeRedemptionLimitReachedPopup(){
+            setRedemptionLimitReachedPopupDisplayProperty('none');
+        }
+        
+        function setEmailSentPopupDisplayProperty(displayPropertyValue){
+            getEmailSentPopup().style.display = displayPropertyValue;
+        }
+        
+        function setRedemptionLimitReachedPopupDisplayProperty(displayPropertyValue){
+            getRedemptionLimitReachedPopup().style.display = displayPropertyValue;
+        }
+        
+        function getEmailSentPopup(){
+            return document.querySelector('#dema-offer_email-sent-popup-overlay');
+        }
+        
+        function getRedemptionLimitReachedPopup(){
+            return document.querySelector('#dema-offer_redemption-limit-reached-overlay');
+        }
+        
+        function sendEmail(){
+            
+            var thisPageURL = window.location.href;
+            var url = thisPageURL.substring(0, thisPageURL.indexOf('/c')) + '/api/coupons/send-coupon-email';
+            
+            //url = 'https://dema.staging.zappit.co/api/coupons/send-coupon-email'; //TODO: remove upon release
+            
+            var sendButton = document.querySelector('.print-email-send-button');
+            
+            sendButton.innerHTML = 'Sending';
+            sendButton.style.opacity = 0.25;
+            sendButton.style.pointerEvents = 'none';
+            
+            
+            /*
+             var xhr = new XMLHttpRequest();
+             xhr.open("POST", url, true);
+             xhr.setRequestHeader("Content-Type", "application/json");
+             xhr.onreadystatechange = function () {
+             if (xhr.readyState === 4 && xhr.status === 200) {
+             var json = JSON.parse(xhr.responseText);
+             console.log(xhr.responseText);
+             }
+             };
+             */
+            
+            var
+            couponData =
+            app.couponData
+            ,
+            data =
+            JSON
+            .stringify(
+                       {
+                       emailAddress: document.querySelector('.email-input').value,
+                       couponUrlForPrint: window.location.href.replace('/v/', '/p/').replace('/view/', '/print/'),
+                       clientCompanyName: couponData.clientCompanyName,
+                       couponBrandName: couponData.brandName,
+                       couponHeadline: couponData.headline,
+                       couponSubheadline: couponData.subheadline,
+                       offerCampaignId: couponData.campaignId,
+                       deviceUid: couponData.deviceUid
+                       }
+                       )
+                       ;
+                       
+                       
+                       function postCompletedOrFailed(){
+                           sendButton.innerHTML = 'Send';
+                           sendButton.style.opacity = 1;
+                           sendButton.style.pointerEvents = 'all';
+                       }
+                       
+                       //xhr.send(data);
+                       
+                       $
+                       .post(
+                             url,
+                             data,
+                             function(data){
+                             
+                             hidePrintPopup();
+                             setEmailSentPopupDisplayProperty('block');
+                             postCompletedOrFailed();
+                             
+                             }
+                             )
+                             .fail(
+                                   function(response){
+                                   postCompletedOrFailed();
+                                   }
+                                   )
+                                   ;
+        }
+        
+        function printCoupon(){
+            var
+            printedCouponHTML =
+            document
+            .getElementById(
+                            'printed-coupon-holder'
+                            ).innerHTML
+                            ;
+                            
+                            if(
+                               window.Android
+                               &&
+                               window.Android.printHTML
+                               ){
+                                window.Android.printHTML(printedCouponHTML);
+                            }
+                               else{
+                                   var
+                                   printWin =
+                                   window
+                                   .open()//'', '', 'width=640,height=860')
+                                   ;
+                                   
+                                   printWin.document.open();
+                                   printWin.document.write(printedCouponHTML);
+                                   printWin.document.close();
+                                   
+                                   setTimeout(
+                                              function() {
+                                              printWin.focus();
+                                              printWin.print();
+                                              printWin.close();
+                                              },
+                                              500 //Otherwise the content sometimes doesn't show
+                                              );
+                               }
+        }
+        
+        function getPrintPopup(){
+            return document.querySelector('#dema-offer_print-popup-overlay');
+        }
+        
+        function setPrintPopupDisplayProperty(displayPropertyValue){
+            document.querySelector('#dema-offer_print-popup-overlay').style.display = displayPropertyValue;
+        }
+        
+        function togglePrintPopupDisplay(event){
+            getPrintPopup().style.display=='block' ?
+            closePrintPopup() :
+            openPrintPopup(event)
+            ;
+        }
+        
+        function hidePrintPopup(){
+            setPrintPopupDisplayProperty('none');
+        }
+        
+        function closePrintPopup(){
+            document.querySelectorAll('.print-button-selected-possible').forEach(
+                                                                                 function(element){element.classList.remove('print-button-selected');}
+                                                                                 );
+                                                                                 hidePrintPopup();
+        }
+        
+        function openPrintPopup(event){
+            document.querySelectorAll('.print-button-selected-possible').forEach(
+                                                                                 function(element){element.classList.add('print-button-selected');}
+                                                                                 );
+                                                                                 setPrintPopupDisplayProperty('block');
+                                                                                 event.stopPropagation();
+        }
+        
+        function setSwappableElementVisibilities(toHideSelector, toShowSelector, removeElementsToHide){
+            var notExpiredElementList = document.querySelectorAll(toHideSelector);
+            
+            for (var i = 0; i < notExpiredElementList.length; i++) {
+                var element = notExpiredElementList[i];
+                if(removeElementsToHide){
+                    element.parentNode
+                    &&
+                    element.parentNode.removeChild(element);
+                }
+                else{
+                    element.style.display = 'none';
+                }
+            }
+            
+            var expiredElementList = document.querySelectorAll(toShowSelector);
+            
+            for (var i = 0; i < expiredElementList.length; i++) {
+                expiredElementList[i].style.display = 'block';
+            }
+        }
+        
+        function showExpiredState(){
+            setSwappableElementVisibilities('.not-expired', '.expired'); //, true);
+            if(
+               app.couponData.couponExpiresUponScheduleEnd
+               &&
+               $("#errorMessage").text()=="Expired"
+               &&
+               document.getElementById('sharing-wrapper')
+               ){
+                /*
+                 var sharingWrapper = document.getElementById('sharing-wrapper');
+                 
+                 sharingWrapper
+                 &&
+                 sharingWrapper.parentNode
+                 &&
+                 sharingWrapper.parentNode.removeChild(sharingWrapper)
+                 ;
+                 */
+                
+                document.querySelector('#sharing-wrapper').style.display = 'none';
+            }
+        }
+        
+        function restoreToNonExpiredState(){
+            setSwappableElementVisibilities('.expired', '.not-expired'); //, true);
+            if(
+               app.couponData.couponExpiresUponScheduleEnd
+               &&
+               $("#errorMessage").text()=="Expired"
+               &&
+               document.getElementById('sharing-wrapper')
+               ){
+                /*
+                 var sharingWrapper = document.getElementById('sharing-wrapper');
+                 
+                 sharingWrapper
+                 &&
+                 sharingWrapper.parentNode
+                 &&
+                 sharingWrapper.parentNode.removeChild(sharingWrapper)
+                 ;
+                 */
+                
+                document.querySelector('#sharing-wrapper').style.display = 'block';
+            }
+        }
+        
+        function restoreToInitialState(){
+            restoreToNonExpiredState();
+            $('#modalwrapper').css('display', 'none');
+            closeEmailSentPopup();
+            closeRedemptionLimitReachedPopup();
+            
+            var sendButton = document.querySelector('.print-email-send-button');
+            
+            sendButton.innerHTML = 'Send';
+            sendButton.style.opacity = 1;
+            sendButton.style.pointerEvents = 'all';
+        }
+        
+        var timeinterval;
+        
+        function getTimeRemaining(endtime) {
+            var t = Date.parse(endtime) - Date.parse(new Date());
+            var seconds = Math.floor((t / 1000) % 60);
+            var minutes = Math.floor((t / 1000 / 60) % 60);
+            var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+            var days = Math.floor(t / (1000 * 60 * 60 * 24));
+            return {
+                'total': t,
+                'days': days,
+                'hours': hours,
+                'minutes': minutes,
+                'seconds': seconds
+            };
+        }
+        
+        function initializeClock(id, endtime) {
+            
+            clearInterval(timeinterval);
+            
+            var clock = document.getElementById(id);
+            
+            var daysWrapper = clock.querySelector('.days-wrapper');
+            
+            var secondsWrapper = clock.querySelector('.seconds-wrapper');
+            
+            var daysSpan = clock.querySelector('.days');
+            var hoursSpan = clock.querySelector('.hours');
+            var minutesSpan = clock.querySelector('.minutes');
+            var secondsSpan = clock.querySelector('.seconds');
+            
+            var textExts = clock.querySelectorAll('.txt-ext');
+            
+            function updateClock() {
+                
+                var t = getTimeRemaining(endtime);
+                
+                daysSpan.innerHTML = t.days <= 0 ? '0' : t.days;
+                hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+                minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+                secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+                
+                if( t.days > 0 ) {
+                    daysWrapper.style.display = 'inline';
+                }
+                else {
+                    daysWrapper.style.display = 'none';
+                }
+                
+                secondsWrapper.style.display = 'inline';
+                
+                if (t.total <= 0) {
+                    daysSpan.innerHTML = '0';
+                    hoursSpan.innerHTML = '00';
+                    minutesSpan.innerHTML = '00';
+                    secondsSpan.innerHTML = '00';
+                    
+                    clearInterval(timeinterval);
+                    showExpiredState();
+                }
+                
+                var showCodeSubmessage = document.getElementById('dema-show_code_submessage');
+                if(showCodeSubmessage && codeShown){
+                    showCodeSubmessage.innerHTML = 'This code will expire in '+Math.floor(t.total/1000)+' seconds.';
+                }
+            }
+            
+            updateClock();
+            timeinterval = setInterval(updateClock, 1000);
+        }
+        
+        function showCode(){
+            codeShown = true;
+            setSwappableElementVisibilities('.show-code', '.code-shown');
+        }
+        
+        var
+        hasRevealingRedemptionButton,
+        hidesWebPageCodeContentForPrintButton,
+        codeShown = true
+        ;
+        
+        function revealCodeAndRedeemAfterTimeout(){
+            
+            showCode();
+            
+            $("#errorMessage").text("Redeemed");
+            
+            initializeClock('countdown-wrapper', new Date(new Date().getTime() + 30000));
+            
+            var
+            url = getUrlReplacingCouponViewPart('api/coupons/revealing-redeem-pressed/')
+            ;
+            
+            var
+            data =
+            JSON
+            .stringify(
+            {
+            }
+            )
+            ;
+            
+            
+            function postCompletedOrFailed(){
+            }
+            
+            
+            $
+            .post(
+                  url,
+                  data,
+                  function(data){
+                  postCompletedOrFailed();
+                  }
+                  )
+                  .fail(
+                        function(response){
+                        postCompletedOrFailed();
+                        }
+                        )
+                        ;
+        }
+        
+        var shouldIndicatePageInfoDisplayedOnNextUpdate;
+        
+        app =
+        new Vue(
+                {
+                delimiters: ['${', '}'],
+                el: '#dema-offer_wrapper',
+                updated:
+                function(){
+                if(
+                   app.couponData.offerRedemptionMethod=='qr'
+                   ){
+                console.log('CODE TO USE IS ' + app.couponData.codeToUse);
+                
+                document.querySelectorAll(".qrCodeToRender").forEach(
+                                                                     function(element){
+                                                                     if(!element.firstChild){
+                                                                     var qrcode = new QRCode(element, {
+                                                                                             text: app.couponData.codeToUse,
+                                                                                             width: 175,
+                                                                                             height: 175,
+                                                                                             colorDark : "#000000",
+                                                                                             colorLight : "#ffffff",
+                                                                                             correctLevel : QRCode.CorrectLevel.H
+                                                                                             });
+                                                                     }
+                                                                     }
+                                                                     );
+                }
+                else if(
+                        app.couponData.offerRedemptionMethod=='barcode'
+                        ){
+                JsBarcode(".dema-coupon-barcode").init();
+                }
+                
+                if(
+                   shouldIndicatePageInfoDisplayedOnNextUpdate
+                   ){
+                shouldIndicatePageInfoDisplayedOnNextUpdate = false;
+                
+                window.Android
+                &&
+                window.Android.onCouponPageLoadedWithItsInfo
+                &&
+                window.Android.onCouponPageLoadedWithItsInfo()
+                ;
+                }
+                }
+                ,
+                data:
+                {
+                couponData: {}
+                }
+                ,
+                methods:
+                {
+                getPrintedCouponExpiryMessage:
+                function(){
+                if(
+                   //These conditions mean "new format coupon data" which requires
+                   //front end date messaging (done for offline functionality)
+                   app.couponData.countdownToExpiryStartedTimestampMsOrNull
+                   ||
+                   app.couponData.countdownToExpiryDurationMsOrNull
+                   ||
+                   app.couponData.scheduleEndTimestampMs
+                   ){
+                var
+                dateFormat = 'D/M/YYYY @ HH:mm',
+                expiryPrefix = 'Expires ',
+                expiryTimestampMs
+                ;
+                
+                if(
+                   app.couponData.countdownToExpiryDurationMsOrNull
+                   ){
+                expiryTimestampMs = app.couponData.countdownToExpiryStartedTimestampMsOrNull + app.couponData.countdownToExpiryDurationMsOrNull;
+                }
+                else{
+                expiryTimestampMs = app.couponData.scheduleEndTimestampMs;
+                if(
+                   !
+                   app.couponData.couponExpiresUponScheduleEnd
+                   ){
+                expiryPrefix = 'Ends ';
+                }
+                }
+                
+                return expiryPrefix + moment(expiryTimestampMs).format(dateFormat);
+                }
+                else{
+                return app.couponData.printedCouponExpiryMessage;
+                }
+                }
+                }
+                }
+                )
+                ;
+                
+                function handleCouponData(data){
+                    
+                    console.log('RECEIVED COUPON DATA!: ' + JSON.stringify(data));
+                    
+                    var companyName = data.customCompanyName || data.clientCompanyName;
+                    
+                    if(companyName){
+                        document.title = companyName + ' Offer';
+                    }
+                    
+                    zcmBaseAddress = data.zcmBaseAddress;
+                    
+                    hasRedemptionLimit = data.hasRedemptionLimit;
+                    
+                    if(
+                       data.customCouponUrl
+                       ){
+                        location.replace(data.customCouponUrl);
+                        
+                        return;
+                    }
+                       
+                       hidesWebPageCodeContentForPrintButton = data.hidesWebPageCodeContentForPrintButton;
+                       
+                       if(hidesWebPageCodeContentForPrintButton){
+                           setSwappableElementVisibilities('.code-showing-despite-print', '.code-hidden-where-print');
+                       }
+                       else{
+                           //setSwappableElementVisibilities('.code-hidden-where-print', '.code-showing-despite-print');
+                       }
+                       
+                       hasRevealingRedemptionButton = data.hasRevealingRedemptionButton;
+                       
+                       var showCodeSubmessage = document.getElementById('dema-show_code_submessage');
+                       
+                       if(hasRevealingRedemptionButton){
+                           codeShown = false;
+                           setSwappableElementVisibilities('.code-shown', '.show-code');
+                           
+                           if(showCodeSubmessage){
+                               showCodeSubmessage.style.display = 'block';
+                           }
+                       }
+                       else{
+                           showCode();
+                           
+                           if(showCodeSubmessage){
+                               showCodeSubmessage.style.display = 'none';
+                           }
+                       }
+                       
+                       var couponExpires = data.couponExpires;
+                       
+                       app.couponData = data;
+                       
+                       if(
+                          data.errorMessageHtml
+                          ){
+                           showExpiredState();
+                       }
+                          else if(
+                                  data.isRedeemed
+                                  ){
+                              onRedeemed();
+                          }
+                                  else{
+                                      if(couponExpires){
+                                          
+                                          document.querySelector('#countdown-wrapper').style.display = 'block';
+                                          document.querySelector('#dema-offer_expires_message').style.display = 'block';
+                                          
+                                          if(
+                                             data.scheduleEndTimestampMs //This is just a sign that it is the "countdown started" timestamp version, used for offline
+                                             ){
+                                              var
+                                              expiryTimestampMs =
+                                              data.couponExpiresUponScheduleEnd ?
+                                              data.scheduleEndTimestampMs :
+                                              (
+                                               data.countdownToExpiryStartedTimestampMsOrNull
+                                               +
+                                               data.countdownToExpiryDurationMsOrNull
+                                               )
+                                               ;
+                                               
+                                               app.couponData.timeLeftSeconds =
+                                               (
+                                                expiryTimestampMs
+                                                -
+                                                new Date().getTime()
+                                                )
+                                                /
+                                                1000
+                                                ;
+                                          }
+                                             else{
+                                                 app.couponData.timeLeftSeconds = data.couponTimeLeftSeconds;
+                                             }
+                                             
+                                             if(app.couponData.timeLeftSeconds<=0){
+                                                 showExpiredState();
+                                             }
+                                             else{
+                                                 var deadline = new Date(new Date().getTime() + app.couponData.timeLeftSeconds * 1000);
+                                                 
+                                                 initializeClock('countdown-wrapper', deadline);
+                                             }
+                                      }
+                                      else{
+                                          document.querySelector('#countdown-wrapper').style.display = 'none';
+                                          document.querySelector('#dema-offer_expires_message').style.display = 'none';
+                                      }
+                                      
+                                      saveToMobileWallet = data.saveToMobileWallet;
+                                      jwtForSaveToGooglePay = data.googlePayJwtOrEmpty;
+                                      
+                                      if(
+                                         saveToMobileWallet
+                                         &&
+                                         jwtForSaveToGooglePay
+                                         ){
+                                          saveToGooglePay();
+                                      }
+                                         
+                                         connectToSocket();
+                                  }
+                                  
+                                  shouldIndicatePageInfoDisplayedOnNextUpdate = true;
+                                  
+                                  app.$forceUpdate();
+                }
+        
+        function loadCouponDataUsingHash(){
+            var campaignId = location.hash.substring(1);
+            
+            console.log('CAMPAIGN ID FOR DATA REQUEST IS ' + campaignId);
+            
+            handleCouponData(window.Android.getCouponDataAsJsonString(parseInt(campaignId)));
+        }
+        
+        if(
+           window.Android
+           &&
+           window.Android.getCouponDataAsJsonString
+           ){
+            window.onhashchange =
+            function(){
+                //restoreToNonExpiredState();
+                
+                restoreToInitialState();
+                
+                document.body.scrollTop = 0;
+                
+                loadCouponDataUsingHash();
+            }
+            ;
+            
+            loadCouponDataUsingHash();
+        }
+        else{
+            $
+            //.post
+            .get(
+                 getUrlWithApiSuffix('api/coupons/get-coupon-data/' + clientCouponHash),
+                 handleCouponData
+                 )
+                 .fail(
+                       function(response){
+                       }
+                       )
+                       ;
+        }
+        
+            </script>
+        
+        <!--Remote:-->
+        <!--
+         <script src="https://go.rere.live/public/frontend/scripts/rere.main.min.js"></script>
+         -->
+        
+        <!--Local (for SDK, download from Remote version link above):-->
+        <script src="rere.main.min.js"></script>
+        
+        <script type="text/javascript">window.addEventListener('load', function() { Rere.initMainLayer({ 'rrid': 'fff2158e-715a-4d4c-93ef-18d161473361',
+                                                                                                       });
+                                                               });
+            </script>
+    </body>
+</html>

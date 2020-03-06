@@ -1,0 +1,265 @@
+
+<!doctype html>
+<html class="no-js rewards-web-ui" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+                <title>Zappit Rewards</title>
+                <link rel="stylesheet" href="app.css">
+                    
+                    <link rel="shortcut icon" href="favicon.ico">
+                        
+                        <script>
+                            var app, deliveredToAppTimestampSecondsByScheduleId = {}, initializeApp;
+                            
+                            function onCampaignUpdated(campaignId){
+                                console.log("LIST VIEW: ON CAMPAIGN UDPATED CALLED (CAMPAIGN ID " + campaignId + ")");
+                                initializeApp();
+                            }
+                        
+                        function onCouponRedeemed(campaignId) {
+                            console.log("LIST VIEW: ON COUPON REDEEMED CALLED (CAMPAIGN ID " + campaignId + ")");
+                            if (app.categories) {
+                                app.categories.forEach(function (category) {
+                                                       if (category.offers) {
+                                                       category.offers.forEach(function (offer) {
+                                                                               if (offer.campaignId == campaignId) {
+                                                                               offer.isRedeemed = true;
+                                                                               console.log('REDEEMING AN OFFER IN LIST!');
+                                                                               }
+                                                                               });
+                                                       }
+                                                       });
+                            }
+                        }
+                        
+                        function onMobileAppPaused() {}
+                        
+                        function onMobileAppResumed() {}
+                            </script>
+                        </head>
+    <body id="page_index" class="layout_default">
+        
+        <div
+            id="app"
+            style="height:100% !important"
+            v-cloak
+            :class="{ 'dema-status_loading': initializationStatus=='loading', 'dema-status_no-geolocation': initializationStatus=='no-geolocation', 'dema-status_no-geolocation-http': initializationStatus=='no-geolocation-http', 'dema-status_no-client-code': initializationStatus=='no-client-code', 'dema-status_no-offers': initializationStatus=='no-offers', 'dema-status_offers-loaded': initializationStatus=='offers-loaded' }"
+            :data-dema-status="initializationStatus"
+            :data-client-code="regCode"
+            >
+            
+            <div class="mainScreenMessageContainer">
+                <div class="mainScreenMessage">
+                    
+                    <div id="app-status-icon"></div>
+                    
+                    ${ introMessage }
+                </div>
+                
+                <div class="button-container"><a data-close onclick="window.location.reload()" class="button close">Try again</a></div>
+                <small class="errNo">${ errNo }</small>
+            </div>
+            
+            <div
+                v-if="true || isViewingOffers"
+                id="coupons-overlay"
+                >
+                
+                <div
+                    id="categories-grid"
+                    ref="categoriesGrid"
+                    >
+                    
+                    <div
+                        v-if="allowExpandIconToShow"
+                        class="category categoriesGridExpanderContractor"
+                        :class="{ iPhoneCategoriesGridExpanderContractor: isOnIPhone() }"
+                        :style="{ background: selectedCategoryTabBackgroundColor || '#000000' }"
+                        @mousedown="isCategoriesViewExpanded = !isCategoriesViewExpanded"
+                        >
+                        ${ isCategoriesViewExpanded ? '-' : '+' }
+                    </div>
+                    
+                    <!--
+                     <div id="categories-grid_title-wrapper">
+                     <div class="title">Rewards available near me</div>
+                     </div>
+                     -->
+                    
+                    <div id="categories-grid_list-wrapper_anchor"></div>
+                    
+                    <!-- #categories-grid_list-wrapper -->
+                    <div
+                        id="categoriesListWrapper"
+                        class="categories-grid_list-wrapper"
+                        :style="{ maxHeight: isCategoriesViewExpanded ? '100%' : '80px' }"
+                        >
+                        <div
+                            class="category-list"
+                            >
+                            <div
+                                v-for="category in categories"
+                                class="category"
+                                :id="category.title=='All' ? 'coupon-category_all' : '' "
+                                :class="{ off: selectedCategory!=category }"
+                                :style="{ background: selectedCategory==category ? ((selectedCategoryTabBackgroundColor || '#000000') + (' !important')) : '#aaa'}"
+                                @click="selectedCategory = category"
+                                >
+                                ${ category.title }<span
+                                    class="count"
+                                    v-if="category.title!='All'"
+                                    :style="{ background: selectedCategory==category ? 'white' : '#d3d3d4', opacity: selectedCategory==category ? 0.8 : 1, color: '#59595a' }"
+                                    >
+                                    ${ (category.offers && category.offers.length) || 0 }
+                                    </span>
+                                    </div>
+                                    
+                                    <div class="clear"></div>
+                                    </div>
+                                    </div><!-- #categories-grid_list-wrapper -->
+                                    <div class="clear"></div>
+                                    
+                                    <div
+                                    v-if="!selectedCategory"
+                                    class="subtitle"
+                                    >
+                                    Please select a category above
+                                    </div>
+                                    
+                                    </div><!-- #categories-grid -->
+                                    
+                                    
+                                    <!--v-show here allows the images to pre-load, since the img elements therefore exist in the document-->
+                                    
+                                    
+                                    <div
+                                    id="rewards-container"
+                                    >
+                                    
+                                    <div
+                                    v-for="category in categories"
+                                    v-show="selectedCategory==category"
+                                    class="offers-list"
+                                    >
+                                    <div class="offer-list-wrap">
+                                    
+                                    <div
+                                    v-for="offer in category.offers"
+                                    class="offer"
+                                    @click="onOfferSelected(offer)"
+                                    :class="{ offerFadeOut: offer.isFadingOut, expiredOffer: isOfferExpired(offer) }"
+                                    :style="{ opacity: offer.isFadingOut ? '0 !important' : '1 !important'}"
+                                    >
+                                    
+                                    <div class="provider">
+                                    <img :src="offer.logoSrc" alt="" :class="{ expiredImg: isOfferExpired(offer) }" />
+                                    </div>
+                                    
+                                    <div class="content">
+                                    
+                                    <div class="content-row content-row_text">
+                                    <div class="heading" :class="{ expiredOfferText: isOfferExpired(offer) }">${ offer.heading }</div>
+                                    <div class="subheading" :class="{ expiredOfferText: isOfferExpired(offer) }">${ offer.subheading }</div>
+                                    <div
+                                    @click="deleteOffer($event, offer)"
+                                    style=
+                                    "
+                                    color: black;
+                                    position: absolute;
+                                    top: -10px;
+                                    right: 4px;
+                                    font-size: 28px;
+                                    opacity: 0.44;
+                                    z-index: 10000;
+                                    "
+                                    >
+                                    &times;
+                                    </div>
+                            <a
+                                v-if="!isOfferExpired(offer) && offer.mapsLink"
+                                href="javascript:;"
+                                @click="$event.stopPropagation();openUrlInNewWindow(offer.mapsLink)"
+                                >
+                                <img
+                                    src="geo-gmap-icon.svg"
+                                    style=
+                                    "
+                                    position: absolute;
+                                    bottom: 3rem;
+                                    right: 0.5rem;
+                                    transform: scale(0.13);
+                                    transform-origin: 100% 100%;
+                                    "
+                                    >
+                                    </a>
+                            <!--
+                             <div class="touch touch_finger"><svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 104.01 133.57"><title>finger</title><path d="M52,1.78a50.56,50.56,0,0,0-31.3,90.27V85.7a45.75,45.75,0,1,1,62.59,0v6.35A50.56,50.56,0,0,0,52,1.78Z"/><path d="M52,30.67A21.67,21.67,0,0,0,30.34,52.36v79.42H73.67V52.36A21.7,21.7,0,0,0,52,30.67ZM64,98.08H40V93.27H64Zm0-9.63H40V83.64H64Zm0-19.26H40V52.39a12,12,0,1,1,24.07,0Z"/><path d="M83.3,70.37a36.12,36.12,0,1,0-62.59,0V52.32a31.3,31.3,0,0,1,62.59,0Z"/></svg></div>
+                             -->
+                        </div>
+                        
+                        <div class="content-row content-row_expiry" :style="{ background: isOfferExpired(offer) ? 'hsla(0,0%,71%,1)' : offer.promoExpiryBackgroundColor, borderLeftColor: offer.promoExpiryBackgroundColor }">
+                            <div class="expiry">
+                                <template
+                                    v-if="isOfferExpired(offer)"
+                                    >
+                                    <template
+                                        v-if="isOfferRedeemed(offer)"
+                                        >
+                                        REDEEMED
+                                    </template>
+                                    <template
+                                        v-else
+                                        >
+                                        EXPIRED
+                                    </template>
+                                </template>
+                                <template
+                                    v-else
+                                    >
+                                    ENDS <span v-if="offer.couponExpiryTimestampMs" style="text-transform: none;"> IN ${ getExpiryTimeMessage(offer) && offer.expiryTimeMessage }</span><span v-else class="datetime">${ offer.expires }</span>
+                                        </template>
+                                        
+                                        <!--
+                                        <span
+                                        class="limit"
+                                        v-if="!isOfferExpired(offer) && offer.offerCampaign.offer.couponDailyLimit"
+                                        >
+                                        <span class="number">
+                                        ${ offer.offerCampaign.offer.couponDailyLimit - (offer.offerCampaign.offer.limitedCouponCountForToday || 0) }
+                                        </span> left<span v-if="offer.offerCampaign.offer.couponLimitIsDailyNotTotal" class="text-ext"> today</span>
+                                        </span>
+                                        -->
+                                        </div>
+                                        </div>
+                                        
+                                        </div><!-- .content -->
+                                        
+                                        
+                                        </div><!-- .offer -->
+                                        
+                                        
+                                        </div><!-- .offer-list-wrap -->
+                                        
+                                        </div><!-- .offers-list -->
+                                        
+                                        </div><!-- #rewards-container -->
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        <div class="bottom-fade"></div>
+                                        </div><!-- coupons-overlay -->
+                                        
+                                        </div><!-- #app -->
+                                        
+                                        
+                                        <!--
+                                        <div id="app-cover"></div>
+                                        -->
+                                        
+                                        <script src="app.js"></script>
+                                        </body>
+                                        </html>
