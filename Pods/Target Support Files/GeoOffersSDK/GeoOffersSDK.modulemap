@@ -1,4 +1,4 @@
-module GeoOffersSDK {
+framework module GeoOffersSDK {
   umbrella header "GeoOffersSDK-umbrella.h"
 
   export *

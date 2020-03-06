@@ -93,7 +93,7 @@ class GeoOffersViewController: UIViewController {
         }
     }
 
-    fileprivate func openCoupon(scheduleID: ScheduleID) {
+    func openCoupon(scheduleID: ScheduleID) {
         guard let vc = presenter?.buildCouponViewController(scheduleID: scheduleID) else { return }
         navigationController?.pushViewController(vc, animated: true)
     }

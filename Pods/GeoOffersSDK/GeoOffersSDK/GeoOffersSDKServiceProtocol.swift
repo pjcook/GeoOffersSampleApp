@@ -12,6 +12,8 @@ public protocol GeoOffersSDKServiceProtocol {
     func requestLocationPermissions()
     func applicationDidBecomeActive(_ application: UIApplication)
     func buildOfferListViewController() -> UIViewController
+    func isGeoOffersNotification(userInfo: [AnyHashable:Any]) -> Bool
+    @discardableResult func deeplinkToCoupon(_ viewController: UIViewController, notificationIdentifier: String, userInfo: [AnyHashable:Any]) -> Bool
     func requestPushNotificationPermissions()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?)

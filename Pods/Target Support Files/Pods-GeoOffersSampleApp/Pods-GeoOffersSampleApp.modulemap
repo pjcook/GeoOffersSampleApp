@@ -1,4 +1,4 @@
-module Pods_GeoOffersSampleApp {
+framework module Pods_GeoOffersSampleApp {
   umbrella header "Pods-GeoOffersSampleApp-umbrella.h"
 
   export *

@@ -191,3 +191,62 @@ GeoOffersWrapper.shared.geoOffers.requestPushNotificationPermissions()
 
 GeoOffersWrapper.shared.geoOffers.requestLocationPermissions()
 ```
+
+#### Deeplinking to Coupon / Offer Page from Notification
+
+The SDK sends the user local notifications when offers become available and the app is running in the background. If you would like to deeplink the user and present their coupon or offer when the app is launched from the user interacting with one of these notifications then you should do the following.
+
+In the **AppDelegate** in application didFinishLaunchingWithOptions you should register yourself as the delegate for UNUserNotifications
+
+```
+// Register as the UNUserNotificationCenterDelegate to support deeplinking to the coupon when the user taps the notification and the app is closed
+
+UNUserNotificationCenter.current().delegate = self
+```
+
+Implement the following delegate methods:
+
+```
+// Required if you want to implement deeplinking to coupon when user taps notification when the app is closed
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        let request = notification.request
+        deeplinkToCoupon(request.identifier, userInfo: request.content.userInfo)
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        let request = response.notification.request
+        deeplinkToCoupon(request.identifier, userInfo: request.content.userInfo)
+    }
+}
+```
+
+and use the following code as an example implementation to present the users coupon
+
+```
+extension AppDelegate {
+    private func deeplinkToCoupon(_ identifier: String, userInfo: [AnyHashable:Any]) {
+        guard GeoOffersWrapper.shared.service.isGeoOffersNotification(userInfo: userInfo) else { return }
+        let viewController = GeoOffersWrapper.shared.service.buildOfferListViewController()
+        viewController.navigationItem.leftBarButtonItem = buildCloseButton()
+        let navigationController = UINavigationController(rootViewController: viewController)
+        window?.rootViewController?.present(navigationController, animated: true, completion: {
+            GeoOffersWrapper.shared.service.deeplinkToCoupon(viewController, notificationIdentifier: identifier, userInfo: userInfo)
+        })
+    }
+    
+    private func buildCloseButton() -> UIBarButtonItem {
+        let button = UIButton(type: .custom)
+        button.setImage(UIImage(named: "close"), for: .normal)
+        button.tintColor = .black
+        button.addTarget(self, action: #selector(closeCouponModal), for: .touchUpInside)
+        button.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
+        let item = UIBarButtonItem(customView: button)
+        return item
+    }
+    
+    @objc private func closeCouponModal() {
+        window?.rootViewController?.dismiss(animated: true, completion: nil)
+    }
+}
+```

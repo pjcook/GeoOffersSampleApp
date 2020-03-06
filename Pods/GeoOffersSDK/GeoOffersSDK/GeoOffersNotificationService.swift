@@ -13,6 +13,8 @@ public protocol GeoOffersUserNotificationCenter {
 
 extension UNUserNotificationCenter: GeoOffersUserNotificationCenter {}
 
+let IsGeoOfferNotificationKey = "isGeoOfferNotification"
+
 class GeoOffersNotificationService: GeoOffersNotificationServiceProtocol {
     private var notificationCenter: GeoOffersUserNotificationCenter
     private let toastManager: GeoOffersNotificationToastManager
@@ -65,6 +67,7 @@ class GeoOffersNotificationService: GeoOffersNotificationServiceProtocol {
         notificationContent.title = title
         notificationContent.subtitle = subtitle
         notificationContent.sound = isSilent ? nil : UNNotificationSound.default
+        notificationContent.userInfo[IsGeoOfferNotificationKey] = true
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: max(1, delaySeconds), repeats: false)
         let request = UNNotificationRequest(identifier: identifier, content: notificationContent, trigger: trigger)
         notificationCenter.add(request) { error in

@@ -23,15 +23,15 @@ class ViewController: UIViewController {
     }
 
     @IBAction private func requestLocationPermissions() {
-        GeoOffersWrapper.shared.geoOffers.requestLocationPermissions()
+        GeoOffersWrapper.shared.service.requestLocationPermissions()
     }
 
     @IBAction private func requestNotificationPermissions() {
-        GeoOffersWrapper.shared.geoOffers.requestPushNotificationPermissions()
+        GeoOffersWrapper.shared.service.requestPushNotificationPermissions()
     }
 
     @IBAction fileprivate func presentOffers() {
-        let viewController = GeoOffersWrapper.shared.geoOffers.buildOfferListViewController()
+        let viewController = GeoOffersWrapper.shared.service.buildOfferListViewController()
         navigationController?.pushViewController(viewController, animated: true)
     }
 

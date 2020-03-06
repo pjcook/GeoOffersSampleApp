@@ -6,6 +6,7 @@ public class GeoOffersWebViewCache {
     private let cache: GeoOffersCache
     private let listingCache: GeoOffersListingCache
     private let offersCache: GeoOffersOffersCache
+    public var startCountdowns: (([String]) -> Void)?
 
     public init(cache: GeoOffersCache, listingCache: GeoOffersListingCache, offersCache: GeoOffersOffersCache) {
         self.cache = cache
@@ -81,19 +82,21 @@ extension GeoOffersWebViewCache {
         var hashes = [String]()
         let campaigns = listing.campaigns
         for campaign in campaigns.values {
-            if campaign.offer.countdownToExpiryStartedTimestampMsOrNull == nil {
+            if campaign.offer.countdownToExpiryStartedTimestampMsOrNull == nil, campaign.offer.countdownToExpiryDurationMsOrNull != nil {
                 var updatableCampaign = campaign
                 updatableCampaign.offer.countdownToExpiryStartedTimestampMsOrNull = timestamp
                 listing.campaigns[String(updatableCampaign.campaignId)] = updatableCampaign
                 if let hash = updatableCampaign.offer.clientCouponHash {
                     hashes.append(hash)
                 }
+                // update api with started timestamp
             }
         }
 
         if hashes.count > 0 {
             cache.cacheData.listing = listing
             cache.cacheUpdated()
+            startCountdowns?(hashes)
         }
         return listing
     }

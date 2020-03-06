@@ -28,7 +28,7 @@ class MapViewController: UIViewController {
     @IBOutlet private var toggle: UISwitch!
     private var locationManager = CLLocationManager()
     private var refreshTimer: Timer?
-    private let service = GeoOffersWrapper.shared.geoOffers
+    private let service = GeoOffersWrapper.shared.service
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

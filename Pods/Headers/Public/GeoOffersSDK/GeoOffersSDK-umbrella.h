@@ -1,1 +1,0 @@
-../../../Target Support Files/GeoOffersSDK/GeoOffersSDK-umbrella.h

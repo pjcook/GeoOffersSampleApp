@@ -6,7 +6,7 @@ import GeoOffersSDK
 class GeoOffersWrapper {
     static let shared = GeoOffersWrapper()
 
-    var geoOffers: GeoOffersSDKService = {
+    var service: GeoOffersSDKService = {
         let registrationCode = "535987"
         let authToken = "963c01a5-1003-11e8-9f97-0a927e8d53d7"
         let configuration = GeoOffersConfiguration(registrationCode: registrationCode, authToken: authToken, testing: true, minimumRefreshWaitTime: 30, mainAppUsesFirebase: false)

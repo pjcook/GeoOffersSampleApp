@@ -38157,7 +38157,7 @@ function appMain() {
 					return;
 				}
 
-				if (window.Android && window.Android.openCouponUrl && window.Android.openCouponUrlInExternalBrowser) {
+				if (window.Android && window.Android.openCouponUrl) {
 					console.log('OFFER SCHEDULE ID PASSED TO ANDROID IS ' + offer.offerScheduleId);
 
 					if (offer.usesCustomCouponURL) {

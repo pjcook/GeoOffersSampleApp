@@ -11,8 +11,8 @@ private var isRunningTests: Bool {
 public class GeoOffersSDKService: GeoOffersSDKServiceProtocol {
     private var configuration: GeoOffersInternalConfiguration
     private let notificationService: GeoOffersNotificationServiceProtocol
-    fileprivate let locationService: GeoOffersLocationService
-    fileprivate var apiService: GeoOffersAPIServiceProtocol
+    private let locationService: GeoOffersLocationService
+    private var apiService: GeoOffersAPIServiceProtocol
     private let presentationService: GeoOffersPresenterProtocol
     private let dataParser: GeoOffersPushNotificationProcessor
     private var firebaseWrapper: GeoOffersFirebaseWrapperProtocol
@@ -21,9 +21,17 @@ public class GeoOffersSDKService: GeoOffersSDKServiceProtocol {
     private let listingCache: GeoOffersListingCache
     private let dataProcessor: GeoOffersDataProcessor
 
+    
+    /// Use this delegate to be notified when new offers become available whilst the app is running
     public weak var delegate: GeoOffersSDKServiceDelegate?
+    
+    /// Used internally, to refresh the coupon list view do not override
     public weak var offersUpdatedDelegate: GeoOffersOffersCacheDelegate?
-
+    
+    /// Initialise the SDK, this should be called in the AppDelegate application didFinishLaunchingWithOptions
+    /// - Parameters:
+    ///   - configuration: Contains all of the configuration required to correctly use the SDK
+    ///   - userNotificationCenter: Purely serves to allow UNUserNotificationCenter to be swapped out for unit testing
     public init(
         configuration: GeoOffersConfiguration,
         userNotificationCenter: GeoOffersUserNotificationCenter = UNUserNotificationCenter.current()
@@ -42,7 +50,8 @@ public class GeoOffersSDKService: GeoOffersSDKServiceProtocol {
         apiService = GeoOffersAPIService(configuration: self.configuration, trackingCache: trackingCache)
 
         dataParser = GeoOffersPushNotificationProcessor(notificationCache: notificationCache, listingCache: listingCache)
-        presentationService = GeoOffersPresenter(configuration: self.configuration, locationService: locationService, cacheService: GeoOffersWebViewCache(cache: cache, listingCache: listingCache, offersCache: offersCache), trackingCache: trackingCache, apiService: apiService)
+        let webViewCache = GeoOffersWebViewCache(cache: cache, listingCache: listingCache, offersCache: offersCache)
+        presentationService = GeoOffersPresenter(configuration: self.configuration, locationService: locationService, cacheService: webViewCache, trackingCache: trackingCache, apiService: apiService)
         firebaseWrapper = isRunningTests ? GeoOffersFirebaseWrapperEmpty() : GeoOffersFirebaseWrapper(configuration: self.configuration)
         dataProcessor = GeoOffersDataProcessor(
             offersCache: offersCache,
@@ -53,12 +62,25 @@ public class GeoOffersSDKService: GeoOffersSDKServiceProtocol {
             apiService: apiService,
             trackingCache: trackingCache
         )
-
+        
         offersCache.delegate = self
         listingCache.delegate = self
         firebaseWrapper.delegate = self
         locationService.delegate = self
         presentationService.viewControllerDelegate = self
+        
+        webViewCache.startCountdowns = { hashes in
+            self.apiService.countdownsStarted(hashes: hashes) { result in
+                switch result {
+                case .failure(let error):
+                    geoOffersLog("\(error)")
+                    
+                default:
+                    break
+                    
+                }
+            }
+        }
     }
 
     init(
@@ -92,6 +114,7 @@ public class GeoOffersSDKService: GeoOffersSDKServiceProtocol {
         self.presentationService.viewControllerDelegate = self
     }
 
+    /// Call from the AppDelegate once the SDK has been initialized
     public func application(_: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
         firebaseWrapper.applicationDidFinishLaunching()
         guard
@@ -102,14 +125,17 @@ public class GeoOffersSDKService: GeoOffersSDKServiceProtocol {
         _ = dataParser.handleNotification(notification)
     }
 
+    /// Call from the matching AppDelegate method
     public func application(_: UIApplication, handleEventsForBackgroundURLSession _: String, completionHandler: @escaping () -> Void) {
         apiService.backgroundSessionCompletionHandler = completionHandler
     }
-
+    
+    /// Use this method to request push notification system permissions
     public func requestPushNotificationPermissions() {
         notificationService.requestNotificationPermissions()
     }
 
+    /// Call from the matching AppDelegate method
     public func application(_: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: ((UIBackgroundFetchResult) -> Void)?) {
         guard let notification = userInfo as? [String: AnyObject],
             dataParser.shouldProcessRemoteNotification(notification) else {
@@ -122,21 +148,25 @@ public class GeoOffersSDKService: GeoOffersSDKServiceProtocol {
         }
     }
 
+    /// Call from the matching AppDelegate method
     public func application(_: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         firebaseWrapper.didRegisterForPushNotifications(deviceToken: deviceToken)
         processListingData()
     }
 
+    /// Call from the matching AppDelegate method
     public func application(_: UIApplication, performFetchWithCompletionHandler completionHandler: ((UIBackgroundFetchResult) -> Void)?) {
         processListingData()
         retrieveNearbyGeoFences()
         completionHandler?(.newData)
     }
 
+    // Use this method to request system location permissions
     public func requestLocationPermissions() {
         locationService.requestPermissions()
     }
 
+    /// Call from the matching AppDelegate method
     public func applicationDidBecomeActive(_ application: UIApplication) {
         notificationService.applicationDidBecomeActive(application)
         locationService.startMonitoringSignificantLocationChanges()
@@ -147,15 +177,41 @@ public class GeoOffersSDKService: GeoOffersSDKServiceProtocol {
         apiService.checkForPendingTrackingEvents()
     }
 
+    /// This will create a UIViewController that contains the list of offers and coupons that the user has available. This will need to be contained in a UINavigationController to work correctly, so either push this on an existing navigation controller, or wrap it in a UINavigationController and present it
     public func buildOfferListViewController() -> UIViewController {
         return presentationService.buildOfferListViewController(service: self)
     }
-
+    
+    /// You can use this method to check whether the UNUserNotification was a GeoOffers notification or not when handling the response from a UNUserNotification for deeplinking to the Coupon or Offer
+    /// - Parameter userInfo: The userInfo from UNNotification.content.userInfo
+    public func isGeoOffersNotification(userInfo: [AnyHashable:Any]) -> Bool {
+        guard let isValidNotification = userInfo[IsGeoOfferNotificationKey] as? Bool else { return false }
+        return isValidNotification
+    }
+    
+    /// Create a GeoOffers list view controller using the buildOfferListViewController() method, push that onto your navigation controller, or wrap it in a navigation controller and present it. Then call this method passing that view controller in here so that we can attempt to deeplink to the correct coupon or offer. If the notificationIdentifier does not match a coupon then the list page will remain visible
+    /// - Parameters:
+    ///   - viewController: The UIViewController from buildOfferListViewController()
+    ///   - notificationIdentifier: the notification identifier from the UNNotification
+    ///   - userInfo: The userInfo from the UNNotification.content.userInfo
+    @discardableResult public func deeplinkToCoupon(_ viewController: UIViewController, notificationIdentifier: String, userInfo: [AnyHashable:Any]) -> Bool {
+        guard
+            isGeoOffersNotification(userInfo: userInfo),
+            let vc = viewController as? GeoOffersViewController,
+            let scheduleID = ScheduleID(notificationIdentifier)
+        else { return false }
+        vc.openCoupon(scheduleID: scheduleID)
+        return true
+    }
+    
+    /// Used internally by the UIViewController from buildOfferListViewController() to refresh it's content when the offers data available changes
+    /// - Parameter viewController: the UIViewController from buildOfferListViewController()
     public func refreshOfferListViewController(_ viewController: UIViewController) {
         guard let vc = viewController as? GeoOffersViewController else { return }
         presentationService.refreshOfferListViewController(vc)
     }
-
+    
+    /// This allows the locations being monitored to be displayed on a MKMapView
     public func debugRegionLocations() -> [GeoOffersDebugRegion] {
         return listingCache.debugRegionLocations()
     }
@@ -167,7 +223,7 @@ extension GeoOffersSDKService {
         GeoOffersSDKUserDefaults.shared.lastRefreshLocation = location
     }
 
-    public func processListingData(_ completionHandler: (() -> Void)? = nil) {
+    private func processListingData(_ completionHandler: (() -> Void)? = nil) {
         guard let location = locationService.latestLocation else { return }
         dataProcessor.process(at: location, locationService: locationService, completionHandler: completionHandler)
     }
