@@ -7,7 +7,7 @@ target 'GeoOffersSampleApp' do
 
   # Pods for GeoOffersSampleApp
   pod 'GeoOffersSDK'
-  # pod 'GeoOffersSDK', :path => '~/Library/Mobile Documents/com~apple~CloudDocs/Private Projects/Zappit/Geo-Offers.com/SDK/GeoOffersSDK'
+    # pod 'GeoOffersSDK', :path => '~/Library/Mobile Documents/com~apple~CloudDocs/Private Projects/Zappit/Geo-Offers.com/SDK/GeoOffersSDK'
 
   target 'GeoOffersSampleAppTests' do
     inherit! :search_paths

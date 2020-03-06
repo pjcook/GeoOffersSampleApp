@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0C83EFFBDEE03F64D38F19AA /* Pods_GeoOffersSampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE714E9CB32051B373577464 /* Pods_GeoOffersSampleApp.framework */; };
-		520AAFA5152024C5DEE3898B /* Pods_GeoOffersSampleAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D685AA4A4A7B2850C1988DE9 /* Pods_GeoOffersSampleAppTests.framework */; };
-		C6F1D564B72440520ADCC0B7 /* Pods_GeoOffersSampleApp_GeoOffersSampleAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEFF4EECE002589538F6AD7F /* Pods_GeoOffersSampleApp_GeoOffersSampleAppUITests.framework */; };
+		A0CF494BF25E3B429DC214A8 /* Pods_GeoOffersSampleAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D1C80C6508EE7A53DDEA413 /* Pods_GeoOffersSampleAppTests.framework */; };
+		D065E9CA13AFC1514B161FD9 /* Pods_GeoOffersSampleApp_GeoOffersSampleAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 61B461B2A9B2789DF1AE6D45 /* Pods_GeoOffersSampleApp_GeoOffersSampleAppUITests.framework */; };
 		D58C095E21E8A9B000D503D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58C095D21E8A9B000D503D2 /* AppDelegate.swift */; };
 		D58C096021E8A9B000D503D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D58C095F21E8A9B000D503D2 /* ViewController.swift */; };
 		D58C096321E8A9B000D503D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D58C096121E8A9B000D503D2 /* Main.storyboard */; };
@@ -27,6 +26,7 @@
 		D5FF9B79226C432500020C55 /* GeoOffersTrackingDebugCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FF9B78226C432500020C55 /* GeoOffersTrackingDebugCache.swift */; };
 		D5FF9B7B226C438A00020C55 /* TrackingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FF9B7A226C438A00020C55 /* TrackingViewController.swift */; };
 		D5FF9B7D226C448900020C55 /* TrackingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FF9B7C226C448900020C55 /* TrackingCell.swift */; };
+		F479EC16E1A88B52C3861100 /* Pods_GeoOffersSampleApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF1E415110D1448A3E9D3FA4 /* Pods_GeoOffersSampleApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,10 +47,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		25FB309C6C97901D036E6447 /* Pods-GeoOffersSampleApp-GeoOffersSampleAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoOffersSampleApp-GeoOffersSampleAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-GeoOffersSampleApp-GeoOffersSampleAppUITests/Pods-GeoOffersSampleApp-GeoOffersSampleAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		6DE8B389408D07728B8AFC09 /* Pods-GeoOffersSampleApp-GeoOffersSampleAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoOffersSampleApp-GeoOffersSampleAppUITests.release.xcconfig"; path = "Target Support Files/Pods-GeoOffersSampleApp-GeoOffersSampleAppUITests/Pods-GeoOffersSampleApp-GeoOffersSampleAppUITests.release.xcconfig"; sourceTree = "<group>"; };
-		85C50EDEF87DB1E6829CAAED /* Pods-GeoOffersSampleAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoOffersSampleAppTests.debug.xcconfig"; path = "Target Support Files/Pods-GeoOffersSampleAppTests/Pods-GeoOffersSampleAppTests.debug.xcconfig"; sourceTree = "<group>"; };
-		AEFF4EECE002589538F6AD7F /* Pods_GeoOffersSampleApp_GeoOffersSampleAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeoOffersSampleApp_GeoOffersSampleAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D1C80C6508EE7A53DDEA413 /* Pods_GeoOffersSampleAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeoOffersSampleAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4BEFB82E5CF3D4A7BEF7064A /* Pods-GeoOffersSampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoOffersSampleApp.debug.xcconfig"; path = "Target Support Files/Pods-GeoOffersSampleApp/Pods-GeoOffersSampleApp.debug.xcconfig"; sourceTree = "<group>"; };
+		61B461B2A9B2789DF1AE6D45 /* Pods_GeoOffersSampleApp_GeoOffersSampleAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeoOffersSampleApp_GeoOffersSampleAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84C25097380FA722A1AD485A /* Pods-GeoOffersSampleAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoOffersSampleAppTests.release.xcconfig"; path = "Target Support Files/Pods-GeoOffersSampleAppTests/Pods-GeoOffersSampleAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		A6555A638B95569E2452BDB5 /* Pods-GeoOffersSampleApp-GeoOffersSampleAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoOffersSampleApp-GeoOffersSampleAppUITests.release.xcconfig"; path = "Target Support Files/Pods-GeoOffersSampleApp-GeoOffersSampleAppUITests/Pods-GeoOffersSampleApp-GeoOffersSampleAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C6D77470A5490202B787F6E2 /* Pods-GeoOffersSampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoOffersSampleApp.release.xcconfig"; path = "Target Support Files/Pods-GeoOffersSampleApp/Pods-GeoOffersSampleApp.release.xcconfig"; sourceTree = "<group>"; };
+		CBC1E2031F5A1BFFF8DBCFD3 /* Pods-GeoOffersSampleAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoOffersSampleAppTests.debug.xcconfig"; path = "Target Support Files/Pods-GeoOffersSampleAppTests/Pods-GeoOffersSampleAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D33B362C87F7691704E69D5B /* Pods-GeoOffersSampleApp-GeoOffersSampleAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoOffersSampleApp-GeoOffersSampleAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-GeoOffersSampleApp-GeoOffersSampleAppUITests/Pods-GeoOffersSampleApp-GeoOffersSampleAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D52AB8A72270479100763DCD /* Crawley.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Crawley.gpx; sourceTree = "<group>"; };
 		D55264CD22E2524B00BDA5C6 /* PottersBar_M.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PottersBar_M.gpx; sourceTree = "<group>"; };
 		D58C095A21E8A9B000D503D2 /* GeoOffersSampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeoOffersSampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,11 +87,7 @@
 		D5FF9B78226C432500020C55 /* GeoOffersTrackingDebugCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoOffersTrackingDebugCache.swift; sourceTree = "<group>"; };
 		D5FF9B7A226C438A00020C55 /* TrackingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingViewController.swift; sourceTree = "<group>"; };
 		D5FF9B7C226C448900020C55 /* TrackingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackingCell.swift; sourceTree = "<group>"; };
-		D685AA4A4A7B2850C1988DE9 /* Pods_GeoOffersSampleAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeoOffersSampleAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		EDFBB6FE84FE5869D9B1E78D /* Pods-GeoOffersSampleApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoOffersSampleApp.debug.xcconfig"; path = "Target Support Files/Pods-GeoOffersSampleApp/Pods-GeoOffersSampleApp.debug.xcconfig"; sourceTree = "<group>"; };
-		F29B2FA2DA72E30B5AA48788 /* Pods-GeoOffersSampleAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoOffersSampleAppTests.release.xcconfig"; path = "Target Support Files/Pods-GeoOffersSampleAppTests/Pods-GeoOffersSampleAppTests.release.xcconfig"; sourceTree = "<group>"; };
-		FC36E7754123B1D074A8D70B /* Pods-GeoOffersSampleApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoOffersSampleApp.release.xcconfig"; path = "Target Support Files/Pods-GeoOffersSampleApp/Pods-GeoOffersSampleApp.release.xcconfig"; sourceTree = "<group>"; };
-		FE714E9CB32051B373577464 /* Pods_GeoOffersSampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeoOffersSampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF1E415110D1448A3E9D3FA4 /* Pods_GeoOffersSampleApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeoOffersSampleApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C83EFFBDEE03F64D38F19AA /* Pods_GeoOffersSampleApp.framework in Frameworks */,
+				F479EC16E1A88B52C3861100 /* Pods_GeoOffersSampleApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,7 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				520AAFA5152024C5DEE3898B /* Pods_GeoOffersSampleAppTests.framework in Frameworks */,
+				A0CF494BF25E3B429DC214A8 /* Pods_GeoOffersSampleAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,34 +111,34 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6F1D564B72440520ADCC0B7 /* Pods_GeoOffersSampleApp_GeoOffersSampleAppUITests.framework in Frameworks */,
+				D065E9CA13AFC1514B161FD9 /* Pods_GeoOffersSampleApp_GeoOffersSampleAppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6AA880AC42F8A9D9686F0C93 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DF1E415110D1448A3E9D3FA4 /* Pods_GeoOffersSampleApp.framework */,
+				61B461B2A9B2789DF1AE6D45 /* Pods_GeoOffersSampleApp_GeoOffersSampleAppUITests.framework */,
+				3D1C80C6508EE7A53DDEA413 /* Pods_GeoOffersSampleAppTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		88EC108DDACF8B4B5BC444B0 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				EDFBB6FE84FE5869D9B1E78D /* Pods-GeoOffersSampleApp.debug.xcconfig */,
-				FC36E7754123B1D074A8D70B /* Pods-GeoOffersSampleApp.release.xcconfig */,
-				25FB309C6C97901D036E6447 /* Pods-GeoOffersSampleApp-GeoOffersSampleAppUITests.debug.xcconfig */,
-				6DE8B389408D07728B8AFC09 /* Pods-GeoOffersSampleApp-GeoOffersSampleAppUITests.release.xcconfig */,
-				85C50EDEF87DB1E6829CAAED /* Pods-GeoOffersSampleAppTests.debug.xcconfig */,
-				F29B2FA2DA72E30B5AA48788 /* Pods-GeoOffersSampleAppTests.release.xcconfig */,
+				4BEFB82E5CF3D4A7BEF7064A /* Pods-GeoOffersSampleApp.debug.xcconfig */,
+				C6D77470A5490202B787F6E2 /* Pods-GeoOffersSampleApp.release.xcconfig */,
+				D33B362C87F7691704E69D5B /* Pods-GeoOffersSampleApp-GeoOffersSampleAppUITests.debug.xcconfig */,
+				A6555A638B95569E2452BDB5 /* Pods-GeoOffersSampleApp-GeoOffersSampleAppUITests.release.xcconfig */,
+				CBC1E2031F5A1BFFF8DBCFD3 /* Pods-GeoOffersSampleAppTests.debug.xcconfig */,
+				84C25097380FA722A1AD485A /* Pods-GeoOffersSampleAppTests.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		CE3BE4BD07B65302DE402AE8 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				FE714E9CB32051B373577464 /* Pods_GeoOffersSampleApp.framework */,
-				AEFF4EECE002589538F6AD7F /* Pods_GeoOffersSampleApp_GeoOffersSampleAppUITests.framework */,
-				D685AA4A4A7B2850C1988DE9 /* Pods_GeoOffersSampleAppTests.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		D58C095121E8A9B000D503D2 = {
@@ -150,7 +150,7 @@
 				D58C097C21E8A9B200D503D2 /* GeoOffersSampleAppUITests */,
 				D58C095B21E8A9B000D503D2 /* Products */,
 				88EC108DDACF8B4B5BC444B0 /* Pods */,
-				CE3BE4BD07B65302DE402AE8 /* Frameworks */,
+				6AA880AC42F8A9D9686F0C93 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -276,12 +276,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D58C098221E8A9B200D503D2 /* Build configuration list for PBXNativeTarget "GeoOffersSampleApp" */;
 			buildPhases = (
-				6C40BBA0C6EFD9AE6523E241 /* [CP] Check Pods Manifest.lock */,
+				B216892300842983C4AB8F4C /* [CP] Check Pods Manifest.lock */,
 				D58C095621E8A9B000D503D2 /* Sources */,
 				D58C095721E8A9B000D503D2 /* Frameworks */,
 				D58C095821E8A9B000D503D2 /* Resources */,
-				9F203CE1BE171D2321EC443D /* [CP] Embed Pods Frameworks */,
-				E6F71AA7E741367D7D21920C /* [CP] Copy Pods Resources */,
+				C71DA9440CA0D45A08DF56E2 /* [CP] Embed Pods Frameworks */,
+				47C5752BD9B783B2E811E3A8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -296,7 +296,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D58C098521E8A9B200D503D2 /* Build configuration list for PBXNativeTarget "GeoOffersSampleAppTests" */;
 			buildPhases = (
-				90BAC222EF479C454E066AEC /* [CP] Check Pods Manifest.lock */,
+				7B23073D3CD60910D240F3C6 /* [CP] Check Pods Manifest.lock */,
 				D58C096A21E8A9B200D503D2 /* Sources */,
 				D58C096B21E8A9B200D503D2 /* Frameworks */,
 				D58C096C21E8A9B200D503D2 /* Resources */,
@@ -315,12 +315,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D58C098821E8A9B200D503D2 /* Build configuration list for PBXNativeTarget "GeoOffersSampleAppUITests" */;
 			buildPhases = (
-				050B9A2BF64152F7E6CA6042 /* [CP] Check Pods Manifest.lock */,
+				668F390C713346CC354245DC /* [CP] Check Pods Manifest.lock */,
 				D58C097521E8A9B200D503D2 /* Sources */,
 				D58C097621E8A9B200D503D2 /* Frameworks */,
 				D58C097721E8A9B200D503D2 /* Resources */,
-				D9100C19C9A5A89AFBF6A96E /* [CP] Embed Pods Frameworks */,
-				D5E867B21F928344A6728855 /* [CP] Copy Pods Resources */,
+				6B82C87CC2E0CF198D5DAC2F /* [CP] Embed Pods Frameworks */,
+				35B960ECC1525321859C7D8A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -409,7 +409,41 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		050B9A2BF64152F7E6CA6042 /* [CP] Check Pods Manifest.lock */ = {
+		35B960ECC1525321859C7D8A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GeoOffersSampleApp-GeoOffersSampleAppUITests/Pods-GeoOffersSampleApp-GeoOffersSampleAppUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GeoOffersSampleApp-GeoOffersSampleAppUITests/Pods-GeoOffersSampleApp-GeoOffersSampleAppUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GeoOffersSampleApp-GeoOffersSampleAppUITests/Pods-GeoOffersSampleApp-GeoOffersSampleAppUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		47C5752BD9B783B2E811E3A8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GeoOffersSampleApp/Pods-GeoOffersSampleApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GeoOffersSampleApp/Pods-GeoOffersSampleApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GeoOffersSampleApp/Pods-GeoOffersSampleApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		668F390C713346CC354245DC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -431,29 +465,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6C40BBA0C6EFD9AE6523E241 /* [CP] Check Pods Manifest.lock */ = {
+		6B82C87CC2E0CF198D5DAC2F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GeoOffersSampleApp-GeoOffersSampleAppUITests/Pods-GeoOffersSampleApp-GeoOffersSampleAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-GeoOffersSampleApp-checkManifestLockResult.txt",
+				"${PODS_ROOT}/Target Support Files/Pods-GeoOffersSampleApp-GeoOffersSampleAppUITests/Pods-GeoOffersSampleApp-GeoOffersSampleAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GeoOffersSampleApp-GeoOffersSampleAppUITests/Pods-GeoOffersSampleApp-GeoOffersSampleAppUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		90BAC222EF479C454E066AEC /* [CP] Check Pods Manifest.lock */ = {
+		7B23073D3CD60910D240F3C6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -475,7 +504,29 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9F203CE1BE171D2321EC443D /* [CP] Embed Pods Frameworks */ = {
+		B216892300842983C4AB8F4C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GeoOffersSampleApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C71DA9440CA0D45A08DF56E2 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -490,57 +541,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GeoOffersSampleApp/Pods-GeoOffersSampleApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D5E867B21F928344A6728855 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GeoOffersSampleApp-GeoOffersSampleAppUITests/Pods-GeoOffersSampleApp-GeoOffersSampleAppUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GeoOffersSampleApp-GeoOffersSampleAppUITests/Pods-GeoOffersSampleApp-GeoOffersSampleAppUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GeoOffersSampleApp-GeoOffersSampleAppUITests/Pods-GeoOffersSampleApp-GeoOffersSampleAppUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D9100C19C9A5A89AFBF6A96E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GeoOffersSampleApp-GeoOffersSampleAppUITests/Pods-GeoOffersSampleApp-GeoOffersSampleAppUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GeoOffersSampleApp-GeoOffersSampleAppUITests/Pods-GeoOffersSampleApp-GeoOffersSampleAppUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GeoOffersSampleApp-GeoOffersSampleAppUITests/Pods-GeoOffersSampleApp-GeoOffersSampleAppUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		E6F71AA7E741367D7D21920C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GeoOffersSampleApp/Pods-GeoOffersSampleApp-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-GeoOffersSampleApp/Pods-GeoOffersSampleApp-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GeoOffersSampleApp/Pods-GeoOffersSampleApp-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -733,7 +733,7 @@
 		};
 		D58C098321E8A9B200D503D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EDFBB6FE84FE5869D9B1E78D /* Pods-GeoOffersSampleApp.debug.xcconfig */;
+			baseConfigurationReference = 4BEFB82E5CF3D4A7BEF7064A /* Pods-GeoOffersSampleApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = GeoOffersSampleApp/GeoOffersSampleApp.entitlements;
@@ -754,7 +754,7 @@
 		};
 		D58C098421E8A9B200D503D2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FC36E7754123B1D074A8D70B /* Pods-GeoOffersSampleApp.release.xcconfig */;
+			baseConfigurationReference = C6D77470A5490202B787F6E2 /* Pods-GeoOffersSampleApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = GeoOffersSampleApp/GeoOffersSampleApp.entitlements;
@@ -775,7 +775,7 @@
 		};
 		D58C098621E8A9B200D503D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 85C50EDEF87DB1E6829CAAED /* Pods-GeoOffersSampleAppTests.debug.xcconfig */;
+			baseConfigurationReference = CBC1E2031F5A1BFFF8DBCFD3 /* Pods-GeoOffersSampleAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -797,7 +797,7 @@
 		};
 		D58C098721E8A9B200D503D2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F29B2FA2DA72E30B5AA48788 /* Pods-GeoOffersSampleAppTests.release.xcconfig */;
+			baseConfigurationReference = 84C25097380FA722A1AD485A /* Pods-GeoOffersSampleAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -819,7 +819,7 @@
 		};
 		D58C098921E8A9B200D503D2 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 25FB309C6C97901D036E6447 /* Pods-GeoOffersSampleApp-GeoOffersSampleAppUITests.debug.xcconfig */;
+			baseConfigurationReference = D33B362C87F7691704E69D5B /* Pods-GeoOffersSampleApp-GeoOffersSampleAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -840,7 +840,7 @@
 		};
 		D58C098A21E8A9B200D503D2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6DE8B389408D07728B8AFC09 /* Pods-GeoOffersSampleApp-GeoOffersSampleAppUITests.release.xcconfig */;
+			baseConfigurationReference = A6555A638B95569E2452BDB5 /* Pods-GeoOffersSampleApp-GeoOffersSampleAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

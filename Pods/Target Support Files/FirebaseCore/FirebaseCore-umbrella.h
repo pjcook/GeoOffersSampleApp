@@ -10,15 +10,10 @@
 #endif
 #endif
 
-#import "FIRApp 3.h"
 #import "FIRApp.h"
-#import "FIRConfiguration 3.h"
 #import "FIRConfiguration.h"
-#import "FirebaseCore 3.h"
 #import "FirebaseCore.h"
-#import "FIRLoggerLevel 3.h"
 #import "FIRLoggerLevel.h"
-#import "FIROptions 3.h"
 #import "FIROptions.h"
 
 FOUNDATION_EXPORT double FirebaseCoreVersionNumber;
